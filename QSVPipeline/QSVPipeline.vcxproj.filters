@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="sources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="qsv_prm.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_control.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="cpu_info.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="gpu_info.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="cl_func.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="convert_csp_avx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="convert_csp_avx2.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="convert_csp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="convert_csp_sse2.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="convert_csp_ssse3.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="ram_speed.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceId.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="gpuz_info.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_plugin.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_task.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_pipeline.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_hw_d3d9.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_hw_d3d11.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_hw_device.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_hw_va.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_allocator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_allocator_d3d9.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_allocator_d3d11.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_allocator_va.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_allocator_sys.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_query.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_err.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_util.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_util.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_log.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_perf_monitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_pipe.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_event.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_ini.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_simd.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_avlog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_avutil.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_version.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_input.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_input_avi.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_input_avs.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_input_vpy.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_output.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_input_raw.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_input_avcodec.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_output_avcodec.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="convert_csp_sse41.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="api_hook.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_bitstream.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="qsv_cmd.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="rgy_caption.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="qsv_prm.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="hw_device.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_control.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="cpu_info.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="gpu_info.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="cl_func.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="convert_csp.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="convert_csp_simd.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="ram_speed.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceId.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="vpp_plugins.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="gpuz_info.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_plugin.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_task.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_pipeline.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_hw_d3d9.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_hw_d3d11.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_hw_device.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_hw_va.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_allocator_d3d9.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_allocator_d3d11.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_allocator_sys.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_allocator_va.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_allocator.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_query.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_err.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_util.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_util.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_log.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_status.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_perf_monitor.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_pipe.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_event.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_ini.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_queue.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_simd.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_thread.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_osdep.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_tchar.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_avlog.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_avutil.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_version.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_input.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_input_avi.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_input_avs.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_input_vpy.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_output.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_input_raw.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_input_avcodec.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_output_avcodec.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="convert_const.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="api_hook.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_bitstream.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="qsv_cmd.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="rgy_caption.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="ram_speed_x86.asm">
+      <Filter>src</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ram_speed_x64.asm">
+      <Filter>src</Filter>
+    </CustomBuild>
+    <CustomBuild Include="cpu_info_x64.asm">
+      <Filter>src</Filter>
+    </CustomBuild>
+    <CustomBuild Include="cpu_info_x86.asm">
+      <Filter>src</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
