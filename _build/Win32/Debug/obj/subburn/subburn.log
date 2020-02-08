@@ -1,0 +1,10 @@
+﻿  plugin_subburn.cpp
+  subburn_process_avx.cpp
+  subburn_process_avx2.cpp
+  subburn_process_sse41.cpp
+  subburn_process_sse41_pshub_slow.cpp
+D:\work\intel\intel_codec\QSVPipeline\rgy_caption.h(68,10): fatal error C1083: 无法打开包括文件: “Caption.h”: No such file or directory (编译源文件 plugin_subburn.cpp)
+D:\work\intel\intel_codec\QSVPipeline\rgy_caption.h(68,10): fatal error C1083: 无法打开包括文件: “Caption.h”: No such file or directory (编译源文件 subburn_process_avx2.cpp)
+D:\work\intel\intel_codec\QSVPipeline\rgy_caption.h(68,10): fatal error C1083: 无法打开包括文件: “Caption.h”: No such file or directory (编译源文件 subburn_process_sse41.cpp)
+D:\work\intel\intel_codec\QSVPipeline\rgy_caption.h(68,10): fatal error C1083: 无法打开包括文件: “Caption.h”: No such file or directory (编译源文件 subburn_process_avx.cpp)
+D:\work\intel\intel_codec\QSVPipeline\rgy_caption.h(68,10): fatal error C1083: 无法打开包括文件: “Caption.h”: No such file or directory (编译源文件 subburn_process_sse41_pshub_slow.cpp)

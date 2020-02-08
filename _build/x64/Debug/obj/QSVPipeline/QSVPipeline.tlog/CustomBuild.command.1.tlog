@@ -1,0 +1,4 @@
+^D:\WORK\INTEL\INTEL_CODEC\QSVPIPELINE\RAM_SPEED_X64.ASM
+yasm -a x86 -f win64 -p nasm -o "D:\work\intel\intel_codec\_build\x64\Debug\obj\QSVPipeline\ram_speed_x64.asm.obj" "D:\work\intel\intel_codec\QSVPipeline\ram_speed_x64.asm"
+^D:\WORK\INTEL\INTEL_CODEC\QSVPIPELINE\CPU_INFO_X64.ASM
+yasm -a x86 -f win64 -p nasm -o "D:\work\intel\intel_codec\_build\x64\Debug\obj\QSVPipeline\cpu_info_x64.asm.obj" "D:\work\intel\intel_codec\QSVPipeline\cpu_info_x64.asm"

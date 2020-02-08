@@ -1,0 +1,6 @@
+﻿  plugin_subburn.cpp
+  subburn_process_avx.cpp
+  subburn_process_avx2.cpp
+  subburn_process_sse41.cpp
+  subburn_process_sse41_pshub_slow.cpp
+  subburn.vcxproj -> D:\work\intel\intel_codec\_build\x64\Debug\subburn.lib
