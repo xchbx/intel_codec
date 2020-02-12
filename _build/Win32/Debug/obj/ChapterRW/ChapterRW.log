@@ -1,3 +1,0 @@
-﻿  chapter_rw.cpp
-D:\work\intel\intel_codec\ChapterRW\chapter_rw.cpp(814,9): warning C4189: “sts”: 局部变量已初始化但不引用
-  ChapterRW.vcxproj -> D:\work\intel\intel_codec\_build\Win32\Debug\ChapterRW.lib

@@ -265,7 +265,7 @@ exit /B 0</Command>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>D:\work\intel\QSVEnc-master\Caption2Ass_PCR\src\common;D:\Program\ffmpeg\ffmpeg-latest-win64-dev\include;.;QSV;prm;encode;frm;..\MediaSDK\include;..\QSVPipeline;..\QSVPlugins;..\ChapterRW;..\AuoLink;..\ffmpeg_lgpl\include;$(INTEL_METRIC_FRAMEWORK_SDK)\include;$(CAPTION2ASS_SRC)\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\work\intel\intel_codec\AuoLink;.;QSV;prm;encode;frm;..\MediaSDK\include;..\QSVPipeline;..\QSVPlugins;$(INTEL_METRIC_FRAMEWORK_SDK)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>QSVENC_AUO;WIN32;_DEBUG;_WINDOWS;_USRDLL;QSVEnc_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -1124,9 +1124,6 @@ exit /B 0</Command>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ChapterRW\ChapterRW.vcxproj">
-      <Project>{6a9832b8-fe45-415c-a162-7d07e5e4fa2b}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\mfx_dispatch\libmfx.vcxproj">
       <Project>{9e7b3527-11aa-46ba-a82f-c58761f9b56f}</Project>
     </ProjectReference>
@@ -1138,9 +1135,6 @@ exit /B 0</Command>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
       <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="auo_version.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

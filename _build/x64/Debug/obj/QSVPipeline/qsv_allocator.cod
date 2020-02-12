@@ -6,629 +6,640 @@ INCLUDELIB MSVCRTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG125785 DB	'h264', 00H
+$SG116497 DB	'h264', 00H
 	ORG $+3
-$SG125786 DB	'hevc', 00H
+$SG116498 DB	'hevc', 00H
 	ORG $+3
-$SG125787 DB	'mpeg2', 00H
+$SG116499 DB	'mpeg2', 00H
 	ORG $+2
-$SG125788 DB	'vc-1', 00H
+$SG116500 DB	'vc-1', 00H
 	ORG $+3
-$SG125789 DB	'vp8', 00H
-$SG125790 DB	'raw', 00H
-$SG125792 DB	'CBR', 00H
-$SG125793 DB	'VBR', 00H
-$SG125794 DB	'CQP', 00H
-$SG125795 DB	'AVBR', 00H
+$SG116501 DB	'vp8', 00H
+$SG116502 DB	'raw', 00H
+$SG116504 DB	'CBR', 00H
+$SG116505 DB	'VBR', 00H
+$SG116506 DB	'CQP', 00H
+$SG116507 DB	'AVBR', 00H
 	ORG $+3
-$SG125796 DB	'LA', 00H
+$SG116508 DB	'LA', 00H
 	ORG $+1
-$SG125797 DB	'LA-EXT', 00H
+$SG116509 DB	'LA-EXT', 00H
 	ORG $+1
-$SG125798 DB	'LA-HRD', 00H
+$SG116510 DB	'LA-HRD', 00H
 	ORG $+1
-$SG125799 DB	'LA-ICQ', 00H
+$SG116511 DB	'LA-ICQ', 00H
 	ORG $+1
-$SG125800 DB	'ICQ', 00H
-$SG125801 DB	'QVBR', 00H
+$SG116512 DB	'ICQ', 00H
+$SG116513 DB	'QVBR', 00H
 	ORG $+3
-$SG125802 DB	'VCM', 00H
-$SG125804 DB	'auto', 00H
+$SG116514 DB	'VCM', 00H
+$SG116516 DB	'auto', 00H
 	ORG $+3
-?list_avc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG125804	; list_avc_profile
+?list_avc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG116516	; list_avc_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG125805
+	DQ	FLAT:$SG116517
 	DD	042H
 	ORG $+4
-	DQ	FLAT:$SG125806
+	DQ	FLAT:$SG116518
 	DD	04dH
 	ORG $+4
-	DQ	FLAT:$SG125807
+	DQ	FLAT:$SG116519
 	DD	064H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG125805 DB	'Baseline', 00H
+$SG116517 DB	'Baseline', 00H
 	ORG $+3
-$SG125806 DB	'Main', 00H
+$SG116518 DB	'Main', 00H
 	ORG $+3
-$SG125807 DB	'High', 00H
+$SG116519 DB	'High', 00H
 	ORG $+7
-?list_hevc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG125809	; list_hevc_profile
+?list_hevc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG116521	; list_hevc_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG125810
+	DQ	FLAT:$SG116522
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG125811
+	DQ	FLAT:$SG116523
 	DD	02H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG125809 DB	'auto', 00H
+$SG116521 DB	'auto', 00H
 	ORG $+3
-$SG125810 DB	'main', 00H
+$SG116522 DB	'main', 00H
 	ORG $+3
-$SG125811 DB	'main10', 00H
+$SG116523 DB	'main10', 00H
 	ORG $+1
-$SG125813 DB	'main', 00H
+$SG116525 DB	'main', 00H
 	ORG $+3
-$SG125814 DB	'high', 00H
+$SG116526 DB	'high', 00H
 	ORG $+3
-$SG125816 DB	'auto', 00H
+$SG116528 DB	'auto', 00H
 	ORG $+3
-?list_mpeg2_profile@@3QBUCX_DESC@@B DQ FLAT:$SG125816	; list_mpeg2_profile
+?list_mpeg2_profile@@3QBUCX_DESC@@B DQ FLAT:$SG116528	; list_mpeg2_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG125817
+	DQ	FLAT:$SG116529
 	DD	050H
 	ORG $+4
-	DQ	FLAT:$SG125818
+	DQ	FLAT:$SG116530
 	DD	040H
 	ORG $+4
-	DQ	FLAT:$SG125819
+	DQ	FLAT:$SG116531
 	DD	010H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG125817 DB	'Simple', 00H
+$SG116529 DB	'Simple', 00H
 	ORG $+1
-$SG125818 DB	'Main', 00H
+$SG116530 DB	'Main', 00H
 	ORG $+3
-$SG125819 DB	'High', 00H
+$SG116531 DB	'High', 00H
 	ORG $+3
-$SG125821 DB	'auto', 00H
+$SG116533 DB	'auto', 00H
 	ORG $+3
-?list_vc1_profile@@3QBUCX_DESC@@B DQ FLAT:$SG125821	; list_vc1_profile
+?list_vc1_profile@@3QBUCX_DESC@@B DQ FLAT:$SG116533	; list_vc1_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG125822
+	DQ	FLAT:$SG116534
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG125823
+	DQ	FLAT:$SG116535
 	DD	05H
 	ORG $+4
-	DQ	FLAT:$SG125824
+	DQ	FLAT:$SG116536
 	DD	0dH
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG125822 DB	'Simple', 00H
+$SG116534 DB	'Simple', 00H
 	ORG $+1
-$SG125823 DB	'Main', 00H
+$SG116535 DB	'Main', 00H
 	ORG $+3
-$SG125824 DB	'Advanced', 00H
+$SG116536 DB	'Advanced', 00H
 	ORG $+7
-?list_vp8_profile@@3QBUCX_DESC@@B DQ FLAT:$SG125826	; list_vp8_profile
+?list_vp8_profile@@3QBUCX_DESC@@B DQ FLAT:$SG116538	; list_vp8_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG125827
+	DQ	FLAT:$SG116539
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG125828
+	DQ	FLAT:$SG116540
 	DD	02H
 	ORG $+4
-	DQ	FLAT:$SG125829
+	DQ	FLAT:$SG116541
 	DD	03H
 	ORG $+4
-	DQ	FLAT:$SG125830
+	DQ	FLAT:$SG116542
 	DD	04H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG125826 DB	'auto', 00H
+$SG116538 DB	'auto', 00H
 	ORG $+3
-$SG125827 DB	'0', 00H
+$SG116539 DB	'0', 00H
 	ORG $+2
-$SG125828 DB	'1', 00H
+$SG116540 DB	'1', 00H
 	ORG $+2
-$SG125829 DB	'2', 00H
+$SG116541 DB	'2', 00H
 	ORG $+2
-$SG125830 DB	'3', 00H
+$SG116542 DB	'3', 00H
 	ORG $+2
-$SG125832 DB	'auto', 00H
+$SG116544 DB	'auto', 00H
 	ORG $+3
-?list_vp9_profile@@3QBUCX_DESC@@B DQ FLAT:$SG125832	; list_vp9_profile
+?list_vp9_profile@@3QBUCX_DESC@@B DQ FLAT:$SG116544	; list_vp9_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG125833
+	DQ	FLAT:$SG116545
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG125834
+	DQ	FLAT:$SG116546
 	DD	02H
 	ORG $+4
-	DQ	FLAT:$SG125835
+	DQ	FLAT:$SG116547
 	DD	03H
 	ORG $+4
-	DQ	FLAT:$SG125836
+	DQ	FLAT:$SG116548
 	DD	04H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG125833 DB	'0', 00H
+$SG116545 DB	'0', 00H
 	ORG $+2
-$SG125834 DB	'1', 00H
+$SG116546 DB	'1', 00H
 	ORG $+2
-$SG125835 DB	'2', 00H
+$SG116547 DB	'2', 00H
 	ORG $+2
-$SG125836 DB	'3', 00H
+$SG116548 DB	'3', 00H
 	ORG $+2
-$SG125838 DB	'8', 00H
+$SG116550 DB	'8', 00H
 	ORG $+2
-$SG125839 DB	'10', 00H
+$SG116551 DB	'10', 00H
 	ORG $+1
-$SG125841 DB	'progressive', 00H
-$SG125847 DB	'it', 00H
+$SG116553 DB	'progressive', 00H
+$SG116559 DB	'it', 00H
 	ORG $+1
-$SG125842 DB	'interlaced(tff)', 00H
-$SG125843 DB	'interlaced(bff)', 00H
-$SG125845 DB	'none', 00H
+$SG116554 DB	'interlaced(tff)', 00H
+$SG116555 DB	'interlaced(bff)', 00H
+$SG116557 DB	'none', 00H
 	ORG $+3
-$SG125846 DB	'normal', 00H
+$SG116558 DB	'normal', 00H
 	ORG $+1
-$SG125848 DB	'bob', 00H
-$SG125850 DB	'32', 00H
+$SG116560 DB	'bob', 00H
+$SG116562 DB	'32', 00H
 	ORG $+1
-$SG125851 DB	'2332', 00H
+$SG116563 DB	'2332', 00H
 	ORG $+3
-$SG125852 DB	'repeat', 00H
+$SG116564 DB	'repeat', 00H
 	ORG $+1
-$SG125853 DB	'41', 00H
+$SG116565 DB	'41', 00H
 	ORG $+1
-$SG125855 DB	'auto', 00H
+$SG116567 DB	'auto', 00H
 	ORG $+7
-?list_avc_level@@3QBUCX_DESC@@B DQ FLAT:$SG125855	; list_avc_level
+?list_avc_level@@3QBUCX_DESC@@B DQ FLAT:$SG116567	; list_avc_level
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG125856
+	DQ	FLAT:$SG116568
 	DD	0aH
 	ORG $+4
-	DQ	FLAT:$SG125857
+	DQ	FLAT:$SG116569
 	DD	09H
 	ORG $+4
-	DQ	FLAT:$SG125858
+	DQ	FLAT:$SG116570
 	DD	0bH
 	ORG $+4
-	DQ	FLAT:$SG125859
+	DQ	FLAT:$SG116571
 	DD	0cH
 	ORG $+4
-	DQ	FLAT:$SG125860
+	DQ	FLAT:$SG116572
 	DD	0dH
 	ORG $+4
-	DQ	FLAT:$SG125861
+	DQ	FLAT:$SG116573
 	DD	014H
 	ORG $+4
-	DQ	FLAT:$SG125862
+	DQ	FLAT:$SG116574
 	DD	015H
 	ORG $+4
-	DQ	FLAT:$SG125863
+	DQ	FLAT:$SG116575
 	DD	016H
 	ORG $+4
-	DQ	FLAT:$SG125864
+	DQ	FLAT:$SG116576
 	DD	01eH
 	ORG $+4
-	DQ	FLAT:$SG125865
+	DQ	FLAT:$SG116577
 	DD	01fH
 	ORG $+4
-	DQ	FLAT:$SG125866
+	DQ	FLAT:$SG116578
 	DD	020H
 	ORG $+4
-	DQ	FLAT:$SG125867
+	DQ	FLAT:$SG116579
 	DD	028H
 	ORG $+4
-	DQ	FLAT:$SG125868
+	DQ	FLAT:$SG116580
 	DD	029H
 	ORG $+4
-	DQ	FLAT:$SG125869
+	DQ	FLAT:$SG116581
 	DD	02aH
 	ORG $+4
-	DQ	FLAT:$SG125870
+	DQ	FLAT:$SG116582
 	DD	032H
 	ORG $+4
-	DQ	FLAT:$SG125871
+	DQ	FLAT:$SG116583
 	DD	033H
 	ORG $+4
-	DQ	FLAT:$SG125872
+	DQ	FLAT:$SG116584
 	DD	034H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG125856 DB	'1', 00H
+$SG116568 DB	'1', 00H
 	ORG $+2
-$SG125857 DB	'1b', 00H
+$SG116569 DB	'1b', 00H
 	ORG $+1
-$SG125858 DB	'1.1', 00H
-$SG125859 DB	'1.2', 00H
-$SG125860 DB	'1.3', 00H
-$SG125861 DB	'2', 00H
+$SG116570 DB	'1.1', 00H
+$SG116571 DB	'1.2', 00H
+$SG116572 DB	'1.3', 00H
+$SG116573 DB	'2', 00H
 	ORG $+2
-$SG125862 DB	'2.1', 00H
-$SG125863 DB	'2.2', 00H
-$SG125864 DB	'3', 00H
+$SG116574 DB	'2.1', 00H
+$SG116575 DB	'2.2', 00H
+$SG116576 DB	'3', 00H
 	ORG $+2
-$SG125865 DB	'3.1', 00H
-$SG125866 DB	'3.2', 00H
-$SG125867 DB	'4', 00H
+$SG116577 DB	'3.1', 00H
+$SG116578 DB	'3.2', 00H
+$SG116579 DB	'4', 00H
 	ORG $+2
-$SG125868 DB	'4.1', 00H
-$SG125869 DB	'4.2', 00H
-$SG125870 DB	'5', 00H
+$SG116580 DB	'4.1', 00H
+$SG116581 DB	'4.2', 00H
+$SG116582 DB	'5', 00H
 	ORG $+2
-$SG125871 DB	'5.1', 00H
-$SG125872 DB	'5.2', 00H
-$SG125874 DB	'auto', 00H
+$SG116583 DB	'5.1', 00H
+$SG116584 DB	'5.2', 00H
+$SG116586 DB	'auto', 00H
 	ORG $+7
-?list_hevc_level@@3QBUCX_DESC@@B DQ FLAT:$SG125874	; list_hevc_level
+?list_hevc_level@@3QBUCX_DESC@@B DQ FLAT:$SG116586	; list_hevc_level
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG125875
+	DQ	FLAT:$SG116587
 	DD	0aH
 	ORG $+4
-	DQ	FLAT:$SG125876
+	DQ	FLAT:$SG116588
 	DD	014H
 	ORG $+4
-	DQ	FLAT:$SG125877
+	DQ	FLAT:$SG116589
 	DD	015H
 	ORG $+4
-	DQ	FLAT:$SG125878
+	DQ	FLAT:$SG116590
 	DD	01eH
 	ORG $+4
-	DQ	FLAT:$SG125879
+	DQ	FLAT:$SG116591
 	DD	01fH
 	ORG $+4
-	DQ	FLAT:$SG125880
+	DQ	FLAT:$SG116592
 	DD	028H
 	ORG $+4
-	DQ	FLAT:$SG125881
+	DQ	FLAT:$SG116593
 	DD	029H
 	ORG $+4
-	DQ	FLAT:$SG125882
+	DQ	FLAT:$SG116594
 	DD	032H
 	ORG $+4
-	DQ	FLAT:$SG125883
+	DQ	FLAT:$SG116595
 	DD	033H
 	ORG $+4
-	DQ	FLAT:$SG125884
+	DQ	FLAT:$SG116596
 	DD	034H
 	ORG $+4
-	DQ	FLAT:$SG125885
+	DQ	FLAT:$SG116597
 	DD	03cH
 	ORG $+4
-	DQ	FLAT:$SG125886
+	DQ	FLAT:$SG116598
 	DD	03dH
 	ORG $+4
-	DQ	FLAT:$SG125887
+	DQ	FLAT:$SG116599
 	DD	03eH
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG125875 DB	'1', 00H
+$SG116587 DB	'1', 00H
 	ORG $+2
-$SG125876 DB	'2', 00H
+$SG116588 DB	'2', 00H
 	ORG $+2
-$SG125877 DB	'2.1', 00H
-$SG125878 DB	'3', 00H
+$SG116589 DB	'2.1', 00H
+$SG116590 DB	'3', 00H
 	ORG $+2
-$SG125879 DB	'3.1', 00H
-$SG125880 DB	'4', 00H
+$SG116591 DB	'3.1', 00H
+$SG116592 DB	'4', 00H
 	ORG $+2
-$SG125881 DB	'4.1', 00H
-$SG125882 DB	'5', 00H
+$SG116593 DB	'4.1', 00H
+$SG116594 DB	'5', 00H
 	ORG $+2
-$SG125883 DB	'5.1', 00H
-$SG125884 DB	'5.2', 00H
-$SG125885 DB	'6', 00H
+$SG116595 DB	'5.1', 00H
+$SG116596 DB	'5.2', 00H
+$SG116597 DB	'6', 00H
 	ORG $+2
-$SG125886 DB	'6.1', 00H
-$SG125887 DB	'6.2', 00H
-$SG125889 DB	'auto', 00H
+$SG116598 DB	'6.1', 00H
+$SG116599 DB	'6.2', 00H
+$SG116601 DB	'auto', 00H
 	ORG $+7
-?list_mpeg2_level@@3QBUCX_DESC@@B DQ FLAT:$SG125889	; list_mpeg2_level
+?list_mpeg2_level@@3QBUCX_DESC@@B DQ FLAT:$SG116601	; list_mpeg2_level
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG125890
+	DQ	FLAT:$SG116602
 	DD	0aH
 	ORG $+4
-	DQ	FLAT:$SG125891
+	DQ	FLAT:$SG116603
 	DD	08H
 	ORG $+4
-	DQ	FLAT:$SG125892
+	DQ	FLAT:$SG116604
 	DD	04H
 	ORG $+4
-	DQ	FLAT:$SG125893
+	DQ	FLAT:$SG116605
 	DD	06H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG125890 DB	'low', 00H
-$SG125891 DB	'main', 00H
+$SG116602 DB	'low', 00H
+$SG116603 DB	'main', 00H
 	ORG $+3
-$SG125892 DB	'high', 00H
+$SG116604 DB	'high', 00H
 	ORG $+3
-$SG125896 DB	'low', 00H
-$SG125893 DB	'high1440', 00H
+$SG116608 DB	'low', 00H
+$SG116605 DB	'high1440', 00H
 	ORG $+3
-$SG125895 DB	'auto', 00H
+$SG116607 DB	'auto', 00H
 	ORG $+7
-?list_vc1_level@@3QBUCX_DESC@@B DQ FLAT:$SG125895	; list_vc1_level
+?list_vc1_level@@3QBUCX_DESC@@B DQ FLAT:$SG116607	; list_vc1_level
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG125896
+	DQ	FLAT:$SG116608
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG125897
+	DQ	FLAT:$SG116609
 	DD	03H
 	ORG $+4
-	DQ	FLAT:$SG125898
+	DQ	FLAT:$SG116610
 	DD	05H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG125897 DB	'median', 00H
+$SG116609 DB	'median', 00H
 	ORG $+1
-$SG125898 DB	'high', 00H
+$SG116610 DB	'high', 00H
 	ORG $+3
-$SG125900 DB	'auto', 00H
+$SG116612 DB	'auto', 00H
 	ORG $+3
-$SG125901 DB	'0', 00H
+$SG116613 DB	'0', 00H
 	ORG $+2
-$SG125902 DB	'1', 00H
+$SG116614 DB	'1', 00H
 	ORG $+2
-$SG125903 DB	'2', 00H
+$SG116615 DB	'2', 00H
 	ORG $+2
-$SG125904 DB	'3', 00H
+$SG116616 DB	'3', 00H
 	ORG $+2
-$SG125905 DB	'4', 00H
+$SG116617 DB	'4', 00H
 	ORG $+2
-$SG125912 DB	'off', 00H
-?list_vp8_level@@3QBUCX_DESC@@B DQ FLAT:$SG125907	; list_vp8_level
+$SG116624 DB	'off', 00H
+?list_vp8_level@@3QBUCX_DESC@@B DQ FLAT:$SG116619	; list_vp8_level
 	DD	00H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG125907 DB	'auto', 00H
+$SG116619 DB	'auto', 00H
 	ORG $+3
-?list_vp9_level@@3QBUCX_DESC@@B DQ FLAT:$SG125909	; list_vp9_level
+?list_vp9_level@@3QBUCX_DESC@@B DQ FLAT:$SG116621	; list_vp9_level
 	DD	00H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG125909 DB	'auto', 00H
+$SG116621 DB	'auto', 00H
 	ORG $+3
-$SG125911 DB	'Auto', 00H
+$SG116623 DB	'Auto', 00H
 	ORG $+3
-$SG125913 DB	'for I frames', 00H
+$SG116625 DB	'for I frames', 00H
 	ORG $+3
-$SG125914 DB	'for I,P frames', 00H
+$SG116626 DB	'for I,P frames', 00H
 	ORG $+1
-$SG125915 DB	'for All frames', 00H
+$SG116627 DB	'for All frames', 00H
 	ORG $+1
-$SG125917 DB	'auto', 00H
+$SG116629 DB	'auto', 00H
 	ORG $+3
-$SG125918 DB	'off', 00H
-$SG125919 DB	'i', 00H
+$SG116630 DB	'off', 00H
+$SG116631 DB	'i', 00H
 	ORG $+2
-$SG125920 DB	'ip', 00H
+$SG116632 DB	'ip', 00H
 	ORG $+1
-$SG125921 DB	'all', 00H
-$SG125922 DB	'ipb', 00H
-$SG125923 DB	'ib', 00H
+$SG116633 DB	'all', 00H
+$SG116634 DB	'ipb', 00H
+$SG116635 DB	'ib', 00H
 	ORG $+1
-$SG125924 DB	'p', 00H
+$SG116636 DB	'p', 00H
 	ORG $+2
-$SG125925 DB	'pb', 00H
+$SG116637 DB	'pb', 00H
 	ORG $+1
-$SG125926 DB	'b', 00H
+$SG116638 DB	'b', 00H
 	ORG $+2
-$SG125928 DB	'auto', 00H
+$SG116640 DB	'auto', 00H
 	ORG $+3
-$SG125929 DB	'slow', 00H
+$SG116641 DB	'slow', 00H
 	ORG $+3
-$SG125930 DB	'medium', 00H
+$SG116642 DB	'medium', 00H
 	ORG $+1
-$SG125931 DB	'fast', 00H
+$SG116643 DB	'fast', 00H
 	ORG $+3
-$SG125934 DB	'0', 00H
+$SG116646 DB	'0', 00H
 	ORG $+2
-$SG125933 DB	'default', 00H
-$SG125935 DB	'1', 00H
+$SG116645 DB	'default', 00H
+$SG116647 DB	'1', 00H
 	ORG $+2
-$SG125936 DB	'2', 00H
+$SG116648 DB	'2', 00H
 	ORG $+2
-$SG125937 DB	'3', 00H
+$SG116649 DB	'3', 00H
 	ORG $+2
-$SG125938 DB	'4', 00H
+$SG116650 DB	'4', 00H
 	ORG $+2
-$SG125940 DB	'low', 00H
-$SG125941 DB	'normal', 00H
+$SG116652 DB	'low', 00H
+$SG116653 DB	'normal', 00H
 	ORG $+1
-$SG125942 DB	'high', 00H
+$SG116654 DB	'high', 00H
 	ORG $+3
-$SG125954 DB	'none', 00H
+$SG116666 DB	'none', 00H
 	ORG $+3
-$SG125955 DB	'copy', 00H
+$SG116667 DB	'copy', 00H
 	ORG $+3
-$SG125956 DB	'aac', 00H
-$SG125957 DB	'libmp3lame', 00H
+$SG116668 DB	'aac', 00H
+$SG116669 DB	'libmp3lame', 00H
 	ORG $+1
-$SG125962 DB	'ac3', 00H
-$SG125958 DB	'libtwolame', 00H
+$SG116674 DB	'ac3', 00H
+$SG116670 DB	'libtwolame', 00H
 	ORG $+1
-$SG125993 DB	'tff', 00H
-$SG125959 DB	'libvorbis', 00H
+$SG116705 DB	'tff', 00H
+$SG116671 DB	'libvorbis', 00H
 	ORG $+2
-$SG125994 DB	'bff', 00H
-$SG125960 DB	'pcm_s16le', 00H
+$SG116706 DB	'bff', 00H
+$SG116672 DB	'pcm_s16le', 00H
 	ORG $+2
-$SG126005 DB	'higher', 00H
+$SG116717 DB	'higher', 00H
 	ORG $+1
-$SG126019 DB	'8x8', 00H
-$SG125961 DB	'libopus', 00H
-$SG125992 DB	'none', 00H
+$SG116731 DB	'8x8', 00H
+$SG116673 DB	'libopus', 00H
+$SG116704 DB	'none', 00H
 	ORG $+3
-$SG125996 DB	' 1 - best quality', 00H
+$SG116708 DB	' 1 - best quality', 00H
 	ORG $+2
-$SG126009 DB	'faster', 00H
+$SG116721 DB	'faster', 00H
 	ORG $+1
-$SG126020 DB	'4x4', 00H
-$SG125997 DB	' 2 - higher', 00H
-$SG126023 DB	'16', 00H
+$SG116732 DB	'4x4', 00H
+$SG116709 DB	' 2 - higher', 00H
+$SG116735 DB	'16', 00H
 	ORG $+1
-$SG125998 DB	' 3 - high quality', 00H
+$SG116710 DB	' 3 - high quality', 00H
 	ORG $+2
-$SG126024 DB	'32', 00H
+$SG116736 DB	'32', 00H
 	ORG $+1
-$SG125999 DB	' 4 - balanced', 00H
+$SG116711 DB	' 4 - balanced', 00H
 	ORG $+2
-$SG126000 DB	' 5 - fast', 00H
+$SG116712 DB	' 5 - fast', 00H
 	ORG $+2
-$SG126025 DB	'64', 00H
+$SG116737 DB	'64', 00H
 	ORG $+1
-$SG126001 DB	' 6 - faster', 00H
-$SG126033 DB	'all', 00H
-$SG126002 DB	' 7 - fastest', 00H
+$SG116713 DB	' 6 - faster', 00H
+$SG116745 DB	'all', 00H
+$SG116714 DB	' 7 - fastest', 00H
 	ORG $+3
-$SG126004 DB	'best', 00H
+$SG116716 DB	'best', 00H
 	ORG $+3
-$SG126006 DB	'high', 00H
+$SG116718 DB	'high', 00H
 	ORG $+3
-$SG126007 DB	'balanced', 00H
+$SG116719 DB	'balanced', 00H
 	ORG $+3
-$SG126008 DB	'fast', 00H
+$SG116720 DB	'fast', 00H
 	ORG $+3
-$SG126015 DB	'Q-pel', 00H
+$SG116727 DB	'Q-pel', 00H
 	ORG $+2
-$SG126032 DB	'chroma', 00H
+$SG116744 DB	'chroma', 00H
 	ORG $+1
-$SG126037 DB	'box', 00H
-$SG126010 DB	'fastest', 00H
-$SG126012 DB	'Auto', 00H
+$SG116749 DB	'box', 00H
+$SG116722 DB	'fastest', 00H
+$SG116724 DB	'Auto', 00H
 	ORG $+3
-$SG126013 DB	'full-pel', 00H
+$SG116725 DB	'full-pel', 00H
 	ORG $+3
-$SG126018 DB	'16x16', 00H
+$SG116730 DB	'16x16', 00H
 	ORG $+2
-$SG126039 DB	'off', 00H
-$SG126014 DB	'half-pel', 00H
+$SG116751 DB	'off', 00H
+$SG116726 DB	'half-pel', 00H
 	ORG $+3
-$SG126017 DB	'Auto', 00H
+$SG116729 DB	'Auto', 00H
 	ORG $+3
-$SG126022 DB	'auto', 00H
+$SG116734 DB	'auto', 00H
 	ORG $+3
-$SG126029 DB	'auto', 00H
+$SG116741 DB	'auto', 00H
 	ORG $+3
-$SG126030 DB	'none', 00H
+$SG116742 DB	'none', 00H
 	ORG $+3
-$SG126031 DB	'luma', 00H
+$SG116743 DB	'luma', 00H
 	ORG $+3
-$SG126035 DB	'none', 00H
+$SG116747 DB	'none', 00H
 	ORG $+3
-$SG126040 DB	'x2', 00H
+$SG116752 DB	'x2', 00H
 	ORG $+1
-$SG126036 DB	'upscale', 00H
-$SG126041 DB	'x2.5', 00H
+$SG116748 DB	'upscale', 00H
+$SG116753 DB	'x2.5', 00H
 	ORG $+3
-$SG126043 DB	'simple', 00H
+$SG116755 DB	'simple', 00H
 	ORG $+1
-$SG126044 DB	'complex', 00H
-$SG126046 DB	'0', 00H
+$SG116756 DB	'complex', 00H
+$SG116758 DB	'0', 00H
 	ORG $+2
-$SG126047 DB	'90', 00H
+$SG116759 DB	'90', 00H
 	ORG $+1
-$SG126048 DB	'180', 00H
-$SG126049 DB	'270', 00H
-$SG126051 DB	'n', 00H
+$SG116760 DB	'180', 00H
+$SG116761 DB	'270', 00H
+$SG116763 DB	'n', 00H
 	ORG $+2
-$SG126052 DB	'h', 00H
+$SG116764 DB	'h', 00H
 	ORG $+2
-$SG126053 DB	'v', 00H
+$SG116765 DB	'v', 00H
 	ORG $+2
-$SG126055 DB	'auto', 00H
+$SG116767 DB	'auto', 00H
 	ORG $+3
-$SG126056 DB	'simple', 00H
+$SG116768 DB	'simple', 00H
 	ORG $+1
-$SG126057 DB	'fine', 00H
+$SG116769 DB	'fine', 00H
 	ORG $+3
-$SG126059 DB	'auto', 00H
+$SG116771 DB	'auto', 00H
 	ORG $+3
-$SG126060 DB	'none', 00H
+$SG116772 DB	'none', 00H
 	ORG $+3
-$SG126061 DB	'sse2', 00H
+$SG116773 DB	'sse2', 00H
 	ORG $+3
-$SG126062 DB	'sse3', 00H
+$SG116774 DB	'sse3', 00H
 	ORG $+3
-$SG126063 DB	'ssse3', 00H
+$SG116775 DB	'ssse3', 00H
 	ORG $+2
-$SG126064 DB	'sse41', 00H
+$SG116776 DB	'sse41', 00H
 	ORG $+2
-$SG126065 DB	'avx', 00H
-$SG126066 DB	'avx2', 00H
+$SG116777 DB	'avx', 00H
+$SG116778 DB	'avx2', 00H
 	ORG $+3
-$SG126458 DB	'%s', 00H
+$SG117170 DB	'%s', 00H
 	ORG $+1
 $SG110664 DB	'rgb', 00H
-$SG126780 DB	'QSVAllocator: FrameAlloc: %s, %d frames.', 0aH, 00H
+$SG117496 DB	'QSVAllocator: FrameAlloc: %s, %d frames.', 0aH, 00H
 	ORG $+2
 $SG110636 DB	'yuv422', 00H
 	ORG $+1
 $SG110666 DB	'gbr', 00H
-$SG126782 DB	'QSVAllocator: Failed CheckRequestType: %s', 0aH, 00H
+$SG117498 DB	'QSVAllocator: Failed CheckRequestType: %s', 0aH, 00H
 	ORG $+1
 $SG110669 DB	'y8', 00H
 	ORG $+1
-$SG126785 DB	'QSVAllocator: Allocate type external.', 0aH, 00H
+$SG117501 DB	'QSVAllocator: Allocate type external.', 0aH, 00H
 	ORG $+1
-$SG126790 DB	'QSVAllocator: NumFrameSuggested > it->NumFrameActual', 0aH
+$SG117506 DB	'QSVAllocator: NumFrameSuggested > it->NumFrameActual', 0aH
 	DB	00H
 	ORG $+2
-$SG126794 DB	'QSVAllocator: Failed Allocate type external: %s', 0aH, 00H
+$SG117510 DB	'QSVAllocator: Failed Allocate type external: %s', 0aH, 00H
 	ORG $+3
 $SG110638 DB	'yuv444', 00H
 	ORG $+1
-$SG111614 DB	'VP8', 00H
-$SG126796 DB	'QSVAllocator: Allocate type internal.', 0aH, 00H
+$SG127837 DB	'%s', 00H
 	ORG $+1
-$SG126799 DB	'QSVAllocator: Failed Allocate type internal: %s', 0aH, 00H
+$SG117512 DB	'QSVAllocator: Allocate type internal.', 0aH, 00H
+	ORG $+1
+$SG117515 DB	'QSVAllocator: Failed Allocate type internal: %s', 0aH, 00H
 	ORG $+3
 $SG110658 DB	'rgb24r', 00H
 	ORG $+1
-$SG111616 DB	'VP9', 00H
-$SG126800 DB	'QSVAllocator: FrameAlloc success.', 0aH, 00H
+$SG111614 DB	'VP8', 00H
+$SG117516 DB	'QSVAllocator: FrameAlloc success.', 0aH, 00H
 	ORG $+1
+$SG111616 DB	'VP9', 00H
+$SG117755 DB	'QSVAllocator: FrameFree...', 0aH, 00H
 $SG112227 DB	'fcc', 00H
+$SG117760 DB	'QSVAllocator: FrameFree external success.', 0aH, 00H
+	ORG $+1
+$SG112228 DB	'GBR', 00H
+$SG117764 DB	'QSVAllocator: FrameFree internal success.', 0aH, 00H
+	ORG $+1
+$SG112541 DB	'pal', 00H
+$SG117803 DB	'QSVAllocator: Closed.', 0aH, 00H
+	ORG $+1
 $SG110632 DB	'Invalid', 00H
 $SG110633 DB	'nv12', 00H
 	ORG $+3
@@ -640,20 +651,22 @@ $SG110637 DB	'nv16', 00H
 	ORG $+3
 $SG110639 DB	'yv12(9bit)', 00H
 	ORG $+1
-$SG112228 DB	'GBR', 00H
-$SG110640 DB	'yv12(10bit)', 00H
-$SG112541 DB	'pal', 00H
-$SG110641 DB	'yv12(12bit)', 00H
 $SG112543 DB	'mac', 00H
-$SG110642 DB	'yv12(14bit)', 00H
+$SG110640 DB	'yv12(10bit)', 00H
 $SG112545 DB	'0', 00H
+	ORG $+2
+$SG110641 DB	'yv12(12bit)', 00H
+$SG112546 DB	'1', 00H
+	ORG $+2
+$SG110642 DB	'yv12(14bit)', 00H
+$SG112547 DB	'2', 00H
 	ORG $+2
 $SG110643 DB	'yv12(16bit)', 00H
 $SG110644 DB	'p010', 00H
 	ORG $+3
 $SG110659 DB	'rgb32r', 00H
 	ORG $+1
-$SG112546 DB	'1', 00H
+$SG112548 DB	'3', 00H
 	ORG $+2
 $SG110645 DB	'yuv422(9bit)', 00H
 	ORG $+3
@@ -675,15 +688,10 @@ $SG110653 DB	'yuv444(12bit)', 00H
 	ORG $+2
 $SG110654 DB	'yuv444(14bit)', 00H
 	ORG $+2
-$SG127039 DB	'QSVAllocator: FrameFree...', 0aH, 00H
-$SG112547 DB	'2', 00H
-	ORG $+2
 $SG110655 DB	'yuv444(16bit)', 00H
 	ORG $+2
 $SG110656 DB	'yuva444', 00H
 $SG110657 DB	'yuva444(16bit)', 00H
-	ORG $+1
-$SG127044 DB	'QSVAllocator: FrameFree external success.', 0aH, 00H
 	ORG $+1
 $SG110660 DB	'rgb24', 00H
 	ORG $+2
@@ -693,12 +701,6 @@ $SG110662 DB	'bgr24', 00H
 	ORG $+2
 $SG110663 DB	'bgr32', 00H
 	ORG $+2
-$SG112379 DB	'bt470m', 00H
-	ORG $+1
-$SG112548 DB	'3', 00H
-	ORG $+2
-$SG127048 DB	'QSVAllocator: FrameFree internal success.', 0aH, 00H
-	ORG $+1
 $SG110665 DB	'rgba', 00H
 	ORG $+3
 $SG110667 DB	'gbra', 00H
@@ -707,32 +709,61 @@ $SG110668 DB	'yc48', 00H
 	ORG $+3
 $SG110670 DB	'yc16', 00H
 	ORG $+3
-$SG111606 DB	'MPEG2', 00H
+$SG127836 DB	'invalid argument', 00H
+	ORG $+7
+$SG127838 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
+$SG127841 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
+	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG112382 DB	'linear', 00H
+$SG127839 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
+	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
+	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
+	DB	00H, 'r', 00H, 'o', 00H, 's', 00H, 'o', 00H, 'f', 00H, 't', 00H
+	DB	' ', 00H, 'V', 00H, 'i', 00H, 's', 00H, 'u', 00H, 'a', 00H, 'l'
+	DB	00H, ' ', 00H, 'S', 00H, 't', 00H, 'u', 00H, 'd', 00H, 'i', 00H
+	DB	'o', 00H, '\', 00H, '2', 00H, '0', 00H, '1', 00H, '9', 00H, '\'
+	DB	00H, 'C', 00H, 'o', 00H, 'm', 00H, 'm', 00H, 'u', 00H, 'n', 00H
+	DB	'i', 00H, 't', 00H, 'y', 00H, '\', 00H, 'V', 00H, 'C', 00H, '\'
+	DB	00H, 'T', 00H, 'o', 00H, 'o', 00H, 'l', 00H, 's', 00H, '\', 00H
+	DB	'M', 00H, 'S', 00H, 'V', 00H, 'C', 00H, '\', 00H, '1', 00H, '4'
+	DB	00H, '.', 00H, '2', 00H, '3', 00H, '.', 00H, '2', 00H, '8', 00H
+	DB	'1', 00H, '0', 00H, '5', 00H, '\', 00H, 'i', 00H, 'n', 00H, 'c'
+	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
+	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
+	DB	00H
+$SG127840 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
+	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
+	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
+	DB	00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, '_', 00H, 'a', 00H
+	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
+	DB	00H
+	ORG $+2
+$SG127916 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
+$SG111602 DB	'H.264/AVC', 00H
+	ORG $+2
+$SG112379 DB	'bt470m', 00H
 	ORG $+1
 $SG112549 DB	'4', 00H
 	ORG $+2
-$SG127087 DB	'QSVAllocator: Closed.', 0aH, 00H
-	ORG $+1
-$SG111602 DB	'H.264/AVC', 00H
-	ORG $+2
-$SG112383 DB	'log100', 00H
-	ORG $+1
-$SG112550 DB	'5', 00H
-	ORG $+2
 $SG111604 DB	'H.265/HEVC', 00H
 	ORG $+1
+$SG111606 DB	'MPEG2', 00H
+	ORG $+2
 $SG111608 DB	'MPEG1', 00H
 	ORG $+2
 $SG111610 DB	'VC-1', 00H
 	ORG $+3
 $SG111612 DB	'MPEG4', 00H
 	ORG $+2
-$SG112384 DB	'log316', 00H
+$SG112382 DB	'linear', 00H
 	ORG $+1
-$SG112554 DB	'tv', 00H
-	ORG $+1
+$SG112550 DB	'5', 00H
+	ORG $+2
 $SG111618 DB	'unknown', 00H
 $SG111725 DB	'unknown', 00H
 $SG112220 DB	'undef', 00H
@@ -791,33 +822,36 @@ $SG112222 DB	'bt709', 00H
 	ORG $+2
 $SG112223 DB	'smpte170m', 00H
 	ORG $+2
-$SG112528 DB	'bt470m', 00H
+$SG112383 DB	'log100', 00H
 	ORG $+1
-$SG112555 DB	'pc', 00H
+$SG112554 DB	'tv', 00H
 	ORG $+1
 $SG112224 DB	'bt470bg', 00H
 $SG112225 DB	'smpte240m', 00H
 	ORG $+2
 $SG112226 DB	'YCgCo', 00H
 	ORG $+2
-$SG112532 DB	'bt2020', 00H
+$SG112384 DB	'log316', 00H
 	ORG $+1
-$SG137323 DB	'%s', 00H
+$SG112555 DB	'pc', 00H
 	ORG $+1
 $SG112229 DB	'bt2020nc', 00H
 	ORG $+3
 $SG112233 DB	'ictco', 00H
 	ORG $+2
-$SG121504 DB	'.', 0aH, 00H
+$SG112528 DB	'bt470m', 00H
 	ORG $+1
+$SG113644 DB	'cfr', 00H
 $SG112230 DB	'bt2020c', 00H
 $SG112231 DB	'derived-ncl', 00H
-$SG121584 DB	'srt', 00H
+$SG113645 DB	'vfr', 00H
 $SG112232 DB	'derived-cl', 00H
 	ORG $+1
-$SG121585 DB	'ass', 00H
+$SG113648 DB	'swr', 00H
 $SG112234 DB	'2100-lms', 00H
-	ORG $+7
+	ORG $+3
+$SG112375 DB	'undef', 00H
+	ORG $+6
 ?list_transfer@@3QBUCX_DESC@@B DQ FLAT:$SG112375	; list_transfer
 	DD	02H
 	ORG $+4
@@ -875,30 +909,26 @@ $SG112234 DB	'2100-lms', 00H
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG112375 DB	'undef', 00H
-	ORG $+2
 $SG112376 DB	'auto', 00H
 	ORG $+3
 $SG112377 DB	'bt709', 00H
 	ORG $+2
 $SG112378 DB	'smpte170m', 00H
 	ORG $+2
-$SG121594 DB	'box', 00H
+$SG112532 DB	'bt2020', 00H
+	ORG $+5
 $SG112380 DB	'bt470bg', 00H
 $SG112381 DB	'smpte240m', 00H
-	ORG $+2
-$SG113644 DB	'cfr', 00H
+	ORG $+6
 $SG112385 DB	'iec61966-2-4', 00H
 	ORG $+3
 $SG112386 DB	'bt1361e', 00H
 $SG112387 DB	'iec61966-2-1', 00H
 	ORG $+3
 $SG112388 DB	'bt2020-10', 00H
-	ORG $+2
-$SG113645 DB	'vfr', 00H
+	ORG $+6
 $SG112389 DB	'bt2020-12', 00H
-	ORG $+2
-$SG113648 DB	'swr', 00H
+	ORG $+6
 $SG112390 DB	'smpte2084', 00H
 	ORG $+6
 $SG112391 DB	'smpte428', 00H
@@ -997,74 +1027,6 @@ $SG112542 DB	'secam', 00H
 	ORG $+6
 $SG112552 DB	'limited', 00H
 $SG112553 DB	'full', 00H
-	ORG $+3
-$SG137322 DB	'invalid argument', 00H
-	ORG $+7
-$SG137327 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
-	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
-	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
-	ORG $+2
-$SG137324 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
-	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
-$SG121377 DB	'auto', 00H
-	ORG $+3
-$SG137325 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
-	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
-	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
-	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
-	DB	00H, 'r', 00H, 'o', 00H, 's', 00H, 'o', 00H, 'f', 00H, 't', 00H
-	DB	' ', 00H, 'V', 00H, 'i', 00H, 's', 00H, 'u', 00H, 'a', 00H, 'l'
-	DB	00H, ' ', 00H, 'S', 00H, 't', 00H, 'u', 00H, 'd', 00H, 'i', 00H
-	DB	'o', 00H, '\', 00H, '2', 00H, '0', 00H, '1', 00H, '9', 00H, '\'
-	DB	00H, 'C', 00H, 'o', 00H, 'm', 00H, 'm', 00H, 'u', 00H, 'n', 00H
-	DB	'i', 00H, 't', 00H, 'y', 00H, '\', 00H, 'V', 00H, 'C', 00H, '\'
-	DB	00H, 'T', 00H, 'o', 00H, 'o', 00H, 'l', 00H, 's', 00H, '\', 00H
-	DB	'M', 00H, 'S', 00H, 'V', 00H, 'C', 00H, '\', 00H, '1', 00H, '4'
-	DB	00H, '.', 00H, '2', 00H, '3', 00H, '.', 00H, '2', 00H, '8', 00H
-	DB	'1', 00H, '0', 00H, '5', 00H, '\', 00H, 'i', 00H, 'n', 00H, 'c'
-	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
-	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
-	DB	00H
-$SG137326 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
-	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
-	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
-	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
-	DB	00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, '_', 00H, 'a', 00H
-	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
-	DB	00H
-	ORG $+2
-$SG137418 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
-	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
-?HW_DECODE_LIST@@3QBUCodecMap@@B DD 01bH		; HW_DECODE_LIST
-	DD	01H
-	DD	0adH
-	DD	02H
-	DD	02H
-	DD	04H
-	DD	08bH
-	DD	06H
-	DD	0a7H
-	DD	07H
-	DD	046H
-	DD	08H
-$SG121379 DB	'copy', 00H
-	ORG $+3
-$SG121505 DB	' for ', 00H
-	ORG $+2
-$SG121508 DB	'avcodec-58.dll', 00H
-	ORG $+1
-$SG121509 DB	'avformat-58.dll', 00H
-$SG121510 DB	'avutil-56.dll', 00H
-	ORG $+2
-$SG121511 DB	'avfilter-7.dll', 00H
-	ORG $+1
-$SG121512 DB	'swresample-3.dll', 00H
-	ORG $+7
-$SG121583 DB	'invalid', 00H
-$SG121592 DB	'invalid', 00H
-$SG121593 DB	'kigou', 00H
-	ORG $+2
-$SG121595 DB	'draw', 00H
 	ORG $+3
 ?list_empty@@3QBUCX_DESC@@B DQ 0000000000000000H	; list_empty
 	DD	00H
@@ -1260,12 +1222,12 @@ PUBLIC	??1?$_List_iterator@V?$_List_val@U?$_List_simple_types@UmfxFrameAllocResp
 PUBLIC	??0?$_List_iterator@V?$_List_val@U?$_List_simple_types@UmfxFrameAllocResponse@@@std@@@std@@@std@@QEAA@AEBV01@@Z ; std::_List_iterator<std::_List_val<std::_List_simple_types<mfxFrameAllocResponse> > >::_List_iterator<std::_List_val<std::_List_simple_types<mfxFrameAllocResponse> > >
 PUBLIC	??0?$_List_iterator@V?$_List_val@U?$_List_simple_types@UmfxFrameAllocResponse@@@std@@@std@@@std@@QEAA@$$QEAV01@@Z ; std::_List_iterator<std::_List_val<std::_List_simple_types<mfxFrameAllocResponse> > >::_List_iterator<std::_List_val<std::_List_simple_types<mfxFrameAllocResponse> > >
 PUBLIC	?pointer_to@?$pointer_traits@PEAUUniqueResponse@QSVAllocator@@@std@@SAPEAUUniqueResponse@QSVAllocator@@AEAU34@@Z ; std::pointer_traits<QSVAllocator::UniqueResponse *>::pointer_to
-PUBLIC	?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z ; std::allocator<std::_Container_proxy>::allocate
-PUBLIC	??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z ; std::_Delete_plain_internal<std::allocator<std::_Container_proxy> >
 PUBLIC	??$_Free_non_head@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@PEAU01@@Z ; std::_List_node<QSVAllocator::UniqueResponse,void *>::_Free_non_head<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >
 PUBLIC	??$addressof@V?$_List_val@U?$_List_simple_types@UUniqueResponse@QSVAllocator@@@std@@@std@@@std@@YAPEAV?$_List_val@U?$_List_simple_types@UUniqueResponse@QSVAllocator@@@std@@@0@AEAV10@@Z ; std::addressof<std::_List_val<std::_List_simple_types<QSVAllocator::UniqueResponse> > >
 PUBLIC	??$_Freenode@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@PEAU01@@Z ; std::_List_node<QSVAllocator::UniqueResponse,void *>::_Freenode<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >
+PUBLIC	?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z ; std::allocator<std::_Container_proxy>::allocate
 PUBLIC	??$?0U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><std::_List_node<QSVAllocator::UniqueResponse,void *> >
+PUBLIC	??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z ; std::_Delete_plain_internal<std::allocator<std::_Container_proxy> >
 PUBLIC	??$move@AEAUUniqueResponse@QSVAllocator@@@std@@YA$$QEAUUniqueResponse@QSVAllocator@@AEAU12@@Z ; std::move<QSVAllocator::UniqueResponse &>
 PUBLIC	??$_Emplace@UUniqueResponse@QSVAllocator@@@?$list@UUniqueResponse@QSVAllocator@@V?$allocator@UUniqueResponse@QSVAllocator@@@std@@@std@@QEAAPEAU?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@1@QEAU21@$$QEAUUniqueResponse@QSVAllocator@@@Z ; std::list<QSVAllocator::UniqueResponse,std::allocator<QSVAllocator::UniqueResponse> >::_Emplace<QSVAllocator::UniqueResponse>
 PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@V?$_List_val@U?$_List_simple_types@UUniqueResponse@QSVAllocator@@@std@@@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> >,std::_List_val<std::_List_simple_types<QSVAllocator::UniqueResponse> >,1>::_Compressed_pair<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> >,std::_List_val<std::_List_simple_types<QSVAllocator::UniqueResponse> >,1><>
@@ -1321,8 +1283,8 @@ PUBLIC	??D?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@UmfxFram
 PUBLIC	??E?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@UmfxFrameAllocResponse@@@std@@@std@@@std@@QEAAAEAV01@XZ ; std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<mfxFrameAllocResponse> > >::operator++
 PUBLIC	??$_Get_unwrapped@V?$_List_iterator@V?$_List_val@U?$_List_simple_types@UmfxFrameAllocResponse@@@std@@@std@@@std@@$0A@@std@@YA?AV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@UmfxFrameAllocResponse@@@std@@@std@@@0@AEBV?$_List_iterator@V?$_List_val@U?$_List_simple_types@UmfxFrameAllocResponse@@@std@@@std@@@0@@Z ; std::_Get_unwrapped<std::_List_iterator<std::_List_val<std::_List_simple_types<mfxFrameAllocResponse> > >,0>
 PUBLIC	??$_Seek_wrapped@V?$_List_iterator@V?$_List_val@U?$_List_simple_types@UmfxFrameAllocResponse@@@std@@@std@@@std@@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@UmfxFrameAllocResponse@@@std@@@std@@@2@@std@@YAXAEAV?$_List_iterator@V?$_List_val@U?$_List_simple_types@UmfxFrameAllocResponse@@@std@@@std@@@0@AEBV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@UmfxFrameAllocResponse@@@std@@@std@@@0@@Z ; std::_Seek_wrapped<std::_List_iterator<std::_List_val<std::_List_simple_types<mfxFrameAllocResponse> > >,std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<mfxFrameAllocResponse> > > >
-PUBLIC	??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z ; std::_Deallocate_plain<std::allocator<std::_Container_proxy> >
 PUBLIC	??$destroy@UUniqueResponse@QSVAllocator@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@QEAUUniqueResponse@QSVAllocator@@@Z ; std::_Default_allocator_traits<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >::destroy<QSVAllocator::UniqueResponse>
+PUBLIC	??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z ; std::_Deallocate_plain<std::allocator<std::_Container_proxy> >
 PUBLIC	??0?$_Alloc_construct_ptr@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@QEAA@AEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@@Z ; std::_Alloc_construct_ptr<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >::_Alloc_construct_ptr<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >
 PUBLIC	?_Allocate@?$_Alloc_construct_ptr@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@QEAAXXZ ; std::_Alloc_construct_ptr<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >::_Allocate
 PUBLIC	??1?$_Alloc_construct_ptr@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@QEAA@XZ ; std::_Alloc_construct_ptr<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >::~_Alloc_construct_ptr<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >
@@ -3029,18 +2991,6 @@ $pdata$?pointer_to@?$pointer_traits@PEAUUniqueResponse@QSVAllocator@@@std@@SAPEA
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
-$pdata$?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z DD imagerel $LN3
-	DD	imagerel $LN3+59
-	DD	imagerel $unwind$?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z DD imagerel $LN3
-	DD	imagerel $LN3+56
-	DD	imagerel $unwind$??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
 $pdata$??$_Free_non_head@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@PEAU01@@Z DD imagerel $LN6
 	DD	imagerel $LN6+120
 	DD	imagerel $unwind$??$_Free_non_head@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@PEAU01@@Z
@@ -3059,9 +3009,21 @@ $pdata$??$_Freenode@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEA
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
+$pdata$?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z DD imagerel $LN3
+	DD	imagerel $LN3+59
+	DD	imagerel $unwind$?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
 $pdata$??$?0U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@@Z DD imagerel $LN3
 	DD	imagerel $LN3+18
 	DD	imagerel $unwind$??$?0U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@@Z
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
+$pdata$??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z DD imagerel $LN3
+	DD	imagerel $LN3+56
+	DD	imagerel $unwind$??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
@@ -3407,15 +3369,15 @@ $pdata$??$_Seek_wrapped@V?$_List_iterator@V?$_List_val@U?$_List_simple_types@Umf
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
-$pdata$??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z DD imagerel $LN3
-	DD	imagerel $LN3+63
-	DD	imagerel $unwind$??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
 $pdata$??$destroy@UUniqueResponse@QSVAllocator@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@QEAUUniqueResponse@QSVAllocator@@@Z DD imagerel $LN3
 	DD	imagerel $LN3+13
 	DD	imagerel $unwind$??$destroy@UUniqueResponse@QSVAllocator@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@QEAUUniqueResponse@QSVAllocator@@@Z
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
+$pdata$??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z DD imagerel $LN3
+	DD	imagerel $LN3+63
+	DD	imagerel $unwind$??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
@@ -4889,11 +4851,6 @@ $unwind$??0?$_Alloc_construct_ptr@V?$allocator@U?$_List_node@UUniqueResponse@QSV
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$unwind$??$destroy@UUniqueResponse@QSVAllocator@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@QEAUUniqueResponse@QSVAllocator@@@Z DD 010b01H
-	DD	0700bH
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
 $ip2state$??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z DB 02H
 	DB	00H
 	DB	00H
@@ -4909,6 +4866,11 @@ $unwind$??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAX
 	DD	0700b320fH
 	DD	imagerel __CxxFrameHandler4
 	DD	imagerel $cppxdata$??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$unwind$??$destroy@UUniqueResponse@QSVAllocator@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@QEAUUniqueResponse@QSVAllocator@@@Z DD 010b01H
+	DD	0700bH
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
@@ -5361,8 +5323,18 @@ $unwind$??$move@AEAUUniqueResponse@QSVAllocator@@@std@@YA$$QEAUUniqueResponse@QS
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
+$unwind$??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z DD 022301H
+	DD	0700b320fH
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
 $unwind$??$?0U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@@Z DD 010b01H
 	DD	0700bH
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$unwind$?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z DD 022301H
+	DD	0700b320fH
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
@@ -5391,16 +5363,6 @@ xdata	ENDS
 xdata	SEGMENT
 $unwind$??$_Free_non_head@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@PEAU01@@Z DD 022301H
 	DD	0700b520fH
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z DD 022301H
-	DD	0700b320fH
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z DD 022301H
-	DD	0700b320fH
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
@@ -6899,7 +6861,7 @@ CONST	SEGMENT
 ?_Alloc_sentinel_and_proxy@?$list@UUniqueResponse@QSVAllocator@@V?$allocator@UUniqueResponse@QSVAllocator@@@std@@@std@@AEAAXXZ$rtcName$0 DB 024H ; std::list<QSVAllocator::UniqueResponse,std::allocator<QSVAllocator::UniqueResponse> >::_Alloc_sentinel_and_proxy
 	DB	053H
 	DB	031H
-	DB	037H
+	DB	036H
 	DB	00H
 	ORG $+3
 ?_Alloc_sentinel_and_proxy@?$list@UUniqueResponse@QSVAllocator@@V?$allocator@UUniqueResponse@QSVAllocator@@@std@@@std@@AEAAXXZ$rtcName$1 DB 05fH ; std::list<QSVAllocator::UniqueResponse,std::allocator<QSVAllocator::UniqueResponse> >::_Alloc_sentinel_and_proxy
@@ -7100,7 +7062,7 @@ xdata	ENDS
 CONST	SEGMENT
 ??1?$list@UUniqueResponse@QSVAllocator@@V?$allocator@UUniqueResponse@QSVAllocator@@@std@@@std@@QEAA@XZ$rtcName$0 DB 024H ; std::list<QSVAllocator::UniqueResponse,std::allocator<QSVAllocator::UniqueResponse> >::~list<QSVAllocator::UniqueResponse,std::allocator<QSVAllocator::UniqueResponse> >
 	DB	053H
-	DB	032H
+	DB	031H
 	DB	00H
 	ORG $+12
 ??1?$list@UUniqueResponse@QSVAllocator@@V?$allocator@UUniqueResponse@QSVAllocator@@@std@@@std@@QEAA@XZ$rtcVarDesc DD 034H ; std::list<QSVAllocator::UniqueResponse,std::allocator<QSVAllocator::UniqueResponse> >::~list<QSVAllocator::UniqueResponse,std::allocator<QSVAllocator::UniqueResponse> >
@@ -7269,7 +7231,7 @@ CONST	SEGMENT
 ?_Alloc_sentinel_and_proxy@?$list@UmfxFrameAllocResponse@@V?$allocator@UmfxFrameAllocResponse@@@std@@@std@@AEAAXXZ$rtcName$0 DB 024H ; std::list<mfxFrameAllocResponse,std::allocator<mfxFrameAllocResponse> >::_Alloc_sentinel_and_proxy
 	DB	053H
 	DB	031H
-	DB	038H
+	DB	037H
 	DB	00H
 	ORG $+3
 ?_Alloc_sentinel_and_proxy@?$list@UmfxFrameAllocResponse@@V?$allocator@UmfxFrameAllocResponse@@@std@@@std@@AEAAXXZ$rtcName$1 DB 05fH ; std::list<mfxFrameAllocResponse,std::allocator<mfxFrameAllocResponse> >::_Alloc_sentinel_and_proxy
@@ -7510,7 +7472,7 @@ xdata	ENDS
 CONST	SEGMENT
 ??1?$list@UmfxFrameAllocResponse@@V?$allocator@UmfxFrameAllocResponse@@@std@@@std@@QEAA@XZ$rtcName$0 DB 024H ; std::list<mfxFrameAllocResponse,std::allocator<mfxFrameAllocResponse> >::~list<mfxFrameAllocResponse,std::allocator<mfxFrameAllocResponse> >
 	DB	053H
-	DB	033H
+	DB	032H
 	DB	00H
 	ORG $+12
 ??1?$list@UmfxFrameAllocResponse@@V?$allocator@UmfxFrameAllocResponse@@@std@@@std@@QEAA@XZ$rtcVarDesc DD 034H ; std::list<mfxFrameAllocResponse,std::allocator<mfxFrameAllocResponse> >::~list<mfxFrameAllocResponse,std::allocator<mfxFrameAllocResponse> >
@@ -8113,7 +8075,7 @@ CONST	SEGMENT
 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ$rtcName$0 DB 024H ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 	DB	053H
 	DB	031H
-	DB	032H
+	DB	031H
 	DB	00H
 	ORG $+11
 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ$rtcVarDesc DD 034H ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
@@ -9146,16 +9108,16 @@ $LN4@Allocate_m:
 $LN9@Allocate_m:
 $LN7@Allocate_m:
   00056	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG137322
+	00 00		 lea	 rax, OFFSET FLAT:$SG127836
   0005d	48 89 44 24 28	 mov	 QWORD PTR [rsp+40], rax
   00062	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG137323
+	00 00		 lea	 rax, OFFSET FLAT:$SG127837
   00069	48 89 44 24 20	 mov	 QWORD PTR [rsp+32], rax
   0006e	45 33 c9	 xor	 r9d, r9d
   00071	41 b8 5b 00 00
 	00		 mov	 r8d, 91			; 0000005bH
   00077	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG137324
+	00 00		 lea	 rdx, OFFSET FLAT:$SG127838
   0007e	b9 02 00 00 00	 mov	 ecx, 2
   00083	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp__CrtDbgReport
@@ -9169,11 +9131,11 @@ $LN12@Allocate_m:
   0009a	41 b9 5b 00 00
 	00		 mov	 r9d, 91			; 0000005bH
   000a0	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG137325
+	00 00		 lea	 r8, OFFSET FLAT:$SG127839
   000a7	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG137326
+	00 00		 lea	 rdx, OFFSET FLAT:$SG127840
   000ae	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:$SG137327
+	00 00		 lea	 rcx, OFFSET FLAT:$SG127841
   000b5	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp__invalid_parameter
   000bb	33 c0		 xor	 eax, eax
@@ -10268,28 +10230,6 @@ $LN3:
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory
-;	COMDAT ??$destroy@UUniqueResponse@QSVAllocator@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@QEAUUniqueResponse@QSVAllocator@@@Z
-_TEXT	SEGMENT
-__formal$ = 16
-_Ptr$ = 24
-??$destroy@UUniqueResponse@QSVAllocator@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@QEAUUniqueResponse@QSVAllocator@@@Z PROC ; std::_Default_allocator_traits<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >::destroy<QSVAllocator::UniqueResponse>, COMDAT
-
-; 762  :     static void destroy(_Alloc&, _Uty* const _Ptr) {
-
-$LN3:
-  00000	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
-  00005	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
-  0000a	57		 push	 rdi
-
-; 763  :         _Ptr->~_Uty();
-; 764  :     }
-
-  0000b	5f		 pop	 rdi
-  0000c	c3		 ret	 0
-??$destroy@UUniqueResponse@QSVAllocator@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@QEAUUniqueResponse@QSVAllocator@@@Z ENDP ; std::_Default_allocator_traits<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >::destroy<QSVAllocator::UniqueResponse>
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory
 ;	COMDAT ??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z
 _TEXT	SEGMENT
 _Al$ = 48
@@ -10331,6 +10271,28 @@ $LN3:
   0003d	5f		 pop	 rdi
   0003e	c3		 ret	 0
 ??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z ENDP ; std::_Deallocate_plain<std::allocator<std::_Container_proxy> >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory
+;	COMDAT ??$destroy@UUniqueResponse@QSVAllocator@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@QEAUUniqueResponse@QSVAllocator@@@Z
+_TEXT	SEGMENT
+__formal$ = 16
+_Ptr$ = 24
+??$destroy@UUniqueResponse@QSVAllocator@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@QEAUUniqueResponse@QSVAllocator@@@Z PROC ; std::_Default_allocator_traits<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >::destroy<QSVAllocator::UniqueResponse>, COMDAT
+
+; 762  :     static void destroy(_Alloc&, _Uty* const _Ptr) {
+
+$LN3:
+  00000	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  00005	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  0000a	57		 push	 rdi
+
+; 763  :         _Ptr->~_Uty();
+; 764  :     }
+
+  0000b	5f		 pop	 rdi
+  0000c	c3		 ret	 0
+??$destroy@UUniqueResponse@QSVAllocator@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@QEAUUniqueResponse@QSVAllocator@@@Z ENDP ; std::_Default_allocator_traits<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >::destroy<QSVAllocator::UniqueResponse>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xutility
@@ -12721,6 +12683,43 @@ $LN3:
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory
+;	COMDAT ??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z
+_TEXT	SEGMENT
+_Al$ = 48
+_Ptr$ = 56
+??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z PROC ; std::_Delete_plain_internal<std::allocator<std::_Container_proxy> >, COMDAT
+
+; 1109 : void _Delete_plain_internal(_Alloc& _Al, typename _Alloc::value_type* const _Ptr) noexcept {
+
+$LN3:
+  00000	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  00005	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  0000a	57		 push	 rdi
+  0000b	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  0000f	48 8b fc	 mov	 rdi, rsp
+  00012	b9 08 00 00 00	 mov	 ecx, 8
+  00017	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
+  0001c	f3 ab		 rep stosd
+  0001e	48 8b 4c 24 30	 mov	 rcx, QWORD PTR [rsp+48]
+
+; 1110 :     // destroy *_Ptr in place, then deallocate _Ptr using _Al; used for internal container types the user didn't name
+; 1111 :     using _Ty = typename _Alloc::value_type;
+; 1112 :     _Ptr->~_Ty();
+; 1113 :     _Deallocate_plain(_Al, _Ptr);
+
+  00023	48 8b 54 24 38	 mov	 rdx, QWORD PTR _Ptr$[rsp]
+  00028	48 8b 4c 24 30	 mov	 rcx, QWORD PTR _Al$[rsp]
+  0002d	e8 00 00 00 00	 call	 ??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z ; std::_Deallocate_plain<std::allocator<std::_Container_proxy> >
+
+; 1114 : }
+
+  00032	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  00036	5f		 pop	 rdi
+  00037	c3		 ret	 0
+??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z ENDP ; std::_Delete_plain_internal<std::allocator<std::_Container_proxy> >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory
 ;	COMDAT ??$?0U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@@Z
 _TEXT	SEGMENT
 this$ = 16
@@ -12737,6 +12736,41 @@ $LN3:
   00010	5f		 pop	 rdi
   00011	c3		 ret	 0
 ??$?0U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@@Z ENDP ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><std::_List_node<QSVAllocator::UniqueResponse,void *> >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory
+;	COMDAT ?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z
+_TEXT	SEGMENT
+this$ = 48
+_Count$ = 56
+?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z PROC ; std::allocator<std::_Container_proxy>::allocate, COMDAT
+
+; 870  :     _NODISCARD _DECLSPEC_ALLOCATOR _Ty* allocate(_CRT_GUARDOVERFLOW const size_t _Count) {
+
+$LN3:
+  00000	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  00005	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  0000a	57		 push	 rdi
+  0000b	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  0000f	48 8b fc	 mov	 rdi, rsp
+  00012	b9 08 00 00 00	 mov	 ecx, 8
+  00017	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
+  0001c	f3 ab		 rep stosd
+  0001e	48 8b 4c 24 30	 mov	 rcx, QWORD PTR [rsp+48]
+
+; 871  :         return static_cast<_Ty*>(_Allocate<_New_alignof<_Ty>>(_Get_size_of_n<sizeof(_Ty)>(_Count)));
+
+  00023	48 8b 4c 24 38	 mov	 rcx, QWORD PTR _Count$[rsp]
+  00028	e8 00 00 00 00	 call	 ??$_Get_size_of_n@$0BA@@std@@YA_K_K@Z ; std::_Get_size_of_n<16>
+  0002d	48 8b c8	 mov	 rcx, rax
+  00030	e8 00 00 00 00	 call	 ??$_Allocate@$0BA@U_Default_allocate_traits@std@@$0A@@std@@YAPEAX_K@Z ; std::_Allocate<16,std::_Default_allocate_traits,0>
+
+; 872  :     }
+
+  00035	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  00039	5f		 pop	 rdi
+  0003a	c3		 ret	 0
+?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z ENDP ; std::allocator<std::_Container_proxy>::allocate
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\list
@@ -12879,78 +12913,6 @@ $LN3@Free_non_h:
   00076	5f		 pop	 rdi
   00077	c3		 ret	 0
 ??$_Free_non_head@V?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@std@@@?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@SAXAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@PEAU01@@Z ENDP ; std::_List_node<QSVAllocator::UniqueResponse,void *>::_Free_non_head<std::allocator<std::_List_node<QSVAllocator::UniqueResponse,void *> > >
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory
-;	COMDAT ??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z
-_TEXT	SEGMENT
-_Al$ = 48
-_Ptr$ = 56
-??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z PROC ; std::_Delete_plain_internal<std::allocator<std::_Container_proxy> >, COMDAT
-
-; 1109 : void _Delete_plain_internal(_Alloc& _Al, typename _Alloc::value_type* const _Ptr) noexcept {
-
-$LN3:
-  00000	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
-  00005	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
-  0000a	57		 push	 rdi
-  0000b	48 83 ec 20	 sub	 rsp, 32			; 00000020H
-  0000f	48 8b fc	 mov	 rdi, rsp
-  00012	b9 08 00 00 00	 mov	 ecx, 8
-  00017	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
-  0001c	f3 ab		 rep stosd
-  0001e	48 8b 4c 24 30	 mov	 rcx, QWORD PTR [rsp+48]
-
-; 1110 :     // destroy *_Ptr in place, then deallocate _Ptr using _Al; used for internal container types the user didn't name
-; 1111 :     using _Ty = typename _Alloc::value_type;
-; 1112 :     _Ptr->~_Ty();
-; 1113 :     _Deallocate_plain(_Al, _Ptr);
-
-  00023	48 8b 54 24 38	 mov	 rdx, QWORD PTR _Ptr$[rsp]
-  00028	48 8b 4c 24 30	 mov	 rcx, QWORD PTR _Al$[rsp]
-  0002d	e8 00 00 00 00	 call	 ??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z ; std::_Deallocate_plain<std::allocator<std::_Container_proxy> >
-
-; 1114 : }
-
-  00032	48 83 c4 20	 add	 rsp, 32			; 00000020H
-  00036	5f		 pop	 rdi
-  00037	c3		 ret	 0
-??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAEAV?$allocator@U_Container_proxy@std@@@0@QEAU_Container_proxy@0@@Z ENDP ; std::_Delete_plain_internal<std::allocator<std::_Container_proxy> >
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory
-;	COMDAT ?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z
-_TEXT	SEGMENT
-this$ = 48
-_Count$ = 56
-?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z PROC ; std::allocator<std::_Container_proxy>::allocate, COMDAT
-
-; 870  :     _NODISCARD _DECLSPEC_ALLOCATOR _Ty* allocate(_CRT_GUARDOVERFLOW const size_t _Count) {
-
-$LN3:
-  00000	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
-  00005	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
-  0000a	57		 push	 rdi
-  0000b	48 83 ec 20	 sub	 rsp, 32			; 00000020H
-  0000f	48 8b fc	 mov	 rdi, rsp
-  00012	b9 08 00 00 00	 mov	 ecx, 8
-  00017	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
-  0001c	f3 ab		 rep stosd
-  0001e	48 8b 4c 24 30	 mov	 rcx, QWORD PTR [rsp+48]
-
-; 871  :         return static_cast<_Ty*>(_Allocate<_New_alignof<_Ty>>(_Get_size_of_n<sizeof(_Ty)>(_Count)));
-
-  00023	48 8b 4c 24 38	 mov	 rcx, QWORD PTR _Count$[rsp]
-  00028	e8 00 00 00 00	 call	 ??$_Get_size_of_n@$0BA@@std@@YA_K_K@Z ; std::_Get_size_of_n<16>
-  0002d	48 8b c8	 mov	 rcx, rax
-  00030	e8 00 00 00 00	 call	 ??$_Allocate@$0BA@U_Default_allocate_traits@std@@$0A@@std@@YAPEAX_K@Z ; std::_Allocate<16,std::_Default_allocate_traits,0>
-
-; 872  :     }
-
-  00035	48 83 c4 20	 add	 rsp, 32			; 00000020H
-  00039	5f		 pop	 rdi
-  0003a	c3		 ret	 0
-?allocate@?$allocator@U_Container_proxy@std@@@std@@QEAAPEAU_Container_proxy@2@_K@Z ENDP ; std::allocator<std::_Container_proxy>::allocate
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory
@@ -18295,7 +18257,7 @@ _TEXT	ENDS
 ;	COMDAT ?_Alloc_sentinel_and_proxy@?$list@UUniqueResponse@QSVAllocator@@V?$allocator@UUniqueResponse@QSVAllocator@@@std@@@std@@AEAAXXZ
 _TEXT	SEGMENT
 _Alproxy$ = 32
-$S17$ = 52
+$S16$ = 52
 _Proxy$ = 88
 _Al$ = 120
 _Newhead$ = 136
@@ -18322,9 +18284,9 @@ $LN4:
 	00 00 00	 mov	 rcx, QWORD PTR this$[rsp]
   0002c	e8 00 00 00 00	 call	 ?_Getal@?$list@UUniqueResponse@QSVAllocator@@V?$allocator@UUniqueResponse@QSVAllocator@@@std@@@std@@AEAAAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@2@XZ ; std::list<QSVAllocator::UniqueResponse,std::allocator<QSVAllocator::UniqueResponse> >::_Getal
   00031	48 8b d0	 mov	 rdx, rax
-  00034	48 8d 4c 24 34	 lea	 rcx, QWORD PTR $S17$[rsp]
+  00034	48 8d 4c 24 34	 lea	 rcx, QWORD PTR $S16$[rsp]
   00039	e8 00 00 00 00	 call	 ??$?0U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><std::_List_node<QSVAllocator::UniqueResponse,void *> >
-  0003e	48 8d 44 24 34	 lea	 rax, QWORD PTR $S17$[rsp]
+  0003e	48 8d 44 24 34	 lea	 rax, QWORD PTR $S16$[rsp]
   00043	48 89 44 24 20	 mov	 QWORD PTR _Alproxy$[rsp], rax
 
 ; 1693 :         _Container_proxy_ptr<_Alty> _Proxy(_Alproxy, _Mypair._Myval2);
@@ -18402,7 +18364,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 _Alproxy$ = 32
-$S17$ = 52
+$S16$ = 52
 _Proxy$ = 88
 _Al$ = 120
 _Newhead$ = 136
@@ -18426,7 +18388,7 @@ text$x	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 _Alproxy$ = 32
-$S17$ = 52
+$S16$ = 52
 _Proxy$ = 88
 _Al$ = 120
 _Newhead$ = 136
@@ -19166,7 +19128,7 @@ text$x	ENDS
 ;	COMDAT ??1?$list@UUniqueResponse@QSVAllocator@@V?$allocator@UUniqueResponse@QSVAllocator@@@std@@@std@@QEAA@XZ
 _TEXT	SEGMENT
 _Alproxy$ = 32
-$S2$ = 52
+$S1$ = 52
 this$ = 96
 ??1?$list@UUniqueResponse@QSVAllocator@@V?$allocator@UUniqueResponse@QSVAllocator@@@std@@@std@@QEAA@XZ PROC ; std::list<QSVAllocator::UniqueResponse,std::allocator<QSVAllocator::UniqueResponse> >::~list<QSVAllocator::UniqueResponse,std::allocator<QSVAllocator::UniqueResponse> >, COMDAT
 
@@ -19193,9 +19155,9 @@ $LN3:
   00028	48 8b 4c 24 60	 mov	 rcx, QWORD PTR this$[rsp]
   0002d	e8 00 00 00 00	 call	 ?_Getal@?$list@UUniqueResponse@QSVAllocator@@V?$allocator@UUniqueResponse@QSVAllocator@@@std@@@std@@AEAAAEAV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@2@XZ ; std::list<QSVAllocator::UniqueResponse,std::allocator<QSVAllocator::UniqueResponse> >::_Getal
   00032	48 8b d0	 mov	 rdx, rax
-  00035	48 8d 4c 24 34	 lea	 rcx, QWORD PTR $S2$[rsp]
+  00035	48 8d 4c 24 34	 lea	 rcx, QWORD PTR $S1$[rsp]
   0003a	e8 00 00 00 00	 call	 ??$?0U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@U?$_List_node@UUniqueResponse@QSVAllocator@@PEAX@std@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><std::_List_node<QSVAllocator::UniqueResponse,void *> >
-  0003f	48 8d 44 24 34	 lea	 rax, QWORD PTR $S2$[rsp]
+  0003f	48 8d 44 24 34	 lea	 rax, QWORD PTR $S1$[rsp]
   00044	48 89 44 24 20	 mov	 QWORD PTR _Alproxy$[rsp], rax
 
 ; 988  :         _Delete_plain_internal(_Alproxy, _Mypair._Myval2._Myproxy);
@@ -19839,7 +19801,7 @@ _TEXT	ENDS
 ;	COMDAT ?_Alloc_sentinel_and_proxy@?$list@UmfxFrameAllocResponse@@V?$allocator@UmfxFrameAllocResponse@@@std@@@std@@AEAAXXZ
 _TEXT	SEGMENT
 _Alproxy$ = 32
-$S18$ = 52
+$S17$ = 52
 _Proxy$ = 88
 _Al$ = 120
 _Newhead$ = 136
@@ -19866,9 +19828,9 @@ $LN4:
 	00 00 00	 mov	 rcx, QWORD PTR this$[rsp]
   0002c	e8 00 00 00 00	 call	 ?_Getal@?$list@UmfxFrameAllocResponse@@V?$allocator@UmfxFrameAllocResponse@@@std@@@std@@AEAAAEAV?$allocator@U?$_List_node@UmfxFrameAllocResponse@@PEAX@std@@@2@XZ ; std::list<mfxFrameAllocResponse,std::allocator<mfxFrameAllocResponse> >::_Getal
   00031	48 8b d0	 mov	 rdx, rax
-  00034	48 8d 4c 24 34	 lea	 rcx, QWORD PTR $S18$[rsp]
+  00034	48 8d 4c 24 34	 lea	 rcx, QWORD PTR $S17$[rsp]
   00039	e8 00 00 00 00	 call	 ??$?0U?$_List_node@UmfxFrameAllocResponse@@PEAX@std@@@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@U?$_List_node@UmfxFrameAllocResponse@@PEAX@std@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><std::_List_node<mfxFrameAllocResponse,void *> >
-  0003e	48 8d 44 24 34	 lea	 rax, QWORD PTR $S18$[rsp]
+  0003e	48 8d 44 24 34	 lea	 rax, QWORD PTR $S17$[rsp]
   00043	48 89 44 24 20	 mov	 QWORD PTR _Alproxy$[rsp], rax
 
 ; 1693 :         _Container_proxy_ptr<_Alty> _Proxy(_Alproxy, _Mypair._Myval2);
@@ -19946,7 +19908,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 _Alproxy$ = 32
-$S18$ = 52
+$S17$ = 52
 _Proxy$ = 88
 _Al$ = 120
 _Newhead$ = 136
@@ -19970,7 +19932,7 @@ text$x	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 _Alproxy$ = 32
-$S18$ = 52
+$S17$ = 52
 _Proxy$ = 88
 _Al$ = 120
 _Newhead$ = 136
@@ -20888,7 +20850,7 @@ text$x	ENDS
 ;	COMDAT ??1?$list@UmfxFrameAllocResponse@@V?$allocator@UmfxFrameAllocResponse@@@std@@@std@@QEAA@XZ
 _TEXT	SEGMENT
 _Alproxy$ = 32
-$S3$ = 52
+$S2$ = 52
 this$ = 96
 ??1?$list@UmfxFrameAllocResponse@@V?$allocator@UmfxFrameAllocResponse@@@std@@@std@@QEAA@XZ PROC ; std::list<mfxFrameAllocResponse,std::allocator<mfxFrameAllocResponse> >::~list<mfxFrameAllocResponse,std::allocator<mfxFrameAllocResponse> >, COMDAT
 
@@ -20915,9 +20877,9 @@ $LN3:
   00028	48 8b 4c 24 60	 mov	 rcx, QWORD PTR this$[rsp]
   0002d	e8 00 00 00 00	 call	 ?_Getal@?$list@UmfxFrameAllocResponse@@V?$allocator@UmfxFrameAllocResponse@@@std@@@std@@AEAAAEAV?$allocator@U?$_List_node@UmfxFrameAllocResponse@@PEAX@std@@@2@XZ ; std::list<mfxFrameAllocResponse,std::allocator<mfxFrameAllocResponse> >::_Getal
   00032	48 8b d0	 mov	 rdx, rax
-  00035	48 8d 4c 24 34	 lea	 rcx, QWORD PTR $S3$[rsp]
+  00035	48 8d 4c 24 34	 lea	 rcx, QWORD PTR $S2$[rsp]
   0003a	e8 00 00 00 00	 call	 ??$?0U?$_List_node@UmfxFrameAllocResponse@@PEAX@std@@@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@U?$_List_node@UmfxFrameAllocResponse@@PEAX@std@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><std::_List_node<mfxFrameAllocResponse,void *> >
-  0003f	48 8d 44 24 34	 lea	 rax, QWORD PTR $S3$[rsp]
+  0003f	48 8d 44 24 34	 lea	 rax, QWORD PTR $S2$[rsp]
   00044	48 89 44 24 20	 mov	 QWORD PTR _Alproxy$[rsp], rax
 
 ; 988  :         _Delete_plain_internal(_Alproxy, _Mypair._Myval2._Myproxy);
@@ -21622,7 +21584,7 @@ $LN2@FrameFree:
 	01 00 00	 mov	 rax, QWORD PTR tv69[rsp]
   0006a	48 8b 00	 mov	 rax, QWORD PTR [rax]
   0006d	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG127039
+	00 00		 lea	 r8, OFFSET FLAT:$SG117755
   00074	ba fe ff ff ff	 mov	 edx, -2
   00079	48 8b 8c 24 e8
 	01 00 00	 mov	 rcx, QWORD PTR tv69[rsp]
@@ -21804,7 +21766,7 @@ $LN3@FrameFree:
 	02 00 00	 mov	 rax, QWORD PTR tv186[rsp]
   002b7	48 8b 00	 mov	 rax, QWORD PTR [rax]
   002ba	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG127044
+	00 00		 lea	 r8, OFFSET FLAT:$SG117760
   002c1	ba fe ff ff ff	 mov	 edx, -2
   002c6	48 8b 8c 24 38
 	02 00 00	 mov	 rcx, QWORD PTR tv186[rsp]
@@ -21961,7 +21923,7 @@ $LN5@FrameFree:
 	02 00 00	 mov	 rax, QWORD PTR tv263[rsp]
   004c9	48 8b 00	 mov	 rax, QWORD PTR [rax]
   004cc	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG127048
+	00 00		 lea	 r8, OFFSET FLAT:$SG117764
   004d3	ba fe ff ff ff	 mov	 edx, -2
   004d8	48 8b 8c 24 80
 	02 00 00	 mov	 rcx, QWORD PTR tv263[rsp]
@@ -23400,7 +23362,7 @@ $LN2@FrameAlloc:
   000fd	89 54 24 20	 mov	 DWORD PTR [rsp+32], edx
   00101	4c 8b c8	 mov	 r9, rax
   00104	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126780
+	00 00		 lea	 r8, OFFSET FLAT:$SG117496
   0010b	ba fe ff ff ff	 mov	 edx, -2
   00110	48 8b 8c 24 b0
 	01 00 00	 mov	 rcx, QWORD PTR tv73[rsp]
@@ -23443,7 +23405,7 @@ $LN2@FrameAlloc:
 	01 00 00	 mov	 QWORD PTR tv348[rsp], rcx
   0018f	4c 8b c8	 mov	 r9, rax
   00192	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126782
+	00 00		 lea	 r8, OFFSET FLAT:$SG117498
   00199	ba 02 00 00 00	 mov	 edx, 2
   0019e	48 8b 8c 24 d8
 	01 00 00	 mov	 rcx, QWORD PTR tv132[rsp]
@@ -23484,7 +23446,7 @@ $LN4@FrameAlloc:
 	01 00 00	 mov	 rax, QWORD PTR tv148[rsp]
   001fb	48 8b 00	 mov	 rax, QWORD PTR [rax]
   001fe	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126785
+	00 00		 lea	 r8, OFFSET FLAT:$SG117501
   00205	ba fe ff ff ff	 mov	 edx, -2
   0020a	48 8b 8c 24 e8
 	01 00 00	 mov	 rcx, QWORD PTR tv148[rsp]
@@ -23614,7 +23576,7 @@ $LN4@FrameAlloc:
 	02 00 00	 mov	 rax, QWORD PTR tv222[rsp]
   003c5	48 8b 00	 mov	 rax, QWORD PTR [rax]
   003c8	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126790
+	00 00		 lea	 r8, OFFSET FLAT:$SG117506
   003cf	ba 02 00 00 00	 mov	 edx, 2
   003d4	48 8b 8c 24 28
 	02 00 00	 mov	 rcx, QWORD PTR tv222[rsp]
@@ -23724,7 +23686,7 @@ $LN10@FrameAlloc:
 	02 00 00	 mov	 QWORD PTR tv343[rsp], rcx
   00511	4c 8b c8	 mov	 r9, rax
   00514	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126794
+	00 00		 lea	 r8, OFFSET FLAT:$SG117510
   0051b	ba 02 00 00 00	 mov	 edx, 2
   00520	48 8b 8c 24 38
 	02 00 00	 mov	 rcx, QWORD PTR tv267[rsp]
@@ -23766,7 +23728,7 @@ $LN5@FrameAlloc:
 	02 00 00	 mov	 rax, QWORD PTR tv279[rsp]
   00587	48 8b 00	 mov	 rax, QWORD PTR [rax]
   0058a	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126796
+	00 00		 lea	 r8, OFFSET FLAT:$SG117512
   00591	ba fe ff ff ff	 mov	 edx, -2
   00596	48 8b 8c 24 48
 	02 00 00	 mov	 rcx, QWORD PTR tv279[rsp]
@@ -23851,7 +23813,7 @@ $LN12@FrameAlloc:
 	02 00 00	 mov	 QWORD PTR tv340[rsp], rcx
   00676	4c 8b c8	 mov	 r9, rax
   00679	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126799
+	00 00		 lea	 r8, OFFSET FLAT:$SG117515
   00680	ba 02 00 00 00	 mov	 edx, 2
   00685	48 8b 8c 24 50
 	02 00 00	 mov	 rcx, QWORD PTR tv308[rsp]
@@ -23880,7 +23842,7 @@ $LN6@FrameAlloc:
 	02 00 00	 mov	 rax, QWORD PTR tv320[rsp]
   006c2	48 8b 00	 mov	 rax, QWORD PTR [rax]
   006c5	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126800
+	00 00		 lea	 r8, OFFSET FLAT:$SG117516
   006cc	ba fe ff ff ff	 mov	 edx, -2
   006d1	48 8b 8c 24 60
 	02 00 00	 mov	 rcx, QWORD PTR tv320[rsp]
@@ -24688,7 +24650,7 @@ $LN6@Close:
 	01 00 00	 mov	 rax, QWORD PTR tv176[rsp]
   00222	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00225	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG127087
+	00 00		 lea	 r8, OFFSET FLAT:$SG117803
   0022c	ba fe ff ff ff	 mov	 edx, -2
   00231	48 8b 8c 24 18
 	01 00 00	 mov	 rcx, QWORD PTR tv176[rsp]
@@ -26632,7 +26594,7 @@ _TEXT	ENDS
 ;	COMDAT ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ
 _TEXT	SEGMENT
 _Alproxy$ = 32
-$S12$ = 52
+$S11$ = 52
 _To_delete$ = 72
 this$ = 96
 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >, COMDAT
@@ -26662,10 +26624,10 @@ $LN4:
   0002e	e8 00 00 00 00	 call	 ?_Getal@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV?$allocator@D@2@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Getal
   00033	90		 npad	 1
   00034	48 8b d0	 mov	 rdx, rax
-  00037	48 8d 4c 24 34	 lea	 rcx, QWORD PTR $S12$[rsp]
+  00037	48 8d 4c 24 34	 lea	 rcx, QWORD PTR $S11$[rsp]
   0003c	e8 00 00 00 00	 call	 ??$?0D@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@D@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>
   00041	90		 npad	 1
-  00042	48 8d 44 24 34	 lea	 rax, QWORD PTR $S12$[rsp]
+  00042	48 8d 44 24 34	 lea	 rax, QWORD PTR $S11$[rsp]
   00047	48 89 44 24 20	 mov	 QWORD PTR _Alproxy$[rsp], rax
 
 ; 2601 :         const auto _To_delete    = _Mypair._Myval2._Myproxy;
@@ -26707,7 +26669,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 _Alproxy$ = 32
-$S12$ = 52
+$S11$ = 52
 _To_delete$ = 72
 this$ = 96
 ?dtor$0@?0???1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ@4HA PROC ; `std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >'::`1'::dtor$0
@@ -26729,7 +26691,7 @@ text$x	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 _Alproxy$ = 32
-$S12$ = 52
+$S11$ = 52
 _To_delete$ = 72
 this$ = 96
 ?dtor$0@?0???1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ@4HA PROC ; `std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >'::`1'::dtor$0

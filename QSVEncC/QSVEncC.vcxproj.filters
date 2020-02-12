@@ -24,9 +24,4 @@
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="QSVEncC_version.rc">
-      <Filter>sources</Filter>
-    </ResourceCompile>
-  </ItemGroup>
 </Project>

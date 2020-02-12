@@ -46,7 +46,6 @@
 #include "qsv_prm.h"
 #include "qsv_query.h"
 #include "rgy_version.h"
-#include "rgy_avutil.h"
 
 #if ENABLE_CPP_REGEX
 #include <regex>
@@ -54,12 +53,6 @@
 #if ENABLE_DTL
 #include <dtl/dtl.hpp>
 #endif //#if ENABLE_DTL
-
-#if ENABLE_AVSW_READER
-extern "C" {
-#include <libavutil/channel_layout.h>
-}
-#endif
 
 #if defined(_WIN32) || defined(_WIN64)
 static bool check_locale_is_ja() {
@@ -171,10 +164,6 @@ static tstring help() {
     tstring str;
     str += strsprintf(_T("Usage: QSVEncC [Options] -i <filename> -o <filename>\n"));
     str += strsprintf(_T("\n")
-#if ENABLE_AVSW_READER
-        _T("When video codec could be decoded by QSV, any format or protocol supported\n")
-        _T("by ffmpeg library could be used as a input.\n")
-#endif
         _T("%s input can be %s%s%sraw YUV or YUV4MPEG2(y4m) format.\n")
         _T("when raw(default), fps, input-res are also necessary.\n")
         _T("\n")
@@ -187,11 +176,7 @@ static tstring help() {
         _T("\n")
         _T("Example for Benchmark:\n")
         _T("  QSVEncC -i \"<avsfilename>\" --benchmark \"<benchmark_result.txt>\"\n")
-        ,
-        (ENABLE_AVSW_READER) ? _T("Also, ") : _T(""),
-        (ENABLE_AVI_READER)         ? _T("avi, ") : _T(""),
-        (ENABLE_AVISYNTH_READER)    ? _T("avs, ") : _T(""),
-        (ENABLE_VAPOURSYNTH_READER) ? _T("vpy, ") : _T(""));
+        );
     str += strsprintf(_T("\n")
         _T("Information Options: \n")
         _T("-h,-? --help                    show help\n")
@@ -210,16 +195,6 @@ static tstring help() {
         _T("                                 specified path. With no value, \"qsv_check.html\"\n")
         _T("                                 will be created to current directory.\n")
         _T("   --check-environment          check environment info\n")
-#if ENABLE_AVSW_READER
-        _T("   --check-avversion            show dll version\n")
-        _T("   --check-codecs               show codecs available\n")
-        _T("   --check-encoders             show audio encoders available\n")
-        _T("   --check-decoders             show audio decoders available\n")
-        _T("   --check-profiles <string>    show profile names available for specified audio codec\n")
-        _T("   --check-formats              show in/out formats available\n")
-        _T("   --check-protocols            show in/out protocols available\n")
-        _T("   --check-filters              show filters available\n")
-#endif
         _T("\n"));
 
     str += strsprintf(_T("\n")
@@ -228,141 +203,10 @@ static tstring help() {
         _T("                                 - h264(default), hevc, mpeg2, raw\n")
         _T("-i,--input-file <filename>      set input file name\n")
         _T("-o,--output-file <filename>     set ouput file name\n")
-#if ENABLE_AVSW_READER
-        _T("                                 for extension mp4/mkv/mov,\n")
-        _T("                                 avcodec muxer will be used.\n")
-#endif
         _T("\n")
         _T(" Input formats (will be estimated from extension if not set.)\n")
         _T("   --raw                        set input as raw format\n")
         _T("   --y4m                        set input as y4m format\n")
-#if ENABLE_AVI_READER
-        _T("   --avi                        set input as avi format\n")
-#endif
-#if ENABLE_AVISYNTH_READER
-        _T("   --avs                        set input as avs format\n")
-#endif
-#if ENABLE_VAPOURSYNTH_READER
-        _T("   --vpy                        set input as vpy format\n")
-        _T("   --vpy-mt                     set input as vpy format in multi-thread\n")
-#endif
-#if ENABLE_AVSW_READER
-        _T("   --avhw                       set input to use avcodec + qsv\n")
-        _T("   --avsw                       set input to use avcodec + sw decoder\n")
-        _T("   --input-analyze <int>        set time (sec) which reader analyze input file.\n")
-        _T("                                 default: 5 (seconds).\n")
-        _T("                                 could be only used with avqsv/avsw reader.\n")
-        _T("                                 use if reader fails to detect audio stream.\n")
-        _T("   --video-track <int>          set video track to encode in track id\n")
-        _T("                                 1 (default)  highest resolution video track\n")
-        _T("                                 2            next high resolution video track\n")
-        _T("                                   ... \n")
-        _T("                                 -1           lowest resolution video track\n")
-        _T("                                 -2           next low resolution video track\n")
-        _T("                                   ... \n")
-        _T("   --video-streamid <int>       set video track to encode in stream id\n")
-        _T("   --audio-source <string>      input extra audio file\n")
-        _T("   --audio-file [<int>?][<string>:]<string>\n")
-        _T("                                extract audio into file.\n")
-        _T("                                 could be only used with avqsv reader.\n")
-        _T("                                 below are optional,\n")
-        _T("                                  in [<int>?], specify track number to extract.\n")
-        _T("                                  in [<string>?], specify output format.\n")
-        _T("   --trim <int>:<int>[,<int>:<int>]...\n")
-        _T("                                trim video for the frame range specified.\n")
-        _T("                                 frame range should not overwrap each other.\n")
-        _T("   --seek [<int>:][<int>:]<int>[.<int>] (hh:mm:ss.ms)\n")
-        _T("                                skip video for the time specified,\n")
-        _T("                                 seek will be inaccurate but fast.\n")
-        _T("   --input-format <string>      set input format of input file.\n")
-        _T("                                 this requires use of avqsv/avsw reader.\n")
-        _T("-f,--output-format <string>     set output format of output file.\n")
-        _T("                                 if format is not specified, output format will\n")
-        _T("                                 be guessed from output file extension.\n")
-        _T("                                 set \"raw\" for H.264/ES output.\n")
-        _T("   --audio-copy [<int>[,...]]   mux audio with video during output.\n")
-        _T("                                 could be only used with\n")
-        _T("                                 avqsv reader and avcodec muxer.\n")
-        _T("                                 by default copies all audio tracks.\n")
-        _T("                                 \"--audio-copy 1,2\" will extract\n")
-        _T("                                 audio track #1 and #2.\n")
-        _T("   --audio-codec [<int>?]<string>\n")
-        _T("                                encode audio to specified format.\n")
-        _T("                                  in [<int>?], specify track number to encode.\n")
-        _T("   --audio-bitrate [<int>?]<int>\n")
-        _T("                                set encode bitrate for audio (kbps).\n")
-        _T("                                  in [<int>?], specify track number of audio.\n")
-        _T("   --audio-profile [<int>?]<string>\n")
-        _T("                                specify audio profile.\n")
-        _T("                                  in [<int>?], specify track number to apply.\n")
-        _T("   --audio-ignore-decode-error <int>  (default: %d)\n")
-        _T("                                set numbers of continuous packets of audio\n")
-        _T("                                 decode error to ignore, replaced by silence.\n")
-        _T("   --audio-samplerate [<int>?]<int>\n")
-        _T("                                set sampling rate for audio (Hz).\n")
-        _T("                                  in [<int>?], specify track number of audio.\n")
-        _T("   --audio-resampler <string>   set audio resampler.\n")
-        _T("                                  swr (swresampler: default), soxr (libsoxr)\n")
-        _T("   --audio-stream [<int>?][<string1>][:<string2>][,[<string1>][:<string2>]][..\n")
-        _T("       set audio streams in channels.\n")
-        _T("         in [<int>?], specify track number to split.\n")
-        _T("         in <string1>, set input channels to use from source stream.\n")
-        _T("           if unset, all input channels will be used.\n")
-        _T("         in <string2>, set output channels to mix.\n")
-        _T("           if unset, all input channels will be copied without mixing.\n")
-        _T("       example1: --audio-stream FL,FR\n")
-        _T("         splitting dual mono audio to each stream.\n")
-        _T("       example2: --audio-stream :stereo\n")
-        _T("         mixing input channels to stereo.\n")
-        _T("       example3: --audio-stream 5.1,5.1:stereo\n")
-        _T("         keeping 5.1ch audio and also adding downmixed stereo stream.\n")
-        _T("       usable symbols\n")
-        _T("         mono       = FC\n")
-        _T("         stereo     = FL + FR\n")
-        _T("         2.1        = FL + FR + LFE\n")
-        _T("         3.0        = FL + FR + FC\n")
-        _T("         3.0(back)  = FL + FR + BC\n")
-        _T("         3.1        = FL + FR + FC + LFE\n")
-        _T("         4.0        = FL + FR + FC + BC\n")
-        _T("         quad       = FL + FR + BL + BR\n")
-        _T("         quad(side) = FL + FR + SL + SR\n")
-        _T("         5.0        = FL + FR + FC + SL + SR\n")
-        _T("         5.1        = FL + FR + FC + LFE + SL + SR\n")
-        _T("         6.0        = FL + FR + FC + BC + SL + SR\n")
-        _T("         6.0(front) = FL + FR + FLC + FRC + SL + SR\n")
-        _T("         hexagonal  = FL + FR + FC + BL + BR + BC\n")
-        _T("         6.1        = FL + FR + FC + LFE + BC + SL + SR\n")
-        _T("         6.1(front) = FL + FR + LFE + FLC + FRC + SL + SR\n")
-        _T("         7.0        = FL + FR + FC + BL + BR + SL + SR\n")
-        _T("         7.0(front) = FL + FR + FC + FLC + FRC + SL + SR\n")
-        _T("         7.1        = FL + FR + FC + LFE + BL + BR + SL + SR\n")
-        _T("         7.1(wide)  = FL + FR + FC + LFE + FLC + FRC + SL + SR\n")
-        _T("   --audio-filter [<int>?]<string>\n")
-        _T("                                set audio filter.\n")
-        _T("                                  in [<int>?], specify track number of audio.\n")
-        _T("   --chapter-copy               copy chapter to output file.\n")
-        _T("   --chapter <string>           set chapter from file specified.\n")
-        _T("   --chapter-no-trim            do not apply trim to chapter file.\n")
-        _T("   --sub-copy [<int>[,...]]     copy subtitle to output file.\n")
-        _T("                                 these could be only used with\n")
-        _T("                                 avqsv reader and avcodec muxer.\n")
-        _T("                                 below are optional,\n")
-        _T("                                  in [<int>?], specify track number to copy.\n")
-        _T("   --caption2ass [<string>]     enable caption2ass during encode.\n")
-        _T("                                  !! This feature requires Caption.dll !!\n")
-        _T("                                 supported formats ... srt (default), ass\n")
-        _T("   --data-copy [<int>[,...]]    copy data stream to output file.\n")
-        _T("\n")
-        _T("   --avsync <string>            method for AV sync (default: cfr)\n")
-        _T("                                 cfr      ... assume cfr\n")
-        _T("                                 vfr      ... pass through timestamp from source\n")
-        _T("                                 forcecfr ... check timestamp and force cfr.\n")
-        _T("-m,--mux-option <string1>:<string2>\n")
-        _T("                                set muxer option name and value.\n")
-        _T("                                 these could be only used with\n")
-        _T("                                 avqsv reader and avcodec muxer.\n"),
-        QSV_DEFAULT_AUDIO_IGNORE_DECODE_ERROR
-#endif
     );
     str += strsprintf(_T("\n")
         _T("   --nv12                       set raw input as NV12 color format,\n")
@@ -699,14 +543,6 @@ static tstring help() {
         _T("                                 - simple   use simple scaling\n")
         _T("                                 - fine     use high quality scaling\n")
 #if ENABLE_CUSTOM_VPP
-#if ENABLE_AVSW_READER && ENABLE_LIBASS_SUBBURN
-        _T("   --vpp-sub [<int>] or [<string>]\n")
-        _T("                                burn in subtitle into frame\n")
-        _T("                                set sub track number in input file by integer\n")
-        _T("                                or set external sub file path by string.\n")
-        _T("   --vpp-sub-charset [<string>] set subtitle char set\n")
-        _T("   --vpp-sub-shaping <string>   simple(default), complex\n")
-#endif //#if ENABLE_AVSW_READER && ENABLE_LIBASS_SUBBURN
         _T("   --vpp-delogo <string>        set delogo file path\n")
         _T("   --vpp-delogo-select <string> set target logo name or auto select file\n")
         _T("                                 or logo index starting from 1.\n")
@@ -894,48 +730,6 @@ int parse_print_options(const TCHAR *option_name, const TCHAR *arg1) {
             _ftprintf(stdout, _T("libmfxsw%s.dll : ----\n"), dll_platform);
         return 1;
     }
-#if ENABLE_AVSW_READER
-    if (0 == _tcscmp(option_name, _T("check-avversion"))) {
-        _ftprintf(stdout, _T("%s\n"), getAVVersions().c_str());
-        return 1;
-    }
-    if (0 == _tcscmp(option_name, _T("check-codecs"))) {
-        _ftprintf(stdout, _T("%s\n"), getAVCodecs((RGYAVCodecType)(RGY_AVCODEC_DEC | RGY_AVCODEC_ENC)).c_str());
-        return 1;
-    }
-    if (0 == _tcscmp(option_name, _T("check-encoders"))) {
-        _ftprintf(stdout, _T("%s\n"), getAVCodecs(RGY_AVCODEC_ENC).c_str());
-        return 1;
-    }
-    if (0 == _tcscmp(option_name, _T("check-decoders"))) {
-        _ftprintf(stdout, _T("%s\n"), getAVCodecs(RGY_AVCODEC_DEC).c_str());
-        return 1;
-    }
-    if (0 == _tcscmp(option_name, _T("check-profiles"))) {
-        auto list = getAudioPofileList(arg1);
-        if (list.size() == 0) {
-            _ftprintf(stdout, _T("Failed to find codec name \"%s\"\n"), arg1);
-        } else {
-            _ftprintf(stdout, _T("profile name for \"%s\"\n"), arg1);
-            for (const auto& name : list) {
-                _ftprintf(stdout, _T("  %s\n"), name.c_str());
-            }
-        }
-        return 1;
-    }
-    if (0 == _tcscmp(option_name, _T("check-protocols"))) {
-        _ftprintf(stdout, _T("%s\n"), getAVProtocols().c_str());
-        return 1;
-    }
-    if (0 == _tcscmp(option_name, _T("check-filters"))) {
-        _ftprintf(stdout, _T("%s\n"), getAVFilters().c_str());
-        return 1;
-    }
-    if (0 == _tcscmp(option_name, _T("check-formats"))) {
-        _ftprintf(stdout, _T("%s\n"), getAVFormats((RGYAVFormatType)(RGY_AVFORMAT_DEMUX | RGY_AVFORMAT_MUX)).c_str());
-        return 1;
-    }
-#endif //ENABLE_AVSW_READER
     return 0;
 }
 

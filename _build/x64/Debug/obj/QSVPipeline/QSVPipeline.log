@@ -28,161 +28,28 @@
   qsv_control.cpp
   qsv_plugin.cpp
   qsv_prm.cpp
-D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(2280,9): warning C4477: “printf”: 格式字符串“%ws”需要类型“wchar_t *”的参数，但可变参数 1 拥有了类型“const TCHAR *[]”
-D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(2441,9): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“const _Elem *”
-D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(2441,9): warning C4477:         with
-D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(2441,9): warning C4477:         [
-D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(2441,9): warning C4477:             _Elem=wchar_t
-D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(2441,9): warning C4477:         ]
-D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(2441,9): message : 请考虑在格式字符串中使用“%ls”
-D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(2441,9): message : 请考虑在格式字符串中使用“%lls”
-D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(2441,9): message : 请考虑在格式字符串中使用“%Ls”
   qsv_query.cpp
   qsv_task.cpp
   qsv_util.cpp
-  rgy_avlog.cpp
-  rgy_avutil.cpp
   rgy_bitstream.cpp
-  rgy_caption.cpp
   rgy_event.cpp
   rgy_ini.cpp
   rgy_input.cpp
-  rgy_input_avcodec.cpp
-  rgy_input_avi.cpp
-D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(2441,9): message : 请考虑在格式字符串中使用“%ws”
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(113,47): warning C4566: 由通用字符名称“\u30FB”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(140,12): warning C4566: 由通用字符名称“\uFF70”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(140,19): warning C4566: 由通用字符名称“\uFF61”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(140,26): warning C4566: 由通用字符名称“\uFF62”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(140,33): warning C4566: 由通用字符名称“\uFF63”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(140,40): warning C4566: 由通用字符名称“\uFF64”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(140,47): warning C4566: 由通用字符名称“\uFF65”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(167,47): warning C4566: 由通用字符名称“\u30FB”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(171,5): warning C4566: 由通用字符名称“\uFF67”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(171,12): warning C4566: 由通用字符名称“\uFF71”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(171,19): warning C4566: 由通用字符名称“\uFF68”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(171,26): warning C4566: 由通用字符名称“\uFF72”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(171,33): warning C4566: 由通用字符名称“\uFF69”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(171,40): warning C4566: 由通用字符名称“\uFF73”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(171,47): warning C4566: 由通用字符名称“\uFF6A”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(172,5): warning C4566: 由通用字符名称“\uFF74”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(172,12): warning C4566: 由通用字符名称“\uFF6B”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(172,19): warning C4566: 由通用字符名称“\uFF75”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(172,26): warning C4566: 由通用字符名称“\uFF76”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(172,33): warning C4566: 由通用字符名称“\uFF76”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(172,33): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(172,43): warning C4566: 由通用字符名称“\uFF77”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(172,50): warning C4566: 由通用字符名称“\uFF77”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(172,50): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(172,60): warning C4566: 由通用字符名称“\uFF78”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(173,5): warning C4566: 由通用字符名称“\uFF78”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(173,5): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(173,15): warning C4566: 由通用字符名称“\uFF79”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(173,22): warning C4566: 由通用字符名称“\uFF79”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(173,22): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(173,32): warning C4566: 由通用字符名称“\uFF7A”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(173,39): warning C4566: 由通用字符名称“\uFF7A”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(173,39): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(173,49): warning C4566: 由通用字符名称“\uFF7B”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(173,56): warning C4566: 由通用字符名称“\uFF7B”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(173,56): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(173,66): warning C4566: 由通用字符名称“\uFF7C”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(174,5): warning C4566: 由通用字符名称“\uFF7C”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(174,5): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(174,15): warning C4566: 由通用字符名称“\uFF7D”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(174,22): warning C4566: 由通用字符名称“\uFF7D”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(174,22): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(174,32): warning C4566: 由通用字符名称“\uFF7E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(174,39): warning C4566: 由通用字符名称“\uFF7E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(174,39): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(174,49): warning C4566: 由通用字符名称“\uFF7F”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(174,56): warning C4566: 由通用字符名称“\uFF7F”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(174,56): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(174,66): warning C4566: 由通用字符名称“\uFF80”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(175,5): warning C4566: 由通用字符名称“\uFF80”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(175,5): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(175,15): warning C4566: 由通用字符名称“\uFF81”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(175,22): warning C4566: 由通用字符名称“\uFF81”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(175,22): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(175,32): warning C4566: 由通用字符名称“\uFF6F”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(175,39): warning C4566: 由通用字符名称“\uFF82”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(175,46): warning C4566: 由通用字符名称“\uFF82”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(175,46): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(175,56): warning C4566: 由通用字符名称“\uFF83”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(175,63): warning C4566: 由通用字符名称“\uFF83”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(175,63): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(176,5): warning C4566: 由通用字符名称“\uFF84”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(176,12): warning C4566: 由通用字符名称“\uFF84”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(176,12): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(176,22): warning C4566: 由通用字符名称“\uFF85”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(176,29): warning C4566: 由通用字符名称“\uFF86”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(176,36): warning C4566: 由通用字符名称“\uFF87”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(176,43): warning C4566: 由通用字符名称“\uFF88”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(176,50): warning C4566: 由通用字符名称“\uFF89”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(176,57): warning C4566: 由通用字符名称“\uFF8A”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,5): warning C4566: 由通用字符名称“\uFF8A”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,5): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,15): warning C4566: 由通用字符名称“\uFF8A”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,15): warning C4566: 由通用字符名称“\uFF9F”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,25): warning C4566: 由通用字符名称“\uFF8B”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,32): warning C4566: 由通用字符名称“\uFF8B”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,32): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,42): warning C4566: 由通用字符名称“\uFF8B”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,42): warning C4566: 由通用字符名称“\uFF9F”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,52): warning C4566: 由通用字符名称“\uFF8C”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,59): warning C4566: 由通用字符名称“\uFF8C”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,59): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,69): warning C4566: 由通用字符名称“\uFF8C”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(177,69): warning C4566: 由通用字符名称“\uFF9F”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(178,5): warning C4566: 由通用字符名称“\uFF8D”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(178,12): warning C4566: 由通用字符名称“\uFF8D”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(178,12): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(178,22): warning C4566: 由通用字符名称“\uFF8D”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(178,22): warning C4566: 由通用字符名称“\uFF9F”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(178,32): warning C4566: 由通用字符名称“\uFF8E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(178,39): warning C4566: 由通用字符名称“\uFF8E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(178,39): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(178,49): warning C4566: 由通用字符名称“\uFF8E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(178,49): warning C4566: 由通用字符名称“\uFF9F”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(178,59): warning C4566: 由通用字符名称“\uFF8F”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(178,66): warning C4566: 由通用字符名称“\uFF90”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(179,5): warning C4566: 由通用字符名称“\uFF91”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(179,12): warning C4566: 由通用字符名称“\uFF92”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(179,19): warning C4566: 由通用字符名称“\uFF93”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(179,26): warning C4566: 由通用字符名称“\uFF6C”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(179,33): warning C4566: 由通用字符名称“\uFF94”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(179,40): warning C4566: 由通用字符名称“\uFF6D”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(179,47): warning C4566: 由通用字符名称“\uFF95”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(179,54): warning C4566: 由通用字符名称“\uFF6E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(180,5): warning C4566: 由通用字符名称“\uFF96”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(180,12): warning C4566: 由通用字符名称“\uFF97”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(180,19): warning C4566: 由通用字符名称“\uFF98”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(180,26): warning C4566: 由通用字符名称“\uFF99”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(180,33): warning C4566: 由通用字符名称“\uFF9A”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(180,40): warning C4566: 由通用字符名称“\uFF9B”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(180,54): warning C4566: 由通用字符名称“\uFF9C”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(181,19): warning C4566: 由通用字符名称“\uFF66”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(181,26): warning C4566: 由通用字符名称“\uFF9D”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(181,33): warning C4566: 由通用字符名称“\uFF73”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(181,33): warning C4566: 由通用字符名称“\uFF9E”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(182,12): warning C4566: 由通用字符名称“\uFF70”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(182,19): warning C4566: 由通用字符名称“\uFF61”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(182,26): warning C4566: 由通用字符名称“\uFF62”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(182,33): warning C4566: 由通用字符名称“\uFF63”表示的字符不能在当前代码页(936)中表示出来
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(182,40): warning C4566: 由通用字符名称“\uFF64”表示的字符不能在当前代码页(936)中表示出来
-  rgy_input_avs.cpp
   rgy_input_raw.cpp
-  rgy_input_vpy.cpp
+D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(1739,9): warning C4477: “printf”: 格式字符串“%ws”需要类型“wchar_t *”的参数，但可变参数 1 拥有了类型“const TCHAR *[]”
+D:\work\intel\intel_codec\QSVPipeline\qsv_pipeline.cpp(313,56): warning C4100: “pInParams”: 未引用的形参
+D:\work\intel\intel_codec\QSVPipeline\qsv_pipeline.cpp(2183,21): warning C4189: “subBurnTrackPtr”: 局部变量已初始化但不引用
+D:\work\intel\intel_codec\QSVPipeline\qsv_pipeline.cpp(3230,13): warning C4189: “nOutFirstPts”: 局部变量已初始化但不引用
   rgy_log.cpp
   rgy_output.cpp
-  rgy_output_avcodec.cpp
   rgy_perf_monitor.cpp
+D:\work\intel\intel_codec\QSVPipeline\qsv_pipeline.cpp(3218,9): warning C4189: “nLastCheckPtsFrame”: 局部变量已初始化但不引用
   rgy_pipe.cpp
   rgy_simd.cpp
   rgy_util.cpp
   ram_speed.cpp
   rgy_err.cpp
   rgy_version.cpp
-D:\work\intel\intel_codec\QSVPipeline\rgy_caption.cpp(182,47): warning C4566: 由通用字符名称“\uFF65”表示的字符不能在当前代码页(936)中表示出来
+D:\work\intel\intel_codec\QSVPipeline\qsv_query.cpp(1265,46): warning C4100: “type”: 未引用的形参
 D:\work\intel\intel_codec\QSVPipeline\rgy_util.cpp(147): warning C4702: 无法访问的代码
   QSVPipeline.vcxproj -> D:\work\intel\intel_codec\_build\x64\Debug\QSVPipeline.lib

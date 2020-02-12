@@ -392,7 +392,7 @@ $SG113561 DB	'forcecfr', 00H
 	ORG $+3
 $SG113564 DB	'soxr', 00H
 	ORG $+7
-$SG113840 DB	'QSVEncC (x64) 3.25 (r0) by happy, Feb  8 2020 10:53:35 ('
+$SG113840 DB	'QSVEncC (x64) 3.25 (r0) by happy, Feb 10 2020 10:09:13 ('
 	DB	'VC 1923/Win/avx2)', 00H
 	ORG $+6
 $SG122200 DB	'invalid argument', 00H

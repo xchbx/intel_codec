@@ -39,7 +39,6 @@
 #include "qsv_pipeline.h"
 #include "qsv_query.h"
 #include "rgy_version.h"
-#include "rgy_avutil.h"
 #include "qsv_cmd.h"
 #include "qsv_cmd.h"
 
@@ -799,127 +798,6 @@ static tstring gen_cmd_oldv5(const sInputParamsOld *pParams, bool save_disabled_
     OPT_LST(_T("--session-thread-priority"), nSessionThreadPriority, list_priority);
 #endif //#if ENABLE_SESSION_THREAD_CONFIG
 
-#if ENABLE_AVSW_READER
-    OPT_NUM(_T("--input-analyze"), nAVDemuxAnalyzeSec);
-    if (pParams->nTrimCount > 0) {
-        cmd << _T(" --trim ");
-        for (int i = 0; i < pParams->nTrimCount; i++) {
-            if (i > 0) cmd << _T(",");
-            cmd << pParams->pTrimList[i].start << _T(":") << pParams->pTrimList[i].fin;
-        }
-    }
-    OPT_FLOAT(_T("--seek"), fSeekSec, 2);
-    OPT_CHAR(_T("--input-format"), pAVInputFormat);
-    OPT_CHAR(_T("--output-format"), pAVMuxOutputFormat);
-    OPT_NUM(_T("--video-track"), nVideoTrack);
-    OPT_NUM(_T("--video-streamid"), nVideoStreamId);
-    if (pParams->pMuxOpt) {
-        for (uint32_t i = 0; i < pParams->pMuxOpt->size(); i++) {
-            cmd << _T(" -m ") << pParams->pMuxOpt->at(i).first << _T(":") << pParams->pMuxOpt->at(i).second;
-        }
-    }
-    tmp.str(tstring());
-    for (uint32_t i = 0; i < pParams->nAudioSelectCount; i++) {
-        const sAudioSelectOld *pAudioSelect = pParams->ppAudioSelectList[i];
-        if (_tcscmp(pAudioSelect->pAVAudioEncodeCodec, RGY_AVCODEC_COPY) == 0) {
-            tmp << pAudioSelect->nAudioSelect << _T(",");
-        }
-    }
-    if (tmp.str().empty()) {
-        cmd << _T(" --audio-copy");
-    } else {
-        cmd << _T(" --audio-copy ") << tmp.str().substr(1);
-    }
-    tmp.str(tstring());
-
-    for (int i = 0; i < pParams->nAudioSelectCount; i++) {
-        const sAudioSelectOld *pAudioSelect = pParams->ppAudioSelectList[i];
-        if (_tcscmp(pAudioSelect->pAVAudioEncodeCodec, RGY_AVCODEC_COPY) != 0) {
-            cmd << _T(" --audio-codec ") << pAudioSelect->nAudioSelect;
-            if (_tcscmp(pAudioSelect->pAVAudioEncodeCodec, RGY_AVCODEC_AUTO) != 0) {
-                cmd << _T("?") << pAudioSelect->pAVAudioEncodeCodec;
-            }
-        }
-    }
-
-    for (int i = 0; i < pParams->nAudioSelectCount; i++) {
-        const sAudioSelectOld *pAudioSelect = pParams->ppAudioSelectList[i];
-        if (_tcscmp(pAudioSelect->pAVAudioEncodeCodec, RGY_AVCODEC_COPY) != 0) {
-            cmd << _T(" --audio-bitrate ") << pAudioSelect->nAudioSelect << _T("?") << pAudioSelect->nAVAudioEncodeBitrate;
-        }
-    }
-
-    //QSVEnc.auoでは、libavutilの関数 av_get_channel_layout_string()を実行してはならない
-    //for (int i = 0; i < pParams->nAudioSelectCount; i++) {
-    //    const sAudioSelectOld *pAudioSelect = pParams->ppAudioSelectList[i];
-    //    cmd << _T(" --audio-stream ") << pAudioSelect->nAudioSelect;
-    //    for (int j = 0; j < MAX_SPLIT_CHANNELS; j++) {
-    //        if (pAudioSelect->pnStreamChannelSelect[j] == 0) {
-    //            break;
-    //        }
-    //        if (j > 0) cmd << _T(",");
-    //        if (pAudioSelect->pnStreamChannelSelect[j] != RGY_CHANNEL_AUTO) {
-    //            char buf[256];
-    //            av_get_channel_layout_string(buf, _countof(buf), 0, pAudioSelect->pnStreamChannelOut[j]);
-    //            cmd << char_to_tstring(buf);
-    //        }
-    //        if (pAudioSelect->pnStreamChannelOut[j] != RGY_CHANNEL_AUTO) {
-    //            cmd << _T(":");
-    //            char buf[256];
-    //            av_get_channel_layout_string(buf, _countof(buf), 0, pAudioSelect->pnStreamChannelOut[j]);
-    //            cmd << char_to_tstring(buf);
-    //        }
-    //    }
-    //}
-
-    for (int i = 0; i < pParams->nAudioSelectCount; i++) {
-        const sAudioSelectOld *pAudioSelect = pParams->ppAudioSelectList[i];
-        if (_tcscmp(pAudioSelect->pAVAudioEncodeCodec, RGY_AVCODEC_COPY) != 0) {
-            cmd << _T(" --audio-samplerate ") << pAudioSelect->nAudioSelect << _T("?") << pAudioSelect->nAudioSamplingRate;
-        }
-    }
-    OPT_LST(_T("--audio-resampler"), nAudioResampler, list_resampler);
-
-    for (int i = 0; i < pParams->nAudioSelectCount; i++) {
-        const sAudioSelectOld *pAudioSelect = pParams->ppAudioSelectList[i];
-        if (_tcscmp(pAudioSelect->pAVAudioEncodeCodec, RGY_AVCODEC_COPY) != 0) {
-            cmd << _T(" --audio-filter ") << pAudioSelect->nAudioSelect << _T("?") << pAudioSelect->pAudioFilter;
-        }
-    }
-    for (int i = 0; i < pParams->nAudioSelectCount; i++) {
-        const sAudioSelectOld *pAudioSelect = pParams->ppAudioSelectList[i];
-        if (pAudioSelect->pAudioExtractFilename) {
-            cmd << _T(" --audio-file ") << pAudioSelect->nAudioSelect << _T("?");
-            if (pAudioSelect->pAudioExtractFormat) {
-                cmd << pAudioSelect->pAudioExtractFormat << _T(":");
-            }
-            cmd << _T("\"") << pAudioSelect->pAudioExtractFilename << _T("\"");
-        }
-    }
-    for (int i = 0; i < pParams->nAudioSourceCount; i++) {
-        cmd << _T(" --audio-source ") << _T("\"") << pParams->ppAudioSourceList[i] << _T("\"");
-    }
-    OPT_NUM(_T("--audio-ignore-decode-error"), nAudioIgnoreDecodeError);
-    if (pParams->pMuxOpt) {
-        for (uint32_t i = 0; i < pParams->pMuxOpt->size(); i++) {
-            cmd << _T(" -m ") << (*pParams->pMuxOpt)[i].first << _T(":") << (*pParams->pMuxOpt)[i].second;
-        }
-    }
-
-    tmp.str(tstring());
-    for (int i = 0; i < pParams->nSubtitleSelectCount; i++) {
-        tmp << pParams->pSubtitleSelect[i] << _T(",");
-    }
-    if (!tmp.str().empty()) {
-        cmd << _T(" --sub-copy ") << tmp.str().substr(1);
-    }
-    tmp.str(tstring());
-    OPT_CHAR_PATH(_T("--chapter"), pChapterFile);
-    OPT_BOOL(_T("--chapter-copy"), _T(""), bCopyChapter);
-    OPT_BOOL(_T("--chapter-no-trim"), _T(""), bChapterNoTrim);
-    OPT_LST(_T("--avsync"), nAVSyncMode, list_avsync);
-#endif //#if ENABLE_AVSW_READER
-
     OPT_LST(_T("--vpp-deinterlace"), vpp.nDeinterlace, list_deinterlace);
     OPT_BOOL_VAL(_T("--vpp-detail-enhance"), _T("--no-vpp-detail-enhance"), vpp.bUseDetailEnhance, vpp.nDetailEnhance);
     OPT_BOOL_VAL(_T("--vpp-denoise"), _T("--no-vpp-denoise"), vpp.bUseDenoise, vpp.nDenoise);
@@ -930,11 +808,6 @@ static tstring gen_cmd_oldv5(const sInputParamsOld *pParams, bool save_disabled_
     OPT_LST(_T("--vpp-fps-conv"), vpp.nFPSConversion, list_vpp_fps_conversion);
     OPT_LST(_T("--vpp-image-stab"), vpp.nImageStabilizer, list_vpp_image_stabilizer);
 #if ENABLE_CUSTOM_VPP
-#if ENABLE_AVSW_READER && ENABLE_LIBASS_SUBBURN
-    OPT_CHAR_PATH(_T("--vpp-sub"), vpp.subburn.pFilePath);
-    OPT_CHAR_PATH(_T("--vpp-sub-charset"), vpp.subburn.pCharEnc);
-    OPT_LST(_T("--vpp-sub-shaping"), vpp.subburn.nShaping, list_vpp_sub_shaping);
-#endif //#if ENABLE_AVSW_READER && ENABLE_LIBASS_SUBBURN
     OPT_CHAR_PATH(_T("--vpp-delogo"), vpp.delogo.pFilePath);
     OPT_CHAR(_T("--vpp-delogo-select"), vpp.delogo.pSelect);
     OPT_NUM(_T("--vpp-delogo-depth"), vpp.delogo.nDepth);

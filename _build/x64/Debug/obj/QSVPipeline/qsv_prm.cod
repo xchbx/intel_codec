@@ -5,9 +5,6 @@ include listing.inc
 INCLUDELIB MSVCRTD
 INCLUDELIB OLDNAMES
 
-PUBLIC	CLSID_Registrar
-PUBLIC	IID_IRegistrar
-PUBLIC	IID_IDocHostUIHandlerDispatch
 PUBLIC	IID_IAxWinHostWindow
 PUBLIC	IID_IAxWinHostWindowLic
 PUBLIC	IID_IAxWinAmbientDispatch
@@ -35,6 +32,9 @@ PUBLIC	?szValToken@ATL@@3QEBDEB			; ATL::szValToken
 PUBLIC	?szForceRemove@ATL@@3QEBDEB			; ATL::szForceRemove
 PUBLIC	?szNoRemove@ATL@@3QEBDEB			; ATL::szNoRemove
 PUBLIC	?szDelete@ATL@@3QEBDEB				; ATL::szDelete
+PUBLIC	CLSID_Registrar
+PUBLIC	IID_IRegistrar
+PUBLIC	IID_IDocHostUIHandlerDispatch
 ;	COMDAT ?_pPerfRegFunc@ATL@@3P6AJPEAUHINSTANCE__@@@ZEA
 _BSS	SEGMENT
 ?_pPerfRegFunc@ATL@@3P6AJPEAUHINSTANCE__@@@ZEA DQ 01H DUP (?) ; ATL::_pPerfRegFunc
@@ -59,37 +59,79 @@ _BSS	ENDS
 _BSS	SEGMENT
 ?_pAtlAutoThreadModule@ATL@@3PEAUIAtlAutoThreadModule@1@EA DQ 01H DUP (?) ; ATL::_pAtlAutoThreadModule
 _BSS	ENDS
+;	COMDAT IID_IDocHostUIHandlerDispatch
+CONST	SEGMENT
+IID_IDocHostUIHandlerDispatch DD 0425b5af0H
+	DW	065f1H
+	DW	011d1H
+	DB	096H
+	DB	011H
+	DB	00H
+	DB	00H
+	DB	0f8H
+	DB	01eH
+	DB	0dH
+	DB	0dH
+CONST	ENDS
+;	COMDAT IID_IRegistrar
+CONST	SEGMENT
+IID_IRegistrar DD 044ec053bH
+	DW	0400fH
+	DW	011d0H
+	DB	09dH
+	DB	0cdH
+	DB	00H
+	DB	0a0H
+	DB	0c9H
+	DB	03H
+	DB	091H
+	DB	0d3H
+CONST	ENDS
+;	COMDAT CLSID_Registrar
+CONST	SEGMENT
+CLSID_Registrar DD 044ec053aH
+	DW	0400fH
+	DW	011d0H
+	DB	09dH
+	DB	0cdH
+	DB	00H
+	DB	0a0H
+	DB	0c9H
+	DB	03H
+	DB	091H
+	DB	0d3H
+CONST	ENDS
 ;	COMDAT ?szDelete@ATL@@3QEBDEB
 CONST	SEGMENT
-?szDelete@ATL@@3QEBDEB DQ FLAT:$SG144195		; ATL::szDelete
+?szDelete@ATL@@3QEBDEB DQ FLAT:$SG134934		; ATL::szDelete
 CONST	ENDS
 ;	COMDAT ?szNoRemove@ATL@@3QEBDEB
 CONST	SEGMENT
-?szNoRemove@ATL@@3QEBDEB DQ FLAT:$SG144193		; ATL::szNoRemove
+?szNoRemove@ATL@@3QEBDEB DQ FLAT:$SG134932		; ATL::szNoRemove
 CONST	ENDS
 ;	COMDAT ?szForceRemove@ATL@@3QEBDEB
 CONST	SEGMENT
-?szForceRemove@ATL@@3QEBDEB DQ FLAT:$SG144191		; ATL::szForceRemove
+?szForceRemove@ATL@@3QEBDEB DQ FLAT:$SG134930		; ATL::szForceRemove
 CONST	ENDS
 ;	COMDAT ?szValToken@ATL@@3QEBDEB
 CONST	SEGMENT
-?szValToken@ATL@@3QEBDEB DQ FLAT:$SG144189		; ATL::szValToken
+?szValToken@ATL@@3QEBDEB DQ FLAT:$SG134928		; ATL::szValToken
 CONST	ENDS
 ;	COMDAT ?szBinaryVal@ATL@@3QEBDEB
 CONST	SEGMENT
-?szBinaryVal@ATL@@3QEBDEB DQ FLAT:$SG144187		; ATL::szBinaryVal
+?szBinaryVal@ATL@@3QEBDEB DQ FLAT:$SG134926		; ATL::szBinaryVal
 CONST	ENDS
 ;	COMDAT ?szDwordVal@ATL@@3QEBDEB
 CONST	SEGMENT
-?szDwordVal@ATL@@3QEBDEB DQ FLAT:$SG144185		; ATL::szDwordVal
+?szDwordVal@ATL@@3QEBDEB DQ FLAT:$SG134924		; ATL::szDwordVal
 CONST	ENDS
 ;	COMDAT ?multiszStringVal@ATL@@3QEBDEB
 CONST	SEGMENT
-?multiszStringVal@ATL@@3QEBDEB DQ FLAT:$SG144183	; ATL::multiszStringVal
+?multiszStringVal@ATL@@3QEBDEB DQ FLAT:$SG134922	; ATL::multiszStringVal
 CONST	ENDS
 ;	COMDAT ?szStringVal@ATL@@3QEBDEB
 CONST	SEGMENT
-?szStringVal@ATL@@3QEBDEB DQ FLAT:$SG144181		; ATL::szStringVal
+?szStringVal@ATL@@3QEBDEB DQ FLAT:$SG134920		; ATL::szStringVal
 CONST	ENDS
 ;	COMDAT ?chEquals@ATL@@3DB
 CONST	SEGMENT
@@ -203,837 +245,771 @@ IID_IAxWinHostWindow DD 0b6ea2050H
 	DB	094H
 	DB	02eH
 CONST	ENDS
-;	COMDAT IID_IDocHostUIHandlerDispatch
 CONST	SEGMENT
-IID_IDocHostUIHandlerDispatch DD 0425b5af0H
-	DW	065f1H
-	DW	011d1H
-	DB	096H
-	DB	011H
-	DB	00H
-	DB	00H
-	DB	0f8H
-	DB	01eH
-	DB	0dH
-	DB	0dH
-CONST	ENDS
-;	COMDAT IID_IRegistrar
-CONST	SEGMENT
-IID_IRegistrar DD 044ec053bH
-	DW	0400fH
-	DW	011d0H
-	DB	09dH
-	DB	0cdH
-	DB	00H
-	DB	0a0H
-	DB	0c9H
-	DB	03H
-	DB	091H
-	DB	0d3H
-CONST	ENDS
-;	COMDAT CLSID_Registrar
-CONST	SEGMENT
-CLSID_Registrar DD 044ec053aH
-	DW	0400fH
-	DW	011d0H
-	DB	09dH
-	DB	0cdH
-	DB	00H
-	DB	0a0H
-	DB	0c9H
-	DB	03H
-	DB	091H
-	DB	0d3H
-CONST	ENDS
-CONST	SEGMENT
-$SG188941 DB	'invalid argument', 00H
+$SG122889 DB	'atlTraceQI', 00H
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
-$SG128982 DB	00H
-	ORG $+1
-$SG188942 DB	'%s', 00H
-	ORG $+1
-$SG188946 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
-	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
-	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
+$SG114860 DB	'vp8', 00H
+$SG122938 DB	'atlTraceRegistrar', 00H
+$SG119695 DB	00H
+	ORG $+5
+$SG122987 DB	'atlTraceRefcount', 00H
+	ORG $+3
+$SG114858 DB	'mpeg2', 00H
 	ORG $+2
-$SG188943 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
-	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
-$SG132225 DB	'atlTraceRegistrar', 00H
-	ORG $+6
-$SG188944 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
-	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
-	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
-	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
-	DB	00H, 'r', 00H, 'o', 00H, 's', 00H, 'o', 00H, 'f', 00H, 't', 00H
-	DB	' ', 00H, 'V', 00H, 'i', 00H, 's', 00H, 'u', 00H, 'a', 00H, 'l'
-	DB	00H, ' ', 00H, 'S', 00H, 't', 00H, 'u', 00H, 'd', 00H, 'i', 00H
-	DB	'o', 00H, '\', 00H, '2', 00H, '0', 00H, '1', 00H, '9', 00H, '\'
-	DB	00H, 'C', 00H, 'o', 00H, 'm', 00H, 'm', 00H, 'u', 00H, 'n', 00H
-	DB	'i', 00H, 't', 00H, 'y', 00H, '\', 00H, 'V', 00H, 'C', 00H, '\'
-	DB	00H, 'T', 00H, 'o', 00H, 'o', 00H, 'l', 00H, 's', 00H, '\', 00H
-	DB	'M', 00H, 'S', 00H, 'V', 00H, 'C', 00H, '\', 00H, '1', 00H, '4'
-	DB	00H, '.', 00H, '2', 00H, '3', 00H, '.', 00H, '2', 00H, '8', 00H
-	DB	'1', 00H, '0', 00H, '5', 00H, '\', 00H, 'i', 00H, 'n', 00H, 'c'
-	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
-	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
-	DB	00H
-$SG188945 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
-	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
-	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
-	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
-	DB	00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, '_', 00H, 'a', 00H
-	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
-	DB	00H
+$SG114861 DB	'raw', 00H
+$SG123036 DB	'atlTraceWindowing', 00H
 	ORG $+2
-$SG189102 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
-	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
-$SG132078 DB	'atlTraceGeneral', 00H
-$SG132127 DB	'atlTraceCOM', 00H
-$SG124544 DB	'vp8', 00H
-$SG132176 DB	'atlTraceQI', 00H
-	ORG $+1
-$SG124545 DB	'raw', 00H
-$SG132274 DB	'atlTraceRefcount', 00H
+$SG114856 DB	'h264', 00H
 	ORG $+3
-$SG124542 DB	'mpeg2', 00H
-	ORG $+2
-$SG124547 DB	'CBR', 00H
-$SG132323 DB	'atlTraceWindowing', 00H
-	ORG $+2
-$SG124548 DB	'VBR', 00H
-$SG132372 DB	'atlTraceControls', 00H
+$SG114857 DB	'hevc', 00H
 	ORG $+3
-$SG124549 DB	'CQP', 00H
-$SG132421 DB	'atlTraceHosting', 00H
-$SG132470 DB	'atlTraceDBClient', 00H
+$SG114859 DB	'vc-1', 00H
 	ORG $+3
-$SG124551 DB	'LA', 00H
-	ORG $+1
-$SG132519 DB	'atlTraceDBProvider', 00H
-	ORG $+1
-$SG124555 DB	'ICQ', 00H
-$SG132568 DB	'atlTraceSnapin', 00H
-	ORG $+1
-$SG132617 DB	'atlTraceNotImpl', 00H
-$SG132666 DB	'atlTraceAllocation', 00H
-	ORG $+1
-$SG124557 DB	'VCM', 00H
-$SG132715 DB	'atlTraceException', 00H
-	ORG $+2
-$SG124540 DB	'h264', 00H
+$SG114863 DB	'CBR', 00H
+$SG114864 DB	'VBR', 00H
+$SG114865 DB	'CQP', 00H
+$SG114866 DB	'AVBR', 00H
 	ORG $+3
-$SG124541 DB	'hevc', 00H
-	ORG $+3
-$SG124543 DB	'vc-1', 00H
-	ORG $+3
-$SG124550 DB	'AVBR', 00H
-	ORG $+3
-$SG124552 DB	'LA-EXT', 00H
+$SG114867 DB	'LA', 00H
 	ORG $+1
-$SG124553 DB	'LA-HRD', 00H
+$SG114868 DB	'LA-EXT', 00H
 	ORG $+1
-$SG124554 DB	'LA-ICQ', 00H
+$SG114869 DB	'LA-HRD', 00H
 	ORG $+1
-$SG124556 DB	'QVBR', 00H
+$SG114870 DB	'LA-ICQ', 00H
+	ORG $+1
+$SG114871 DB	'ICQ', 00H
+$SG114872 DB	'QVBR', 00H
 	ORG $+3
-$SG124559 DB	'auto', 00H
+$SG114873 DB	'VCM', 00H
+$SG114875 DB	'auto', 00H
 	ORG $+7
-?list_avc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG124559	; list_avc_profile
+?list_avc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG114875	; list_avc_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG124560
+	DQ	FLAT:$SG114876
 	DD	042H
 	ORG $+4
-	DQ	FLAT:$SG124561
+	DQ	FLAT:$SG114877
 	DD	04dH
 	ORG $+4
-	DQ	FLAT:$SG124562
+	DQ	FLAT:$SG114878
 	DD	064H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG124560 DB	'Baseline', 00H
+$SG114876 DB	'Baseline', 00H
 	ORG $+3
-$SG124561 DB	'Main', 00H
+$SG114877 DB	'Main', 00H
 	ORG $+3
-$SG124562 DB	'High', 00H
+$SG114878 DB	'High', 00H
 	ORG $+7
-?list_hevc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG124564	; list_hevc_profile
+?list_hevc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG114880	; list_hevc_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG124565
+	DQ	FLAT:$SG114881
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG124566
+	DQ	FLAT:$SG114882
 	DD	02H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG124564 DB	'auto', 00H
+$SG114880 DB	'auto', 00H
 	ORG $+3
-$SG124565 DB	'main', 00H
+$SG114881 DB	'main', 00H
 	ORG $+3
-$SG124566 DB	'main10', 00H
+$SG114882 DB	'main10', 00H
 	ORG $+1
-$SG124568 DB	'main', 00H
+$SG114884 DB	'main', 00H
 	ORG $+3
-$SG124569 DB	'high', 00H
+$SG114885 DB	'high', 00H
 	ORG $+3
-$SG124571 DB	'auto', 00H
+$SG114887 DB	'auto', 00H
 	ORG $+3
-?list_mpeg2_profile@@3QBUCX_DESC@@B DQ FLAT:$SG124571	; list_mpeg2_profile
+?list_mpeg2_profile@@3QBUCX_DESC@@B DQ FLAT:$SG114887	; list_mpeg2_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG124572
+	DQ	FLAT:$SG114888
 	DD	050H
 	ORG $+4
-	DQ	FLAT:$SG124573
+	DQ	FLAT:$SG114889
 	DD	040H
 	ORG $+4
-	DQ	FLAT:$SG124574
+	DQ	FLAT:$SG114890
 	DD	010H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG132764 DB	'atlTraceTime', 00H
-	ORG $+3
-$SG124572 DB	'Simple', 00H
+$SG114888 DB	'Simple', 00H
 	ORG $+1
-$SG124573 DB	'Main', 00H
+$SG114889 DB	'Main', 00H
 	ORG $+3
-$SG124574 DB	'High', 00H
+$SG114890 DB	'High', 00H
 	ORG $+3
-$SG124576 DB	'auto', 00H
+$SG114892 DB	'auto', 00H
 	ORG $+3
-?list_vc1_profile@@3QBUCX_DESC@@B DQ FLAT:$SG124576	; list_vc1_profile
+?list_vc1_profile@@3QBUCX_DESC@@B DQ FLAT:$SG114892	; list_vc1_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG124577
+	DQ	FLAT:$SG114893
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG124578
+	DQ	FLAT:$SG114894
 	DD	05H
 	ORG $+4
-	DQ	FLAT:$SG124579
+	DQ	FLAT:$SG114895
 	DD	0dH
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG124577 DB	'Simple', 00H
-	ORG $+1
-$SG124578 DB	'Main', 00H
+$SG123085 DB	'atlTraceControls', 00H
 	ORG $+3
-$SG124579 DB	'Advanced', 00H
+$SG114893 DB	'Simple', 00H
+	ORG $+1
+$SG114894 DB	'Main', 00H
+	ORG $+3
+$SG114898 DB	'0', 00H
+	ORG $+2
+$SG114895 DB	'Advanced', 00H
+	ORG $+3
+$SG114897 DB	'auto', 00H
 	ORG $+7
-?list_vp8_profile@@3QBUCX_DESC@@B DQ FLAT:$SG124581	; list_vp8_profile
+?list_vp8_profile@@3QBUCX_DESC@@B DQ FLAT:$SG114897	; list_vp8_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG124582
+	DQ	FLAT:$SG114898
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG124583
+	DQ	FLAT:$SG114899
 	DD	02H
 	ORG $+4
-	DQ	FLAT:$SG124584
+	DQ	FLAT:$SG114900
 	DD	03H
 	ORG $+4
-	DQ	FLAT:$SG124585
+	DQ	FLAT:$SG114901
 	DD	04H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG124581 DB	'auto', 00H
-	ORG $+3
-$SG124582 DB	'0', 00H
+$SG114899 DB	'1', 00H
 	ORG $+2
-$SG124583 DB	'1', 00H
+$SG114900 DB	'2', 00H
 	ORG $+2
-$SG124584 DB	'2', 00H
-	ORG $+2
-$SG124585 DB	'3', 00H
-	ORG $+2
-$SG124587 DB	'auto', 00H
-	ORG $+3
-?list_vp9_profile@@3QBUCX_DESC@@B DQ FLAT:$SG124587	; list_vp9_profile
+$SG114901 DB	'3', 00H
+	ORG $+6
+?list_vp9_profile@@3QBUCX_DESC@@B DQ FLAT:$SG114903	; list_vp9_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG124588
+	DQ	FLAT:$SG114904
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG124589
+	DQ	FLAT:$SG114905
 	DD	02H
 	ORG $+4
-	DQ	FLAT:$SG124590
+	DQ	FLAT:$SG114906
 	DD	03H
 	ORG $+4
-	DQ	FLAT:$SG124591
+	DQ	FLAT:$SG114907
 	DD	04H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG124588 DB	'0', 00H
-	ORG $+2
-$SG124589 DB	'1', 00H
-	ORG $+2
-$SG124590 DB	'2', 00H
-	ORG $+2
-$SG124591 DB	'3', 00H
-	ORG $+2
-$SG124593 DB	'8', 00H
-	ORG $+2
-$SG124594 DB	'10', 00H
-	ORG $+1
-$SG124596 DB	'progressive', 00H
-$SG124602 DB	'it', 00H
-	ORG $+1
-$SG124597 DB	'interlaced(tff)', 00H
-$SG124598 DB	'interlaced(bff)', 00H
-$SG124600 DB	'none', 00H
+$SG114903 DB	'auto', 00H
 	ORG $+3
-$SG124601 DB	'normal', 00H
+$SG114904 DB	'0', 00H
+	ORG $+2
+$SG114905 DB	'1', 00H
+	ORG $+2
+$SG114906 DB	'2', 00H
+	ORG $+2
+$SG114907 DB	'3', 00H
+	ORG $+2
+$SG114909 DB	'8', 00H
+	ORG $+2
+$SG114910 DB	'10', 00H
 	ORG $+1
-$SG124603 DB	'bob', 00H
-$SG124605 DB	'32', 00H
+$SG114912 DB	'progressive', 00H
+$SG114918 DB	'it', 00H
 	ORG $+1
-$SG124606 DB	'2332', 00H
+$SG114913 DB	'interlaced(tff)', 00H
+$SG114914 DB	'interlaced(bff)', 00H
+$SG114916 DB	'none', 00H
 	ORG $+3
-$SG124607 DB	'repeat', 00H
+$SG114917 DB	'normal', 00H
 	ORG $+1
-$SG124608 DB	'41', 00H
+$SG114919 DB	'bob', 00H
+$SG114921 DB	'32', 00H
 	ORG $+1
-$SG124610 DB	'auto', 00H
-	ORG $+7
-?list_avc_level@@3QBUCX_DESC@@B DQ FLAT:$SG124610	; list_avc_level
+$SG114922 DB	'2332', 00H
+	ORG $+3
+$SG114923 DB	'repeat', 00H
+	ORG $+1
+$SG114924 DB	'41', 00H
+	ORG $+5
+?list_avc_level@@3QBUCX_DESC@@B DQ FLAT:$SG114926	; list_avc_level
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG124611
+	DQ	FLAT:$SG114927
 	DD	0aH
 	ORG $+4
-	DQ	FLAT:$SG124612
+	DQ	FLAT:$SG114928
 	DD	09H
 	ORG $+4
-	DQ	FLAT:$SG124613
+	DQ	FLAT:$SG114929
 	DD	0bH
 	ORG $+4
-	DQ	FLAT:$SG124614
+	DQ	FLAT:$SG114930
 	DD	0cH
 	ORG $+4
-	DQ	FLAT:$SG124615
+	DQ	FLAT:$SG114931
 	DD	0dH
 	ORG $+4
-	DQ	FLAT:$SG124616
+	DQ	FLAT:$SG114932
 	DD	014H
 	ORG $+4
-	DQ	FLAT:$SG124617
+	DQ	FLAT:$SG114933
 	DD	015H
 	ORG $+4
-	DQ	FLAT:$SG124618
+	DQ	FLAT:$SG114934
 	DD	016H
 	ORG $+4
-	DQ	FLAT:$SG124619
+	DQ	FLAT:$SG114935
 	DD	01eH
 	ORG $+4
-	DQ	FLAT:$SG124620
+	DQ	FLAT:$SG114936
 	DD	01fH
 	ORG $+4
-	DQ	FLAT:$SG124621
+	DQ	FLAT:$SG114937
 	DD	020H
 	ORG $+4
-	DQ	FLAT:$SG124622
+	DQ	FLAT:$SG114938
 	DD	028H
 	ORG $+4
-	DQ	FLAT:$SG124623
+	DQ	FLAT:$SG114939
 	DD	029H
 	ORG $+4
-	DQ	FLAT:$SG124624
+	DQ	FLAT:$SG114940
 	DD	02aH
 	ORG $+4
-	DQ	FLAT:$SG124625
+	DQ	FLAT:$SG114941
 	DD	032H
 	ORG $+4
-	DQ	FLAT:$SG124626
+	DQ	FLAT:$SG114942
 	DD	033H
 	ORG $+4
-	DQ	FLAT:$SG124627
+	DQ	FLAT:$SG114943
 	DD	034H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG124611 DB	'1', 00H
+$SG114926 DB	'auto', 00H
+	ORG $+3
+$SG114927 DB	'1', 00H
 	ORG $+2
-$SG124612 DB	'1b', 00H
+$SG114928 DB	'1b', 00H
 	ORG $+1
-$SG124613 DB	'1.1', 00H
-$SG124614 DB	'1.2', 00H
-$SG124615 DB	'1.3', 00H
-$SG124616 DB	'2', 00H
+$SG114929 DB	'1.1', 00H
+$SG114930 DB	'1.2', 00H
+$SG114931 DB	'1.3', 00H
+$SG114932 DB	'2', 00H
 	ORG $+2
-$SG124617 DB	'2.1', 00H
-$SG124618 DB	'2.2', 00H
-$SG124619 DB	'3', 00H
+$SG114933 DB	'2.1', 00H
+$SG114934 DB	'2.2', 00H
+$SG114935 DB	'3', 00H
 	ORG $+2
-$SG124620 DB	'3.1', 00H
-$SG132813 DB	'atlTraceCache', 00H
+$SG114936 DB	'3.1', 00H
+$SG114937 DB	'3.2', 00H
+$SG114938 DB	'4', 00H
 	ORG $+2
-$SG124621 DB	'3.2', 00H
-$SG124622 DB	'4', 00H
+$SG114939 DB	'4.1', 00H
+$SG114940 DB	'4.2', 00H
+$SG114941 DB	'5', 00H
 	ORG $+2
-$SG124623 DB	'4.1', 00H
-$SG124624 DB	'4.2', 00H
-$SG124625 DB	'5', 00H
-	ORG $+2
-$SG124626 DB	'5.1', 00H
-$SG124627 DB	'5.2', 00H
-$SG124629 DB	'auto', 00H
-	ORG $+7
-?list_hevc_level@@3QBUCX_DESC@@B DQ FLAT:$SG124629	; list_hevc_level
+$SG114942 DB	'5.1', 00H
+$SG123134 DB	'atlTraceHosting', 00H
+$SG114943 DB	'5.2', 00H
+	ORG $+4
+?list_hevc_level@@3QBUCX_DESC@@B DQ FLAT:$SG114945	; list_hevc_level
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG124630
+	DQ	FLAT:$SG114946
 	DD	0aH
 	ORG $+4
-	DQ	FLAT:$SG124631
+	DQ	FLAT:$SG114947
 	DD	014H
 	ORG $+4
-	DQ	FLAT:$SG124632
+	DQ	FLAT:$SG114948
 	DD	015H
 	ORG $+4
-	DQ	FLAT:$SG124633
+	DQ	FLAT:$SG114949
 	DD	01eH
 	ORG $+4
-	DQ	FLAT:$SG124634
+	DQ	FLAT:$SG114950
 	DD	01fH
 	ORG $+4
-	DQ	FLAT:$SG124635
+	DQ	FLAT:$SG114951
 	DD	028H
 	ORG $+4
-	DQ	FLAT:$SG124636
+	DQ	FLAT:$SG114952
 	DD	029H
 	ORG $+4
-	DQ	FLAT:$SG124637
+	DQ	FLAT:$SG114953
 	DD	032H
 	ORG $+4
-	DQ	FLAT:$SG124638
+	DQ	FLAT:$SG114954
 	DD	033H
 	ORG $+4
-	DQ	FLAT:$SG124639
+	DQ	FLAT:$SG114955
 	DD	034H
 	ORG $+4
-	DQ	FLAT:$SG124640
+	DQ	FLAT:$SG114956
 	DD	03cH
 	ORG $+4
-	DQ	FLAT:$SG124641
+	DQ	FLAT:$SG114957
 	DD	03dH
 	ORG $+4
-	DQ	FLAT:$SG124642
+	DQ	FLAT:$SG114958
 	DD	03eH
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG124630 DB	'1', 00H
+$SG114945 DB	'auto', 00H
+	ORG $+3
+$SG114946 DB	'1', 00H
 	ORG $+2
-$SG124631 DB	'2', 00H
+$SG114947 DB	'2', 00H
 	ORG $+2
-$SG124632 DB	'2.1', 00H
-$SG124633 DB	'3', 00H
+$SG114948 DB	'2.1', 00H
+$SG114949 DB	'3', 00H
 	ORG $+2
-$SG124634 DB	'3.1', 00H
-$SG124635 DB	'4', 00H
+$SG114950 DB	'3.1', 00H
+$SG114951 DB	'4', 00H
 	ORG $+2
-$SG124636 DB	'4.1', 00H
-$SG124637 DB	'5', 00H
+$SG114952 DB	'4.1', 00H
+$SG114953 DB	'5', 00H
 	ORG $+2
-$SG124638 DB	'5.1', 00H
-$SG124639 DB	'5.2', 00H
-$SG124640 DB	'6', 00H
+$SG114954 DB	'5.1', 00H
+$SG114955 DB	'5.2', 00H
+$SG114956 DB	'6', 00H
 	ORG $+2
-$SG124641 DB	'6.1', 00H
-$SG124642 DB	'6.2', 00H
-$SG124644 DB	'auto', 00H
-	ORG $+7
-?list_mpeg2_level@@3QBUCX_DESC@@B DQ FLAT:$SG124644	; list_mpeg2_level
+$SG114957 DB	'6.1', 00H
+$SG114958 DB	'6.2', 00H
+	ORG $+4
+?list_mpeg2_level@@3QBUCX_DESC@@B DQ FLAT:$SG114960	; list_mpeg2_level
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG124645
+	DQ	FLAT:$SG114961
 	DD	0aH
 	ORG $+4
-	DQ	FLAT:$SG124646
+	DQ	FLAT:$SG114962
 	DD	08H
 	ORG $+4
-	DQ	FLAT:$SG124647
+	DQ	FLAT:$SG114963
 	DD	04H
 	ORG $+4
-	DQ	FLAT:$SG124648
+	DQ	FLAT:$SG114964
 	DD	06H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG124645 DB	'low', 00H
-$SG124646 DB	'main', 00H
+$SG114960 DB	'auto', 00H
 	ORG $+3
-$SG124647 DB	'high', 00H
+$SG114961 DB	'low', 00H
+$SG114962 DB	'main', 00H
 	ORG $+3
-$SG124651 DB	'low', 00H
-$SG124648 DB	'high1440', 00H
+$SG114963 DB	'high', 00H
 	ORG $+3
-$SG124650 DB	'auto', 00H
+$SG114967 DB	'low', 00H
+$SG114964 DB	'high1440', 00H
 	ORG $+7
-?list_vc1_level@@3QBUCX_DESC@@B DQ FLAT:$SG124650	; list_vc1_level
+?list_vc1_level@@3QBUCX_DESC@@B DQ FLAT:$SG114966	; list_vc1_level
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG124651
+	DQ	FLAT:$SG114967
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG124652
+	DQ	FLAT:$SG114968
 	DD	03H
 	ORG $+4
-	DQ	FLAT:$SG124653
+	DQ	FLAT:$SG114969
 	DD	05H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG124652 DB	'median', 00H
+$SG114966 DB	'auto', 00H
+	ORG $+3
+$SG114968 DB	'median', 00H
 	ORG $+1
-$SG124653 DB	'high', 00H
+$SG114969 DB	'high', 00H
 	ORG $+3
-$SG124655 DB	'auto', 00H
+$SG114971 DB	'auto', 00H
 	ORG $+3
-$SG124656 DB	'0', 00H
+$SG114972 DB	'0', 00H
 	ORG $+2
-$SG124657 DB	'1', 00H
+$SG114973 DB	'1', 00H
 	ORG $+2
-$SG124658 DB	'2', 00H
+$SG114974 DB	'2', 00H
 	ORG $+2
-$SG124659 DB	'3', 00H
+$SG114975 DB	'3', 00H
 	ORG $+2
-$SG124660 DB	'4', 00H
+$SG114976 DB	'4', 00H
 	ORG $+2
-$SG124667 DB	'off', 00H
-?list_vp8_level@@3QBUCX_DESC@@B DQ FLAT:$SG124662	; list_vp8_level
+$SG114983 DB	'off', 00H
+?list_vp8_level@@3QBUCX_DESC@@B DQ FLAT:$SG114978	; list_vp8_level
 	DD	00H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG124662 DB	'auto', 00H
+$SG114978 DB	'auto', 00H
 	ORG $+3
-?list_vp9_level@@3QBUCX_DESC@@B DQ FLAT:$SG124664	; list_vp9_level
+?list_vp9_level@@3QBUCX_DESC@@B DQ FLAT:$SG114980	; list_vp9_level
 	DD	00H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG124664 DB	'auto', 00H
+$SG114980 DB	'auto', 00H
 	ORG $+3
-$SG124666 DB	'Auto', 00H
+$SG114982 DB	'Auto', 00H
 	ORG $+3
-$SG124668 DB	'for I frames', 00H
+$SG114984 DB	'for I frames', 00H
 	ORG $+3
-$SG124669 DB	'for I,P frames', 00H
+$SG114985 DB	'for I,P frames', 00H
 	ORG $+1
-$SG132862 DB	'atlTraceStencil', 00H
-$SG124670 DB	'for All frames', 00H
+$SG114986 DB	'for All frames', 00H
 	ORG $+1
-$SG124672 DB	'auto', 00H
+$SG114988 DB	'auto', 00H
 	ORG $+3
-$SG124673 DB	'off', 00H
-$SG124674 DB	'i', 00H
+$SG114989 DB	'off', 00H
+$SG114990 DB	'i', 00H
 	ORG $+2
-$SG124675 DB	'ip', 00H
-	ORG $+1
-$SG124676 DB	'all', 00H
-$SG124677 DB	'ipb', 00H
-$SG124678 DB	'ib', 00H
-	ORG $+1
-$SG124679 DB	'p', 00H
-	ORG $+2
-$SG124680 DB	'pb', 00H
-	ORG $+1
-$SG124681 DB	'b', 00H
-	ORG $+2
-$SG124683 DB	'auto', 00H
+$SG123183 DB	'atlTraceDBClient', 00H
 	ORG $+3
-$SG124684 DB	'slow', 00H
-	ORG $+3
-$SG124685 DB	'medium', 00H
+$SG114991 DB	'ip', 00H
 	ORG $+1
-$SG124686 DB	'fast', 00H
+$SG114992 DB	'all', 00H
+$SG114993 DB	'ipb', 00H
+$SG114994 DB	'ib', 00H
+	ORG $+1
+$SG114995 DB	'p', 00H
+	ORG $+2
+$SG114996 DB	'pb', 00H
+	ORG $+1
+$SG114997 DB	'b', 00H
+	ORG $+2
+$SG114999 DB	'auto', 00H
 	ORG $+3
-$SG124689 DB	'0', 00H
+$SG115000 DB	'slow', 00H
+	ORG $+3
+$SG115001 DB	'medium', 00H
+	ORG $+1
+$SG115002 DB	'fast', 00H
+	ORG $+3
+$SG115004 DB	'default', 00H
+$SG115005 DB	'0', 00H
 	ORG $+2
-$SG124688 DB	'default', 00H
-$SG124690 DB	'1', 00H
+$SG115006 DB	'1', 00H
 	ORG $+2
-$SG124691 DB	'2', 00H
+$SG115007 DB	'2', 00H
 	ORG $+2
-$SG124692 DB	'3', 00H
+$SG115008 DB	'3', 00H
 	ORG $+2
-$SG124693 DB	'4', 00H
+$SG115009 DB	'4', 00H
 	ORG $+2
-?list_priority@@3QBUCX_DESC@@B DQ FLAT:$SG124695	; list_priority
+$SG115011 DB	'low', 00H
+?list_priority@@3QBUCX_DESC@@B DQ FLAT:$SG115011	; list_priority
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG124696
+	DQ	FLAT:$SG115012
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG124697
+	DQ	FLAT:$SG115013
 	DD	02H
 	ORG $+4
-$SG124695 DB	'low', 00H
-$SG124696 DB	'normal', 00H
+$SG115012 DB	'normal', 00H
 	ORG $+1
-$SG124697 DB	'high', 00H
+$SG115013 DB	'high', 00H
 	ORG $+3
-$SG124709 DB	'none', 00H
+$SG115025 DB	'none', 00H
 	ORG $+3
-$SG124710 DB	'copy', 00H
+$SG115026 DB	'copy', 00H
 	ORG $+3
-$SG124711 DB	'aac', 00H
-$SG124712 DB	'libmp3lame', 00H
+$SG115027 DB	'aac', 00H
+$SG115033 DB	'ac3', 00H
+$SG115028 DB	'libmp3lame', 00H
 	ORG $+1
-$SG124717 DB	'ac3', 00H
-$SG124713 DB	'libtwolame', 00H
+$SG115064 DB	'tff', 00H
+$SG115029 DB	'libtwolame', 00H
 	ORG $+1
-$SG124748 DB	'tff', 00H
-$SG124714 DB	'libvorbis', 00H
+$SG115065 DB	'bff', 00H
+$SG115030 DB	'libvorbis', 00H
 	ORG $+2
-$SG124749 DB	'bff', 00H
-$SG124715 DB	'pcm_s16le', 00H
-	ORG $+2
-$SG124760 DB	'higher', 00H
+$SG115076 DB	'higher', 00H
 	ORG $+1
-$SG124774 DB	'8x8', 00H
-$SG124716 DB	'libopus', 00H
-$SG132911 DB	'atlTraceString', 00H
-	ORG $+1
-$SG124747 DB	'none', 00H
-	ORG $+3
-$SG124751 DB	' 1 - best quality', 00H
+$SG115090 DB	'8x8', 00H
+$SG115031 DB	'pcm_s16le', 00H
 	ORG $+2
-$SG124764 DB	'faster', 00H
+$SG115080 DB	'faster', 00H
 	ORG $+1
-$SG124775 DB	'4x4', 00H
-$SG124752 DB	' 2 - higher', 00H
-$SG124778 DB	'16', 00H
+$SG115091 DB	'4x4', 00H
+$SG115032 DB	'libopus', 00H
+$SG123232 DB	'atlTraceDBProvider', 00H
 	ORG $+1
-$SG124753 DB	' 3 - high quality', 00H
+$SG115063 DB	'none', 00H
+	ORG $+3
+$SG115086 DB	'Q-pel', 00H
 	ORG $+2
-$SG124779 DB	'32', 00H
+$SG115094 DB	'16', 00H
 	ORG $+1
-$SG124754 DB	' 4 - balanced', 00H
+$SG115067 DB	' 1 - best quality', 00H
 	ORG $+2
-$SG124755 DB	' 5 - fast', 00H
-	ORG $+2
-$SG124780 DB	'64', 00H
+$SG115095 DB	'32', 00H
 	ORG $+1
-$SG124756 DB	' 6 - faster', 00H
-$SG124788 DB	'all', 00H
-$SG124757 DB	' 7 - fastest', 00H
-	ORG $+3
-$SG124759 DB	'best', 00H
-	ORG $+3
-$SG124761 DB	'high', 00H
-	ORG $+3
-$SG124762 DB	'balanced', 00H
-	ORG $+3
-$SG124763 DB	'fast', 00H
-	ORG $+3
-$SG124770 DB	'Q-pel', 00H
-	ORG $+2
-$SG124787 DB	'chroma', 00H
+$SG115068 DB	' 2 - higher', 00H
+$SG115096 DB	'64', 00H
 	ORG $+1
-$SG124792 DB	'box', 00H
-$SG124765 DB	'fastest', 00H
-$SG124767 DB	'Auto', 00H
-	ORG $+3
-$SG132960 DB	'atlTraceMap', 00H
-$SG124794 DB	'off', 00H
-$SG124768 DB	'full-pel', 00H
-	ORG $+3
-$SG124773 DB	'16x16', 00H
+$SG115069 DB	' 3 - high quality', 00H
 	ORG $+2
-$SG124795 DB	'x2', 00H
+$SG115103 DB	'chroma', 00H
 	ORG $+1
-$SG124769 DB	'half-pel', 00H
+$SG115104 DB	'all', 00H
+$SG115070 DB	' 4 - balanced', 00H
+	ORG $+2
+$SG115071 DB	' 5 - fast', 00H
+	ORG $+2
+$SG115108 DB	'box', 00H
+$SG115072 DB	' 6 - faster', 00H
+$SG115110 DB	'off', 00H
+$SG115073 DB	' 7 - fastest', 00H
 	ORG $+3
-$SG124772 DB	'Auto', 00H
+$SG115075 DB	'best', 00H
 	ORG $+3
-$SG124798 DB	'simple', 00H
+$SG115077 DB	'high', 00H
+	ORG $+3
+$SG115078 DB	'balanced', 00H
+	ORG $+3
+$SG115079 DB	'fast', 00H
+	ORG $+3
+$SG115089 DB	'16x16', 00H
+	ORG $+2
+$SG115111 DB	'x2', 00H
 	ORG $+1
-$SG124801 DB	'0', 00H
-	ORG $+2
-$SG132965 DB	'atlTraceUtil', 00H
+$SG115081 DB	'fastest', 00H
+$SG115083 DB	'Auto', 00H
 	ORG $+3
-$SG124777 DB	'auto', 00H
+$SG115084 DB	'full-pel', 00H
 	ORG $+3
-$SG124784 DB	'auto', 00H
-	ORG $+3
-$SG124785 DB	'none', 00H
-	ORG $+3
-$SG124786 DB	'luma', 00H
-	ORG $+3
-$SG124790 DB	'none', 00H
-	ORG $+3
-$SG124791 DB	'upscale', 00H
-$SG124796 DB	'x2.5', 00H
-	ORG $+3
-$SG124799 DB	'complex', 00H
-$SG124802 DB	'90', 00H
+$SG115114 DB	'simple', 00H
 	ORG $+1
-$SG124803 DB	'180', 00H
-$SG124804 DB	'270', 00H
-$SG124806 DB	'n', 00H
+$SG115117 DB	'0', 00H
 	ORG $+2
-$SG124807 DB	'h', 00H
-	ORG $+2
-$SG124808 DB	'v', 00H
-	ORG $+2
-$SG124810 DB	'auto', 00H
+$SG115085 DB	'half-pel', 00H
 	ORG $+3
-$SG124811 DB	'simple', 00H
+$SG115088 DB	'Auto', 00H
+	ORG $+3
+$SG115118 DB	'90', 00H
 	ORG $+1
-$SG124812 DB	'fine', 00H
+$SG123281 DB	'atlTraceSnapin', 00H
+	ORG $+1
+$SG115093 DB	'auto', 00H
 	ORG $+3
-$SG124814 DB	'auto', 00H
+$SG115100 DB	'auto', 00H
 	ORG $+3
-?list_simd@@3QBUCX_DESC@@B DQ FLAT:$SG124814		; list_simd
+$SG115101 DB	'none', 00H
+	ORG $+3
+$SG115102 DB	'luma', 00H
+	ORG $+3
+$SG115106 DB	'none', 00H
+	ORG $+3
+$SG115107 DB	'upscale', 00H
+$SG115112 DB	'x2.5', 00H
+	ORG $+3
+$SG115115 DB	'complex', 00H
+$SG115119 DB	'180', 00H
+$SG115120 DB	'270', 00H
+$SG115122 DB	'n', 00H
+	ORG $+2
+$SG115123 DB	'h', 00H
+	ORG $+2
+$SG115124 DB	'v', 00H
+	ORG $+2
+$SG115126 DB	'auto', 00H
+	ORG $+3
+$SG115127 DB	'simple', 00H
+	ORG $+1
+$SG115128 DB	'fine', 00H
+	ORG $+7
+?list_simd@@3QBUCX_DESC@@B DQ FLAT:$SG115130		; list_simd
 	DD	0ffffffffH
 	ORG $+4
-	DQ	FLAT:$SG124815
+	DQ	FLAT:$SG115131
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG124816
+	DQ	FLAT:$SG115132
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG124817
+	DQ	FLAT:$SG115133
 	DD	03H
 	ORG $+4
-	DQ	FLAT:$SG124818
+	DQ	FLAT:$SG115134
 	DD	07H
 	ORG $+4
-	DQ	FLAT:$SG124819
+	DQ	FLAT:$SG115135
 	DD	0fH
 	ORG $+4
-	DQ	FLAT:$SG124820
+	DQ	FLAT:$SG115136
 	DD	05fH
 	ORG $+4
-	DQ	FLAT:$SG124821
+	DQ	FLAT:$SG115137
 	DD	0dfH
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG124815 DB	'none', 00H
+$SG115130 DB	'auto', 00H
 	ORG $+3
-$SG124816 DB	'sse2', 00H
+$SG115131 DB	'none', 00H
 	ORG $+3
-$SG124817 DB	'sse3', 00H
+$SG115132 DB	'sse2', 00H
 	ORG $+3
-$SG124818 DB	'ssse3', 00H
+$SG115133 DB	'sse3', 00H
+	ORG $+3
+$SG115134 DB	'ssse3', 00H
 	ORG $+2
-$SG124819 DB	'sse41', 00H
+$SG115135 DB	'sse41', 00H
 	ORG $+2
-$SG124820 DB	'avx', 00H
-$SG124821 DB	'avx2', 00H
+$SG115136 DB	'avx', 00H
+$SG115137 DB	'avx2', 00H
 	ORG $+3
-$SG174635 DB	'normal', 00H
+$SG164997 DB	'normal', 00H
 	ORG $+1
-$SG159069 DB	'all', 00H
-$SG133014 DB	'atlTraceSecurity', 00H
-	ORG $+3
-$SG159070 DB	'cpu', 00H
-$SG133063 DB	'atlTraceSync', 00H
-	ORG $+3
-$SG133112 DB	'atlTraceISAPI', 00H
+$SG148802 DB	'all', 00H
+$SG123330 DB	'atlTraceNotImpl', 00H
+$SG123379 DB	'atlTraceAllocation', 00H
+	ORG $+1
+$SG148803 DB	'cpu', 00H
+$SG123428 DB	'atlTraceException', 00H
 	ORG $+2
-$SG174634 DB	'auto', 00H
+$SG148808 DB	'cpu_in', 00H
+	ORG $+1
+$SG148813 DB	'mem', 00H
+$SG123477 DB	'atlTraceTime', 00H
 	ORG $+3
-$SG159071 DB	'cpu_total', 00H
+$SG123526 DB	'atlTraceCache', 00H
 	ORG $+2
-$SG159075 DB	'cpu_in', 00H
+$SG123575 DB	'atlTraceStencil', 00H
+$SG123624 DB	'atlTraceString', 00H
 	ORG $+1
-$SG159080 DB	'mem', 00H
-$SG159072 DB	'cpu_kernel', 00H
+$SG123673 DB	'atlTraceMap', 00H
+$SG148816 DB	'io', 00H
 	ORG $+1
-$SG159083 DB	'io', 00H
-	ORG $+1
-$SG159073 DB	'cpu_main', 00H
+$SG123678 DB	'atlTraceUtil', 00H
 	ORG $+3
-$SG159086 DB	'fps', 00H
-$SG159074 DB	'cpu_enc', 00H
-$SG159076 DB	'cpu_aud', 00H
-$SG159077 DB	'cpu_aud_proc', 00H
+$SG123727 DB	'atlTraceSecurity', 00H
 	ORG $+3
-$SG159078 DB	'cpu_aud_enc', 00H
-$SG159091 DB	'gpu', 00H
-$SG159079 DB	'cpu_out', 00H
-$SG159081 DB	'mem_private', 00H
+$SG148819 DB	'fps', 00H
+$SG123776 DB	'atlTraceSync', 00H
+	ORG $+3
+$SG123825 DB	'atlTraceISAPI', 00H
+	ORG $+2
+$SG164996 DB	'auto', 00H
+	ORG $+3
+$SG148804 DB	'cpu_total', 00H
+	ORG $+2
+$SG148824 DB	'gpu', 00H
+$SG148805 DB	'cpu_kernel', 00H
+	ORG $+1
+$SG134920 DB	'S', 00H
+	ORG $+2
+$SG148806 DB	'cpu_main', 00H
+	ORG $+3
+$SG148831 DB	'queue', 00H
+	ORG $+2
+$SG134922 DB	'M', 00H
+	ORG $+2
+$SG148807 DB	'cpu_enc', 00H
+$SG148809 DB	'cpu_aud', 00H
+$SG148810 DB	'cpu_aud_proc', 00H
+	ORG $+3
+$SG148811 DB	'cpu_aud_enc', 00H
+$SG134924 DB	'D', 00H
+	ORG $+2
+$SG148812 DB	'cpu_out', 00H
+$SG148814 DB	'mem_private', 00H
+$SG134926 DB	'B', 00H
+	ORG $+2
+$SG148815 DB	'mem_virtual', 00H
+$SG134928 DB	'Val', 00H
+$SG148817 DB	'io_read', 00H
+$SG148818 DB	'io_write', 00H
+	ORG $+3
+$SG134934 DB	'Delete', 00H
+	ORG $+1
 $SG110588 DB	'rgb', 00H
-$SG159082 DB	'mem_virtual', 00H
+$SG148820 DB	'fps_avg', 00H
+$SG148821 DB	'bitrate', 00H
+$SG148822 DB	'bitrate_avg', 00H
 $SG110590 DB	'gbr', 00H
-$SG159084 DB	'io_read', 00H
-$SG159085 DB	'io_write', 00H
-	ORG $+3
-$SG159098 DB	'queue', 00H
+$SG148823 DB	'frame_out', 00H
 	ORG $+2
 $SG110560 DB	'yuv422', 00H
 	ORG $+1
 $SG110593 DB	'y8', 00H
 	ORG $+1
-$SG159087 DB	'fps_avg', 00H
-$SG159088 DB	'bitrate', 00H
-$SG159089 DB	'bitrate_avg', 00H
-$SG144181 DB	'S', 00H
-	ORG $+2
-$SG159090 DB	'frame_out', 00H
-	ORG $+2
+$SG148825 DB	'gpu_load', 00H
+	ORG $+3
 $SG110562 DB	'yuv444', 00H
 	ORG $+1
-$SG144183 DB	'M', 00H
+$SG135714 DB	'SAM', 00H
+$SG148826 DB	'gpu_clock', 00H
 	ORG $+2
-$SG159092 DB	'gpu_load', 00H
-	ORG $+3
 $SG110582 DB	'rgb24r', 00H
 	ORG $+1
-$SG144185 DB	'D', 00H
-	ORG $+2
-$SG159093 DB	'gpu_clock', 00H
-	ORG $+2
+$SG111538 DB	'VP8', 00H
+$SG148827 DB	'vee_load', 00H
+	ORG $+3
 $SG110583 DB	'rgb32r', 00H
 	ORG $+1
-$SG144187 DB	'B', 00H
-	ORG $+2
-$SG159094 DB	'vee_load', 00H
+$SG111540 DB	'VP9', 00H
+$SG148828 DB	'ved_load', 00H
 	ORG $+3
 $SG110584 DB	'rgb24', 00H
 	ORG $+2
-$SG144189 DB	'Val', 00H
-$SG159095 DB	'ved_load', 00H
+$SG135716 DB	'SYSTEM', 00H
+	ORG $+1
+$SG112151 DB	'fcc', 00H
+$SG148829 DB	'pcie_load', 00H
+	ORG $+2
+$SG112152 DB	'GBR', 00H
+$SG148830 DB	've_clock', 00H
 	ORG $+3
 $SG110585 DB	'rgb32', 00H
 	ORG $+2
-$SG144195 DB	'Delete', 00H
+$SG112303 DB	'bt470m', 00H
 	ORG $+1
-$SG111538 DB	'VP8', 00H
-$SG159096 DB	'pcie_load', 00H
-	ORG $+2
-$SG111540 DB	'VP9', 00H
-$SG159097 DB	've_clock', 00H
+$SG112465 DB	'pal', 00H
+$SG134930 DB	'ForceRemove', 00H
+$SG112467 DB	'mac', 00H
+$SG134932 DB	'NoRemove', 00H
 	ORG $+3
 $SG110586 DB	'bgr24', 00H
 	ORG $+2
-$SG119862 DB	'.', 0aH, 00H
+$SG112306 DB	'linear', 00H
 	ORG $+1
+$SG112469 DB	'0', 00H
+	ORG $+2
 $SG110556 DB	'Invalid', 00H
 $SG110557 DB	'nv12', 00H
 	ORG $+3
@@ -1045,19 +1021,26 @@ $SG110561 DB	'nv16', 00H
 	ORG $+3
 $SG110563 DB	'yv12(9bit)', 00H
 	ORG $+1
-$SG120165 DB	'srt', 00H
+$SG112470 DB	'1', 00H
+	ORG $+2
 $SG110564 DB	'yv12(10bit)', 00H
-$SG120166 DB	'ass', 00H
+$SG112471 DB	'2', 00H
+	ORG $+2
 $SG110565 DB	'yv12(12bit)', 00H
-$SG120175 DB	'box', 00H
+$SG112472 DB	'3', 00H
+	ORG $+2
 $SG110566 DB	'yv12(14bit)', 00H
-$SG112151 DB	'fcc', 00H
+$SG112473 DB	'4', 00H
+	ORG $+2
 $SG110567 DB	'yv12(16bit)', 00H
 $SG110568 DB	'p010', 00H
 	ORG $+3
 $SG110587 DB	'bgr32', 00H
 	ORG $+2
-$SG112152 DB	'GBR', 00H
+$SG112307 DB	'log100', 00H
+	ORG $+1
+$SG112474 DB	'5', 00H
+	ORG $+2
 $SG110569 DB	'yuv422(9bit)', 00H
 	ORG $+3
 $SG110570 DB	'yuv422(10bit)', 00H
@@ -1091,71 +1074,221 @@ $SG110592 DB	'yc48', 00H
 	ORG $+3
 $SG110594 DB	'yc16', 00H
 	ORG $+3
-$SG144191 DB	'ForceRemove', 00H
-$SG144975 DB	'SAM', 00H
-$SG144193 DB	'NoRemove', 00H
+$SG135707 DB	'AppID', 00H
+	ORG $+2
+$SG135708 DB	'CLSID', 00H
+	ORG $+2
+$SG135709 DB	'Component Categories', 00H
+	ORG $+3
+$SG135710 DB	'FileType', 00H
 	ORG $+3
 $SG111530 DB	'MPEG2', 00H
 	ORG $+2
-$SG144977 DB	'SYSTEM', 00H
+$SG112308 DB	'log316', 00H
 	ORG $+1
-$SG112465 DB	'pal', 00H
-$SG111526 DB	'H.264/AVC', 00H
+$SG112478 DB	'tv', 00H
+	ORG $+1
+$SG135711 DB	'Interface', 00H
 	ORG $+2
-$SG112303 DB	'bt470m', 00H
+$SG112452 DB	'bt470m', 00H
 	ORG $+1
-$SG112467 DB	'mac', 00H
-?HW_DECODE_LIST@@3QBUCodecMap@@B DD 01bH		; HW_DECODE_LIST
-	DD	01H
-	DD	0adH
-	DD	02H
-	DD	02H
-	DD	04H
-	DD	08bH
-	DD	06H
-	DD	0a7H
-	DD	07H
-	DD	046H
-	DD	08H
-$SG111528 DB	'H.265/HEVC', 00H
+$SG112479 DB	'pc', 00H
 	ORG $+1
+$SG135712 DB	'Hardware', 00H
+	ORG $+3
+$SG135713 DB	'Mime', 00H
+	ORG $+3
 $SG111532 DB	'MPEG1', 00H
 	ORG $+2
-$SG111534 DB	'VC-1', 00H
+$SG112456 DB	'bt2020', 00H
+	ORG $+1
+$SG113568 DB	'cfr', 00H
+$SG135715 DB	'SECURITY', 00H
 	ORG $+3
 $SG111536 DB	'MPEG4', 00H
 	ORG $+2
-$SG112306 DB	'linear', 00H
-	ORG $+1
-$SG112469 DB	'0', 00H
+$SG113569 DB	'vfr', 00H
+$SG135717 DB	'Software', 00H
+	ORG $+3
+$SG119797 DB	'CBR  ', 00H
 	ORG $+2
+$SG113572 DB	'swr', 00H
+$SG135718 DB	'TypeLib', 00H
+$SG119696 DB	'SandyBridge', 00H
+$SG179260 DB	'%s', 00H
+	ORG $+1
+$SG119697 DB	'IvyBridge', 00H
+	ORG $+2
+$SG114198 DB	'%s', 00H
+	ORG $+1
+$SG119698 DB	'Silvermont', 00H
+	ORG $+5
+$SG119699 DB	'Haswell', 00H
+$SG119700 DB	'Airmont', 00H
+$SG119701 DB	'Broadwell', 00H
+	ORG $+6
+$SG119702 DB	'Skylake', 00H
+$SG119703 DB	'Apollolake', 00H
+	ORG $+5
+$SG119704 DB	'Kabylake', 00H
+	ORG $+7
+$SG119705 DB	'Geminilake', 00H
+	ORG $+5
+$SG119706 DB	'Coffeelake', 00H
+	ORG $+5
+$SG119707 DB	'Cannonlake', 00H
+	ORG $+5
+$SG119708 DB	'Icelake', 00H
+?LIB_VER_LIST@@3QBTmfxVersion@@B DW 00H			; LIB_VER_LIST
+	DW	00H
+	DW	00H
+	DW	01H
+	DW	01H
+	DW	01H
+	DW	03H
+	DW	01H
+	DW	04H
+	DW	01H
+	DW	06H
+	DW	01H
+	DW	07H
+	DW	01H
+	DW	08H
+	DW	01H
+	DW	09H
+	DW	01H
+	DW	0aH
+	DW	01H
+	DW	0bH
+	DW	01H
+	DW	0dH
+	DW	01H
+	DW	0fH
+	DW	01H
+	DW	010H
+	DW	01H
+	DW	011H
+	DW	01H
+	DW	013H
+	DW	01H
+	DW	017H
+	DW	01H
+	DW	01aH
+	DW	01H
+	DW	01bH
+	DW	01H
+	DW	00H
+	DW	00H
+$SG111526 DB	'H.264/AVC', 00H
+	ORG $+6
+$SG111528 DB	'H.265/HEVC', 00H
+	ORG $+1
+$SG111534 DB	'VC-1', 00H
+	ORG $+7
 $SG111542 DB	'unknown', 00H
-$SG119736 DB	'auto', 00H
-	ORG $+3
-$SG119738 DB	'copy', 00H
-	ORG $+3
+$SG119798 DB	'VBR  ', 00H
+	ORG $+2
+$SG119799 DB	'AVBR ', 00H
+	ORG $+2
+$SG119800 DB	'QVBR ', 00H
+	ORG $+2
+$SG119801 DB	'CQP  ', 00H
+	ORG $+2
+$SG119802 DB	'LA   ', 00H
+	ORG $+2
+$SG119803 DB	'LAHRD', 00H
+	ORG $+2
+$SG119804 DB	'ICQ  ', 00H
+	ORG $+2
+$SG119805 DB	'LAICQ', 00H
+	ORG $+2
+$SG119806 DB	'VCM  ', 00H
+	ORG $+2
+$SG119808 DB	'RC mode      ', 00H
+	ORG $+2
+$SG119809 DB	'10bit depth  ', 00H
+	ORG $+2
+$SG119810 DB	'Fixed Func   ', 00H
+	ORG $+2
+$SG119811 DB	'Interlace    ', 00H
+	ORG $+2
+$SG119812 DB	'VUI info     ', 00H
+	ORG $+2
+$SG119813 DB	'Trellis      ', 00H
+	ORG $+2
+$SG119814 DB	'Adaptive_I   ', 00H
+	ORG $+2
+$SG119815 DB	'Adaptive_B   ', 00H
+	ORG $+2
+$SG119816 DB	'WeightP      ', 00H
+	ORG $+2
+$SG119817 DB	'WeightB      ', 00H
+	ORG $+2
+$SG119818 DB	'FadeDetect   ', 00H
+	ORG $+2
+$SG119819 DB	'B_Pyramid    ', 00H
+	ORG $+2
+$SG119820 DB	' +ManyBframes', 00H
+	ORG $+2
+$SG119821 DB	'PyramQPOffset', 00H
+	ORG $+2
+$SG119822 DB	'MBBRC        ', 00H
+	ORG $+2
+$SG119823 DB	'ExtBRC       ', 00H
+	ORG $+2
+$SG119824 DB	'Adaptive_LTR ', 00H
+	ORG $+2
+$SG119825 DB	'LA Quality   ', 00H
+	ORG $+2
+$SG119826 DB	'QP Min/Max   ', 00H
+	ORG $+2
+$SG119827 DB	'IntraRefresh ', 00H
+	ORG $+2
+$SG119828 DB	'No Deblock   ', 00H
+	ORG $+2
+$SG119829 DB	'No GPB       ', 00H
+	ORG $+2
+$SG119830 DB	'Windowed BRC ', 00H
+	ORG $+2
+$SG119831 DB	'PerMBQP(CQP) ', 00H
+	ORG $+2
+$SG119832 DB	'DirectBiasAdj', 00H
+	ORG $+2
+$SG119833 DB	'MVCostScaling', 00H
+	ORG $+2
+$SG119834 DB	'SAO          ', 00H
+	ORG $+2
+$SG119835 DB	'Max CTU Size ', 00H
+	ORG $+2
+$SG119836 DB	'TSkip        ', 00H
+	ORG $+2
+$SG119838 DB	'Resize               ', 00H
+	ORG $+2
+$SG119839 DB	'Deinterlace          ', 00H
+	ORG $+2
+$SG119840 DB	'Scaling Quality      ', 00H
+	ORG $+2
+$SG119841 DB	'Denoise              ', 00H
+	ORG $+2
 $SG111649 DB	'unknown', 00H
-$SG119863 DB	' for ', 00H
+$SG119842 DB	'Mctf                 ', 00H
 	ORG $+2
-$SG119866 DB	'avcodec-58.dll', 00H
-	ORG $+1
-$SG119867 DB	'avformat-58.dll', 00H
-$SG119868 DB	'avutil-56.dll', 00H
+$SG119843 DB	'Rotate               ', 00H
 	ORG $+2
-$SG119869 DB	'avfilter-7.dll', 00H
-	ORG $+1
-$SG119870 DB	'swresample-3.dll', 00H
-	ORG $+3
-$SG120174 DB	'kigou', 00H
+$SG119844 DB	'Mirror               ', 00H
 	ORG $+2
-$SG112307 DB	'log100', 00H
-	ORG $+1
-$SG112470 DB	'1', 00H
+$SG119845 DB	'Detail Enhancement   ', 00H
 	ORG $+2
-$SG120164 DB	'invalid', 00H
-$SG120173 DB	'invalid', 00H
-$SG120176 DB	'draw', 00H
-	ORG $+3
+$SG119846 DB	'Proc Amp.            ', 00H
+	ORG $+2
+$SG119847 DB	'Image Stabilization  ', 00H
+	ORG $+2
+$SG119848 DB	'Video Signal Info    ', 00H
+	ORG $+2
+$SG119849 DB	'FPS Conversion       ', 00H
+	ORG $+2
+$SG119850 DB	'FPS Conversion (Adv.)', 00H
+	ORG $+2
 $SG112144 DB	'undef', 00H
 	ORG $+2
 ?list_colormatrix@@3QBUCX_DESC@@B DQ FLAT:$SG112144	; list_colormatrix
@@ -1211,72 +1344,23 @@ $SG112145 DB	'auto', 00H
 $SG112146 DB	'bt709', 00H
 	ORG $+2
 $SG112147 DB	'smpte170m', 00H
-	ORG $+2
-$SG112308 DB	'log316', 00H
-	ORG $+1
-$SG112471 DB	'2', 00H
-	ORG $+2
+	ORG $+6
 $SG112148 DB	'bt470bg', 00H
 $SG112149 DB	'smpte240m', 00H
 	ORG $+2
 $SG112150 DB	'YCgCo', 00H
-	ORG $+2
-$SG112452 DB	'bt470m', 00H
-	ORG $+1
-$SG112472 DB	'3', 00H
-	ORG $+2
+	ORG $+6
 $SG112153 DB	'bt2020nc', 00H
-	ORG $+3
-$SG112157 DB	'ictco', 00H
-	ORG $+2
-$SG112456 DB	'bt2020', 00H
-	ORG $+1
-$SG112473 DB	'4', 00H
-	ORG $+2
+	ORG $+7
 $SG112154 DB	'bt2020c', 00H
 $SG112155 DB	'derived-ncl', 00H
-$SG112474 DB	'5', 00H
-	ORG $+2
+	ORG $+4
 $SG112156 DB	'derived-cl', 00H
 	ORG $+1
-$SG112478 DB	'tv', 00H
-	ORG $+1
-$SG112158 DB	'2100-lms', 00H
-	ORG $+3
-$SG144968 DB	'AppID', 00H
-	ORG $+2
-$SG144969 DB	'CLSID', 00H
-	ORG $+2
-$SG112479 DB	'pc', 00H
-	ORG $+1
-$SG144970 DB	'Component Categories', 00H
-	ORG $+3
-$SG144971 DB	'FileType', 00H
-	ORG $+3
-$SG112299 DB	'undef', 00H
-	ORG $+2
-$SG113568 DB	'cfr', 00H
-$SG144972 DB	'Interface', 00H
-	ORG $+2
-$SG113569 DB	'vfr', 00H
-$SG144973 DB	'Hardware', 00H
-	ORG $+3
-$SG144974 DB	'Mime', 00H
-	ORG $+3
-$SG112301 DB	'bt709', 00H
-	ORG $+2
-$SG113572 DB	'swr', 00H
-$SG144976 DB	'SECURITY', 00H
-	ORG $+3
-$SG112448 DB	'undef', 00H
-	ORG $+2
-$SG114198 DB	'%s', 00H
-	ORG $+1
-$SG144978 DB	'Software', 00H
-	ORG $+3
-$SG112450 DB	'bt709', 00H
+$SG112157 DB	'ictco', 00H
 	ORG $+6
-$SG144979 DB	'TypeLib', 00H
+$SG112158 DB	'2100-lms', 00H
+	ORG $+7
 ?list_transfer@@3QBUCX_DESC@@B DQ FLAT:$SG112299	; list_transfer
 	DD	02H
 	ORG $+4
@@ -1334,8 +1418,12 @@ $SG144979 DB	'TypeLib', 00H
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
+$SG112299 DB	'undef', 00H
+	ORG $+2
 $SG112300 DB	'auto', 00H
 	ORG $+3
+$SG112301 DB	'bt709', 00H
+	ORG $+2
 $SG112302 DB	'smpte170m', 00H
 	ORG $+6
 $SG112304 DB	'bt470bg', 00H
@@ -1356,8 +1444,34 @@ $SG112315 DB	'smpte428', 00H
 	ORG $+7
 $SG112316 DB	'arib-srd-b67', 00H
 	ORG $+3
+$SG136925 DB	'l', 00H, 'p', 00H, 's', 00H, 'z', 00H, 'P', 00H, 'a', 00H
+	DB	't', 00H, 'h', 00H, 'N', 00H, 'a', 00H, 'm', 00H, 'e', 00H, ' '
+	DB	00H, '!', 00H, '=', 00H, ' ', 00H, '0', 00H, 00H, 00H
+	ORG $+4
+$SG136926 DB	'%', 00H, 'l', 00H, 's', 00H, 00H, 00H
+$SG112448 DB	'undef', 00H
+	ORG $+2
+$SG136927 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
+	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
+	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
+	DB	00H, 'r', 00H, 'o', 00H, 's', 00H, 'o', 00H, 'f', 00H, 't', 00H
+	DB	' ', 00H, 'V', 00H, 'i', 00H, 's', 00H, 'u', 00H, 'a', 00H, 'l'
+	DB	00H, ' ', 00H, 'S', 00H, 't', 00H, 'u', 00H, 'd', 00H, 'i', 00H
+	DB	'o', 00H, '\', 00H, '2', 00H, '0', 00H, '1', 00H, '9', 00H, '\'
+	DB	00H, 'C', 00H, 'o', 00H, 'm', 00H, 'm', 00H, 'u', 00H, 'n', 00H
+	DB	'i', 00H, 't', 00H, 'y', 00H, '\', 00H, 'V', 00H, 'C', 00H, '\'
+	DB	00H, 'T', 00H, 'o', 00H, 'o', 00H, 'l', 00H, 's', 00H, '\', 00H
+	DB	'M', 00H, 'S', 00H, 'V', 00H, 'C', 00H, '\', 00H, '1', 00H, '4'
+	DB	00H, '.', 00H, '2', 00H, '3', 00H, '.', 00H, '2', 00H, '8', 00H
+	DB	'1', 00H, '0', 00H, '5', 00H, '\', 00H, 'a', 00H, 't', 00H, 'l'
+	DB	00H, 'm', 00H, 'f', 00H, 'c', 00H, '\', 00H, 'i', 00H, 'n', 00H
+	DB	'c', 00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'a'
+	DB	00H, 't', 00H, 'l', 00H, 'b', 00H, 'a', 00H, 's', 00H, 'e', 00H
+	DB	'.', 00H, 'h', 00H, 00H, 00H
+	ORG $+2
 $SG112449 DB	'auto', 00H
-	ORG $+3
+	ORG $+7
 ?list_colorprim@@3QBUCX_DESC@@B DQ FLAT:$SG112448	; list_colorprim
 	DD	02H
 	ORG $+4
@@ -1400,6 +1514,8 @@ $SG112449 DB	'auto', 00H
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
+$SG112450 DB	'bt709', 00H
+	ORG $+2
 $SG112451 DB	'smpte170m', 00H
 	ORG $+6
 $SG112453 DB	'bt470bg', 00H
@@ -1412,8 +1528,6 @@ $SG112457 DB	'st428', 00H
 $SG112458 DB	'st431-2', 00H
 $SG112459 DB	'st432-1', 00H
 $SG112460 DB	'ebu3213-e', 00H
-	ORG $+2
-$SG112462 DB	'undef', 00H
 	ORG $+6
 ?list_videoformat@@3QBUCX_DESC@@B DQ FLAT:$SG112462	; list_videoformat
 	DD	05H
@@ -1436,6 +1550,8 @@ $SG112462 DB	'undef', 00H
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
+$SG112462 DB	'undef', 00H
+	ORG $+2
 $SG112463 DB	'ntsc', 00H
 	ORG $+3
 $SG112464 DB	'component', 00H
@@ -1445,201 +1561,11 @@ $SG112466 DB	'secam', 00H
 $SG112476 DB	'limited', 00H
 $SG112477 DB	'full', 00H
 	ORG $+3
-$SG128983 DB	'SandyBridge', 00H
-	ORG $+4
-$SG128984 DB	'IvyBridge', 00H
-	ORG $+6
-$SG128985 DB	'Silvermont', 00H
-	ORG $+5
-$SG128986 DB	'Haswell', 00H
-$SG128987 DB	'Airmont', 00H
-$SG128988 DB	'Broadwell', 00H
-	ORG $+6
-$SG128989 DB	'Skylake', 00H
-$SG128990 DB	'Apollolake', 00H
-	ORG $+5
-$SG128991 DB	'Kabylake', 00H
-	ORG $+7
-$SG128992 DB	'Geminilake', 00H
-	ORG $+5
-$SG128993 DB	'Coffeelake', 00H
-	ORG $+5
-$SG128994 DB	'Cannonlake', 00H
-	ORG $+5
-$SG128995 DB	'Icelake', 00H
-?LIB_VER_LIST@@3QBTmfxVersion@@B DW 00H			; LIB_VER_LIST
-	DW	00H
-	DW	00H
-	DW	01H
-	DW	01H
-	DW	01H
-	DW	03H
-	DW	01H
-	DW	04H
-	DW	01H
-	DW	06H
-	DW	01H
-	DW	07H
-	DW	01H
-	DW	08H
-	DW	01H
-	DW	09H
-	DW	01H
-	DW	0aH
-	DW	01H
-	DW	0bH
-	DW	01H
-	DW	0dH
-	DW	01H
-	DW	0fH
-	DW	01H
-	DW	010H
-	DW	01H
-	DW	011H
-	DW	01H
-	DW	013H
-	DW	01H
-	DW	017H
-	DW	01H
-	DW	01aH
-	DW	01H
-	DW	01bH
-	DW	01H
-	DW	00H
-	DW	00H
-$SG129084 DB	'CBR  ', 00H
-	ORG $+2
-$SG129085 DB	'VBR  ', 00H
-	ORG $+2
-$SG129086 DB	'AVBR ', 00H
-	ORG $+2
-$SG129087 DB	'QVBR ', 00H
-	ORG $+2
-$SG129088 DB	'CQP  ', 00H
-	ORG $+2
-$SG129089 DB	'LA   ', 00H
-	ORG $+2
-$SG129090 DB	'LAHRD', 00H
-	ORG $+2
-$SG129091 DB	'ICQ  ', 00H
-	ORG $+2
-$SG129092 DB	'LAICQ', 00H
-	ORG $+2
-$SG129093 DB	'VCM  ', 00H
-	ORG $+2
-$SG129095 DB	'RC mode      ', 00H
-	ORG $+2
-$SG129096 DB	'10bit depth  ', 00H
-	ORG $+2
-$SG129097 DB	'Fixed Func   ', 00H
-	ORG $+2
-$SG129098 DB	'Interlace    ', 00H
-	ORG $+2
-$SG129099 DB	'VUI info     ', 00H
-	ORG $+2
-$SG129100 DB	'Trellis      ', 00H
-	ORG $+2
-$SG129101 DB	'Adaptive_I   ', 00H
-	ORG $+2
-$SG129102 DB	'Adaptive_B   ', 00H
-	ORG $+2
-$SG129103 DB	'WeightP      ', 00H
-	ORG $+2
-$SG129104 DB	'WeightB      ', 00H
-	ORG $+2
-$SG129105 DB	'FadeDetect   ', 00H
-	ORG $+2
-$SG129106 DB	'B_Pyramid    ', 00H
-	ORG $+2
-$SG129107 DB	' +ManyBframes', 00H
-	ORG $+2
-$SG129108 DB	'PyramQPOffset', 00H
-	ORG $+2
-$SG129109 DB	'MBBRC        ', 00H
-	ORG $+2
-$SG129110 DB	'ExtBRC       ', 00H
-	ORG $+2
-$SG129111 DB	'Adaptive_LTR ', 00H
-	ORG $+2
-$SG129112 DB	'LA Quality   ', 00H
-	ORG $+2
-$SG129113 DB	'QP Min/Max   ', 00H
-	ORG $+2
-$SG129114 DB	'IntraRefresh ', 00H
-	ORG $+2
-$SG129115 DB	'No Deblock   ', 00H
-	ORG $+2
-$SG129116 DB	'No GPB       ', 00H
-	ORG $+2
-$SG129117 DB	'Windowed BRC ', 00H
-	ORG $+2
-$SG129118 DB	'PerMBQP(CQP) ', 00H
-	ORG $+2
-$SG129119 DB	'DirectBiasAdj', 00H
-	ORG $+2
-$SG129120 DB	'MVCostScaling', 00H
-	ORG $+2
-$SG129121 DB	'SAO          ', 00H
-	ORG $+2
-$SG129122 DB	'Max CTU Size ', 00H
-	ORG $+2
-$SG129123 DB	'TSkip        ', 00H
-	ORG $+2
-$SG129125 DB	'Resize               ', 00H
-	ORG $+2
-$SG129126 DB	'Deinterlace          ', 00H
-	ORG $+2
-$SG129127 DB	'Scaling Quality      ', 00H
-	ORG $+2
-$SG129128 DB	'Denoise              ', 00H
-	ORG $+2
-$SG129129 DB	'Mctf                 ', 00H
-	ORG $+2
-$SG129130 DB	'Rotate               ', 00H
-	ORG $+2
-$SG129131 DB	'Mirror               ', 00H
-	ORG $+2
-$SG129132 DB	'Detail Enhancement   ', 00H
-	ORG $+2
-$SG129133 DB	'Proc Amp.            ', 00H
-	ORG $+2
-$SG129134 DB	'Image Stabilization  ', 00H
-	ORG $+2
-$SG129135 DB	'Video Signal Info    ', 00H
-	ORG $+2
-$SG129136 DB	'FPS Conversion       ', 00H
-	ORG $+2
-$SG129137 DB	'FPS Conversion (Adv.)', 00H
-	ORG $+2
-$SG146186 DB	'l', 00H, 'p', 00H, 's', 00H, 'z', 00H, 'P', 00H, 'a', 00H
-	DB	't', 00H, 'h', 00H, 'N', 00H, 'a', 00H, 'm', 00H, 'e', 00H, ' '
-	DB	00H, '!', 00H, '=', 00H, ' ', 00H, '0', 00H, 00H, 00H
-	ORG $+4
-$SG146187 DB	'%', 00H, 'l', 00H, 's', 00H, 00H, 00H
-$SG113561 DB	'trace', 00H
-	ORG $+2
-$SG146188 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
-	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
-	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
-	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
-	DB	00H, 'r', 00H, 'o', 00H, 's', 00H, 'o', 00H, 'f', 00H, 't', 00H
-	DB	' ', 00H, 'V', 00H, 'i', 00H, 's', 00H, 'u', 00H, 'a', 00H, 'l'
-	DB	00H, ' ', 00H, 'S', 00H, 't', 00H, 'u', 00H, 'd', 00H, 'i', 00H
-	DB	'o', 00H, '\', 00H, '2', 00H, '0', 00H, '1', 00H, '9', 00H, '\'
-	DB	00H, 'C', 00H, 'o', 00H, 'm', 00H, 'm', 00H, 'u', 00H, 'n', 00H
-	DB	'i', 00H, 't', 00H, 'y', 00H, '\', 00H, 'V', 00H, 'C', 00H, '\'
-	DB	00H, 'T', 00H, 'o', 00H, 'o', 00H, 'l', 00H, 's', 00H, '\', 00H
-	DB	'M', 00H, 'S', 00H, 'V', 00H, 'C', 00H, '\', 00H, '1', 00H, '4'
-	DB	00H, '.', 00H, '2', 00H, '3', 00H, '.', 00H, '2', 00H, '8', 00H
-	DB	'1', 00H, '0', 00H, '5', 00H, '\', 00H, 'a', 00H, 't', 00H, 'l'
-	DB	00H, 'm', 00H, 'f', 00H, 'c', 00H, '\', 00H, 'i', 00H, 'n', 00H
-	DB	'c', 00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'a'
-	DB	00H, 't', 00H, 'l', 00H, 'b', 00H, 'a', 00H, 's', 00H, 'e', 00H
-	DB	'.', 00H, 'h', 00H, 00H, 00H
-	ORG $+6
 ?list_empty@@3QBUCX_DESC@@B DQ 0000000000000000H	; list_empty
 	DD	00H
 	ORG $+4
+$SG113561 DB	'trace', 00H
+	ORG $+2
 $SG113562 DB	'debug', 00H
 	ORG $+2
 $SG113563 DB	'more', 00H
@@ -1653,6 +1579,45 @@ $SG113566 DB	'error', 00H
 $SG113570 DB	'forcecfr', 00H
 	ORG $+3
 $SG113573 DB	'soxr', 00H
+	ORG $+7
+$SG179259 DB	'invalid argument', 00H
+	ORG $+7
+$SG179264 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
+	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
+	ORG $+2
+$SG179261 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
+	ORG $+8
+$SG179262 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
+	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
+	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
+	DB	00H, 'r', 00H, 'o', 00H, 's', 00H, 'o', 00H, 'f', 00H, 't', 00H
+	DB	' ', 00H, 'V', 00H, 'i', 00H, 's', 00H, 'u', 00H, 'a', 00H, 'l'
+	DB	00H, ' ', 00H, 'S', 00H, 't', 00H, 'u', 00H, 'd', 00H, 'i', 00H
+	DB	'o', 00H, '\', 00H, '2', 00H, '0', 00H, '1', 00H, '9', 00H, '\'
+	DB	00H, 'C', 00H, 'o', 00H, 'm', 00H, 'm', 00H, 'u', 00H, 'n', 00H
+	DB	'i', 00H, 't', 00H, 'y', 00H, '\', 00H, 'V', 00H, 'C', 00H, '\'
+	DB	00H, 'T', 00H, 'o', 00H, 'o', 00H, 'l', 00H, 's', 00H, '\', 00H
+	DB	'M', 00H, 'S', 00H, 'V', 00H, 'C', 00H, '\', 00H, '1', 00H, '4'
+	DB	00H, '.', 00H, '2', 00H, '3', 00H, '.', 00H, '2', 00H, '8', 00H
+	DB	'1', 00H, '0', 00H, '5', 00H, '\', 00H, 'i', 00H, 'n', 00H, 'c'
+	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
+	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
+	DB	00H
+$SG179263 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
+	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
+	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
+	DB	00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, '_', 00H, 'a', 00H
+	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
+	DB	00H
+	ORG $+2
+$SG179420 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
+$SG122791 DB	'atlTraceGeneral', 00H
+$SG122840 DB	'atlTraceCOM', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPEAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPEAX_K@Z		; __empty_global_delete
@@ -2067,7 +2032,7 @@ $pdata$??__ECspColorprimList@@YAXXZ DD imagerel ??__ECspColorprimList@@YAXXZ
 pdata	ENDS
 pdata	SEGMENT
 $pdata$?init_qsvp_prm@@YAXPEAUsInputParams@@@Z DD imagerel $LN5
-	DD	imagerel $LN5+876
+	DD	imagerel $LN5+861
 	DD	imagerel $unwind$?init_qsvp_prm@@YAXPEAUsInputParams@@@Z
 pdata	ENDS
 ;	COMDAT pdata
@@ -8298,7 +8263,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG133112
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123825
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceISAPI@ATL@@3V?$CTraceCategoryEx@$0EAAAAA@$0A@@1@A ; ATL::atlTraceISAPI
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0EAAAAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<4194304,0>::CTraceCategoryEx<4194304,0>
@@ -8357,7 +8322,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG133063
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123776
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceSync@ATL@@3V?$CTraceCategoryEx@$0CAAAAA@$0A@@1@A ; ATL::atlTraceSync
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0CAAAAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<2097152,0>::CTraceCategoryEx<2097152,0>
@@ -8416,7 +8381,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG133014
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123727
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceSecurity@ATL@@3V?$CTraceCategoryEx@$0BAAAAA@$0A@@1@A ; ATL::atlTraceSecurity
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0BAAAAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<1048576,0>::CTraceCategoryEx<1048576,0>
@@ -8475,7 +8440,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132965
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123678
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceUtil@ATL@@3V?$CTraceCategoryEx@$0IAAAA@$0A@@1@A ; ATL::atlTraceUtil
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0IAAAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<524288,0>::CTraceCategoryEx<524288,0>
@@ -8499,7 +8464,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132960
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123673
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceMap@ATL@@3V?$CTraceCategoryEx@$0EAAAA@$0A@@1@A ; ATL::atlTraceMap
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0EAAAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<262144,0>::CTraceCategoryEx<262144,0>
@@ -8558,7 +8523,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132911
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123624
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceString@ATL@@3V?$CTraceCategoryEx@$0CAAAA@$0A@@1@A ; ATL::atlTraceString
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0CAAAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<131072,0>::CTraceCategoryEx<131072,0>
@@ -8617,7 +8582,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132862
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123575
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceStencil@ATL@@3V?$CTraceCategoryEx@$0BAAAA@$0A@@1@A ; ATL::atlTraceStencil
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0BAAAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<65536,0>::CTraceCategoryEx<65536,0>
@@ -8676,7 +8641,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132813
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123526
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceCache@ATL@@3V?$CTraceCategoryEx@$0IAAA@$0A@@1@A ; ATL::atlTraceCache
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0IAAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<32768,0>::CTraceCategoryEx<32768,0>
@@ -8735,7 +8700,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132764
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123477
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceTime@ATL@@3V?$CTraceCategoryEx@$0EAAA@$0A@@1@A ; ATL::atlTraceTime
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0EAAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<16384,0>::CTraceCategoryEx<16384,0>
@@ -8794,7 +8759,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132715
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123428
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceException@ATL@@3V?$CTraceCategoryEx@$0CAAA@$0A@@1@A ; ATL::atlTraceException
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0CAAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<8192,0>::CTraceCategoryEx<8192,0>
@@ -8853,7 +8818,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132666
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123379
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceAllocation@ATL@@3V?$CTraceCategoryEx@$0BAAA@$0A@@1@A ; ATL::atlTraceAllocation
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0BAAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<4096,0>::CTraceCategoryEx<4096,0>
@@ -8912,7 +8877,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132617
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123330
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceNotImpl@ATL@@3V?$CTraceCategoryEx@$0IAA@$0A@@1@A ; ATL::atlTraceNotImpl
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0IAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<2048,0>::CTraceCategoryEx<2048,0>
@@ -8971,7 +8936,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132568
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123281
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceSnapin@ATL@@3V?$CTraceCategoryEx@$0EAA@$0A@@1@A ; ATL::atlTraceSnapin
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0EAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<1024,0>::CTraceCategoryEx<1024,0>
@@ -9030,7 +8995,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132519
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123232
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceDBProvider@ATL@@3V?$CTraceCategoryEx@$0CAA@$0A@@1@A ; ATL::atlTraceDBProvider
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0CAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<512,0>::CTraceCategoryEx<512,0>
@@ -9089,7 +9054,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132470
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123183
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceDBClient@ATL@@3V?$CTraceCategoryEx@$0BAA@$0A@@1@A ; ATL::atlTraceDBClient
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0BAA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<256,0>::CTraceCategoryEx<256,0>
@@ -9148,7 +9113,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132421
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123134
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceHosting@ATL@@3V?$CTraceCategoryEx@$0IA@$0A@@1@A ; ATL::atlTraceHosting
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0IA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<128,0>::CTraceCategoryEx<128,0>
@@ -9207,7 +9172,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132372
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123085
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceControls@ATL@@3V?$CTraceCategoryEx@$0EA@$0A@@1@A ; ATL::atlTraceControls
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0EA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<64,0>::CTraceCategoryEx<64,0>
@@ -9266,7 +9231,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132323
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123036
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceWindowing@ATL@@3V?$CTraceCategoryEx@$0CA@$0A@@1@A ; ATL::atlTraceWindowing
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0CA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<32,0>::CTraceCategoryEx<32,0>
@@ -9352,7 +9317,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132274
+	00 00		 lea	 rdx, OFFSET FLAT:$SG122987
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceRefcount@ATL@@3V?$CTraceCategoryEx@$0BA@$0A@@1@A ; ATL::atlTraceRefcount
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$0BA@$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<16,0>::CTraceCategoryEx<16,0>
@@ -9411,7 +9376,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132225
+	00 00		 lea	 rdx, OFFSET FLAT:$SG122938
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceRegistrar@ATL@@3V?$CTraceCategoryEx@$07$0A@@1@A ; ATL::atlTraceRegistrar
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$07$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<8,0>::CTraceCategoryEx<8,0>
@@ -9470,7 +9435,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132176
+	00 00		 lea	 rdx, OFFSET FLAT:$SG122889
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceQI@ATL@@3V?$CTraceCategoryEx@$03$0A@@1@A ; ATL::atlTraceQI
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$03$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<4,0>::CTraceCategoryEx<4,0>
@@ -9529,7 +9494,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132127
+	00 00		 lea	 rdx, OFFSET FLAT:$SG122840
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceCOM@ATL@@3V?$CTraceCategoryEx@$01$0A@@1@A ; ATL::atlTraceCOM
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$01$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<2,0>::CTraceCategoryEx<2,0>
@@ -9615,7 +9580,7 @@ text$di	SEGMENT
   0000e	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
   00013	f3 ab		 rep stosd
   00015	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG132078
+	00 00		 lea	 rdx, OFFSET FLAT:$SG122791
   0001c	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?atlTraceGeneral@ATL@@3V?$CTraceCategoryEx@$00$0A@@1@A ; ATL::atlTraceGeneral
   00023	e8 00 00 00 00	 call	 ??0?$CTraceCategoryEx@$00$0A@@ATL@@QEAA@PEBD@Z ; ATL::CTraceCategoryEx<1,0>::CTraceCategoryEx<1,0>
@@ -9779,8 +9744,8 @@ $LN5:
 
 ; 33   :     memset(prm, 0, sizeof(sInputParams));
 
-  0001e	41 b8 78 0e 00
-	00		 mov	 r8d, 3704		; 00000e78H
+  0001e	41 b8 70 0e 00
+	00		 mov	 r8d, 3696		; 00000e70H
   00024	33 d2		 xor	 edx, edx
   00026	48 8b 4c 24 40	 mov	 rcx, QWORD PTR prm$[rsp]
   0002b	e8 00 00 00 00	 call	 memset
@@ -10047,7 +10012,7 @@ $LN4@init_qsvp_:
 ; 77   :     prm->simdCsp           = get_cx_value(list_simd, _T("auto"));
 
   00289	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG174634
+	00 00		 lea	 rdx, OFFSET FLAT:$SG164996
   00290	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?list_simd@@3QBUCX_DESC@@B
   00297	e8 00 00 00 00	 call	 ?get_cx_value@@YAHPEBUCX_DESC@@PEBD@Z ; get_cx_value
@@ -10062,90 +10027,83 @@ $LN4@init_qsvp_:
 	00 0a 00 00 00	 mov	 DWORD PTR [rax+368], 10
 
 ; 79   : 
-; 80   :     prm->caption2ass = FORMAT_INVALID;
+; 80   :     prm->nDstWidth          = 0;
 
-  002b6	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
-  002bb	c7 80 08 02 00
-	00 00 00 00 00	 mov	 DWORD PTR [rax+520], 0
+  002b6	33 c0		 xor	 eax, eax
+  002b8	48 8b 4c 24 40	 mov	 rcx, QWORD PTR prm$[rsp]
+  002bd	66 89 41 4e	 mov	 WORD PTR [rcx+78], ax
 
-; 81   : 
-; 82   :     prm->nDstWidth          = 0;
+; 81   :     prm->nDstHeight         = 0;
 
-  002c5	33 c0		 xor	 eax, eax
-  002c7	48 8b 4c 24 40	 mov	 rcx, QWORD PTR prm$[rsp]
-  002cc	66 89 41 4e	 mov	 WORD PTR [rcx+78], ax
+  002c1	33 c0		 xor	 eax, eax
+  002c3	48 8b 4c 24 40	 mov	 rcx, QWORD PTR prm$[rsp]
+  002c8	66 89 41 50	 mov	 WORD PTR [rcx+80], ax
 
-; 83   :     prm->nDstHeight         = 0;
+; 82   :     prm->vpp.bEnable        = true;
 
-  002d0	33 c0		 xor	 eax, eax
-  002d2	48 8b 4c 24 40	 mov	 rcx, QWORD PTR prm$[rsp]
-  002d7	66 89 41 50	 mov	 WORD PTR [rcx+80], ax
+  002cc	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
+  002d1	c6 80 e0 0d 00
+	00 01		 mov	 BYTE PTR [rax+3552], 1
 
-; 84   :     prm->vpp.bEnable        = true;
+; 83   :     prm->vpp.denoise.enable   = false;
 
-  002db	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
-  002e0	c6 80 e8 0d 00
-	00 01		 mov	 BYTE PTR [rax+3560], 1
+  002d8	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
+  002dd	c6 80 08 0e 00
+	00 00		 mov	 BYTE PTR [rax+3592], 0
 
-; 85   :     prm->vpp.denoise.enable   = false;
+; 84   :     prm->vpp.denoise.strength = 20;
 
-  002e7	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
-  002ec	c6 80 10 0e 00
-	00 00		 mov	 BYTE PTR [rax+3600], 0
+  002e4	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
+  002e9	c7 80 0c 0e 00
+	00 14 00 00 00	 mov	 DWORD PTR [rax+3596], 20
 
-; 86   :     prm->vpp.denoise.strength = 20;
+; 85   :     prm->vpp.mctf.enable      = false;
 
   002f3	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
-  002f8	c7 80 14 0e 00
-	00 14 00 00 00	 mov	 DWORD PTR [rax+3604], 20
+  002f8	c6 80 10 0e 00
+	00 00		 mov	 BYTE PTR [rax+3600], 0
 
-; 87   :     prm->vpp.mctf.enable      = false;
+; 86   :     prm->vpp.mctf.strength    = 0;
 
-  00302	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
-  00307	c6 80 18 0e 00
-	00 00		 mov	 BYTE PTR [rax+3608], 0
+  002ff	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
+  00304	c7 80 14 0e 00
+	00 00 00 00 00	 mov	 DWORD PTR [rax+3604], 0
 
-; 88   :     prm->vpp.mctf.strength    = 0;
+; 87   :     prm->vpp.detail.enable    = false;
 
   0030e	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
-  00313	c7 80 1c 0e 00
-	00 00 00 00 00	 mov	 DWORD PTR [rax+3612], 0
+  00313	c6 80 18 0e 00
+	00 00		 mov	 BYTE PTR [rax+3608], 0
 
-; 89   :     prm->vpp.detail.enable    = false;
+; 88   :     prm->vpp.detail.strength  = 15;
 
-  0031d	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
-  00322	c6 80 20 0e 00
-	00 00		 mov	 BYTE PTR [rax+3616], 0
+  0031a	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
+  0031f	c7 80 1c 0e 00
+	00 0f 00 00 00	 mov	 DWORD PTR [rax+3612], 15
 
-; 90   :     prm->vpp.detail.strength  = 15;
+; 89   :     prm->vpp.delogo.depth     = QSV_DEFAULT_VPP_DELOGO_DEPTH;
 
   00329	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
-  0032e	c7 80 24 0e 00
-	00 0f 00 00 00	 mov	 DWORD PTR [rax+3620], 15
+  0032e	c7 80 38 0e 00
+	00 80 00 00 00	 mov	 DWORD PTR [rax+3640], 128 ; 00000080H
 
-; 91   :     prm->vpp.delogo.depth     = QSV_DEFAULT_VPP_DELOGO_DEPTH;
+; 90   : 
+; 91   :     prm->nSessionThreadPriority = (mfxU16)get_value_from_chr(list_priority, _T("normal"));
 
-  00338	48 8b 44 24 40	 mov	 rax, QWORD PTR prm$[rsp]
-  0033d	c7 80 40 0e 00
-	00 80 00 00 00	 mov	 DWORD PTR [rax+3648], 128 ; 00000080H
-
-; 92   : 
-; 93   :     prm->nSessionThreadPriority = (mfxU16)get_value_from_chr(list_priority, _T("normal"));
-
-  00347	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG174635
-  0034e	48 8d 0d 00 00
+  00338	48 8d 15 00 00
+	00 00		 lea	 rdx, OFFSET FLAT:$SG164997
+  0033f	48 8d 0d 00 00
 	00 00		 lea	 rcx, OFFSET FLAT:?list_priority@@3QBUCX_DESC@@B
-  00355	e8 00 00 00 00	 call	 ?get_value_from_chr@@YAHPEBUCX_DESC@@PEBD@Z ; get_value_from_chr
-  0035a	48 8b 4c 24 40	 mov	 rcx, QWORD PTR prm$[rsp]
-  0035f	66 89 81 fa 00
+  00346	e8 00 00 00 00	 call	 ?get_value_from_chr@@YAHPEBUCX_DESC@@PEBD@Z ; get_value_from_chr
+  0034b	48 8b 4c 24 40	 mov	 rcx, QWORD PTR prm$[rsp]
+  00350	66 89 81 fa 00
 	00 00		 mov	 WORD PTR [rcx+250], ax
 
-; 94   : }
+; 92   : }
 
-  00366	48 83 c4 30	 add	 rsp, 48			; 00000030H
-  0036a	5f		 pop	 rdi
-  0036b	c3		 ret	 0
+  00357	48 83 c4 30	 add	 rsp, 48			; 00000030H
+  0035b	5f		 pop	 rdi
+  0035c	c3		 ret	 0
 ?init_qsvp_prm@@YAXPEAUsInputParams@@@Z ENDP		; init_qsvp_prm
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu

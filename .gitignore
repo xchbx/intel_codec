@@ -3,3 +3,16 @@
 *.opendb
 *.db-shm
 *.db-wal
+.vs/QSVEnc/v16/.suo
+.vs/QSVEnc/v16/.suo
+*.lib
+*.pdb
+*.pdb
+*.log
+*.pdb
+*.obj
+.vs/QSVEnc/v16/.suo
+.vs/*
+_build/*
+*.pdb
+*.lib

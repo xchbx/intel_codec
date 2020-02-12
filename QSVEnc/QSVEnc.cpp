@@ -187,7 +187,7 @@ BOOL func_output( OUTPUT_INFO *oip ) {
 // ------------------------------------------------ ---------------------
 //@@@ 部分静音警告C4100
 // C4100：该函数的主体中永远不会引用该参数。
-#pragma警告（推送）
+//#pragma警告（推送）
 #pragma warning( push )
 #pragma warning( disable: 4100 )
 BOOL func_config(HWND hwnd, HINSTANCE dll_hinst) {

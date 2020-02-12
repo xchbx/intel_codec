@@ -24,7 +24,6 @@
 #include "mfxjpeg.h"
 #include "rgy_tchar.h"
 #include "rgy_util.h"
-#include "rgy_avutil.h"
 #include "qsv_util.h"
 #include "qsv_prm.h"
 #include "qsv_plugin.h"
@@ -1264,133 +1263,11 @@ tstring MakeVppFeatureStr(FeatureListStrType type) {
 }
 
 tstring MakeDecFeatureStr(FeatureListStrType type) {
-#if ENABLE_AVSW_READER
-    mfxVersion ver = get_mfx_libhw_version();
-    vector<RGY_CODEC> codecLists;
-    for (int i = 0; i < _countof(HW_DECODE_LIST); i++) {
-        codecLists.push_back(HW_DECODE_LIST[i].rgy_codec);
-    }
-    auto decodeCodecCsp = MakeDecodeFeatureList(ver, codecLists);
-
-    enum : uint32_t {
-        DEC_FEATURE_HW    = 0x00000001,
-        DEC_FEATURE_10BIT = 0x00000002,
-    };
-
-    static const FEATURE_DESC list_dec_feature[] = {
-        { _T("HW Decode   "), DEC_FEATURE_HW    },
-        { _T("10bit depth "), DEC_FEATURE_10BIT },
-        { NULL, 0 },
-    };
-
-    std::vector<uint32_t> featurePerCodec;
-    for (int i = 0; i < _countof(HW_DECODE_LIST); i++) {
-        uint32_t feature = 0x00;
-        if (decodeCodecCsp.count(HW_DECODE_LIST[i].rgy_codec) > 0) {
-            feature |= DEC_FEATURE_HW;
-            const auto& cspList = decodeCodecCsp.at(HW_DECODE_LIST[i].rgy_codec);
-            for (auto csp : cspList) {
-                if (RGY_CSP_BIT_DEPTH[csp] > 8) {
-                    feature |= DEC_FEATURE_10BIT;
-                }
-            }
-        }
-        featurePerCodec.push_back(feature);
-    }
-
-
-    const TCHAR *MARK_YES_NO[] = { _T("   x "), _T("   o ") };
-    tstring str;
-    if (type == FEATURE_LIST_STR_TYPE_HTML) {
-        str += _T("<table class=simpleOrange>");
-    }
-    if (type == FEATURE_LIST_STR_TYPE_HTML) {
-        str += _T("<tr><td></td>");
-    }
-
-    int maxFeatureStrLen = 0;
-    for (const FEATURE_DESC *ptr = list_dec_feature; ptr->desc; ptr++) {
-        maxFeatureStrLen = (std::max<int>)(maxFeatureStrLen, (int)_tcslen(ptr->desc));
-    }
-
-    if (type != FEATURE_LIST_STR_TYPE_HTML) {
-        for (int i = 0; i < maxFeatureStrLen; i++) {
-            str += _T(" ");
-        }
-    }
-    for (uint32_t i_codec = 0; i_codec < codecLists.size(); i_codec++) {
-        if (type == FEATURE_LIST_STR_TYPE_HTML) {
-            str += _T("<td>");
-        }
-        tstring codecStr = CodecToStr(codecLists[i_codec]);
-        codecStr = str_replace(codecStr, _T("H.264/AVC"), _T("H.264"));
-        codecStr = str_replace(codecStr, _T("H.265/HEVC"), _T("HEVC"));
-        while (codecStr.length() < 4) {
-            codecStr += _T(" ");
-        }
-        str += codecStr;
-        switch (type) {
-        case FEATURE_LIST_STR_TYPE_TXT: str += _T(" ");
-            break;
-        case FEATURE_LIST_STR_TYPE_CSV:
-            str += _T(",");
-            break;
-        case FEATURE_LIST_STR_TYPE_HTML: str += _T("</td>"); break;
-        default: break;
-        }
-    }
-    if (type == FEATURE_LIST_STR_TYPE_HTML) {
-        str += _T("</tr>");
-    }
-    str += _T("\n");
-
-    for (const FEATURE_DESC *ptr = list_dec_feature; ptr->desc; ptr++) {
-        if (type == FEATURE_LIST_STR_TYPE_HTML) {
-            str += _T("<tr><td>");
-        }
-        str += ptr->desc;
-        switch (type) {
-        case FEATURE_LIST_STR_TYPE_CSV: str += _T(","); break;
-        case FEATURE_LIST_STR_TYPE_HTML: str += _T("</td>"); break;
-        default: break;
-        }
-        for (uint32_t i_codec = 0; i_codec < codecLists.size(); i_codec++) {
-            if (type == FEATURE_LIST_STR_TYPE_HTML) {
-                str += (featurePerCodec[i_codec] & ptr->value) ? _T("<td class=ok>") : _T("<td class=fail>");
-            }
-            if (type == FEATURE_LIST_STR_TYPE_TXT) {
-                str += MARK_YES_NO[ptr->value == (featurePerCodec[i_codec] & ptr->value)];
-            } else {
-                str += QSV_FEATURE_MARK_YES_NO[ptr->value == (featurePerCodec[i_codec] & ptr->value)];
-            }
-            if (type == FEATURE_LIST_STR_TYPE_HTML) {
-                str += _T("</td>");
-            }
-        }
-        if (type == FEATURE_LIST_STR_TYPE_HTML) {
-            str += _T("</tr>");
-        }
-        str += _T("\n");
-    }
-    if (type == FEATURE_LIST_STR_TYPE_HTML) {
-        str += _T("</table>\n");
-    }
-    return str;
-#else
     return _T("");
-#endif
 }
 
 CodecCsp getHWDecCodecCsp() {
-#if ENABLE_AVSW_READER
-    vector<RGY_CODEC> codecLists;
-    for (int i = 0; i < _countof(HW_DECODE_LIST); i++) {
-        codecLists.push_back(HW_DECODE_LIST[i].rgy_codec);
-    }
-    return MakeDecodeFeatureList(get_mfx_libhw_version(), codecLists);
-#else
     return CodecCsp();
-#endif
 }
 
 BOOL check_lib_version(mfxU32 _value, mfxU32 _required) {

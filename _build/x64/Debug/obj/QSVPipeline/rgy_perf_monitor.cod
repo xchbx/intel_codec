@@ -12,118 +12,117 @@ $SG117265 DB	',', 00H
 	ORG $+2
 $SG117383 DB	0aH, 0aH, 00H
 	ORG $+1
-$SG117400 DB	'PERF_MONITOR_SRC', 00H
-	ORG $+3
-$SG117405 DB	'wb', 00H
+$SG117403 DB	'wb', 00H
 	ORG $+1
-$SG117401 DB	'PERF_MONITOR_PYW', 00H
-	ORG $+3
-$SG117474 DB	0aH, 00H
+$SG117472 DB	0aH, 00H
 	ORG $+2
-$SG117417 DB	',cpu (%)', 00H
+$SG117415 DB	',cpu (%)', 00H
 	ORG $+3
-$SG118201 DB	'a', 00H
+$SG118199 DB	'a', 00H
 	ORG $+2
-$SG117419 DB	',cpu kernel (%)', 00H
-$SG117421 DB	',cpu main thread (%)', 00H
+$SG117417 DB	',cpu kernel (%)', 00H
+$SG117419 DB	',cpu main thread (%)', 00H
 	ORG $+3
-$SG117423 DB	',cpu enc thread (%)', 00H
+$SG117421 DB	',cpu enc thread (%)', 00H
+$SG118208 DB	'"', 00H
+	ORG $+2
+$SG117423 DB	',cpu aud proc thread (%)', 00H
+	ORG $+3
+$SG118207 DB	'python', 00H
+	ORG $+1
+$SG118209 DB	'"', 00H
+	ORG $+2
+$SG117425 DB	',cpu aud enc thread (%)', 00H
+$SG117427 DB	',cpu in thread (%)', 00H
+	ORG $+1
 $SG118210 DB	'"', 00H
 	ORG $+2
-$SG117425 DB	',cpu aud proc thread (%)', 00H
-	ORG $+3
-$SG118209 DB	'python', 00H
-	ORG $+1
+$SG117429 DB	',cpu out thread (%)', 00H
 $SG118211 DB	'"', 00H
 	ORG $+2
-$SG117427 DB	',cpu aud enc thread (%)', 00H
-$SG117429 DB	',cpu in thread (%)', 00H
-	ORG $+1
-$SG118212 DB	'"', 00H
+$SG117431 DB	',gpu load (%)', 00H
 	ORG $+2
-$SG117431 DB	',cpu out thread (%)', 00H
-$SG118213 DB	'"', 00H
-	ORG $+2
-$SG117433 DB	',gpu load (%)', 00H
-	ORG $+2
-$SG117435 DB	',gpu clock (MHz)', 00H
+$SG117433 DB	',gpu clock (MHz)', 00H
 	ORG $+3
-$SG118218 DB	'%d', 00H
+$SG118216 DB	'%d', 00H
 	ORG $+1
-$SG117437 DB	',mfx load (%)', 00H
+$SG117435 DB	',mfx load (%)', 00H
 	ORG $+2
-$SG117439 DB	',video encoder load (%)', 00H
-$SG117441 DB	',video decoder load (%)', 00H
-$SG117443 DB	',video engine clock (MHz)', 00H
+$SG117437 DB	',video encoder load (%)', 00H
+$SG117439 DB	',video decoder load (%)', 00H
+$SG117441 DB	',video engine clock (MHz)', 00H
 	ORG $+2
-$SG118219 DB	'-i', 00H
+$SG118217 DB	'-i', 00H
 	ORG $+1
-$SG117445 DB	',pcie link,pcie tx, pci rx', 00H
+$SG117443 DB	',pcie link,pcie tx, pci rx', 00H
 	ORG $+1
-$SG118409 DB	'%lf', 00H
-$SG117447 DB	',queue vid in', 00H
+$SG118407 DB	'%lf', 00H
+$SG117445 DB	',queue vid in', 00H
 	ORG $+2
-$SG117449 DB	',queue aud in', 00H
+$SG117447 DB	',queue aud in', 00H
 	ORG $+2
-$SG117451 DB	',queue vid out', 00H
+$SG117449 DB	',queue vid out', 00H
 	ORG $+1
-$SG117453 DB	',queue aud out', 00H
+$SG117451 DB	',queue aud out', 00H
 	ORG $+1
-$SG117455 DB	',mem private (MB)', 00H
+$SG117453 DB	',mem private (MB)', 00H
+	ORG $+2
+$SG118441 DB	',%d', 00H
+$SG117455 DB	',mem virtual (MB)', 00H
 	ORG $+2
 $SG118443 DB	',%d', 00H
-$SG117457 DB	',mem virtual (MB)', 00H
+$SG117457 DB	',frame in', 00H
 	ORG $+2
 $SG118445 DB	',%d', 00H
-$SG117459 DB	',frame in', 00H
-	ORG $+2
-$SG118447 DB	',%d', 00H
-$SG117461 DB	',frame out', 00H
+$SG117459 DB	',frame out', 00H
 	ORG $+1
-$SG118449 DB	',%d', 00H
-$SG117463 DB	',enc speed (fps)', 00H
+$SG118447 DB	',%d', 00H
+$SG117461 DB	',enc speed (fps)', 00H
+	ORG $+3
+$SG118449 DB	',%.2lf', 00H
+	ORG $+1
+$SG118453 DB	',%d', 00H
+$SG117463 DB	',enc speed avg (fps)', 00H
+	ORG $+3
+$SG117465 DB	',bitrate (kbps)', 00H
+$SG117467 DB	',bitrate avg (kbps)', 00H
+$SG118455 DB	',%d', 00H
+$SG117469 DB	',read (MB/s)', 00H
+	ORG $+3
+$SG117471 DB	',write (MB/s)', 00H
+	ORG $+2
+$SG118201 DB	'Failed to open performance monitor log file: %s', 0aH, 00H
 	ORG $+3
 $SG118451 DB	',%.2lf', 00H
 	ORG $+1
-$SG118455 DB	',%d', 00H
-$SG117465 DB	',enc speed avg (fps)', 00H
-	ORG $+3
-$SG117467 DB	',bitrate (kbps)', 00H
-$SG117469 DB	',bitrate avg (kbps)', 00H
-$SG118457 DB	',%d', 00H
-$SG117471 DB	',read (MB/s)', 00H
-	ORG $+3
-$SG117473 DB	',write (MB/s)', 00H
+$SG118468 DB	0aH, 00H
 	ORG $+2
-$SG118203 DB	'Failed to open performance monitor log file: %s', 0aH, 00H
-	ORG $+3
-$SG118453 DB	',%.2lf', 00H
-	ORG $+1
-$SG118470 DB	0aH, 00H
-	ORG $+2
-$SG118204 DB	'performance monitoring disabled.', 0aH, 00H
+$SG118202 DB	'performance monitoring disabled.', 0aH, 00H
 	ORG $+2
 $SG110947 DB	'yuv422', 00H
 	ORG $+1
 $SG110975 DB	'rgb', 00H
-$SG118208 DB	'qsvencc_perf_monitor_%d.pyw', 00H
-$SG118411 DB	',%lf', 00H
-	ORG $+7
-$SG118216 DB	'Failed to create file qsvencc_perf_monitor.pyw for perfo'
+$SG118206 DB	'qsvencc_perf_monitor_%d.pyw', 00H
+	ORG $+4
+$SG118214 DB	'Failed to create file qsvencc_perf_monitor.pyw for perfo'
 	DB	'rmance monitor plot.', 0aH, 00H
 	ORG $+2
-$SG118217 DB	'performance monitor plot disabled.', 0aH, 00H
+$SG118215 DB	'performance monitor plot disabled.', 0aH, 00H
 $SG110977 DB	'gbr', 00H
-$SG118222 DB	'Failed to run performance monitor plot.', 0aH, 00H
+$SG118220 DB	'Failed to run performance monitor plot.', 0aH, 00H
 	ORG $+3
 $SG110949 DB	'yuv444', 00H
 	ORG $+1
 $SG110980 DB	'y8', 00H
 	ORG $+1
-$SG118223 DB	'performance monitor plot disabled.', 0aH, 00H
+$SG118221 DB	'performance monitor plot disabled.', 0aH, 00H
 $SG111925 DB	'VP8', 00H
-$SG118224 DB	'Performace Monitor: %s', 0aH, 00H
-$SG118225 DB	'Performace Plot   : %s', 0aH, 00H
+$SG118222 DB	'Performace Monitor: %s', 0aH, 00H
+$SG118223 DB	'Performace Plot   : %s', 0aH, 00H
+$SG118409 DB	',%lf', 00H
+	ORG $+3
+$SG118411 DB	',%lf', 00H
+	ORG $+3
 $SG118413 DB	',%lf', 00H
 	ORG $+3
 $SG118415 DB	',%lf', 00H
@@ -148,12 +147,12 @@ $SG118433 DB	',%lf', 00H
 	ORG $+3
 $SG118435 DB	',%lf', 00H
 	ORG $+3
-$SG118437 DB	',%lf', 00H
+$SG118437 DB	',PCIe %dx%d', 00H
+$SG118438 DB	',%lf', 00H
 	ORG $+3
-$SG118439 DB	',PCIe %dx%d', 00H
-$SG118440 DB	',%lf', 00H
+$SG118439 DB	',%lf', 00H
 	ORG $+3
-$SG118441 DB	',%lf', 00H
+$SG118457 DB	',%lf', 00H
 	ORG $+3
 $SG118459 DB	',%lf', 00H
 	ORG $+3
@@ -165,12 +164,10 @@ $SG118465 DB	',%lf', 00H
 	ORG $+3
 $SG118467 DB	',%lf', 00H
 	ORG $+3
-$SG118469 DB	',%lf', 00H
-	ORG $+3
 $SG110969 DB	'rgb24r', 00H
 	ORG $+1
 $SG111927 DB	'VP9', 00H
-$SG118491 DB	'Error occured running python for perf-monitor-plot.', 0aH
+$SG118489 DB	'Error occured running python for perf-monitor-plot.', 0aH
 	DB	00H
 	ORG $+3
 $SG110943 DB	'Invalid', 00H
@@ -261,8 +258,6 @@ $SG112858 DB	'2', 00H
 	ORG $+2
 $SG111929 DB	'unknown', 00H
 $SG112036 DB	'unknown', 00H
-$SG112531 DB	'undef', 00H
-	ORG $+2
 ?list_colormatrix@@3QBUCX_DESC@@B DQ FLAT:$SG112531	; list_colormatrix
 	DD	02H
 	ORG $+4
@@ -311,6 +306,8 @@ $SG112531 DB	'undef', 00H
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
+$SG112531 DB	'undef', 00H
+	ORG $+2
 $SG112532 DB	'auto', 00H
 	ORG $+3
 $SG112533 DB	'bt709', 00H
@@ -347,9 +344,7 @@ $SG112543 DB	'derived-cl', 00H
 $SG112866 DB	'pc', 00H
 	ORG $+1
 $SG112545 DB	'2100-lms', 00H
-	ORG $+3
-$SG112686 DB	'undef', 00H
-	ORG $+6
+	ORG $+7
 ?list_transfer@@3QBUCX_DESC@@B DQ FLAT:$SG112686	; list_transfer
 	DD	02H
 	ORG $+4
@@ -407,6 +402,8 @@ $SG112686 DB	'undef', 00H
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
+$SG112686 DB	'undef', 00H
+	ORG $+2
 $SG112687 DB	'auto', 00H
 	ORG $+3
 $SG112688 DB	'bt709', 00H
@@ -430,7 +427,7 @@ $SG112699 DB	'bt2020-10', 00H
 $SG113959 DB	'swr', 00H
 $SG112700 DB	'bt2020-12', 00H
 	ORG $+2
-$SG130638 DB	'%s', 00H
+$SG130636 DB	'%s', 00H
 	ORG $+1
 $SG112701 DB	'smpte2084', 00H
 	ORG $+2
@@ -441,6 +438,8 @@ $SG112835 DB	'undef', 00H
 	ORG $+2
 $SG114654 DB	'cpu', 00H
 $SG112703 DB	'arib-srd-b67', 00H
+	ORG $+3
+$SG112836 DB	'auto', 00H
 	ORG $+3
 ?list_colorprim@@3QBUCX_DESC@@B DQ FLAT:$SG112835	; list_colorprim
 	DD	02H
@@ -484,8 +483,6 @@ $SG112703 DB	'arib-srd-b67', 00H
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG112836 DB	'auto', 00H
-	ORG $+3
 $SG112837 DB	'bt709', 00H
 	ORG $+2
 $SG112838 DB	'smpte170m', 00H
@@ -505,6 +502,8 @@ $SG114667 DB	'io', 00H
 $SG112845 DB	'st431-2', 00H
 $SG112846 DB	'st432-1', 00H
 $SG112847 DB	'ebu3213-e', 00H
+	ORG $+2
+$SG112849 DB	'undef', 00H
 	ORG $+6
 ?list_videoformat@@3QBUCX_DESC@@B DQ FLAT:$SG112849	; list_videoformat
 	DD	05H
@@ -527,8 +526,6 @@ $SG112847 DB	'ebu3213-e', 00H
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG112849 DB	'undef', 00H
-	ORG $+2
 $SG112850 DB	'ntsc', 00H
 	ORG $+3
 $SG112851 DB	'component', 00H
@@ -556,16 +553,15 @@ $SG113957 DB	'forcecfr', 00H
 $SG113960 DB	'soxr', 00H
 	ORG $+3
 $SG114675 DB	'gpu', 00H
-$SG130637 DB	'invalid argument', 00H
+$SG130635 DB	'invalid argument', 00H
 	ORG $+7
-$SG130642 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG130637 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
+$SG130640 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG130639 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
-	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
-$SG114658 DB	'cpu_enc', 00H
-$SG130640 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG130638 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -582,7 +578,7 @@ $SG130640 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG130641 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG130639 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -590,9 +586,9 @@ $SG130641 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG130794 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG130792 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
-$SG114660 DB	'cpu_aud', 00H
+$SG114658 DB	'cpu_enc', 00H
 ?list_pref_monitor@@3QBUCX_DESC@@B DQ FLAT:$SG114653	; list_pref_monitor
 	DD	0ffffffffH
 	ORG $+4
@@ -694,6 +690,7 @@ $SG114657 DB	'cpu_main', 00H
 	ORG $+3
 $SG114682 DB	'queue', 00H
 	ORG $+6
+$SG114660 DB	'cpu_aud', 00H
 $SG114661 DB	'cpu_aud_proc', 00H
 	ORG $+3
 $SG114662 DB	'cpu_aud_enc', 00H
@@ -1167,7 +1164,6 @@ EXTRN	__imp_LoadResource:PROC
 EXTRN	__imp_LockResource:PROC
 EXTRN	__imp_SizeofResource:PROC
 EXTRN	__imp_GetProcessIoCounters:PROC
-EXTRN	__imp_FindResourceA:PROC
 EXTRN	__imp_SystemTimeToFileTime:PROC
 EXTRN	__imp_WaitForInputIdle:PROC
 EXTRN	__imp_PathCombineA:PROC
@@ -2162,7 +2158,7 @@ $pdata$?clear@CPerfMonitor@@QEAAXXZ DD imagerel $LN6
 	DD	imagerel $LN6+419
 	DD	imagerel $unwind$?clear@CPerfMonitor@@QEAAXXZ
 $pdata$?createPerfMpnitorPyw@CPerfMonitor@@IEAAHPEBD@Z DD imagerel $LN11
-	DD	imagerel $LN11+390
+	DD	imagerel $LN11+352
 	DD	imagerel $unwind$?createPerfMpnitorPyw@CPerfMonitor@@IEAAHPEBD@Z
 $pdata$?check@CPerfMonitor@@IEAAXXZ DD imagerel $LN29
 	DD	imagerel $LN29+3576
@@ -6800,6 +6796,10 @@ CONST	SEGMENT
 	DB	06fH
 	DB	00H
 	ORG $+7
+??0CPerfMonitor@@QEAA@XZ$rtcVarDesc DD 030H		; CPerfMonitor::CPerfMonitor
+	DD	070H
+	DQ	FLAT:??0CPerfMonitor@@QEAA@XZ$rtcName$0
+	ORG $+48
 ??0CPerfMonitor@@QEAA@XZ$rtcFrameData DD 01H		; CPerfMonitor::CPerfMonitor
 	DD	00H
 	DQ	FLAT:??0CPerfMonitor@@QEAA@XZ$rtcVarDesc
@@ -6811,10 +6811,6 @@ CONST	SEGMENT
 	DB	069H
 	DB	072H
 	DB	00H
-??0CPerfMonitor@@QEAA@XZ$rtcVarDesc DD 030H		; CPerfMonitor::CPerfMonitor
-	DD	070H
-	DQ	FLAT:??0CPerfMonitor@@QEAA@XZ$rtcName$0
-	ORG $+48
 ?init@CPerfMonitor@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDHHHV?$unique_ptr@XUhandle_deleter@@@3@V?$shared_ptr@VRGYLog@@@3@PEAUCPerfMonitorPrm@@@Z$rtcName$1 DB 074H ; CPerfMonitor::init
 	DB	065H
 	DB	06dH
@@ -6862,15 +6858,6 @@ CONST	SEGMENT
 	DB	073H
 	DB	00H
 	ORG $+7
-?init@CPerfMonitor@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDHHHV?$unique_ptr@XUhandle_deleter@@@3@V?$shared_ptr@VRGYLog@@@3@PEAUCPerfMonitorPrm@@@Z$rtcFrameData DD 05H ; CPerfMonitor::init
-	DD	00H
-	DQ	FLAT:?init@CPerfMonitor@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDHHHV?$unique_ptr@XUhandle_deleter@@@3@V?$shared_ptr@VRGYLog@@@3@PEAUCPerfMonitorPrm@@@Z$rtcVarDesc
-?SetEncStatus@CPerfMonitor@@QEAAXV?$shared_ptr@VEncodeStatus@@@std@@@Z$rtcName$0 DB 064H ; CPerfMonitor::SetEncStatus
-	DB	061H
-	DB	074H
-	DB	061H
-	DB	00H
-	ORG $+3
 ?init@CPerfMonitor@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDHHHV?$unique_ptr@XUhandle_deleter@@@3@V?$shared_ptr@VRGYLog@@@3@PEAUCPerfMonitorPrm@@@Z$rtcVarDesc DD 0a78H ; CPerfMonitor::init
 	DD	020H
 	DQ	FLAT:?init@CPerfMonitor@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDHHHV?$unique_ptr@XUhandle_deleter@@@3@V?$shared_ptr@VRGYLog@@@3@PEAUCPerfMonitorPrm@@@Z$rtcName$4
@@ -6887,13 +6874,30 @@ CONST	SEGMENT
 	DD	0400H
 	DQ	FLAT:?init@CPerfMonitor@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDHHHV?$unique_ptr@XUhandle_deleter@@@3@V?$shared_ptr@VRGYLog@@@3@PEAUCPerfMonitorPrm@@@Z$rtcName$0
 	ORG $+240
+?init@CPerfMonitor@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDHHHV?$unique_ptr@XUhandle_deleter@@@3@V?$shared_ptr@VRGYLog@@@3@PEAUCPerfMonitorPrm@@@Z$rtcFrameData DD 05H ; CPerfMonitor::init
+	DD	00H
+	DQ	FLAT:?init@CPerfMonitor@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDHHHV?$unique_ptr@XUhandle_deleter@@@3@V?$shared_ptr@VRGYLog@@@3@PEAUCPerfMonitorPrm@@@Z$rtcVarDesc
+?SetEncStatus@CPerfMonitor@@QEAAXV?$shared_ptr@VEncodeStatus@@@std@@@Z$rtcName$0 DB 064H ; CPerfMonitor::SetEncStatus
+	DB	061H
+	DB	074H
+	DB	061H
+	DB	00H
+	ORG $+3
+?SetEncStatus@CPerfMonitor@@QEAAXV?$shared_ptr@VEncodeStatus@@@std@@@Z$rtcFrameData DD 01H ; CPerfMonitor::SetEncStatus
+	DD	00H
+	DQ	FLAT:?SetEncStatus@CPerfMonitor@@QEAAXV?$shared_ptr@VEncodeStatus@@@std@@@Z$rtcVarDesc
+?check@CPerfMonitor@@IEAAXXZ$rtcName$4 DB 073H		; CPerfMonitor::check
+	DB	079H
+	DB	073H
+	DB	074H
+	DB	069H
+	DB	06dH
+	DB	065H
+	DB	00H
 ?SetEncStatus@CPerfMonitor@@QEAAXV?$shared_ptr@VEncodeStatus@@@std@@@Z$rtcVarDesc DD 030H ; CPerfMonitor::SetEncStatus
 	DD	0b0H
 	DQ	FLAT:?SetEncStatus@CPerfMonitor@@QEAAXV?$shared_ptr@VEncodeStatus@@@std@@@Z$rtcName$0
 	ORG $+48
-?SetEncStatus@CPerfMonitor@@QEAAXV?$shared_ptr@VEncodeStatus@@@std@@@Z$rtcFrameData DD 01H ; CPerfMonitor::SetEncStatus
-	DD	00H
-	DQ	FLAT:?SetEncStatus@CPerfMonitor@@QEAAXV?$shared_ptr@VEncodeStatus@@@std@@@Z$rtcVarDesc
 ?createPerfMpnitorPyw@CPerfMonitor@@IEAAHPEBD@Z$rtcVarDesc DD 038H ; CPerfMonitor::createPerfMpnitorPyw
 	DD	08H
 	DQ	FLAT:?createPerfMpnitorPyw@CPerfMonitor@@IEAAHPEBD@Z$rtcName$0
@@ -6960,14 +6964,6 @@ CONST	SEGMENT
 	DB	065H
 	DB	00H
 	ORG $+3
-?check@CPerfMonitor@@IEAAXXZ$rtcName$4 DB 073H		; CPerfMonitor::check
-	DB	079H
-	DB	073H
-	DB	074H
-	DB	069H
-	DB	06dH
-	DB	065H
-	DB	00H
 ?check@CPerfMonitor@@IEAAXXZ$rtcName$6 DB 065H		; CPerfMonitor::check
 	DB	078H
 	DB	069H
@@ -7037,6 +7033,10 @@ CONST	SEGMENT
 	DB	061H
 	DB	00H
 	ORG $+7
+?check@CPerfMonitor@@IEAAXXZ$rtcFrameData DD 0cH	; CPerfMonitor::check
+	DD	00H
+	DQ	FLAT:?check@CPerfMonitor@@IEAAXXZ$rtcVarDesc
+	ORG $+8
 ?check@CPerfMonitor@@IEAAXXZ$rtcVarDesc DD 0280H	; CPerfMonitor::check
 	DD	0b0H
 	DQ	FLAT:?check@CPerfMonitor@@IEAAXXZ$rtcName$11
@@ -7074,9 +7074,6 @@ CONST	SEGMENT
 	DD	01H
 	DQ	FLAT:?check@CPerfMonitor@@IEAAXXZ$rtcName$0
 	ORG $+576
-?check@CPerfMonitor@@IEAAXXZ$rtcFrameData DD 0cH	; CPerfMonitor::check
-	DD	00H
-	DQ	FLAT:?check@CPerfMonitor@@IEAAXXZ$rtcVarDesc
 ?write_header@CPerfMonitor@@IEAAXPEAU_iobuf@@H@Z$rtcVarDesc DD 028H ; CPerfMonitor::write_header
 	DD	028H
 	DQ	FLAT:?write_header@CPerfMonitor@@IEAAXPEAU_iobuf@@H@Z$rtcName$0
@@ -11495,16 +11492,16 @@ $LN4@Allocate_m:
 $LN9@Allocate_m:
 $LN7@Allocate_m:
   00056	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG130637
+	00 00		 lea	 rax, OFFSET FLAT:$SG130635
   0005d	48 89 44 24 28	 mov	 QWORD PTR [rsp+40], rax
   00062	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG130638
+	00 00		 lea	 rax, OFFSET FLAT:$SG130636
   00069	48 89 44 24 20	 mov	 QWORD PTR [rsp+32], rax
   0006e	45 33 c9	 xor	 r9d, r9d
   00071	41 b8 5b 00 00
 	00		 mov	 r8d, 91			; 0000005bH
   00077	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG130639
+	00 00		 lea	 rdx, OFFSET FLAT:$SG130637
   0007e	b9 02 00 00 00	 mov	 ecx, 2
   00083	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp__CrtDbgReport
@@ -11518,11 +11515,11 @@ $LN12@Allocate_m:
   0009a	41 b9 5b 00 00
 	00		 mov	 r9d, 91			; 0000005bH
   000a0	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG130640
+	00 00		 lea	 r8, OFFSET FLAT:$SG130638
   000a7	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG130641
+	00 00		 lea	 rdx, OFFSET FLAT:$SG130639
   000ae	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:$SG130642
+	00 00		 lea	 rcx, OFFSET FLAT:$SG130640
   000b5	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp__invalid_parameter
   000bb	33 c0		 xor	 eax, eax
@@ -16355,7 +16352,7 @@ hThread$ = 88
 time$ = 96
 ??R<lambda_5a0ebdb53bca1837caa8d6a14c3bf926>@@QEBAXPEAXPEAUPROCESS_TIME@@@Z PROC ; <lambda_5a0ebdb53bca1837caa8d6a14c3bf926>::operator(), COMDAT
 
-; 879  :     auto getThreadTime = [](HANDLE hThread, PROCESS_TIME *time) {
+; 878  :     auto getThreadTime = [](HANDLE hThread, PROCESS_TIME *time) {
 
   00000	4c 89 44 24 18	 mov	 QWORD PTR [rsp+24], r8
   00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
@@ -16368,7 +16365,7 @@ time$ = 96
   00021	f3 ab		 rep stosd
   00023	48 8b 4c 24 50	 mov	 rcx, QWORD PTR [rsp+80]
 
-; 880  :         GetThreadTimes(hThread, (FILETIME *)&time->creation, (FILETIME *)&time->exit, (FILETIME *)&time->kernel, (FILETIME *)&time->user);
+; 879  :         GetThreadTimes(hThread, (FILETIME *)&time->creation, (FILETIME *)&time->exit, (FILETIME *)&time->kernel, (FILETIME *)&time->user);
 
   00028	48 8b 44 24 60	 mov	 rax, QWORD PTR time$[rsp]
   0002d	48 83 c0 18	 add	 rax, 24
@@ -16387,7 +16384,7 @@ time$ = 96
   00065	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_GetThreadTimes
 
-; 881  :     };
+; 880  :     };
 
   0006b	48 83 c4 40	 add	 rsp, 64			; 00000040H
   0006f	5f		 pop	 rdi
@@ -20302,7 +20299,7 @@ _TEXT	SEGMENT
 prm$ = 48
 ?loader@CPerfMonitor@@KAXPEAX@Z PROC			; CPerfMonitor::loader
 
-; 1243 : void CPerfMonitor::loader(void *prm) {
+; 1242 : void CPerfMonitor::loader(void *prm) {
 
 $LN3:
   00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
@@ -20314,12 +20311,12 @@ $LN3:
   00017	f3 ab		 rep stosd
   00019	48 8b 4c 24 30	 mov	 rcx, QWORD PTR [rsp+48]
 
-; 1244 :     reinterpret_cast<CPerfMonitor*>(prm)->run();
+; 1243 :     reinterpret_cast<CPerfMonitor*>(prm)->run();
 
   0001e	48 8b 4c 24 30	 mov	 rcx, QWORD PTR prm$[rsp]
   00023	e8 00 00 00 00	 call	 ?run@CPerfMonitor@@IEAAXXZ ; CPerfMonitor::run
 
-; 1245 : }
+; 1244 : }
 
   00028	48 83 c4 20	 add	 rsp, 32			; 00000020H
   0002c	5f		 pop	 rdi
@@ -20431,7 +20428,7 @@ fp$ = 1896
 nSelect$ = 1904
 ?write@CPerfMonitor@@IEAAXPEAU_iobuf@@H@Z PROC		; CPerfMonitor::write
 
-; 1141 : void CPerfMonitor::write(FILE *fp, int nSelect) {
+; 1140 : void CPerfMonitor::write(FILE *fp, int nSelect) {
 
 $LN66:
   00000	44 89 44 24 18	 mov	 DWORD PTR [rsp+24], r8d
@@ -20452,19 +20449,19 @@ $LN66:
   00038	48 89 84 24 40
 	07 00 00	 mov	 QWORD PTR __$ArrayPad$[rsp], rax
 
-; 1142 :     if (fp == NULL) {
+; 1141 :     if (fp == NULL) {
 
   00040	48 83 bc 24 68
 	07 00 00 00	 cmp	 QWORD PTR fp$[rsp], 0
   00049	75 05		 jne	 SHORT $LN2@write
 
-; 1143 :         return;
+; 1142 :         return;
 
   0004b	e9 fa 0d 00 00	 jmp	 $LN1@write
 $LN2@write:
 
-; 1144 :     }
-; 1145 :     const PerfInfo *pInfo = &m_info[m_nStep & 1];
+; 1143 :     }
+; 1144 :     const PerfInfo *pInfo = &m_info[m_nStep & 1];
 
   00050	48 8b 84 24 60
 	07 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -20478,7 +20475,7 @@ $LN2@write:
   0006e	48 8d 44 01 30	 lea	 rax, QWORD PTR [rcx+rax+48]
   00073	48 89 44 24 20	 mov	 QWORD PTR pInfo$[rsp], rax
 
-; 1146 :     std::string str = strsprintf("%lf", pInfo->time_us * 1e-6);
+; 1145 :     std::string str = strsprintf("%lf", pInfo->time_us * 1e-6);
 
   00078	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   0007d	f2 48 0f 2a 00	 cvtsi2sd xmm0, QWORD PTR [rax]
@@ -20487,12 +20484,12 @@ $LN2@write:
   0008a	0f 28 d0	 movaps	 xmm2, xmm0
   0008d	66 49 0f 7e d0	 movq	 r8, xmm2
   00092	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118409
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118407
   00099	48 8d 4c 24 38	 lea	 rcx, QWORD PTR str$[rsp]
   0009e	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
   000a3	90		 npad	 1
 
-; 1147 :     if (nSelect & PERF_MONITOR_CPU) {
+; 1146 :     if (nSelect & PERF_MONITOR_CPU) {
 
   000a4	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20500,14 +20497,14 @@ $LN2@write:
   000ae	85 c0		 test	 eax, eax
   000b0	74 58		 je	 SHORT $LN3@write
 
-; 1148 :         str += strsprintf(",%lf", pInfo->cpu_percent);
+; 1147 :         str += strsprintf(",%lf", pInfo->cpu_percent);
 
   000b2	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   000b7	f2 0f 10 90 b0
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+176]
   000bf	66 49 0f 7e d0	 movq	 r8, xmm2
   000c4	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118411
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118409
   000cb	48 8d 4c 24 68	 lea	 rcx, QWORD PTR $T4[rsp]
   000d0	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
   000d5	48 89 84 24 48
@@ -20525,8 +20522,8 @@ $LN2@write:
   00105	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN3@write:
 
-; 1149 :     }
-; 1150 :     if (nSelect & PERF_MONITOR_CPU_KERNEL) {
+; 1148 :     }
+; 1149 :     if (nSelect & PERF_MONITOR_CPU_KERNEL) {
 
   0010a	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20534,14 +20531,14 @@ $LN3@write:
   00114	85 c0		 test	 eax, eax
   00116	74 5e		 je	 SHORT $LN4@write
 
-; 1151 :         str += strsprintf(",%lf", pInfo->cpu_kernel_percent);
+; 1150 :         str += strsprintf(",%lf", pInfo->cpu_kernel_percent);
 
   00118	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   0011d	f2 0f 10 90 b8
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+184]
   00125	66 49 0f 7e d0	 movq	 r8, xmm2
   0012a	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118413
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118411
   00131	48 8d 8c 24 90
 	00 00 00	 lea	 rcx, QWORD PTR $T5[rsp]
   00139	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20561,8 +20558,8 @@ $LN3@write:
   00171	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN4@write:
 
-; 1152 :     }
-; 1153 :     if (nSelect & PERF_MONITOR_THREAD_MAIN) {
+; 1151 :     }
+; 1152 :     if (nSelect & PERF_MONITOR_THREAD_MAIN) {
 
   00176	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20570,14 +20567,14 @@ $LN4@write:
   00182	85 c0		 test	 eax, eax
   00184	74 5e		 je	 SHORT $LN5@write
 
-; 1154 :         str += strsprintf(",%lf", pInfo->main_thread_percent);
+; 1153 :         str += strsprintf(",%lf", pInfo->main_thread_percent);
 
   00186	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   0018b	f2 0f 10 90 c0
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+192]
   00193	66 49 0f 7e d0	 movq	 r8, xmm2
   00198	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118415
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118413
   0019f	48 8d 8c 24 b8
 	00 00 00	 lea	 rcx, QWORD PTR $T6[rsp]
   001a7	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20597,8 +20594,8 @@ $LN4@write:
   001df	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN5@write:
 
-; 1155 :     }
-; 1156 :     if (nSelect & PERF_MONITOR_THREAD_ENC) {
+; 1154 :     }
+; 1155 :     if (nSelect & PERF_MONITOR_THREAD_ENC) {
 
   001e4	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20606,14 +20603,14 @@ $LN5@write:
   001f0	85 c0		 test	 eax, eax
   001f2	74 5e		 je	 SHORT $LN6@write
 
-; 1157 :         str += strsprintf(",%lf", pInfo->enc_thread_percent);
+; 1156 :         str += strsprintf(",%lf", pInfo->enc_thread_percent);
 
   001f4	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   001f9	f2 0f 10 90 c8
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+200]
   00201	66 49 0f 7e d0	 movq	 r8, xmm2
   00206	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118417
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118415
   0020d	48 8d 8c 24 e0
 	00 00 00	 lea	 rcx, QWORD PTR $T7[rsp]
   00215	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20633,8 +20630,8 @@ $LN5@write:
   0024d	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN6@write:
 
-; 1158 :     }
-; 1159 :     if (nSelect & PERF_MONITOR_THREAD_AUDP) {
+; 1157 :     }
+; 1158 :     if (nSelect & PERF_MONITOR_THREAD_AUDP) {
 
   00252	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20642,14 +20639,14 @@ $LN6@write:
   0025e	85 c0		 test	 eax, eax
   00260	74 5e		 je	 SHORT $LN7@write
 
-; 1160 :         str += strsprintf(",%lf", pInfo->aud_proc_thread_percent);
+; 1159 :         str += strsprintf(",%lf", pInfo->aud_proc_thread_percent);
 
   00262	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00267	f2 0f 10 90 d0
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+208]
   0026f	66 49 0f 7e d0	 movq	 r8, xmm2
   00274	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118419
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118417
   0027b	48 8d 8c 24 08
 	01 00 00	 lea	 rcx, QWORD PTR $T8[rsp]
   00283	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20669,8 +20666,8 @@ $LN6@write:
   002bb	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN7@write:
 
-; 1161 :     }
-; 1162 :     if (nSelect & PERF_MONITOR_THREAD_AUDE) {
+; 1160 :     }
+; 1161 :     if (nSelect & PERF_MONITOR_THREAD_AUDE) {
 
   002c0	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20678,14 +20675,14 @@ $LN7@write:
   002cc	85 c0		 test	 eax, eax
   002ce	74 5e		 je	 SHORT $LN8@write
 
-; 1163 :         str += strsprintf(",%lf", pInfo->aud_enc_thread_percent);
+; 1162 :         str += strsprintf(",%lf", pInfo->aud_enc_thread_percent);
 
   002d0	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   002d5	f2 0f 10 90 d8
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+216]
   002dd	66 49 0f 7e d0	 movq	 r8, xmm2
   002e2	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118421
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118419
   002e9	48 8d 8c 24 30
 	01 00 00	 lea	 rcx, QWORD PTR $T9[rsp]
   002f1	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20705,8 +20702,8 @@ $LN7@write:
   00329	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN8@write:
 
-; 1164 :     }
-; 1165 :     if (nSelect & PERF_MONITOR_THREAD_IN) {
+; 1163 :     }
+; 1164 :     if (nSelect & PERF_MONITOR_THREAD_IN) {
 
   0032e	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20714,14 +20711,14 @@ $LN8@write:
   0033a	85 c0		 test	 eax, eax
   0033c	74 5e		 je	 SHORT $LN9@write
 
-; 1166 :         str += strsprintf(",%lf", pInfo->in_thread_percent);
+; 1165 :         str += strsprintf(",%lf", pInfo->in_thread_percent);
 
   0033e	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00343	f2 0f 10 90 e8
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+232]
   0034b	66 49 0f 7e d0	 movq	 r8, xmm2
   00350	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118423
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118421
   00357	48 8d 8c 24 58
 	01 00 00	 lea	 rcx, QWORD PTR $T10[rsp]
   0035f	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20741,8 +20738,8 @@ $LN8@write:
   00397	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN9@write:
 
-; 1167 :     }
-; 1168 :     if (nSelect & PERF_MONITOR_THREAD_OUT) {
+; 1166 :     }
+; 1167 :     if (nSelect & PERF_MONITOR_THREAD_OUT) {
 
   0039c	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20750,14 +20747,14 @@ $LN9@write:
   003a8	85 c0		 test	 eax, eax
   003aa	74 5e		 je	 SHORT $LN10@write
 
-; 1169 :         str += strsprintf(",%lf", pInfo->out_thread_percent);
+; 1168 :         str += strsprintf(",%lf", pInfo->out_thread_percent);
 
   003ac	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   003b1	f2 0f 10 90 e0
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+224]
   003b9	66 49 0f 7e d0	 movq	 r8, xmm2
   003be	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118425
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118423
   003c5	48 8d 8c 24 80
 	01 00 00	 lea	 rcx, QWORD PTR $T11[rsp]
   003cd	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20777,8 +20774,8 @@ $LN9@write:
   00405	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN10@write:
 
-; 1170 :     }
-; 1171 :     if (nSelect & PERF_MONITOR_GPU_LOAD) {
+; 1169 :     }
+; 1170 :     if (nSelect & PERF_MONITOR_GPU_LOAD) {
 
   0040a	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20786,14 +20783,14 @@ $LN10@write:
   00416	85 c0		 test	 eax, eax
   00418	74 5e		 je	 SHORT $LN11@write
 
-; 1172 :         str += strsprintf(",%lf", pInfo->gpu_load_percent);
+; 1171 :         str += strsprintf(",%lf", pInfo->gpu_load_percent);
 
   0041a	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   0041f	f2 0f 10 90 f8
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+248]
   00427	66 49 0f 7e d0	 movq	 r8, xmm2
   0042c	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118427
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118425
   00433	48 8d 8c 24 a8
 	01 00 00	 lea	 rcx, QWORD PTR $T12[rsp]
   0043b	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20813,8 +20810,8 @@ $LN10@write:
   00473	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN11@write:
 
-; 1173 :     }
-; 1174 :     if (nSelect & PERF_MONITOR_GPU_CLOCK) {
+; 1172 :     }
+; 1173 :     if (nSelect & PERF_MONITOR_GPU_CLOCK) {
 
   00478	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20822,14 +20819,14 @@ $LN11@write:
   00484	85 c0		 test	 eax, eax
   00486	74 5e		 je	 SHORT $LN12@write
 
-; 1175 :         str += strsprintf(",%lf", pInfo->gpu_clock);
+; 1174 :         str += strsprintf(",%lf", pInfo->gpu_clock);
 
   00488	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   0048d	f2 0f 10 90 00
 	01 00 00	 movsd	 xmm2, QWORD PTR [rax+256]
   00495	66 49 0f 7e d0	 movq	 r8, xmm2
   0049a	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118429
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118427
   004a1	48 8d 8c 24 d0
 	01 00 00	 lea	 rcx, QWORD PTR $T13[rsp]
   004a9	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20849,8 +20846,8 @@ $LN11@write:
   004e1	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN12@write:
 
-; 1176 :     }
-; 1177 :     if (nSelect & PERF_MONITOR_MFX_LOAD) {
+; 1175 :     }
+; 1176 :     if (nSelect & PERF_MONITOR_MFX_LOAD) {
 
   004e6	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20858,14 +20855,14 @@ $LN12@write:
   004f2	85 c0		 test	 eax, eax
   004f4	74 5e		 je	 SHORT $LN13@write
 
-; 1178 :         str += strsprintf(",%lf", pInfo->mfx_load_percent);
+; 1177 :         str += strsprintf(",%lf", pInfo->mfx_load_percent);
 
   004f6	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   004fb	f2 0f 10 90 08
 	01 00 00	 movsd	 xmm2, QWORD PTR [rax+264]
   00503	66 49 0f 7e d0	 movq	 r8, xmm2
   00508	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118431
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118429
   0050f	48 8d 8c 24 f8
 	01 00 00	 lea	 rcx, QWORD PTR $T14[rsp]
   00517	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20885,8 +20882,8 @@ $LN12@write:
   0054f	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN13@write:
 
-; 1179 :     }
-; 1180 :     if (nSelect & PERF_MONITOR_VEE_LOAD) {
+; 1178 :     }
+; 1179 :     if (nSelect & PERF_MONITOR_VEE_LOAD) {
 
   00554	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20894,14 +20891,14 @@ $LN13@write:
   00560	85 c0		 test	 eax, eax
   00562	74 5e		 je	 SHORT $LN14@write
 
-; 1181 :         str += strsprintf(",%lf", pInfo->vee_load_percent);
+; 1180 :         str += strsprintf(",%lf", pInfo->vee_load_percent);
 
   00564	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00569	f2 0f 10 90 10
 	01 00 00	 movsd	 xmm2, QWORD PTR [rax+272]
   00571	66 49 0f 7e d0	 movq	 r8, xmm2
   00576	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118433
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118431
   0057d	48 8d 8c 24 20
 	02 00 00	 lea	 rcx, QWORD PTR $T15[rsp]
   00585	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20921,8 +20918,8 @@ $LN13@write:
   005bd	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN14@write:
 
-; 1182 :     }
-; 1183 :     if (nSelect & PERF_MONITOR_VED_LOAD) {
+; 1181 :     }
+; 1182 :     if (nSelect & PERF_MONITOR_VED_LOAD) {
 
   005c2	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20930,14 +20927,14 @@ $LN14@write:
   005ce	85 c0		 test	 eax, eax
   005d0	74 5e		 je	 SHORT $LN15@write
 
-; 1184 :         str += strsprintf(",%lf", pInfo->ved_load_percent);
+; 1183 :         str += strsprintf(",%lf", pInfo->ved_load_percent);
 
   005d2	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   005d7	f2 0f 10 90 18
 	01 00 00	 movsd	 xmm2, QWORD PTR [rax+280]
   005df	66 49 0f 7e d0	 movq	 r8, xmm2
   005e4	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118435
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118433
   005eb	48 8d 8c 24 48
 	02 00 00	 lea	 rcx, QWORD PTR $T16[rsp]
   005f3	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20957,8 +20954,8 @@ $LN14@write:
   0062b	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN15@write:
 
-; 1185 :     }
-; 1186 :     if (nSelect & PERF_MONITOR_VE_CLOCK) {
+; 1184 :     }
+; 1185 :     if (nSelect & PERF_MONITOR_VE_CLOCK) {
 
   00630	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -20966,14 +20963,14 @@ $LN15@write:
   0063c	85 c0		 test	 eax, eax
   0063e	74 5e		 je	 SHORT $LN16@write
 
-; 1187 :         str += strsprintf(",%lf", pInfo->ve_clock);
+; 1186 :         str += strsprintf(",%lf", pInfo->ve_clock);
 
   00640	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00645	f2 0f 10 90 20
 	01 00 00	 movsd	 xmm2, QWORD PTR [rax+288]
   0064d	66 49 0f 7e d0	 movq	 r8, xmm2
   00652	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118437
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118435
   00659	48 8d 8c 24 70
 	02 00 00	 lea	 rcx, QWORD PTR $T17[rsp]
   00661	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -20993,8 +20990,8 @@ $LN15@write:
   00699	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN16@write:
 
-; 1188 :     }
-; 1189 :     if (nSelect & PERF_MONITOR_PCIE_LOAD) {
+; 1187 :     }
+; 1188 :     if (nSelect & PERF_MONITOR_PCIE_LOAD) {
 
   0069e	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21003,7 +21000,7 @@ $LN16@write:
   006ac	0f 84 14 01 00
 	00		 je	 $LN17@write
 
-; 1190 :         str += strsprintf(",PCIe %dx%d", pInfo->pcie_gen, pInfo->pcie_link);
+; 1189 :         str += strsprintf(",PCIe %dx%d", pInfo->pcie_gen, pInfo->pcie_link);
 
   006b2	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   006b7	44 8b 88 2c 01
@@ -21012,7 +21009,7 @@ $LN16@write:
   006c3	44 8b 80 28 01
 	00 00		 mov	 r8d, DWORD PTR [rax+296]
   006ca	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118439
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118437
   006d1	48 8d 8c 24 98
 	02 00 00	 lea	 rcx, QWORD PTR $T18[rsp]
   006d9	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21031,13 +21028,13 @@ $LN16@write:
 	02 00 00	 lea	 rcx, QWORD PTR $T18[rsp]
   00711	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 1191 :         str += strsprintf(",%lf", pInfo->pcie_throughput_tx_per_sec);
+; 1190 :         str += strsprintf(",%lf", pInfo->pcie_throughput_tx_per_sec);
 
   00716	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   0071b	44 8b 80 30 01
 	00 00		 mov	 r8d, DWORD PTR [rax+304]
   00722	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118440
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118438
   00729	48 8d 8c 24 c0
 	02 00 00	 lea	 rcx, QWORD PTR $T19[rsp]
   00731	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21056,13 +21053,13 @@ $LN16@write:
 	02 00 00	 lea	 rcx, QWORD PTR $T19[rsp]
   00769	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 1192 :         str += strsprintf(",%lf", pInfo->pcie_throughput_rx_per_sec);
+; 1191 :         str += strsprintf(",%lf", pInfo->pcie_throughput_rx_per_sec);
 
   0076e	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00773	44 8b 80 34 01
 	00 00		 mov	 r8d, DWORD PTR [rax+308]
   0077a	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118441
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118439
   00781	48 8d 8c 24 e8
 	02 00 00	 lea	 rcx, QWORD PTR $T20[rsp]
   00789	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21082,8 +21079,8 @@ $LN16@write:
   007c1	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN17@write:
 
-; 1193 :     }
-; 1194 :     if (nSelect & PERF_MONITOR_QUEUE_VID_IN) {
+; 1192 :     }
+; 1193 :     if (nSelect & PERF_MONITOR_QUEUE_VID_IN) {
 
   007c6	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21091,14 +21088,14 @@ $LN17@write:
   007d2	85 c0		 test	 eax, eax
   007d4	74 5b		 je	 SHORT $LN18@write
 
-; 1195 :         str += strsprintf(",%d", (int)m_QueueInfo.usage_vid_in);
+; 1194 :         str += strsprintf(",%d", (int)m_QueueInfo.usage_vid_in);
 
   007d6	48 8b 84 24 60
 	07 00 00	 mov	 rax, QWORD PTR this$[rsp]
   007de	44 8b 80 c0 0b
 	00 00		 mov	 r8d, DWORD PTR [rax+3008]
   007e5	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118443
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118441
   007ec	48 8d 8c 24 10
 	03 00 00	 lea	 rcx, QWORD PTR $T21[rsp]
   007f4	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21118,8 +21115,8 @@ $LN17@write:
   0082c	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN18@write:
 
-; 1196 :     }
-; 1197 :     if (nSelect & PERF_MONITOR_QUEUE_AUD_IN) {
+; 1195 :     }
+; 1196 :     if (nSelect & PERF_MONITOR_QUEUE_AUD_IN) {
 
   00831	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21127,14 +21124,14 @@ $LN18@write:
   0083d	85 c0		 test	 eax, eax
   0083f	74 5b		 je	 SHORT $LN19@write
 
-; 1198 :         str += strsprintf(",%d", (int)m_QueueInfo.usage_aud_in);
+; 1197 :         str += strsprintf(",%d", (int)m_QueueInfo.usage_aud_in);
 
   00841	48 8b 84 24 60
 	07 00 00	 mov	 rax, QWORD PTR this$[rsp]
   00849	44 8b 80 c8 0b
 	00 00		 mov	 r8d, DWORD PTR [rax+3016]
   00850	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118445
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118443
   00857	48 8d 8c 24 38
 	03 00 00	 lea	 rcx, QWORD PTR $T22[rsp]
   0085f	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21154,8 +21151,8 @@ $LN18@write:
   00897	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN19@write:
 
-; 1199 :     }
-; 1200 :     if (nSelect & PERF_MONITOR_QUEUE_VID_OUT) {
+; 1198 :     }
+; 1199 :     if (nSelect & PERF_MONITOR_QUEUE_VID_OUT) {
 
   0089c	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21163,14 +21160,14 @@ $LN19@write:
   008a8	85 c0		 test	 eax, eax
   008aa	74 5b		 je	 SHORT $LN20@write
 
-; 1201 :         str += strsprintf(",%d", (int)m_QueueInfo.usage_vid_out);
+; 1200 :         str += strsprintf(",%d", (int)m_QueueInfo.usage_vid_out);
 
   008ac	48 8b 84 24 60
 	07 00 00	 mov	 rax, QWORD PTR this$[rsp]
   008b4	44 8b 80 d0 0b
 	00 00		 mov	 r8d, DWORD PTR [rax+3024]
   008bb	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118447
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118445
   008c2	48 8d 8c 24 60
 	03 00 00	 lea	 rcx, QWORD PTR $T23[rsp]
   008ca	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21190,8 +21187,8 @@ $LN19@write:
   00902	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN20@write:
 
-; 1202 :     }
-; 1203 :     if (nSelect & PERF_MONITOR_QUEUE_AUD_OUT) {
+; 1201 :     }
+; 1202 :     if (nSelect & PERF_MONITOR_QUEUE_AUD_OUT) {
 
   00907	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21199,14 +21196,14 @@ $LN20@write:
   00913	85 c0		 test	 eax, eax
   00915	74 5b		 je	 SHORT $LN21@write
 
-; 1204 :         str += strsprintf(",%d", (int)m_QueueInfo.usage_aud_out);
+; 1203 :         str += strsprintf(",%d", (int)m_QueueInfo.usage_aud_out);
 
   00917	48 8b 84 24 60
 	07 00 00	 mov	 rax, QWORD PTR this$[rsp]
   0091f	44 8b 80 d8 0b
 	00 00		 mov	 r8d, DWORD PTR [rax+3032]
   00926	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118449
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118447
   0092d	48 8d 8c 24 88
 	03 00 00	 lea	 rcx, QWORD PTR $T24[rsp]
   00935	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21226,8 +21223,8 @@ $LN20@write:
   0096d	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN21@write:
 
-; 1205 :     }
-; 1206 :     if (nSelect & PERF_MONITOR_MEM_PRIVATE) {
+; 1204 :     }
+; 1205 :     if (nSelect & PERF_MONITOR_MEM_PRIVATE) {
 
   00972	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21235,7 +21232,7 @@ $LN21@write:
   0097c	85 c0		 test	 eax, eax
   0097e	74 67		 je	 SHORT $LN22@write
 
-; 1207 :         str += strsprintf(",%.2lf", pInfo->mem_private / (double)(1024 * 1024));
+; 1206 :         str += strsprintf(",%.2lf", pInfo->mem_private / (double)(1024 * 1024));
 
   00980	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00985	f2 48 0f 2a 40
@@ -21245,7 +21242,7 @@ $LN21@write:
   00993	0f 28 d0	 movaps	 xmm2, xmm0
   00996	66 49 0f 7e d0	 movq	 r8, xmm2
   0099b	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118451
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118449
   009a2	48 8d 8c 24 b0
 	03 00 00	 lea	 rcx, QWORD PTR $T25[rsp]
   009aa	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21265,8 +21262,8 @@ $LN21@write:
   009e2	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN22@write:
 
-; 1208 :     }
-; 1209 :     if (nSelect & PERF_MONITOR_MEM_VIRTUAL) {
+; 1207 :     }
+; 1208 :     if (nSelect & PERF_MONITOR_MEM_VIRTUAL) {
 
   009e7	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21274,7 +21271,7 @@ $LN22@write:
   009f1	85 c0		 test	 eax, eax
   009f3	74 67		 je	 SHORT $LN23@write
 
-; 1210 :         str += strsprintf(",%.2lf", pInfo->mem_virtual / (double)(1024 * 1024));
+; 1209 :         str += strsprintf(",%.2lf", pInfo->mem_virtual / (double)(1024 * 1024));
 
   009f5	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   009fa	f2 48 0f 2a 40
@@ -21284,7 +21281,7 @@ $LN22@write:
   00a08	0f 28 d0	 movaps	 xmm2, xmm0
   00a0b	66 49 0f 7e d0	 movq	 r8, xmm2
   00a10	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118453
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118451
   00a17	48 8d 8c 24 d8
 	03 00 00	 lea	 rcx, QWORD PTR $T26[rsp]
   00a1f	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21304,8 +21301,8 @@ $LN22@write:
   00a57	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN23@write:
 
-; 1211 :     }
-; 1212 :     if (nSelect & PERF_MONITOR_FRAME_IN) {
+; 1210 :     }
+; 1211 :     if (nSelect & PERF_MONITOR_FRAME_IN) {
 
   00a5c	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21313,12 +21310,12 @@ $LN23@write:
   00a68	85 c0		 test	 eax, eax
   00a6a	74 55		 je	 SHORT $LN24@write
 
-; 1213 :         str += strsprintf(",%d", pInfo->frames_in);
+; 1212 :         str += strsprintf(",%d", pInfo->frames_in);
 
   00a6c	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00a71	4c 8b 40 68	 mov	 r8, QWORD PTR [rax+104]
   00a75	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118455
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118453
   00a7c	48 8d 8c 24 00
 	04 00 00	 lea	 rcx, QWORD PTR $T27[rsp]
   00a84	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21338,8 +21335,8 @@ $LN23@write:
   00abc	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN24@write:
 
-; 1214 :     }
-; 1215 :     if (nSelect & PERF_MONITOR_FRAME_OUT) {
+; 1213 :     }
+; 1214 :     if (nSelect & PERF_MONITOR_FRAME_OUT) {
 
   00ac1	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21347,12 +21344,12 @@ $LN24@write:
   00acd	85 c0		 test	 eax, eax
   00acf	74 55		 je	 SHORT $LN25@write
 
-; 1216 :         str += strsprintf(",%d", pInfo->frames_out);
+; 1215 :         str += strsprintf(",%d", pInfo->frames_out);
 
   00ad1	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00ad6	4c 8b 40 70	 mov	 r8, QWORD PTR [rax+112]
   00ada	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118457
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118455
   00ae1	48 8d 8c 24 28
 	04 00 00	 lea	 rcx, QWORD PTR $T28[rsp]
   00ae9	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21372,8 +21369,8 @@ $LN24@write:
   00b21	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN25@write:
 
-; 1217 :     }
-; 1218 :     if (nSelect & PERF_MONITOR_FPS) {
+; 1216 :     }
+; 1217 :     if (nSelect & PERF_MONITOR_FPS) {
 
   00b26	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21381,14 +21378,14 @@ $LN25@write:
   00b30	85 c0		 test	 eax, eax
   00b32	74 5e		 je	 SHORT $LN26@write
 
-; 1219 :         str += strsprintf(",%lf", pInfo->fps);
+; 1218 :         str += strsprintf(",%lf", pInfo->fps);
 
   00b34	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00b39	f2 0f 10 90 80
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+128]
   00b41	66 49 0f 7e d0	 movq	 r8, xmm2
   00b46	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118459
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118457
   00b4d	48 8d 8c 24 50
 	04 00 00	 lea	 rcx, QWORD PTR $T29[rsp]
   00b55	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21408,8 +21405,8 @@ $LN25@write:
   00b8d	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN26@write:
 
-; 1220 :     }
-; 1221 :     if (nSelect & PERF_MONITOR_FPS_AVG) {
+; 1219 :     }
+; 1220 :     if (nSelect & PERF_MONITOR_FPS_AVG) {
 
   00b92	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21417,14 +21414,14 @@ $LN26@write:
   00b9c	85 c0		 test	 eax, eax
   00b9e	74 5e		 je	 SHORT $LN27@write
 
-; 1222 :         str += strsprintf(",%lf", pInfo->fps_avg);
+; 1221 :         str += strsprintf(",%lf", pInfo->fps_avg);
 
   00ba0	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00ba5	f2 0f 10 90 88
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+136]
   00bad	66 49 0f 7e d0	 movq	 r8, xmm2
   00bb2	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118461
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118459
   00bb9	48 8d 8c 24 78
 	04 00 00	 lea	 rcx, QWORD PTR $T30[rsp]
   00bc1	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21444,8 +21441,8 @@ $LN26@write:
   00bf9	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN27@write:
 
-; 1223 :     }
-; 1224 :     if (nSelect & PERF_MONITOR_BITRATE) {
+; 1222 :     }
+; 1223 :     if (nSelect & PERF_MONITOR_BITRATE) {
 
   00bfe	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21453,14 +21450,14 @@ $LN27@write:
   00c08	85 c0		 test	 eax, eax
   00c0a	74 5e		 je	 SHORT $LN28@write
 
-; 1225 :         str += strsprintf(",%lf", pInfo->bitrate_kbps);
+; 1224 :         str += strsprintf(",%lf", pInfo->bitrate_kbps);
 
   00c0c	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00c11	f2 0f 10 90 90
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+144]
   00c19	66 49 0f 7e d0	 movq	 r8, xmm2
   00c1e	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118463
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118461
   00c25	48 8d 8c 24 a0
 	04 00 00	 lea	 rcx, QWORD PTR $T31[rsp]
   00c2d	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21480,8 +21477,8 @@ $LN27@write:
   00c65	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN28@write:
 
-; 1226 :     }
-; 1227 :     if (nSelect & PERF_MONITOR_BITRATE_AVG) {
+; 1225 :     }
+; 1226 :     if (nSelect & PERF_MONITOR_BITRATE_AVG) {
 
   00c6a	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21489,14 +21486,14 @@ $LN28@write:
   00c76	85 c0		 test	 eax, eax
   00c78	74 5e		 je	 SHORT $LN29@write
 
-; 1228 :         str += strsprintf(",%lf", pInfo->bitrate_kbps_avg);
+; 1227 :         str += strsprintf(",%lf", pInfo->bitrate_kbps_avg);
 
   00c7a	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00c7f	f2 0f 10 90 98
 	00 00 00	 movsd	 xmm2, QWORD PTR [rax+152]
   00c87	66 49 0f 7e d0	 movq	 r8, xmm2
   00c8c	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118465
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118463
   00c93	48 8d 8c 24 c8
 	04 00 00	 lea	 rcx, QWORD PTR $T32[rsp]
   00c9b	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21516,8 +21513,8 @@ $LN28@write:
   00cd3	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN29@write:
 
-; 1229 :     }
-; 1230 :     if (nSelect & PERF_MONITOR_IO_READ) {
+; 1228 :     }
+; 1229 :     if (nSelect & PERF_MONITOR_IO_READ) {
 
   00cd8	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21525,7 +21522,7 @@ $LN29@write:
   00ce4	85 c0		 test	 eax, eax
   00ce6	74 69		 je	 SHORT $LN30@write
 
-; 1231 :         str += strsprintf(",%lf", pInfo->io_read_per_sec / (double)(1024 * 1024));
+; 1230 :         str += strsprintf(",%lf", pInfo->io_read_per_sec / (double)(1024 * 1024));
 
   00ce8	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00ced	f2 0f 10 80 a0
@@ -21535,7 +21532,7 @@ $LN29@write:
   00cfd	0f 28 d0	 movaps	 xmm2, xmm0
   00d00	66 49 0f 7e d0	 movq	 r8, xmm2
   00d05	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118467
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118465
   00d0c	48 8d 8c 24 f0
 	04 00 00	 lea	 rcx, QWORD PTR $T33[rsp]
   00d14	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21555,8 +21552,8 @@ $LN29@write:
   00d4c	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN30@write:
 
-; 1232 :     }
-; 1233 :     if (nSelect & PERF_MONITOR_IO_WRITE) {
+; 1231 :     }
+; 1232 :     if (nSelect & PERF_MONITOR_IO_WRITE) {
 
   00d51	8b 84 24 70 07
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -21564,7 +21561,7 @@ $LN30@write:
   00d5d	85 c0		 test	 eax, eax
   00d5f	74 69		 je	 SHORT $LN31@write
 
-; 1234 :         str += strsprintf(",%lf", pInfo->io_write_per_sec / (double)(1024 * 1024));
+; 1233 :         str += strsprintf(",%lf", pInfo->io_write_per_sec / (double)(1024 * 1024));
 
   00d61	48 8b 44 24 20	 mov	 rax, QWORD PTR pInfo$[rsp]
   00d66	f2 0f 10 80 a8
@@ -21574,7 +21571,7 @@ $LN30@write:
   00d76	0f 28 d0	 movaps	 xmm2, xmm0
   00d79	66 49 0f 7e d0	 movq	 r8, xmm2
   00d7e	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118469
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118467
   00d85	48 8d 8c 24 18
 	05 00 00	 lea	 rcx, QWORD PTR $T34[rsp]
   00d8d	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -21594,15 +21591,15 @@ $LN30@write:
   00dc5	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN31@write:
 
-; 1235 :     }
-; 1236 :     str += "\n";
+; 1234 :     }
+; 1235 :     str += "\n";
 
   00dca	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118470
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118468
   00dd1	48 8d 4c 24 38	 lea	 rcx, QWORD PTR str$[rsp]
   00dd6	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 
-; 1237 :     fwrite(str.c_str(), 1, str.length(), fp);
+; 1236 :     fwrite(str.c_str(), 1, str.length(), fp);
 
   00ddb	48 8d 4c 24 38	 lea	 rcx, QWORD PTR str$[rsp]
   00de0	e8 00 00 00 00	 call	 ?length@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA_KXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::length
@@ -21620,7 +21617,7 @@ $LN31@write:
   00e12	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_fwrite
 
-; 1238 :     if (fp == m_pipes.f_stdin) {
+; 1237 :     if (fp == m_pipes.f_stdin) {
 
   00e18	48 8b 84 24 60
 	07 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -21630,7 +21627,7 @@ $LN31@write:
 	07 00 00	 cmp	 QWORD PTR fp$[rsp], rax
   00e2f	75 0f		 jne	 SHORT $LN32@write
 
-; 1239 :         fflush(fp);
+; 1238 :         fflush(fp);
 
   00e31	48 8b 8c 24 68
 	07 00 00	 mov	 rcx, QWORD PTR fp$[rsp]
@@ -21639,8 +21636,8 @@ $LN31@write:
   00e3f	90		 npad	 1
 $LN32@write:
 
-; 1240 :     }
-; 1241 : }
+; 1239 :     }
+; 1240 : }
 
   00e40	48 8d 4c 24 38	 lea	 rcx, QWORD PTR str$[rsp]
   00e45	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
@@ -29124,7 +29121,7 @@ fp$ = 136
 nSelect$ = 144
 ?write_header@CPerfMonitor@@IEAAXPEAU_iobuf@@H@Z PROC	; CPerfMonitor::write_header
 
-; 567  : void CPerfMonitor::write_header(FILE *fp, int nSelect) {
+; 566  : void CPerfMonitor::write_header(FILE *fp, int nSelect) {
 
 $LN35:
   00000	44 89 44 24 18	 mov	 DWORD PTR [rsp+24], r8d
@@ -29143,7 +29140,7 @@ $LN35:
   00032	48 33 c4	 xor	 rax, rsp
   00035	48 89 44 24 68	 mov	 QWORD PTR __$ArrayPad$[rsp], rax
 
-; 568  :     if (fp == NULL || nSelect == 0) {
+; 567  :     if (fp == NULL || nSelect == 0) {
 
   0003a	48 83 bc 24 88
 	00 00 00 00	 cmp	 QWORD PTR fp$[rsp], 0
@@ -29153,19 +29150,19 @@ $LN35:
   0004d	75 05		 jne	 SHORT $LN2@write_head
 $LN3@write_head:
 
-; 569  :         return;
+; 568  :         return;
 
   0004f	e9 1b 04 00 00	 jmp	 $LN1@write_head
 $LN2@write_head:
 
-; 570  :     }
-; 571  :     std::string str;
+; 569  :     }
+; 570  :     std::string str;
 
   00054	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00059	e8 00 00 00 00	 call	 ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
   0005e	90		 npad	 1
 
-; 572  :     if (nSelect & PERF_MONITOR_CPU) {
+; 571  :     if (nSelect & PERF_MONITOR_CPU) {
 
   0005f	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29173,16 +29170,16 @@ $LN2@write_head:
   00069	85 c0		 test	 eax, eax
   0006b	74 11		 je	 SHORT $LN4@write_head
 
-; 573  :         str += ",cpu (%)";
+; 572  :         str += ",cpu (%)";
 
   0006d	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117417
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117415
   00074	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00079	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN4@write_head:
 
-; 574  :     }
-; 575  :     if (nSelect & PERF_MONITOR_CPU_KERNEL) {
+; 573  :     }
+; 574  :     if (nSelect & PERF_MONITOR_CPU_KERNEL) {
 
   0007e	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29190,16 +29187,16 @@ $LN4@write_head:
   00088	85 c0		 test	 eax, eax
   0008a	74 11		 je	 SHORT $LN5@write_head
 
-; 576  :         str += ",cpu kernel (%)";
+; 575  :         str += ",cpu kernel (%)";
 
   0008c	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117419
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117417
   00093	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00098	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN5@write_head:
 
-; 577  :     }
-; 578  :     if (nSelect & PERF_MONITOR_THREAD_MAIN) {
+; 576  :     }
+; 577  :     if (nSelect & PERF_MONITOR_THREAD_MAIN) {
 
   0009d	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29207,16 +29204,16 @@ $LN5@write_head:
   000a9	85 c0		 test	 eax, eax
   000ab	74 11		 je	 SHORT $LN6@write_head
 
-; 579  :         str += ",cpu main thread (%)";
+; 578  :         str += ",cpu main thread (%)";
 
   000ad	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117421
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117419
   000b4	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   000b9	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN6@write_head:
 
-; 580  :     }
-; 581  :     if (nSelect & PERF_MONITOR_THREAD_ENC) {
+; 579  :     }
+; 580  :     if (nSelect & PERF_MONITOR_THREAD_ENC) {
 
   000be	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29224,16 +29221,16 @@ $LN6@write_head:
   000ca	85 c0		 test	 eax, eax
   000cc	74 11		 je	 SHORT $LN7@write_head
 
-; 582  :         str += ",cpu enc thread (%)";
+; 581  :         str += ",cpu enc thread (%)";
 
   000ce	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117423
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117421
   000d5	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   000da	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN7@write_head:
 
-; 583  :     }
-; 584  :     if (nSelect & PERF_MONITOR_THREAD_AUDP) {
+; 582  :     }
+; 583  :     if (nSelect & PERF_MONITOR_THREAD_AUDP) {
 
   000df	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29241,16 +29238,16 @@ $LN7@write_head:
   000eb	85 c0		 test	 eax, eax
   000ed	74 11		 je	 SHORT $LN8@write_head
 
-; 585  :         str += ",cpu aud proc thread (%)";
+; 584  :         str += ",cpu aud proc thread (%)";
 
   000ef	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117425
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117423
   000f6	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   000fb	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN8@write_head:
 
-; 586  :     }
-; 587  :     if (nSelect & PERF_MONITOR_THREAD_AUDE) {
+; 585  :     }
+; 586  :     if (nSelect & PERF_MONITOR_THREAD_AUDE) {
 
   00100	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29258,16 +29255,16 @@ $LN8@write_head:
   0010c	85 c0		 test	 eax, eax
   0010e	74 11		 je	 SHORT $LN9@write_head
 
-; 588  :         str += ",cpu aud enc thread (%)";
+; 587  :         str += ",cpu aud enc thread (%)";
 
   00110	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117427
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117425
   00117	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   0011c	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN9@write_head:
 
-; 589  :     }
-; 590  :     if (nSelect & PERF_MONITOR_THREAD_IN) {
+; 588  :     }
+; 589  :     if (nSelect & PERF_MONITOR_THREAD_IN) {
 
   00121	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29275,16 +29272,16 @@ $LN9@write_head:
   0012d	85 c0		 test	 eax, eax
   0012f	74 11		 je	 SHORT $LN10@write_head
 
-; 591  :         str += ",cpu in thread (%)";
+; 590  :         str += ",cpu in thread (%)";
 
   00131	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117429
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117427
   00138	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   0013d	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN10@write_head:
 
-; 592  :     }
-; 593  :     if (nSelect & PERF_MONITOR_THREAD_OUT) {
+; 591  :     }
+; 592  :     if (nSelect & PERF_MONITOR_THREAD_OUT) {
 
   00142	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29292,16 +29289,16 @@ $LN10@write_head:
   0014e	85 c0		 test	 eax, eax
   00150	74 11		 je	 SHORT $LN11@write_head
 
-; 594  :         str += ",cpu out thread (%)";
+; 593  :         str += ",cpu out thread (%)";
 
   00152	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117431
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117429
   00159	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   0015e	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN11@write_head:
 
-; 595  :     }
-; 596  :     if (nSelect & PERF_MONITOR_GPU_LOAD) {
+; 594  :     }
+; 595  :     if (nSelect & PERF_MONITOR_GPU_LOAD) {
 
   00163	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29309,16 +29306,16 @@ $LN11@write_head:
   0016f	85 c0		 test	 eax, eax
   00171	74 11		 je	 SHORT $LN12@write_head
 
-; 597  :         str += ",gpu load (%)";
+; 596  :         str += ",gpu load (%)";
 
   00173	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117433
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117431
   0017a	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   0017f	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN12@write_head:
 
-; 598  :     }
-; 599  :     if (nSelect & PERF_MONITOR_GPU_CLOCK) {
+; 597  :     }
+; 598  :     if (nSelect & PERF_MONITOR_GPU_CLOCK) {
 
   00184	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29326,16 +29323,16 @@ $LN12@write_head:
   00190	85 c0		 test	 eax, eax
   00192	74 11		 je	 SHORT $LN13@write_head
 
-; 600  :         str += ",gpu clock (MHz)";
+; 599  :         str += ",gpu clock (MHz)";
 
   00194	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117435
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117433
   0019b	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   001a0	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN13@write_head:
 
-; 601  :     }
-; 602  :     if (nSelect & PERF_MONITOR_MFX_LOAD) {
+; 600  :     }
+; 601  :     if (nSelect & PERF_MONITOR_MFX_LOAD) {
 
   001a5	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29343,16 +29340,16 @@ $LN13@write_head:
   001b1	85 c0		 test	 eax, eax
   001b3	74 11		 je	 SHORT $LN14@write_head
 
-; 603  :         str += ",mfx load (%)";
+; 602  :         str += ",mfx load (%)";
 
   001b5	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117437
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117435
   001bc	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   001c1	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN14@write_head:
 
-; 604  :     }
-; 605  :     if (nSelect & PERF_MONITOR_VEE_LOAD) {
+; 603  :     }
+; 604  :     if (nSelect & PERF_MONITOR_VEE_LOAD) {
 
   001c6	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29360,16 +29357,16 @@ $LN14@write_head:
   001d2	85 c0		 test	 eax, eax
   001d4	74 11		 je	 SHORT $LN15@write_head
 
-; 606  :         str += ",video encoder load (%)";
+; 605  :         str += ",video encoder load (%)";
 
   001d6	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117439
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117437
   001dd	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   001e2	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN15@write_head:
 
-; 607  :     }
-; 608  :     if (nSelect & PERF_MONITOR_VED_LOAD) {
+; 606  :     }
+; 607  :     if (nSelect & PERF_MONITOR_VED_LOAD) {
 
   001e7	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29377,16 +29374,16 @@ $LN15@write_head:
   001f3	85 c0		 test	 eax, eax
   001f5	74 11		 je	 SHORT $LN16@write_head
 
-; 609  :         str += ",video decoder load (%)";
+; 608  :         str += ",video decoder load (%)";
 
   001f7	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117441
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117439
   001fe	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00203	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN16@write_head:
 
-; 610  :     }
-; 611  :     if (nSelect & PERF_MONITOR_VE_CLOCK) {
+; 609  :     }
+; 610  :     if (nSelect & PERF_MONITOR_VE_CLOCK) {
 
   00208	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29394,16 +29391,16 @@ $LN16@write_head:
   00214	85 c0		 test	 eax, eax
   00216	74 11		 je	 SHORT $LN17@write_head
 
-; 612  :         str += ",video engine clock (MHz)";
+; 611  :         str += ",video engine clock (MHz)";
 
   00218	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117443
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117441
   0021f	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00224	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN17@write_head:
 
-; 613  :     }
-; 614  :     if (nSelect & PERF_MONITOR_PCIE_LOAD) {
+; 612  :     }
+; 613  :     if (nSelect & PERF_MONITOR_PCIE_LOAD) {
 
   00229	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29411,16 +29408,16 @@ $LN17@write_head:
   00235	85 c0		 test	 eax, eax
   00237	74 11		 je	 SHORT $LN18@write_head
 
-; 615  :         str += ",pcie link,pcie tx, pci rx";
+; 614  :         str += ",pcie link,pcie tx, pci rx";
 
   00239	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117445
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117443
   00240	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00245	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN18@write_head:
 
-; 616  :     }
-; 617  :     if (nSelect & PERF_MONITOR_QUEUE_VID_IN) {
+; 615  :     }
+; 616  :     if (nSelect & PERF_MONITOR_QUEUE_VID_IN) {
 
   0024a	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29428,16 +29425,16 @@ $LN18@write_head:
   00256	85 c0		 test	 eax, eax
   00258	74 11		 je	 SHORT $LN19@write_head
 
-; 618  :         str += ",queue vid in";
+; 617  :         str += ",queue vid in";
 
   0025a	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117447
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117445
   00261	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00266	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN19@write_head:
 
-; 619  :     }
-; 620  :     if (nSelect & PERF_MONITOR_QUEUE_AUD_IN) {
+; 618  :     }
+; 619  :     if (nSelect & PERF_MONITOR_QUEUE_AUD_IN) {
 
   0026b	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29445,16 +29442,16 @@ $LN19@write_head:
   00277	85 c0		 test	 eax, eax
   00279	74 11		 je	 SHORT $LN20@write_head
 
-; 621  :         str += ",queue aud in";
+; 620  :         str += ",queue aud in";
 
   0027b	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117449
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117447
   00282	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00287	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN20@write_head:
 
-; 622  :     }
-; 623  :     if (nSelect & PERF_MONITOR_QUEUE_VID_OUT) {
+; 621  :     }
+; 622  :     if (nSelect & PERF_MONITOR_QUEUE_VID_OUT) {
 
   0028c	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29462,16 +29459,16 @@ $LN20@write_head:
   00298	85 c0		 test	 eax, eax
   0029a	74 11		 je	 SHORT $LN21@write_head
 
-; 624  :         str += ",queue vid out";
+; 623  :         str += ",queue vid out";
 
   0029c	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117451
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117449
   002a3	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   002a8	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN21@write_head:
 
-; 625  :     }
-; 626  :     if (nSelect & PERF_MONITOR_QUEUE_AUD_OUT) {
+; 624  :     }
+; 625  :     if (nSelect & PERF_MONITOR_QUEUE_AUD_OUT) {
 
   002ad	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29479,16 +29476,16 @@ $LN21@write_head:
   002b9	85 c0		 test	 eax, eax
   002bb	74 11		 je	 SHORT $LN22@write_head
 
-; 627  :         str += ",queue aud out";
+; 626  :         str += ",queue aud out";
 
   002bd	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117453
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117451
   002c4	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   002c9	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN22@write_head:
 
-; 628  :     }
-; 629  :     if (nSelect & PERF_MONITOR_MEM_PRIVATE) {
+; 627  :     }
+; 628  :     if (nSelect & PERF_MONITOR_MEM_PRIVATE) {
 
   002ce	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29496,16 +29493,16 @@ $LN22@write_head:
   002d8	85 c0		 test	 eax, eax
   002da	74 11		 je	 SHORT $LN23@write_head
 
-; 630  :         str += ",mem private (MB)";
+; 629  :         str += ",mem private (MB)";
 
   002dc	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117455
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117453
   002e3	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   002e8	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN23@write_head:
 
-; 631  :     }
-; 632  :     if (nSelect & PERF_MONITOR_MEM_VIRTUAL) {
+; 630  :     }
+; 631  :     if (nSelect & PERF_MONITOR_MEM_VIRTUAL) {
 
   002ed	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29513,16 +29510,16 @@ $LN23@write_head:
   002f7	85 c0		 test	 eax, eax
   002f9	74 11		 je	 SHORT $LN24@write_head
 
-; 633  :         str += ",mem virtual (MB)";
+; 632  :         str += ",mem virtual (MB)";
 
   002fb	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117457
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117455
   00302	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00307	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN24@write_head:
 
-; 634  :     }
-; 635  :     if (nSelect & PERF_MONITOR_FRAME_IN) {
+; 633  :     }
+; 634  :     if (nSelect & PERF_MONITOR_FRAME_IN) {
 
   0030c	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29530,16 +29527,16 @@ $LN24@write_head:
   00318	85 c0		 test	 eax, eax
   0031a	74 11		 je	 SHORT $LN25@write_head
 
-; 636  :         str += ",frame in";
+; 635  :         str += ",frame in";
 
   0031c	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117459
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117457
   00323	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00328	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN25@write_head:
 
-; 637  :     }
-; 638  :     if (nSelect & PERF_MONITOR_FRAME_OUT) {
+; 636  :     }
+; 637  :     if (nSelect & PERF_MONITOR_FRAME_OUT) {
 
   0032d	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29547,16 +29544,16 @@ $LN25@write_head:
   00339	85 c0		 test	 eax, eax
   0033b	74 11		 je	 SHORT $LN26@write_head
 
-; 639  :         str += ",frame out";
+; 638  :         str += ",frame out";
 
   0033d	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117461
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117459
   00344	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00349	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN26@write_head:
 
-; 640  :     }
-; 641  :     if (nSelect & PERF_MONITOR_FPS) {
+; 639  :     }
+; 640  :     if (nSelect & PERF_MONITOR_FPS) {
 
   0034e	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29564,16 +29561,16 @@ $LN26@write_head:
   00358	85 c0		 test	 eax, eax
   0035a	74 11		 je	 SHORT $LN27@write_head
 
-; 642  :         str += ",enc speed (fps)";
+; 641  :         str += ",enc speed (fps)";
 
   0035c	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117463
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117461
   00363	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00368	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN27@write_head:
 
-; 643  :     }
-; 644  :     if (nSelect & PERF_MONITOR_FPS_AVG) {
+; 642  :     }
+; 643  :     if (nSelect & PERF_MONITOR_FPS_AVG) {
 
   0036d	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29581,16 +29578,16 @@ $LN27@write_head:
   00377	85 c0		 test	 eax, eax
   00379	74 11		 je	 SHORT $LN28@write_head
 
-; 645  :         str += ",enc speed avg (fps)";
+; 644  :         str += ",enc speed avg (fps)";
 
   0037b	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117465
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117463
   00382	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00387	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN28@write_head:
 
-; 646  :     }
-; 647  :     if (nSelect & PERF_MONITOR_BITRATE) {
+; 645  :     }
+; 646  :     if (nSelect & PERF_MONITOR_BITRATE) {
 
   0038c	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29598,16 +29595,16 @@ $LN28@write_head:
   00396	85 c0		 test	 eax, eax
   00398	74 11		 je	 SHORT $LN29@write_head
 
-; 648  :         str += ",bitrate (kbps)";
+; 647  :         str += ",bitrate (kbps)";
 
   0039a	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117467
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117465
   003a1	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   003a6	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN29@write_head:
 
-; 649  :     }
-; 650  :     if (nSelect & PERF_MONITOR_BITRATE_AVG) {
+; 648  :     }
+; 649  :     if (nSelect & PERF_MONITOR_BITRATE_AVG) {
 
   003ab	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29615,16 +29612,16 @@ $LN29@write_head:
   003b7	85 c0		 test	 eax, eax
   003b9	74 11		 je	 SHORT $LN30@write_head
 
-; 651  :         str += ",bitrate avg (kbps)";
+; 650  :         str += ",bitrate avg (kbps)";
 
   003bb	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117469
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117467
   003c2	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   003c7	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN30@write_head:
 
-; 652  :     }
-; 653  :     if (nSelect & PERF_MONITOR_IO_READ) {
+; 651  :     }
+; 652  :     if (nSelect & PERF_MONITOR_IO_READ) {
 
   003cc	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29632,16 +29629,16 @@ $LN30@write_head:
   003d8	85 c0		 test	 eax, eax
   003da	74 11		 je	 SHORT $LN31@write_head
 
-; 654  :         str += ",read (MB/s)";
+; 653  :         str += ",read (MB/s)";
 
   003dc	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117471
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117469
   003e3	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   003e8	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN31@write_head:
 
-; 655  :     }
-; 656  :     if (nSelect & PERF_MONITOR_IO_WRITE) {
+; 654  :     }
+; 655  :     if (nSelect & PERF_MONITOR_IO_WRITE) {
 
   003ed	8b 84 24 90 00
 	00 00		 mov	 eax, DWORD PTR nSelect$[rsp]
@@ -29649,23 +29646,23 @@ $LN31@write_head:
   003f9	85 c0		 test	 eax, eax
   003fb	74 11		 je	 SHORT $LN32@write_head
 
-; 657  :         str += ",write (MB/s)";
+; 656  :         str += ",write (MB/s)";
 
   003fd	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117473
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117471
   00404	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00409	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 $LN32@write_head:
 
-; 658  :     }
-; 659  :     str += "\n";
+; 657  :     }
+; 658  :     str += "\n";
 
   0040e	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117474
+	00 00		 lea	 rdx, OFFSET FLAT:$SG117472
   00415	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   0041a	e8 00 00 00 00	 call	 ??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator+=
 
-; 660  :     fwrite(str.c_str(), 1, str.length(), fp);
+; 659  :     fwrite(str.c_str(), 1, str.length(), fp);
 
   0041f	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   00424	e8 00 00 00 00	 call	 ?length@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA_KXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::length
@@ -29681,7 +29678,7 @@ $LN32@write_head:
   00450	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_fwrite
 
-; 661  :     fflush(fp);
+; 660  :     fflush(fp);
 
   00456	48 8b 8c 24 88
 	00 00 00	 mov	 rcx, QWORD PTR fp$[rsp]
@@ -29689,7 +29686,7 @@ $LN32@write_head:
 	00		 call	 QWORD PTR __imp_fflush
   00464	90		 npad	 1
 
-; 662  : }
+; 661  : }
 
   00465	48 8d 4c 24 28	 lea	 rcx, QWORD PTR str$[rsp]
   0046a	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
@@ -29760,7 +29757,7 @@ tv129 = 48
 this$ = 80
 ?run@CPerfMonitor@@IEAAXXZ PROC				; CPerfMonitor::run
 
-; 1247 : void CPerfMonitor::run() {
+; 1246 : void CPerfMonitor::run() {
 
 $LN8:
   00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
@@ -29773,7 +29770,7 @@ $LN8:
   00019	48 8b 4c 24 50	 mov	 rcx, QWORD PTR [rsp+80]
 $LN2@run:
 
-; 1248 :     while (!m_bAbort) {
+; 1247 :     while (!m_bAbort) {
 
   0001e	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   00023	0f b6 80 78 0b
@@ -29782,12 +29779,12 @@ $LN2@run:
   0002c	0f 85 50 01 00
 	00		 jne	 $LN3@run
 
-; 1249 :         check();
+; 1248 :         check();
 
   00032	48 8b 4c 24 50	 mov	 rcx, QWORD PTR this$[rsp]
   00037	e8 00 00 00 00	 call	 ?check@CPerfMonitor@@IEAAXXZ ; CPerfMonitor::check
 
-; 1250 :         if (m_pProcess && !m_pProcess->processAlive()) {
+; 1249 :         if (m_pProcess && !m_pProcess->processAlive()) {
 
   0003c	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   00041	48 05 b8 02 00
@@ -29813,14 +29810,14 @@ $LN2@run:
   00087	0f 85 82 00 00
 	00		 jne	 $LN4@run
 
-; 1251 :             if (m_pipes.f_stdin) {
+; 1250 :             if (m_pipes.f_stdin) {
 
   0008d	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   00092	48 83 b8 08 03
 	00 00 00	 cmp	 QWORD PTR [rax+776], 0
   0009a	74 12		 je	 SHORT $LN5@run
 
-; 1252 :                 fclose(m_pipes.f_stdin);
+; 1251 :                 fclose(m_pipes.f_stdin);
 
   0009c	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   000a1	48 8b 88 08 03
@@ -29829,22 +29826,22 @@ $LN2@run:
 	00		 call	 QWORD PTR __imp_fclose
 $LN5@run:
 
-; 1253 :             }
-; 1254 :             m_pipes.f_stdin = NULL;
+; 1252 :             }
+; 1253 :             m_pipes.f_stdin = NULL;
 
   000ae	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   000b3	48 c7 80 08 03
 	00 00 00 00 00
 	00		 mov	 QWORD PTR [rax+776], 0
 
-; 1255 :             if (m_nSelectOutputPlot) {
+; 1254 :             if (m_nSelectOutputPlot) {
 
   000be	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   000c3	83 b8 b8 0b 00
 	00 00		 cmp	 DWORD PTR [rax+3000], 0
   000ca	74 43		 je	 SHORT $LN6@run
 
-; 1256 :                 m_pRGYLog->write(RGY_LOG_WARN, _T("Error occured running python for perf-monitor-plot.\n"));
+; 1255 :                 m_pRGYLog->write(RGY_LOG_WARN, _T("Error occured running python for perf-monitor-plot.\n"));
 
   000cc	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   000d1	48 05 f0 0b 00
@@ -29855,12 +29852,12 @@ $LN5@run:
   000e4	48 8b 44 24 30	 mov	 rax, QWORD PTR tv129[rsp]
   000e9	48 8b 00	 mov	 rax, QWORD PTR [rax]
   000ec	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG118491
+	00 00		 lea	 r8, OFFSET FLAT:$SG118489
   000f3	ba 01 00 00 00	 mov	 edx, 1
   000f8	48 8b 4c 24 30	 mov	 rcx, QWORD PTR tv129[rsp]
   000fd	ff 50 20	 call	 QWORD PTR [rax+32]
 
-; 1257 :                 m_nSelectOutputPlot = 0;
+; 1256 :                 m_nSelectOutputPlot = 0;
 
   00100	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   00105	c7 80 b8 0b 00
@@ -29868,9 +29865,9 @@ $LN5@run:
 $LN6@run:
 $LN4@run:
 
-; 1258 :             }
-; 1259 :         }
-; 1260 :         write(m_fpLog.get(),   m_nSelectOutputLog);
+; 1257 :             }
+; 1258 :         }
+; 1259 :         write(m_fpLog.get(),   m_nSelectOutputLog);
 
   0010f	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   00114	48 05 a8 0b 00
@@ -29884,7 +29881,7 @@ $LN4@run:
   00131	48 8b 4c 24 50	 mov	 rcx, QWORD PTR this$[rsp]
   00136	e8 00 00 00 00	 call	 ?write@CPerfMonitor@@IEAAXPEAU_iobuf@@H@Z ; CPerfMonitor::write
 
-; 1261 :         write(m_pipes.f_stdin, m_nSelectOutputPlot);
+; 1260 :         write(m_pipes.f_stdin, m_nSelectOutputPlot);
 
   0013b	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   00140	44 8b 80 b8 0b
@@ -29895,7 +29892,7 @@ $LN4@run:
   00153	48 8b 4c 24 50	 mov	 rcx, QWORD PTR this$[rsp]
   00158	e8 00 00 00 00	 call	 ?write@CPerfMonitor@@IEAAXPEAU_iobuf@@H@Z ; CPerfMonitor::write
 
-; 1262 :         std::this_thread::sleep_for(std::chrono::milliseconds(m_nInterval));
+; 1261 :         std::this_thread::sleep_for(std::chrono::milliseconds(m_nInterval));
 
   0015d	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   00162	48 05 7c 0b 00
@@ -29906,17 +29903,17 @@ $LN4@run:
   00175	48 8b c8	 mov	 rcx, rax
   00178	e8 00 00 00 00	 call	 ??$sleep_for@_JU?$ratio@$00$0DOI@@std@@@this_thread@std@@YAXAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@1@@Z ; std::this_thread::sleep_for<__int64,std::ratio<1,1000> >
 
-; 1263 :     }
+; 1262 :     }
 
   0017d	e9 9c fe ff ff	 jmp	 $LN2@run
 $LN3@run:
 
-; 1264 :     check();
+; 1263 :     check();
 
   00182	48 8b 4c 24 50	 mov	 rcx, QWORD PTR this$[rsp]
   00187	e8 00 00 00 00	 call	 ?check@CPerfMonitor@@IEAAXXZ ; CPerfMonitor::check
 
-; 1265 :     write(m_fpLog.get(),   m_nSelectOutputLog);
+; 1264 :     write(m_fpLog.get(),   m_nSelectOutputLog);
 
   0018c	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   00191	48 05 a8 0b 00
@@ -29930,7 +29927,7 @@ $LN3@run:
   001ae	48 8b 4c 24 50	 mov	 rcx, QWORD PTR this$[rsp]
   001b3	e8 00 00 00 00	 call	 ?write@CPerfMonitor@@IEAAXPEAU_iobuf@@H@Z ; CPerfMonitor::write
 
-; 1266 :     write(m_pipes.f_stdin, m_nSelectOutputPlot);
+; 1265 :     write(m_pipes.f_stdin, m_nSelectOutputPlot);
 
   001b8	48 8b 44 24 50	 mov	 rax, QWORD PTR this$[rsp]
   001bd	44 8b 80 b8 0b
@@ -29941,7 +29938,7 @@ $LN3@run:
   001d0	48 8b 4c 24 50	 mov	 rcx, QWORD PTR this$[rsp]
   001d5	e8 00 00 00 00	 call	 ?write@CPerfMonitor@@IEAAXPEAU_iobuf@@H@Z ; CPerfMonitor::write
 
-; 1267 : }
+; 1266 : }
 
   001da	48 83 c4 40	 add	 rsp, 64			; 00000040H
   001de	5f		 pop	 rdi
@@ -29975,7 +29972,7 @@ __$ArrayPad$ = 856
 this$ = 880
 ?check@CPerfMonitor@@IEAAXXZ PROC			; CPerfMonitor::check
 
-; 872  : void CPerfMonitor::check() {
+; 871  : void CPerfMonitor::check() {
 
 $LN29:
   00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
@@ -29994,7 +29991,7 @@ $LN29:
   0002e	48 89 84 24 58
 	03 00 00	 mov	 QWORD PTR __$ArrayPad$[rsp], rax
 
-; 873  :     PerfInfo *pInfoNew = &m_info[(m_nStep + 1) & 1];
+; 872  :     PerfInfo *pInfoNew = &m_info[(m_nStep + 1) & 1];
 
   00036	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30009,7 +30006,7 @@ $LN29:
   00056	48 8d 44 01 30	 lea	 rax, QWORD PTR [rcx+rax+48]
   0005b	48 89 44 24 30	 mov	 QWORD PTR pInfoNew$[rsp], rax
 
-; 874  :     PerfInfo *pInfoOld = &m_info[ m_nStep      & 1];
+; 873  :     PerfInfo *pInfoOld = &m_info[ m_nStep      & 1];
 
   00060	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30023,7 +30020,7 @@ $LN29:
   0007e	48 8d 44 01 30	 lea	 rax, QWORD PTR [rcx+rax+48]
   00083	48 89 44 24 38	 mov	 QWORD PTR pInfoOld$[rsp], rax
 
-; 875  :     memcpy(pInfoNew, pInfoOld, sizeof(pInfoNew[0]));
+; 874  :     memcpy(pInfoNew, pInfoOld, sizeof(pInfoNew[0]));
 
   00088	41 b8 38 01 00
 	00		 mov	 r8d, 312		; 00000138H
@@ -30031,15 +30028,15 @@ $LN29:
   00093	48 8b 4c 24 30	 mov	 rcx, QWORD PTR pInfoNew$[rsp]
   00098	e8 00 00 00 00	 call	 memcpy
 
-; 876  : 
-; 877  : #if defined(_WIN32) || defined(_WIN64)
-; 878  :     const auto hProcess = GetCurrentProcess();
+; 875  : 
+; 876  : #if defined(_WIN32) || defined(_WIN64)
+; 877  :     const auto hProcess = GetCurrentProcess();
 
   0009d	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_GetCurrentProcess
   000a3	48 89 44 24 40	 mov	 QWORD PTR hProcess$[rsp], rax
 
-; 879  :     auto getThreadTime = [](HANDLE hThread, PROCESS_TIME *time) {
+; 878  :     auto getThreadTime = [](HANDLE hThread, PROCESS_TIME *time) {
 
   000a8	48 8d 84 24 50
 	03 00 00	 lea	 rax, QWORD PTR $T24[rsp]
@@ -30048,11 +30045,11 @@ $LN29:
   000b5	b9 01 00 00 00	 mov	 ecx, 1
   000ba	f3 aa		 rep stosb
 
-; 880  :         GetThreadTimes(hThread, (FILETIME *)&time->creation, (FILETIME *)&time->exit, (FILETIME *)&time->kernel, (FILETIME *)&time->user);
-; 881  :     };
-; 882  : 
-; 883  :     //メモリ情報
-; 884  :     PROCESS_MEMORY_COUNTERS mem_counters = { 0 };
+; 879  :         GetThreadTimes(hThread, (FILETIME *)&time->creation, (FILETIME *)&time->exit, (FILETIME *)&time->kernel, (FILETIME *)&time->user);
+; 880  :     };
+; 881  : 
+; 882  :     //メモリ情報
+; 883  :     PROCESS_MEMORY_COUNTERS mem_counters = { 0 };
 
   000bc	48 8d 84 24 80
 	00 00 00	 lea	 rax, QWORD PTR mem_counters$[rsp]
@@ -30061,13 +30058,13 @@ $LN29:
   000c9	b9 48 00 00 00	 mov	 ecx, 72			; 00000048H
   000ce	f3 aa		 rep stosb
 
-; 885  :     mem_counters.cb = sizeof(PROCESS_MEMORY_COUNTERS);
+; 884  :     mem_counters.cb = sizeof(PROCESS_MEMORY_COUNTERS);
 
   000d0	c7 84 24 80 00
 	00 00 48 00 00
 	00		 mov	 DWORD PTR mem_counters$[rsp], 72 ; 00000048H
 
-; 886  :     GetProcessMemoryInfo(hProcess, &mem_counters, sizeof(mem_counters));
+; 885  :     GetProcessMemoryInfo(hProcess, &mem_counters, sizeof(mem_counters));
 
   000db	41 b8 48 00 00
 	00		 mov	 r8d, 72			; 00000048H
@@ -30076,23 +30073,23 @@ $LN29:
   000e9	48 8b 4c 24 40	 mov	 rcx, QWORD PTR hProcess$[rsp]
   000ee	e8 00 00 00 00	 call	 K32GetProcessMemoryInfo
 
-; 887  :     pInfoNew->mem_private = mem_counters.WorkingSetSize;
+; 886  :     pInfoNew->mem_private = mem_counters.WorkingSetSize;
 
   000f3	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   000f8	48 8b 8c 24 90
 	00 00 00	 mov	 rcx, QWORD PTR mem_counters$[rsp+16]
   00100	48 89 48 48	 mov	 QWORD PTR [rax+72], rcx
 
-; 888  :     pInfoNew->mem_virtual = mem_counters.PagefileUsage;
+; 887  :     pInfoNew->mem_virtual = mem_counters.PagefileUsage;
 
   00104	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00109	48 8b 8c 24 b8
 	00 00 00	 mov	 rcx, QWORD PTR mem_counters$[rsp+56]
   00111	48 89 48 50	 mov	 QWORD PTR [rax+80], rcx
 
-; 889  : 
-; 890  :     //IO情報
-; 891  :     IO_COUNTERS io_counters = { 0 };
+; 888  : 
+; 889  :     //IO情報
+; 890  :     IO_COUNTERS io_counters = { 0 };
 
   00115	48 8d 84 24 e8
 	00 00 00	 lea	 rax, QWORD PTR io_counters$[rsp]
@@ -30101,7 +30098,7 @@ $LN29:
   00122	b9 30 00 00 00	 mov	 ecx, 48			; 00000030H
   00127	f3 aa		 rep stosb
 
-; 892  :     GetProcessIoCounters(hProcess, &io_counters);
+; 891  :     GetProcessIoCounters(hProcess, &io_counters);
 
   00129	48 8d 94 24 e8
 	00 00 00	 lea	 rdx, QWORD PTR io_counters$[rsp]
@@ -30109,29 +30106,29 @@ $LN29:
   00136	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_GetProcessIoCounters
 
-; 893  :     pInfoNew->io_total_read = io_counters.ReadTransferCount;
+; 892  :     pInfoNew->io_total_read = io_counters.ReadTransferCount;
 
   0013c	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00141	48 8b 8c 24 00
 	01 00 00	 mov	 rcx, QWORD PTR io_counters$[rsp+24]
   00149	48 89 48 58	 mov	 QWORD PTR [rax+88], rcx
 
-; 894  :     pInfoNew->io_total_write = io_counters.WriteTransferCount;
+; 893  :     pInfoNew->io_total_write = io_counters.WriteTransferCount;
 
   0014d	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00152	48 8b 8c 24 08
 	01 00 00	 mov	 rcx, QWORD PTR io_counters$[rsp+32]
   0015a	48 89 48 60	 mov	 QWORD PTR [rax+96], rcx
 
-; 895  : 
-; 896  :     //現在時刻
-; 897  :     uint64_t current_time = 0;
+; 894  : 
+; 895  :     //現在時刻
+; 896  :     uint64_t current_time = 0;
 
   0015e	48 c7 84 24 38
 	01 00 00 00 00
 	00 00		 mov	 QWORD PTR current_time$[rsp], 0
 
-; 898  :     SYSTEMTIME systime = { 0 };
+; 897  :     SYSTEMTIME systime = { 0 };
 
   0016a	48 8d 84 24 58
 	01 00 00	 lea	 rax, QWORD PTR systime$[rsp]
@@ -30140,14 +30137,14 @@ $LN29:
   00177	b9 10 00 00 00	 mov	 ecx, 16
   0017c	f3 aa		 rep stosb
 
-; 899  :     GetSystemTime(&systime);
+; 898  :     GetSystemTime(&systime);
 
   0017e	48 8d 8c 24 58
 	01 00 00	 lea	 rcx, QWORD PTR systime$[rsp]
   00186	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_GetSystemTime
 
-; 900  :     SystemTimeToFileTime(&systime, (FILETIME *)&current_time);
+; 899  :     SystemTimeToFileTime(&systime, (FILETIME *)&current_time);
 
   0018c	48 8d 94 24 38
 	01 00 00	 lea	 rdx, QWORD PTR current_time$[rsp]
@@ -30156,9 +30153,9 @@ $LN29:
   0019c	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_SystemTimeToFileTime
 
-; 901  : 
-; 902  :     //CPU情報
-; 903  :     PROCESS_TIME pt = { 0 };
+; 900  : 
+; 901  :     //CPU情報
+; 902  :     PROCESS_TIME pt = { 0 };
 
   001a2	48 8d 84 24 88
 	01 00 00	 lea	 rax, QWORD PTR pt$[rsp]
@@ -30167,7 +30164,7 @@ $LN29:
   001af	b9 20 00 00 00	 mov	 ecx, 32			; 00000020H
   001b4	f3 aa		 rep stosb
 
-; 904  :     GetProcessTimes(hProcess, (FILETIME *)&pt.creation, (FILETIME *)&pt.exit, (FILETIME *)&pt.kernel, (FILETIME *)&pt.user);
+; 903  :     GetProcessTimes(hProcess, (FILETIME *)&pt.creation, (FILETIME *)&pt.exit, (FILETIME *)&pt.kernel, (FILETIME *)&pt.user);
 
   001b6	48 8d 84 24 a0
 	01 00 00	 lea	 rax, QWORD PTR pt$[rsp+24]
@@ -30182,7 +30179,7 @@ $LN29:
   001e0	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_GetProcessTimes
 
-; 905  :     pInfoNew->time_us = (current_time - pt.creation) / 10;
+; 904  :     pInfoNew->time_us = (current_time - pt.creation) / 10;
 
   001e6	48 8b 84 24 88
 	01 00 00	 mov	 rax, QWORD PTR pt$[rsp]
@@ -30196,7 +30193,7 @@ $LN29:
   00206	48 8b 4c 24 30	 mov	 rcx, QWORD PTR pInfoNew$[rsp]
   0020b	48 89 01	 mov	 QWORD PTR [rcx], rax
 
-; 906  :     const double time_diff_inv = 1.0 / (pInfoNew->time_us - pInfoOld->time_us);
+; 905  :     const double time_diff_inv = 1.0 / (pInfoNew->time_us - pInfoOld->time_us);
 
   0020e	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00213	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -30211,117 +30208,117 @@ $LN29:
   00235	f2 0f 11 84 24
 	b8 01 00 00	 movsd	 QWORD PTR time_diff_inv$[rsp], xmm0
 
-; 907  : 
-; 908  :     //GPU情報
-; 909  :     m_bGPUZInfoValid = false;
+; 906  : 
+; 907  :     //GPU情報
+; 908  :     m_bGPUZInfoValid = false;
 
   0023e	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
   00246	c6 80 0c 1a 03
 	00 00		 mov	 BYTE PTR [rax+203276], 0
 
-; 910  :     pInfoNew->gpu_info_valid = FALSE;
+; 909  :     pInfoNew->gpu_info_valid = FALSE;
 
   0024d	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00252	c7 80 f0 00 00
 	00 00 00 00 00	 mov	 DWORD PTR [rax+240], 0
 
-; 911  : #if ENABLE_METRIC_FRAMEWORK
-; 912  :     QSVGPUInfo qsvinfo = { 0 };
-; 913  :     if (m_Consumer.getMFXLoad(&qsvinfo)) {
-; 914  :         pInfoNew->gpu_info_valid = TRUE;
-; 915  :         pInfoNew->mfx_load_percent = qsvinfo.dMFXLoad;
-; 916  :         pInfoNew->gpu_load_percent = qsvinfo.dEULoad;
-; 917  :         pInfoNew->gpu_clock = qsvinfo.dGPUFreq;
-; 918  :     } else {
-; 919  : #endif //#if ENABLE_METRIC_FRAMEWORK
-; 920  : #if ENABLE_NVML
-; 921  :     pInfoNew->gpu_info_valid   = FALSE;
-; 922  :     pInfoNew->gpu_clock = 0.0;
-; 923  :     pInfoNew->gpu_load_percent = 0.0;
-; 924  :     pInfoNew->ve_clock = 0.0;
-; 925  :     pInfoNew->vee_load_percent = 0.0;
-; 926  :     pInfoNew->ved_load_percent = 0.0;
-; 927  :     pInfoNew->pcie_gen = 0;
-; 928  :     pInfoNew->pcie_link = 0;
-; 929  :     pInfoNew->pcie_throughput_tx_per_sec = 0;
-; 930  :     pInfoNew->pcie_throughput_rx_per_sec = 0;
-; 931  :     NVMLMonitorInfo nvmlInfo;
-; 932  :     if (m_nvmlMonitor.getData(&nvmlInfo) == NVML_SUCCESS) {
-; 933  :         m_nvmlInfo = nvmlInfo;
-; 934  :         pInfoNew->gpu_info_valid   = TRUE;
-; 935  :         pInfoNew->gpu_clock        = m_nvmlInfo.GPUFreq;
-; 936  :         pInfoNew->gpu_load_percent = m_nvmlInfo.GPULoad;
-; 937  :         pInfoNew->ve_clock         = m_nvmlInfo.VEFreq;
-; 938  :         pInfoNew->vee_load_percent = m_nvmlInfo.VEELoad;
-; 939  :         pInfoNew->ved_load_percent = m_nvmlInfo.VEDLoad;
-; 940  :         pInfoNew->pcie_gen         = m_nvmlInfo.pcieGen;
-; 941  :         pInfoNew->pcie_link        = m_nvmlInfo.pcieLink;
-; 942  :         pInfoNew->pcie_throughput_tx_per_sec = m_nvmlInfo.pcieLoadTX;
-; 943  :         pInfoNew->pcie_throughput_rx_per_sec = m_nvmlInfo.pcieLoadRX;
-; 944  :     } else {
-; 945  : #endif //#if ENABLE_NVML
-; 946  :         pInfoNew->gpu_clock = 0.0;
+; 910  : #if ENABLE_METRIC_FRAMEWORK
+; 911  :     QSVGPUInfo qsvinfo = { 0 };
+; 912  :     if (m_Consumer.getMFXLoad(&qsvinfo)) {
+; 913  :         pInfoNew->gpu_info_valid = TRUE;
+; 914  :         pInfoNew->mfx_load_percent = qsvinfo.dMFXLoad;
+; 915  :         pInfoNew->gpu_load_percent = qsvinfo.dEULoad;
+; 916  :         pInfoNew->gpu_clock = qsvinfo.dGPUFreq;
+; 917  :     } else {
+; 918  : #endif //#if ENABLE_METRIC_FRAMEWORK
+; 919  : #if ENABLE_NVML
+; 920  :     pInfoNew->gpu_info_valid   = FALSE;
+; 921  :     pInfoNew->gpu_clock = 0.0;
+; 922  :     pInfoNew->gpu_load_percent = 0.0;
+; 923  :     pInfoNew->ve_clock = 0.0;
+; 924  :     pInfoNew->vee_load_percent = 0.0;
+; 925  :     pInfoNew->ved_load_percent = 0.0;
+; 926  :     pInfoNew->pcie_gen = 0;
+; 927  :     pInfoNew->pcie_link = 0;
+; 928  :     pInfoNew->pcie_throughput_tx_per_sec = 0;
+; 929  :     pInfoNew->pcie_throughput_rx_per_sec = 0;
+; 930  :     NVMLMonitorInfo nvmlInfo;
+; 931  :     if (m_nvmlMonitor.getData(&nvmlInfo) == NVML_SUCCESS) {
+; 932  :         m_nvmlInfo = nvmlInfo;
+; 933  :         pInfoNew->gpu_info_valid   = TRUE;
+; 934  :         pInfoNew->gpu_clock        = m_nvmlInfo.GPUFreq;
+; 935  :         pInfoNew->gpu_load_percent = m_nvmlInfo.GPULoad;
+; 936  :         pInfoNew->ve_clock         = m_nvmlInfo.VEFreq;
+; 937  :         pInfoNew->vee_load_percent = m_nvmlInfo.VEELoad;
+; 938  :         pInfoNew->ved_load_percent = m_nvmlInfo.VEDLoad;
+; 939  :         pInfoNew->pcie_gen         = m_nvmlInfo.pcieGen;
+; 940  :         pInfoNew->pcie_link        = m_nvmlInfo.pcieLink;
+; 941  :         pInfoNew->pcie_throughput_tx_per_sec = m_nvmlInfo.pcieLoadTX;
+; 942  :         pInfoNew->pcie_throughput_rx_per_sec = m_nvmlInfo.pcieLoadRX;
+; 943  :     } else {
+; 944  : #endif //#if ENABLE_NVML
+; 945  :         pInfoNew->gpu_clock = 0.0;
 
   0025c	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00261	0f 57 c0	 xorps	 xmm0, xmm0
   00264	f2 0f 11 80 00
 	01 00 00	 movsd	 QWORD PTR [rax+256], xmm0
 
-; 947  :         pInfoNew->gpu_load_percent = 0.0;
+; 946  :         pInfoNew->gpu_load_percent = 0.0;
 
   0026c	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00271	0f 57 c0	 xorps	 xmm0, xmm0
   00274	f2 0f 11 80 f8
 	00 00 00	 movsd	 QWORD PTR [rax+248], xmm0
 
-; 948  :         pInfoNew->ve_clock = 0.0;
+; 947  :         pInfoNew->ve_clock = 0.0;
 
   0027c	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00281	0f 57 c0	 xorps	 xmm0, xmm0
   00284	f2 0f 11 80 20
 	01 00 00	 movsd	 QWORD PTR [rax+288], xmm0
 
-; 949  :         pInfoNew->vee_load_percent = 0.0;
+; 948  :         pInfoNew->vee_load_percent = 0.0;
 
   0028c	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00291	0f 57 c0	 xorps	 xmm0, xmm0
   00294	f2 0f 11 80 10
 	01 00 00	 movsd	 QWORD PTR [rax+272], xmm0
 
-; 950  :         pInfoNew->ved_load_percent = 0.0;
+; 949  :         pInfoNew->ved_load_percent = 0.0;
 
   0029c	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   002a1	0f 57 c0	 xorps	 xmm0, xmm0
   002a4	f2 0f 11 80 18
 	01 00 00	 movsd	 QWORD PTR [rax+280], xmm0
 
-; 951  :         pInfoNew->pcie_gen = 0;
+; 950  :         pInfoNew->pcie_gen = 0;
 
   002ac	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   002b1	c7 80 28 01 00
 	00 00 00 00 00	 mov	 DWORD PTR [rax+296], 0
 
-; 952  :         pInfoNew->pcie_link = 0;
+; 951  :         pInfoNew->pcie_link = 0;
 
   002bb	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   002c0	c7 80 2c 01 00
 	00 00 00 00 00	 mov	 DWORD PTR [rax+300], 0
 
-; 953  :         pInfoNew->pcie_throughput_tx_per_sec = 0;
+; 952  :         pInfoNew->pcie_throughput_tx_per_sec = 0;
 
   002ca	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   002cf	c7 80 30 01 00
 	00 00 00 00 00	 mov	 DWORD PTR [rax+304], 0
 
-; 954  :         pInfoNew->pcie_throughput_rx_per_sec = 0;
+; 953  :         pInfoNew->pcie_throughput_rx_per_sec = 0;
 
   002d9	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   002de	c7 80 34 01 00
 	00 00 00 00 00	 mov	 DWORD PTR [rax+308], 0
 
-; 955  : #if ENABLE_GPUZ_INFO
-; 956  :         memset(&m_GPUZInfo, 0, sizeof(m_GPUZInfo));
+; 954  : #if ENABLE_GPUZ_INFO
+; 955  :         memset(&m_GPUZInfo, 0, sizeof(m_GPUZInfo));
 
   002e8	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30333,7 +30330,7 @@ $LN29:
   002fe	48 8b c8	 mov	 rcx, rax
   00301	e8 00 00 00 00	 call	 memset
 
-; 957  :         if (0 == get_gpuz_info(&m_GPUZInfo)) {
+; 956  :         if (0 == get_gpuz_info(&m_GPUZInfo)) {
 
   00306	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30345,20 +30342,20 @@ $LN29:
   0031e	0f 85 89 00 00
 	00		 jne	 $LN2@check
 
-; 958  :             m_bGPUZInfoValid = true;
+; 957  :             m_bGPUZInfoValid = true;
 
   00324	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
   0032c	c6 80 0c 1a 03
 	00 01		 mov	 BYTE PTR [rax+203276], 1
 
-; 959  :             pInfoNew->gpu_info_valid = TRUE;
+; 958  :             pInfoNew->gpu_info_valid = TRUE;
 
   00333	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00338	c7 80 f0 00 00
 	00 01 00 00 00	 mov	 DWORD PTR [rax+240], 1
 
-; 960  :             pInfoNew->gpu_load_percent = gpu_load(&m_GPUZInfo);
+; 959  :             pInfoNew->gpu_load_percent = gpu_load(&m_GPUZInfo);
 
   00342	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30370,7 +30367,7 @@ $LN29:
   0035d	f2 0f 11 80 f8
 	00 00 00	 movsd	 QWORD PTR [rax+248], xmm0
 
-; 961  :             pInfoNew->vee_load_percent = video_engine_load(&m_GPUZInfo, nullptr);
+; 960  :             pInfoNew->vee_load_percent = video_engine_load(&m_GPUZInfo, nullptr);
 
   00365	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30383,7 +30380,7 @@ $LN29:
   00382	f2 0f 11 80 10
 	01 00 00	 movsd	 QWORD PTR [rax+272], xmm0
 
-; 962  :             pInfoNew->gpu_clock = gpu_core_clock(&m_GPUZInfo);
+; 961  :             pInfoNew->gpu_clock = gpu_core_clock(&m_GPUZInfo);
 
   0038a	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30396,64 +30393,64 @@ $LN29:
 	01 00 00	 movsd	 QWORD PTR [rax+256], xmm0
 $LN2@check:
 
-; 963  :         }
-; 964  : #endif //#if ENABLE_GPUZ_INFO
-; 965  : #if ENABLE_METRIC_FRAMEWORK || ENABLE_NVML
-; 966  :     }
-; 967  : #endif //#if ENABLE_METRIC_FRAMEWORK || ENABLE_NVML
-; 968  : #else
-; 969  :     struct rusage usage = { 0 };
-; 970  :     getrusage(RUSAGE_SELF, &usage);
-; 971  : 
-; 972  :     //現在時間
-; 973  :     uint64_t current_time = clock() * (1e7 / CLOCKS_PER_SEC);
-; 974  : 
-; 975  :     std::string proc_dir = strsprintf("/proc/%d/", (int)getpid());
-; 976  :     //メモリ情報
-; 977  :     FILE *fp_mem = popen((std::string("cat ") + proc_dir + std::string("status")).c_str(), "r");
-; 978  :     if (fp_mem) {
-; 979  :         char buffer[2048] = { 0 };
-; 980  :         while (NULL != fgets(buffer, _countof(buffer), fp_mem)) {
-; 981  :             if (nullptr != strstr(buffer, "VmSize")) {
-; 982  :                 long long i = 0;
-; 983  :                 if (1 == sscanf(buffer, "VmSize: %lld kB", &i)) {
-; 984  :                     pInfoNew->mem_virtual = i << 10;
-; 985  :                 }
-; 986  :             } else if (nullptr != strstr(buffer, "VmRSS")) {
-; 987  :                 long long i = 0;
-; 988  :                 if (1 == sscanf(buffer, "VmRSS: %lld kB", &i)) {
-; 989  :                     pInfoNew->mem_private = i << 10;
-; 990  :                 }
-; 991  :             }
-; 992  :         }
-; 993  :         fclose(fp_mem);
-; 994  :     }
-; 995  :     //IO情報
-; 996  :     FILE *fp_io = popen((std::string("cat ") + proc_dir + std::string("io")).c_str(), "r");
-; 997  :     if (fp_io) {
-; 998  :         char buffer[2048] = { 0 };
-; 999  :         while (NULL != fgets(buffer, _countof(buffer), fp_io)) {
-; 1000 :             if (nullptr != strstr(buffer, "rchar:")) {
-; 1001 :                 long long i = 0;
-; 1002 :                 if (1 == sscanf(buffer, "rchar: %lld", &i)) {
-; 1003 :                     pInfoNew->io_total_read = i;
-; 1004 :                 }
-; 1005 :             } else if (nullptr != strstr(buffer, "wchar")) {
-; 1006 :                 long long i = 0;
-; 1007 :                 if (1 == sscanf(buffer, "wchar: %lld", &i)) {
-; 1008 :                     pInfoNew->io_total_write = i;
-; 1009 :                 }
-; 1010 :             }
-; 1011 :         }
-; 1012 :         fclose(fp_io);
-; 1013 :     }
-; 1014 : 
-; 1015 :     //CPU情報
-; 1016 :     pInfoNew->time_us = (current_time - m_nCreateTime100ns) / 10;
-; 1017 :     const double time_diff_inv = 1.0 / (pInfoNew->time_us - pInfoOld->time_us);
-; 1018 : #endif
-; 1019 : 
-; 1020 :     if (pInfoNew->time_us > pInfoOld->time_us) {
+; 962  :         }
+; 963  : #endif //#if ENABLE_GPUZ_INFO
+; 964  : #if ENABLE_METRIC_FRAMEWORK || ENABLE_NVML
+; 965  :     }
+; 966  : #endif //#if ENABLE_METRIC_FRAMEWORK || ENABLE_NVML
+; 967  : #else
+; 968  :     struct rusage usage = { 0 };
+; 969  :     getrusage(RUSAGE_SELF, &usage);
+; 970  : 
+; 971  :     //現在時間
+; 972  :     uint64_t current_time = clock() * (1e7 / CLOCKS_PER_SEC);
+; 973  : 
+; 974  :     std::string proc_dir = strsprintf("/proc/%d/", (int)getpid());
+; 975  :     //メモリ情報
+; 976  :     FILE *fp_mem = popen((std::string("cat ") + proc_dir + std::string("status")).c_str(), "r");
+; 977  :     if (fp_mem) {
+; 978  :         char buffer[2048] = { 0 };
+; 979  :         while (NULL != fgets(buffer, _countof(buffer), fp_mem)) {
+; 980  :             if (nullptr != strstr(buffer, "VmSize")) {
+; 981  :                 long long i = 0;
+; 982  :                 if (1 == sscanf(buffer, "VmSize: %lld kB", &i)) {
+; 983  :                     pInfoNew->mem_virtual = i << 10;
+; 984  :                 }
+; 985  :             } else if (nullptr != strstr(buffer, "VmRSS")) {
+; 986  :                 long long i = 0;
+; 987  :                 if (1 == sscanf(buffer, "VmRSS: %lld kB", &i)) {
+; 988  :                     pInfoNew->mem_private = i << 10;
+; 989  :                 }
+; 990  :             }
+; 991  :         }
+; 992  :         fclose(fp_mem);
+; 993  :     }
+; 994  :     //IO情報
+; 995  :     FILE *fp_io = popen((std::string("cat ") + proc_dir + std::string("io")).c_str(), "r");
+; 996  :     if (fp_io) {
+; 997  :         char buffer[2048] = { 0 };
+; 998  :         while (NULL != fgets(buffer, _countof(buffer), fp_io)) {
+; 999  :             if (nullptr != strstr(buffer, "rchar:")) {
+; 1000 :                 long long i = 0;
+; 1001 :                 if (1 == sscanf(buffer, "rchar: %lld", &i)) {
+; 1002 :                     pInfoNew->io_total_read = i;
+; 1003 :                 }
+; 1004 :             } else if (nullptr != strstr(buffer, "wchar")) {
+; 1005 :                 long long i = 0;
+; 1006 :                 if (1 == sscanf(buffer, "wchar: %lld", &i)) {
+; 1007 :                     pInfoNew->io_total_write = i;
+; 1008 :                 }
+; 1009 :             }
+; 1010 :         }
+; 1011 :         fclose(fp_io);
+; 1012 :     }
+; 1013 : 
+; 1014 :     //CPU情報
+; 1015 :     pInfoNew->time_us = (current_time - m_nCreateTime100ns) / 10;
+; 1016 :     const double time_diff_inv = 1.0 / (pInfoNew->time_us - pInfoOld->time_us);
+; 1017 : #endif
+; 1018 : 
+; 1019 :     if (pInfoNew->time_us > pInfoOld->time_us) {
 
   003ad	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   003b2	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -30462,8 +30459,8 @@ $LN2@check:
   003bd	0f 8e d8 06 00
 	00		 jle	 $LN3@check
 
-; 1021 : #if defined(_WIN32) || defined(_WIN64)
-; 1022 :         pInfoNew->cpu_total_us = (pt.user + pt.kernel) / 10;
+; 1020 : #if defined(_WIN32) || defined(_WIN64)
+; 1021 :         pInfoNew->cpu_total_us = (pt.user + pt.kernel) / 10;
 
   003c3	48 8b 84 24 98
 	01 00 00	 mov	 rax, QWORD PTR pt$[rsp+16]
@@ -30477,7 +30474,7 @@ $LN2@check:
   003e3	48 8b 4c 24 30	 mov	 rcx, QWORD PTR pInfoNew$[rsp]
   003e8	48 89 41 08	 mov	 QWORD PTR [rcx+8], rax
 
-; 1023 :         pInfoNew->cpu_total_kernel_us = pt.kernel / 10;
+; 1022 :         pInfoNew->cpu_total_kernel_us = pt.kernel / 10;
 
   003ec	33 d2		 xor	 edx, edx
   003ee	48 8b 84 24 98
@@ -30487,15 +30484,15 @@ $LN2@check:
   003fe	48 8b 4c 24 30	 mov	 rcx, QWORD PTR pInfoNew$[rsp]
   00403	48 89 41 10	 mov	 QWORD PTR [rcx+16], rax
 
-; 1024 : #else
-; 1025 :         int64_t cpu_user_us = usage.ru_utime.tv_sec * 1000000 + usage.ru_utime.tv_usec;
-; 1026 :         int64_t cpu_kernel_us = usage.ru_stime.tv_sec * 1000000 + usage.ru_stime.tv_usec;
-; 1027 :         pInfoNew->cpu_total_us = cpu_user_us + cpu_kernel_us;
-; 1028 :         pInfoNew->cpu_total_kernel_us = cpu_kernel_us;
-; 1029 : #endif //#if defined(_WIN32) || defined(_WIN64)
-; 1030 : 
-; 1031 :         //CPU使用率
-; 1032 :         const double logical_cpu_inv       = 1.0 / m_nLogicalCPU;
+; 1023 : #else
+; 1024 :         int64_t cpu_user_us = usage.ru_utime.tv_sec * 1000000 + usage.ru_utime.tv_usec;
+; 1025 :         int64_t cpu_kernel_us = usage.ru_stime.tv_sec * 1000000 + usage.ru_stime.tv_usec;
+; 1026 :         pInfoNew->cpu_total_us = cpu_user_us + cpu_kernel_us;
+; 1027 :         pInfoNew->cpu_total_kernel_us = cpu_kernel_us;
+; 1028 : #endif //#if defined(_WIN32) || defined(_WIN64)
+; 1029 : 
+; 1030 :         //CPU使用率
+; 1031 :         const double logical_cpu_inv       = 1.0 / m_nLogicalCPU;
 
   00407	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30508,7 +30505,7 @@ $LN2@check:
   00426	f2 0f 11 84 24
 	c0 01 00 00	 movsd	 QWORD PTR logical_cpu_inv$15[rsp], xmm0
 
-; 1033 :         pInfoNew->cpu_percent        = (pInfoNew->cpu_total_us        - pInfoOld->cpu_total_us) * 100.0 * logical_cpu_inv * time_diff_inv;
+; 1032 :         pInfoNew->cpu_percent        = (pInfoNew->cpu_total_us        - pInfoOld->cpu_total_us) * 100.0 * logical_cpu_inv * time_diff_inv;
 
   0042f	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00434	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -30526,7 +30523,7 @@ $LN2@check:
   00468	f2 0f 11 80 b0
 	00 00 00	 movsd	 QWORD PTR [rax+176], xmm0
 
-; 1034 :         pInfoNew->cpu_kernel_percent = (pInfoNew->cpu_total_kernel_us - pInfoOld->cpu_total_kernel_us) * 100.0 * logical_cpu_inv * time_diff_inv;
+; 1033 :         pInfoNew->cpu_kernel_percent = (pInfoNew->cpu_total_kernel_us - pInfoOld->cpu_total_kernel_us) * 100.0 * logical_cpu_inv * time_diff_inv;
 
   00470	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00475	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -30544,9 +30541,9 @@ $LN2@check:
   004a9	f2 0f 11 80 b8
 	00 00 00	 movsd	 QWORD PTR [rax+184], xmm0
 
-; 1035 : 
-; 1036 :         //IO情報
-; 1037 :         pInfoNew->io_read_per_sec = (pInfoNew->io_total_read - pInfoOld->io_total_read) * time_diff_inv * 1e6;
+; 1034 : 
+; 1035 :         //IO情報
+; 1036 :         pInfoNew->io_read_per_sec = (pInfoNew->io_total_read - pInfoOld->io_total_read) * time_diff_inv * 1e6;
 
   004b1	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   004b6	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -30562,7 +30559,7 @@ $LN2@check:
   004e1	f2 0f 11 80 a0
 	00 00 00	 movsd	 QWORD PTR [rax+160], xmm0
 
-; 1038 :         pInfoNew->io_write_per_sec = (pInfoNew->io_total_write - pInfoOld->io_total_write) * time_diff_inv * 1e6;
+; 1037 :         pInfoNew->io_write_per_sec = (pInfoNew->io_total_write - pInfoOld->io_total_write) * time_diff_inv * 1e6;
 
   004e9	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   004ee	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -30578,10 +30575,10 @@ $LN2@check:
   00519	f2 0f 11 80 a8
 	00 00 00	 movsd	 QWORD PTR [rax+168], xmm0
 
-; 1039 : 
-; 1040 : #if defined(_WIN32) || defined(_WIN64)
-; 1041 :         //スレッドCPU使用率
-; 1042 :         if (m_thMainThread) {
+; 1038 : 
+; 1039 : #if defined(_WIN32) || defined(_WIN64)
+; 1040 :         //スレッドCPU使用率
+; 1041 :         if (m_thMainThread) {
 
   00521	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30594,7 +30591,7 @@ $LN2@check:
   0053c	0f 84 95 00 00
 	00		 je	 $LN4@check
 
-; 1043 :             getThreadTime(m_thMainThread.get(), &pt);
+; 1042 :             getThreadTime(m_thMainThread.get(), &pt);
 
   00542	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30608,7 +30605,7 @@ $LN2@check:
   00563	48 8d 4c 24 54	 lea	 rcx, QWORD PTR getThreadTime$[rsp]
   00568	e8 00 00 00 00	 call	 ??R<lambda_5a0ebdb53bca1837caa8d6a14c3bf926>@@QEBAXPEAXPEAUPROCESS_TIME@@@Z ; <lambda_5a0ebdb53bca1837caa8d6a14c3bf926>::operator()
 
-; 1044 :             pInfoNew->main_thread_total_active_us = (pt.user + pt.kernel) / 10;
+; 1043 :             pInfoNew->main_thread_total_active_us = (pt.user + pt.kernel) / 10;
 
   0056d	48 8b 84 24 98
 	01 00 00	 mov	 rax, QWORD PTR pt$[rsp+16]
@@ -30622,7 +30619,7 @@ $LN2@check:
   0058d	48 8b 4c 24 30	 mov	 rcx, QWORD PTR pInfoNew$[rsp]
   00592	48 89 41 18	 mov	 QWORD PTR [rcx+24], rax
 
-; 1045 :             pInfoNew->main_thread_percent = (pInfoNew->main_thread_total_active_us - pInfoOld->main_thread_total_active_us) * 100.0 * logical_cpu_inv * time_diff_inv;
+; 1044 :             pInfoNew->main_thread_percent = (pInfoNew->main_thread_total_active_us - pInfoOld->main_thread_total_active_us) * 100.0 * logical_cpu_inv * time_diff_inv;
 
   00596	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   0059b	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -30641,9 +30638,9 @@ $LN2@check:
 	00 00 00	 movsd	 QWORD PTR [rax+192], xmm0
 $LN4@check:
 
-; 1046 :         }
-; 1047 : 
-; 1048 :         if (m_thEncThread) {
+; 1045 :         }
+; 1046 : 
+; 1047 :         if (m_thEncThread) {
 
   005d7	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30652,13 +30649,13 @@ $LN4@check:
   005e7	0f 84 de 00 00
 	00		 je	 $LN5@check
 
-; 1049 :             DWORD exit_code = 0;
+; 1048 :             DWORD exit_code = 0;
 
   005ed	c7 84 24 d4 01
 	00 00 00 00 00
 	00		 mov	 DWORD PTR exit_code$16[rsp], 0
 
-; 1050 :             if (0 != GetExitCodeThread(m_thEncThread, &exit_code) && exit_code == STILL_ACTIVE) {
+; 1049 :             if (0 != GetExitCodeThread(m_thEncThread, &exit_code) && exit_code == STILL_ACTIVE) {
 
   005f8	48 8d 94 24 d4
 	01 00 00	 lea	 rdx, QWORD PTR exit_code$16[rsp]
@@ -30677,7 +30674,7 @@ $LN4@check:
   00628	0f 85 8d 00 00
 	00		 jne	 $LN6@check
 
-; 1051 :                 getThreadTime(m_thEncThread, &pt);
+; 1050 :                 getThreadTime(m_thEncThread, &pt);
 
   0062e	4c 8d 84 24 88
 	01 00 00	 lea	 r8, QWORD PTR pt$[rsp]
@@ -30688,7 +30685,7 @@ $LN4@check:
   00645	48 8d 4c 24 54	 lea	 rcx, QWORD PTR getThreadTime$[rsp]
   0064a	e8 00 00 00 00	 call	 ??R<lambda_5a0ebdb53bca1837caa8d6a14c3bf926>@@QEBAXPEAXPEAUPROCESS_TIME@@@Z ; <lambda_5a0ebdb53bca1837caa8d6a14c3bf926>::operator()
 
-; 1052 :                 pInfoNew->enc_thread_total_active_us = (pt.user + pt.kernel) / 10;
+; 1051 :                 pInfoNew->enc_thread_total_active_us = (pt.user + pt.kernel) / 10;
 
   0064f	48 8b 84 24 98
 	01 00 00	 mov	 rax, QWORD PTR pt$[rsp+16]
@@ -30702,7 +30699,7 @@ $LN4@check:
   0066f	48 8b 4c 24 30	 mov	 rcx, QWORD PTR pInfoNew$[rsp]
   00674	48 89 41 20	 mov	 QWORD PTR [rcx+32], rax
 
-; 1053 :                 pInfoNew->enc_thread_percent  = (pInfoNew->enc_thread_total_active_us  - pInfoOld->enc_thread_total_active_us) * 100.0 * logical_cpu_inv * time_diff_inv;
+; 1052 :                 pInfoNew->enc_thread_percent  = (pInfoNew->enc_thread_total_active_us  - pInfoOld->enc_thread_total_active_us) * 100.0 * logical_cpu_inv * time_diff_inv;
 
   00678	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   0067d	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -30720,12 +30717,12 @@ $LN4@check:
   006b1	f2 0f 11 80 c8
 	00 00 00	 movsd	 QWORD PTR [rax+200], xmm0
 
-; 1054 :             } else {
+; 1053 :             } else {
 
   006b9	eb 10		 jmp	 SHORT $LN7@check
 $LN6@check:
 
-; 1055 :                 pInfoNew->enc_thread_percent = 0.0;
+; 1054 :                 pInfoNew->enc_thread_percent = 0.0;
 
   006bb	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   006c0	0f 57 c0	 xorps	 xmm0, xmm0
@@ -30734,10 +30731,10 @@ $LN6@check:
 $LN7@check:
 $LN5@check:
 
-; 1056 :             }
-; 1057 :         }
-; 1058 : 
-; 1059 :         if (m_thAudProcThread) {
+; 1055 :             }
+; 1056 :         }
+; 1057 : 
+; 1058 :         if (m_thAudProcThread) {
 
   006cb	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30746,13 +30743,13 @@ $LN5@check:
   006db	0f 84 de 00 00
 	00		 je	 $LN8@check
 
-; 1060 :             DWORD exit_code = 0;
+; 1059 :             DWORD exit_code = 0;
 
   006e1	c7 84 24 f4 01
 	00 00 00 00 00
 	00		 mov	 DWORD PTR exit_code$17[rsp], 0
 
-; 1061 :             if (0 != GetExitCodeThread(m_thAudProcThread, &exit_code) && exit_code == STILL_ACTIVE) {
+; 1060 :             if (0 != GetExitCodeThread(m_thAudProcThread, &exit_code) && exit_code == STILL_ACTIVE) {
 
   006ec	48 8d 94 24 f4
 	01 00 00	 lea	 rdx, QWORD PTR exit_code$17[rsp]
@@ -30771,7 +30768,7 @@ $LN5@check:
   0071c	0f 85 8d 00 00
 	00		 jne	 $LN9@check
 
-; 1062 :                 getThreadTime(m_thAudProcThread, &pt);
+; 1061 :                 getThreadTime(m_thAudProcThread, &pt);
 
   00722	4c 8d 84 24 88
 	01 00 00	 lea	 r8, QWORD PTR pt$[rsp]
@@ -30782,7 +30779,7 @@ $LN5@check:
   00739	48 8d 4c 24 54	 lea	 rcx, QWORD PTR getThreadTime$[rsp]
   0073e	e8 00 00 00 00	 call	 ??R<lambda_5a0ebdb53bca1837caa8d6a14c3bf926>@@QEBAXPEAXPEAUPROCESS_TIME@@@Z ; <lambda_5a0ebdb53bca1837caa8d6a14c3bf926>::operator()
 
-; 1063 :                 pInfoNew->aud_proc_thread_total_active_us = (pt.user + pt.kernel) / 10;
+; 1062 :                 pInfoNew->aud_proc_thread_total_active_us = (pt.user + pt.kernel) / 10;
 
   00743	48 8b 84 24 98
 	01 00 00	 mov	 rax, QWORD PTR pt$[rsp+16]
@@ -30796,7 +30793,7 @@ $LN5@check:
   00763	48 8b 4c 24 30	 mov	 rcx, QWORD PTR pInfoNew$[rsp]
   00768	48 89 41 28	 mov	 QWORD PTR [rcx+40], rax
 
-; 1064 :                 pInfoNew->aud_proc_thread_percent  = (pInfoNew->aud_proc_thread_total_active_us  - pInfoOld->aud_proc_thread_total_active_us) * 100.0 * logical_cpu_inv * time_diff_inv;
+; 1063 :                 pInfoNew->aud_proc_thread_percent  = (pInfoNew->aud_proc_thread_total_active_us  - pInfoOld->aud_proc_thread_total_active_us) * 100.0 * logical_cpu_inv * time_diff_inv;
 
   0076c	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00771	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -30814,12 +30811,12 @@ $LN5@check:
   007a5	f2 0f 11 80 d0
 	00 00 00	 movsd	 QWORD PTR [rax+208], xmm0
 
-; 1065 :             } else {
+; 1064 :             } else {
 
   007ad	eb 10		 jmp	 SHORT $LN10@check
 $LN9@check:
 
-; 1066 :                 pInfoNew->aud_proc_thread_percent = 0.0;
+; 1065 :                 pInfoNew->aud_proc_thread_percent = 0.0;
 
   007af	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   007b4	0f 57 c0	 xorps	 xmm0, xmm0
@@ -30828,10 +30825,10 @@ $LN9@check:
 $LN10@check:
 $LN8@check:
 
-; 1067 :             }
-; 1068 :         }
-; 1069 : 
-; 1070 :         if (m_thAudEncThread) {
+; 1066 :             }
+; 1067 :         }
+; 1068 : 
+; 1069 :         if (m_thAudEncThread) {
 
   007bf	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30840,13 +30837,13 @@ $LN8@check:
   007cf	0f 84 de 00 00
 	00		 je	 $LN11@check
 
-; 1071 :             DWORD exit_code = 0;
+; 1070 :             DWORD exit_code = 0;
 
   007d5	c7 84 24 14 02
 	00 00 00 00 00
 	00		 mov	 DWORD PTR exit_code$18[rsp], 0
 
-; 1072 :             if (0 != GetExitCodeThread(m_thAudEncThread, &exit_code) && exit_code == STILL_ACTIVE) {
+; 1071 :             if (0 != GetExitCodeThread(m_thAudEncThread, &exit_code) && exit_code == STILL_ACTIVE) {
 
   007e0	48 8d 94 24 14
 	02 00 00	 lea	 rdx, QWORD PTR exit_code$18[rsp]
@@ -30865,7 +30862,7 @@ $LN8@check:
   00810	0f 85 8d 00 00
 	00		 jne	 $LN12@check
 
-; 1073 :                 getThreadTime(m_thAudEncThread, &pt);
+; 1072 :                 getThreadTime(m_thAudEncThread, &pt);
 
   00816	4c 8d 84 24 88
 	01 00 00	 lea	 r8, QWORD PTR pt$[rsp]
@@ -30876,7 +30873,7 @@ $LN8@check:
   0082d	48 8d 4c 24 54	 lea	 rcx, QWORD PTR getThreadTime$[rsp]
   00832	e8 00 00 00 00	 call	 ??R<lambda_5a0ebdb53bca1837caa8d6a14c3bf926>@@QEBAXPEAXPEAUPROCESS_TIME@@@Z ; <lambda_5a0ebdb53bca1837caa8d6a14c3bf926>::operator()
 
-; 1074 :                 pInfoNew->aud_enc_thread_total_active_us = (pt.user + pt.kernel) / 10;
+; 1073 :                 pInfoNew->aud_enc_thread_total_active_us = (pt.user + pt.kernel) / 10;
 
   00837	48 8b 84 24 98
 	01 00 00	 mov	 rax, QWORD PTR pt$[rsp+16]
@@ -30890,7 +30887,7 @@ $LN8@check:
   00857	48 8b 4c 24 30	 mov	 rcx, QWORD PTR pInfoNew$[rsp]
   0085c	48 89 41 30	 mov	 QWORD PTR [rcx+48], rax
 
-; 1075 :                 pInfoNew->aud_enc_thread_percent  = (pInfoNew->aud_enc_thread_total_active_us  - pInfoOld->aud_enc_thread_total_active_us) * 100.0 * logical_cpu_inv * time_diff_inv;
+; 1074 :                 pInfoNew->aud_enc_thread_percent  = (pInfoNew->aud_enc_thread_total_active_us  - pInfoOld->aud_enc_thread_total_active_us) * 100.0 * logical_cpu_inv * time_diff_inv;
 
   00860	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00865	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -30908,12 +30905,12 @@ $LN8@check:
   00899	f2 0f 11 80 d8
 	00 00 00	 movsd	 QWORD PTR [rax+216], xmm0
 
-; 1076 :             } else {
+; 1075 :             } else {
 
   008a1	eb 10		 jmp	 SHORT $LN13@check
 $LN12@check:
 
-; 1077 :                 pInfoNew->aud_enc_thread_percent = 0.0;
+; 1076 :                 pInfoNew->aud_enc_thread_percent = 0.0;
 
   008a3	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   008a8	0f 57 c0	 xorps	 xmm0, xmm0
@@ -30922,10 +30919,10 @@ $LN12@check:
 $LN13@check:
 $LN11@check:
 
-; 1078 :             }
-; 1079 :         }
-; 1080 : 
-; 1081 :         if (m_thInThread) {
+; 1077 :             }
+; 1078 :         }
+; 1079 : 
+; 1080 :         if (m_thInThread) {
 
   008b3	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -30934,13 +30931,13 @@ $LN11@check:
   008c3	0f 84 de 00 00
 	00		 je	 $LN14@check
 
-; 1082 :             DWORD exit_code = 0;
+; 1081 :             DWORD exit_code = 0;
 
   008c9	c7 84 24 34 02
 	00 00 00 00 00
 	00		 mov	 DWORD PTR exit_code$19[rsp], 0
 
-; 1083 :             if (0 != GetExitCodeThread(m_thInThread, &exit_code) && exit_code == STILL_ACTIVE) {
+; 1082 :             if (0 != GetExitCodeThread(m_thInThread, &exit_code) && exit_code == STILL_ACTIVE) {
 
   008d4	48 8d 94 24 34
 	02 00 00	 lea	 rdx, QWORD PTR exit_code$19[rsp]
@@ -30959,7 +30956,7 @@ $LN11@check:
   00904	0f 85 8d 00 00
 	00		 jne	 $LN15@check
 
-; 1084 :                 getThreadTime(m_thInThread, &pt);
+; 1083 :                 getThreadTime(m_thInThread, &pt);
 
   0090a	4c 8d 84 24 88
 	01 00 00	 lea	 r8, QWORD PTR pt$[rsp]
@@ -30970,7 +30967,7 @@ $LN11@check:
   00921	48 8d 4c 24 54	 lea	 rcx, QWORD PTR getThreadTime$[rsp]
   00926	e8 00 00 00 00	 call	 ??R<lambda_5a0ebdb53bca1837caa8d6a14c3bf926>@@QEBAXPEAXPEAUPROCESS_TIME@@@Z ; <lambda_5a0ebdb53bca1837caa8d6a14c3bf926>::operator()
 
-; 1085 :                 pInfoNew->in_thread_total_active_us = (pt.user + pt.kernel) / 10;
+; 1084 :                 pInfoNew->in_thread_total_active_us = (pt.user + pt.kernel) / 10;
 
   0092b	48 8b 84 24 98
 	01 00 00	 mov	 rax, QWORD PTR pt$[rsp+16]
@@ -30984,7 +30981,7 @@ $LN11@check:
   0094b	48 8b 4c 24 30	 mov	 rcx, QWORD PTR pInfoNew$[rsp]
   00950	48 89 41 40	 mov	 QWORD PTR [rcx+64], rax
 
-; 1086 :                 pInfoNew->in_thread_percent  = (pInfoNew->in_thread_total_active_us  - pInfoOld->in_thread_total_active_us) * 100.0 * logical_cpu_inv * time_diff_inv;
+; 1085 :                 pInfoNew->in_thread_percent  = (pInfoNew->in_thread_total_active_us  - pInfoOld->in_thread_total_active_us) * 100.0 * logical_cpu_inv * time_diff_inv;
 
   00954	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00959	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -31002,12 +30999,12 @@ $LN11@check:
   0098d	f2 0f 11 80 e8
 	00 00 00	 movsd	 QWORD PTR [rax+232], xmm0
 
-; 1087 :             } else {
+; 1086 :             } else {
 
   00995	eb 10		 jmp	 SHORT $LN16@check
 $LN15@check:
 
-; 1088 :                 pInfoNew->in_thread_percent = 0.0;
+; 1087 :                 pInfoNew->in_thread_percent = 0.0;
 
   00997	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   0099c	0f 57 c0	 xorps	 xmm0, xmm0
@@ -31016,10 +31013,10 @@ $LN15@check:
 $LN16@check:
 $LN14@check:
 
-; 1089 :             }
-; 1090 :         }
-; 1091 : 
-; 1092 :         if (m_thOutThread) {
+; 1088 :             }
+; 1089 :         }
+; 1090 : 
+; 1091 :         if (m_thOutThread) {
 
   009a7	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -31028,13 +31025,13 @@ $LN14@check:
   009b7	0f 84 de 00 00
 	00		 je	 $LN17@check
 
-; 1093 :             DWORD exit_code = 0;
+; 1092 :             DWORD exit_code = 0;
 
   009bd	c7 84 24 54 02
 	00 00 00 00 00
 	00		 mov	 DWORD PTR exit_code$20[rsp], 0
 
-; 1094 :             if (0 != GetExitCodeThread(m_thOutThread, &exit_code) && exit_code == STILL_ACTIVE) {
+; 1093 :             if (0 != GetExitCodeThread(m_thOutThread, &exit_code) && exit_code == STILL_ACTIVE) {
 
   009c8	48 8d 94 24 54
 	02 00 00	 lea	 rdx, QWORD PTR exit_code$20[rsp]
@@ -31053,7 +31050,7 @@ $LN14@check:
   009f8	0f 85 8d 00 00
 	00		 jne	 $LN18@check
 
-; 1095 :                 getThreadTime(m_thOutThread, &pt);
+; 1094 :                 getThreadTime(m_thOutThread, &pt);
 
   009fe	4c 8d 84 24 88
 	01 00 00	 lea	 r8, QWORD PTR pt$[rsp]
@@ -31064,7 +31061,7 @@ $LN14@check:
   00a15	48 8d 4c 24 54	 lea	 rcx, QWORD PTR getThreadTime$[rsp]
   00a1a	e8 00 00 00 00	 call	 ??R<lambda_5a0ebdb53bca1837caa8d6a14c3bf926>@@QEBAXPEAXPEAUPROCESS_TIME@@@Z ; <lambda_5a0ebdb53bca1837caa8d6a14c3bf926>::operator()
 
-; 1096 :                 pInfoNew->out_thread_total_active_us = (pt.user + pt.kernel) / 10;
+; 1095 :                 pInfoNew->out_thread_total_active_us = (pt.user + pt.kernel) / 10;
 
   00a1f	48 8b 84 24 98
 	01 00 00	 mov	 rax, QWORD PTR pt$[rsp+16]
@@ -31078,7 +31075,7 @@ $LN14@check:
   00a3f	48 8b 4c 24 30	 mov	 rcx, QWORD PTR pInfoNew$[rsp]
   00a44	48 89 41 38	 mov	 QWORD PTR [rcx+56], rax
 
-; 1097 :                 pInfoNew->out_thread_percent  = (pInfoNew->out_thread_total_active_us  - pInfoOld->out_thread_total_active_us) * 100.0 * logical_cpu_inv * time_diff_inv;
+; 1096 :                 pInfoNew->out_thread_percent  = (pInfoNew->out_thread_total_active_us  - pInfoOld->out_thread_total_active_us) * 100.0 * logical_cpu_inv * time_diff_inv;
 
   00a48	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00a4d	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -31096,12 +31093,12 @@ $LN14@check:
   00a81	f2 0f 11 80 e0
 	00 00 00	 movsd	 QWORD PTR [rax+224], xmm0
 
-; 1098 :             } else {
+; 1097 :             } else {
 
   00a89	eb 10		 jmp	 SHORT $LN19@check
 $LN18@check:
 
-; 1099 :                 pInfoNew->out_thread_percent = 0.0;
+; 1098 :                 pInfoNew->out_thread_percent = 0.0;
 
   00a8b	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00a90	0f 57 c0	 xorps	 xmm0, xmm0
@@ -31111,12 +31108,12 @@ $LN19@check:
 $LN17@check:
 $LN3@check:
 
-; 1100 :             }
-; 1101 :         }
-; 1102 : #endif //defined(_WIN32) || defined(_WIN64)
-; 1103 :     }
-; 1104 : 
-; 1105 :     if (!m_bEncStarted && m_pEncStatus) {
+; 1099 :             }
+; 1100 :         }
+; 1101 : #endif //defined(_WIN32) || defined(_WIN64)
+; 1102 :     }
+; 1103 : 
+; 1104 :     if (!m_bEncStarted && m_pEncStatus) {
 
   00a9b	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -31135,7 +31132,7 @@ $LN3@check:
   00acb	85 c0		 test	 eax, eax
   00acd	74 6c		 je	 SHORT $LN20@check
 
-; 1106 :         m_bEncStarted = m_pEncStatus->getEncStarted();
+; 1105 :         m_bEncStarted = m_pEncStatus->getEncStarted();
 
   00acf	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -31150,7 +31147,7 @@ $LN3@check:
   00af5	88 81 79 0b 00
 	00		 mov	 BYTE PTR [rcx+2937], al
 
-; 1107 :         if (m_bEncStarted) {
+; 1106 :         if (m_bEncStarted) {
 
   00afb	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -31159,7 +31156,7 @@ $LN3@check:
   00b0a	85 c0		 test	 eax, eax
   00b0c	74 2d		 je	 SHORT $LN21@check
 
-; 1108 :             m_nEncStartTime = m_pEncStatus->getStartTimeMicroSec();
+; 1107 :             m_nEncStartTime = m_pEncStatus->getStartTimeMicroSec();
 
   00b0e	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -31176,30 +31173,30 @@ $LN3@check:
 $LN21@check:
 $LN20@check:
 
-; 1109 :         }
-; 1110 :     }
-; 1111 : 
-; 1112 :     pInfoNew->bitrate_kbps = 0;
+; 1108 :         }
+; 1109 :     }
+; 1110 : 
+; 1111 :     pInfoNew->bitrate_kbps = 0;
 
   00b3b	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00b40	0f 57 c0	 xorps	 xmm0, xmm0
   00b43	f2 0f 11 80 90
 	00 00 00	 movsd	 QWORD PTR [rax+144], xmm0
 
-; 1113 :     pInfoNew->frames_out_byte = 0;
+; 1112 :     pInfoNew->frames_out_byte = 0;
 
   00b4b	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00b50	48 c7 40 78 00
 	00 00 00	 mov	 QWORD PTR [rax+120], 0
 
-; 1114 :     pInfoNew->fps = 0.0;
+; 1113 :     pInfoNew->fps = 0.0;
 
   00b58	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00b5d	0f 57 c0	 xorps	 xmm0, xmm0
   00b60	f2 0f 11 80 80
 	00 00 00	 movsd	 QWORD PTR [rax+128], xmm0
 
-; 1115 :     if (m_bEncStarted && m_pEncStatus) {
+; 1114 :     if (m_bEncStarted && m_pEncStatus) {
 
   00b68	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -31219,7 +31216,7 @@ $LN20@check:
   00b9a	0f 84 1a 02 00
 	00		 je	 $LN22@check
 
-; 1116 :         EncodeStatusData data = m_pEncStatus->GetEncodeData();
+; 1115 :         EncodeStatusData data = m_pEncStatus->GetEncodeData();
 
   00ba0	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -31232,16 +31229,16 @@ $LN20@check:
   00bbe	48 8b c8	 mov	 rcx, rax
   00bc1	e8 00 00 00 00	 call	 ?GetEncodeData@EncodeStatus@@QEAA?AUEncodeStatusData@@XZ ; EncodeStatus::GetEncodeData
 
-; 1117 : 
-; 1118 :         //fps情報
-; 1119 :         pInfoNew->frames_out = data.frameTotal;
+; 1116 : 
+; 1117 :         //fps情報
+; 1118 :         pInfoNew->frames_out = data.frameTotal;
 
   00bc6	8b 84 24 98 02
 	00 00		 mov	 eax, DWORD PTR data$21[rsp+24]
   00bcd	48 8b 4c 24 30	 mov	 rcx, QWORD PTR pInfoNew$[rsp]
   00bd2	48 89 41 70	 mov	 QWORD PTR [rcx+112], rax
 
-; 1120 :         if (pInfoNew->frames_out > pInfoOld->frames_out) {
+; 1119 :         if (pInfoNew->frames_out > pInfoOld->frames_out) {
 
   00bd6	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00bdb	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -31250,7 +31247,7 @@ $LN20@check:
   00be8	0f 8e cc 01 00
 	00		 jle	 $LN23@check
 
-; 1121 :             pInfoNew->fps_avg = pInfoNew->frames_out / (double)(current_time / 10 - m_nEncStartTime) * 1e6;
+; 1120 :             pInfoNew->fps_avg = pInfoNew->frames_out / (double)(current_time / 10 - m_nEncStartTime) * 1e6;
 
   00bee	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00bf3	f2 48 0f 2a 40
@@ -31284,7 +31281,7 @@ $LN28@check:
   00c50	f2 0f 11 80 88
 	00 00 00	 movsd	 QWORD PTR [rax+136], xmm0
 
-; 1122 :             if (pInfoNew->time_us > pInfoOld->time_us) {
+; 1121 :             if (pInfoNew->time_us > pInfoOld->time_us) {
 
   00c58	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00c5d	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -31292,7 +31289,7 @@ $LN28@check:
   00c65	48 39 08	 cmp	 QWORD PTR [rax], rcx
   00c68	7e 38		 jle	 SHORT $LN24@check
 
-; 1123 :                 pInfoNew->fps     = (pInfoNew->frames_out - pInfoOld->frames_out) * time_diff_inv * 1e6;
+; 1122 :                 pInfoNew->fps     = (pInfoNew->frames_out - pInfoOld->frames_out) * time_diff_inv * 1e6;
 
   00c6a	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00c6f	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -31309,10 +31306,10 @@ $LN28@check:
 	00 00 00	 movsd	 QWORD PTR [rax+128], xmm0
 $LN24@check:
 
-; 1124 :             }
-; 1125 : 
-; 1126 :             //ビットレート情報
-; 1127 :             double videoSec     = pInfoNew->frames_out * m_nOutputFPSScale / (double)m_nOutputFPSRate;
+; 1123 :             }
+; 1124 : 
+; 1125 :             //ビットレート情報
+; 1126 :             double videoSec     = pInfoNew->frames_out * m_nOutputFPSScale / (double)m_nOutputFPSRate;
 
   00ca2	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00ca7	48 8b 8c 24 70
@@ -31329,7 +31326,7 @@ $LN24@check:
   00cd5	f2 0f 11 84 24
 	38 03 00 00	 movsd	 QWORD PTR videoSec$22[rsp], xmm0
 
-; 1128 :             double videoSecDiff = (pInfoNew->frames_out - pInfoOld->frames_out) * m_nOutputFPSScale / (double)m_nOutputFPSRate;
+; 1127 :             double videoSecDiff = (pInfoNew->frames_out - pInfoOld->frames_out) * m_nOutputFPSScale / (double)m_nOutputFPSRate;
 
   00cde	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00ce3	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -31349,15 +31346,15 @@ $LN24@check:
   00d1d	f2 0f 11 84 24
 	40 03 00 00	 movsd	 QWORD PTR videoSecDiff$23[rsp], xmm0
 
-; 1129 : 
-; 1130 :             pInfoNew->frames_out_byte = data.outFileSize;
+; 1128 : 
+; 1129 :             pInfoNew->frames_out_byte = data.outFileSize;
 
   00d26	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00d2b	48 8b 8c 24 88
 	02 00 00	 mov	 rcx, QWORD PTR data$21[rsp+8]
   00d33	48 89 48 78	 mov	 QWORD PTR [rax+120], rcx
 
-; 1131 :             pInfoNew->bitrate_kbps_avg =  pInfoNew->frames_out_byte * 8.0 / videoSec * 1e-3;
+; 1130 :             pInfoNew->bitrate_kbps_avg =  pInfoNew->frames_out_byte * 8.0 / videoSec * 1e-3;
 
   00d37	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00d3c	f2 48 0f 2a 40
@@ -31372,7 +31369,7 @@ $LN24@check:
   00d60	f2 0f 11 80 98
 	00 00 00	 movsd	 QWORD PTR [rax+152], xmm0
 
-; 1132 :             if (pInfoNew->time_us > pInfoOld->time_us) {
+; 1131 :             if (pInfoNew->time_us > pInfoOld->time_us) {
 
   00d68	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00d6d	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -31380,7 +31377,7 @@ $LN24@check:
   00d75	48 39 08	 cmp	 QWORD PTR [rax], rcx
   00d78	7e 40		 jle	 SHORT $LN25@check
 
-; 1133 :                 pInfoNew->bitrate_kbps     = (pInfoNew->frames_out_byte - pInfoOld->frames_out_byte) * 8.0 / videoSecDiff * 1e-3;
+; 1132 :                 pInfoNew->bitrate_kbps     = (pInfoNew->frames_out_byte - pInfoOld->frames_out_byte) * 8.0 / videoSecDiff * 1e-3;
 
   00d7a	48 8b 44 24 30	 mov	 rax, QWORD PTR pInfoNew$[rsp]
   00d7f	48 8b 4c 24 38	 mov	 rcx, QWORD PTR pInfoOld$[rsp]
@@ -31401,11 +31398,11 @@ $LN25@check:
 $LN23@check:
 $LN22@check:
 
-; 1134 :             }
-; 1135 :         }
-; 1136 :     }
-; 1137 : 
-; 1138 :     m_nStep++;
+; 1133 :             }
+; 1134 :         }
+; 1135 :     }
+; 1136 : 
+; 1137 :     m_nStep++;
 
   00dba	48 8b 84 24 70
 	03 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -31415,7 +31412,7 @@ $LN22@check:
 	03 00 00	 mov	 rcx, QWORD PTR this$[rsp]
   00dce	89 01		 mov	 DWORD PTR [rcx], eax
 
-; 1139 : }
+; 1138 : }
 
   00dd0	48 8b cc	 mov	 rcx, rsp
   00dd3	48 8d 15 00 00
@@ -31441,7 +31438,7 @@ pDataPtr$ = 72
 hResource$ = 80
 hResourceData$ = 88
 hModule$ = 96
-tv89 = 104
+tv84 = 104
 this$ = 128
 pywPath$ = 136
 ?createPerfMpnitorPyw@CPerfMonitor@@IEAAHPEBD@Z PROC	; CPerfMonitor::createPerfMpnitorPyw
@@ -31504,138 +31501,126 @@ $LN11:
 
 ; 545  : #endif
 ; 546  :     if (   NULL == hModule
-; 547  :         || NULL == (hResource = FindResource(hModule, _T("PERF_MONITOR_PYW"), _T("PERF_MONITOR_SRC")))
-; 548  :         || NULL == (hResourceData = LoadResource(hModule, hResource))
-; 549  :         || NULL == (pDataPtr = (const char *)LockResource(hResourceData))
-; 550  :         || 0    == (resourceSize = SizeofResource(hModule, hResource))) {
+; 547  :         || NULL == (hResourceData = LoadResource(hModule, hResource))
+; 548  :         || NULL == (pDataPtr = (const char *)LockResource(hResourceData))
+; 549  :         || 0    == (resourceSize = SizeofResource(hModule, hResource))) {
 
   00067	48 83 7c 24 60
 	00		 cmp	 QWORD PTR hModule$[rsp], 0
-  0006d	74 76		 je	 SHORT $LN4@createPerf
-  0006f	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117400
-  00076	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG117401
-  0007d	48 8b 4c 24 60	 mov	 rcx, QWORD PTR hModule$[rsp]
-  00082	ff 15 00 00 00
-	00		 call	 QWORD PTR __imp_FindResourceA
-  00088	48 89 44 24 50	 mov	 QWORD PTR hResource$[rsp], rax
-  0008d	48 83 7c 24 50
-	00		 cmp	 QWORD PTR hResource$[rsp], 0
-  00093	74 50		 je	 SHORT $LN4@createPerf
-  00095	48 8b 54 24 50	 mov	 rdx, QWORD PTR hResource$[rsp]
-  0009a	48 8b 4c 24 60	 mov	 rcx, QWORD PTR hModule$[rsp]
-  0009f	ff 15 00 00 00
+  0006d	74 50		 je	 SHORT $LN4@createPerf
+  0006f	48 8b 54 24 50	 mov	 rdx, QWORD PTR hResource$[rsp]
+  00074	48 8b 4c 24 60	 mov	 rcx, QWORD PTR hModule$[rsp]
+  00079	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_LoadResource
-  000a5	48 89 44 24 58	 mov	 QWORD PTR hResourceData$[rsp], rax
-  000aa	48 83 7c 24 58
+  0007f	48 89 44 24 58	 mov	 QWORD PTR hResourceData$[rsp], rax
+  00084	48 83 7c 24 58
 	00		 cmp	 QWORD PTR hResourceData$[rsp], 0
-  000b0	74 33		 je	 SHORT $LN4@createPerf
-  000b2	48 8b 4c 24 58	 mov	 rcx, QWORD PTR hResourceData$[rsp]
-  000b7	ff 15 00 00 00
+  0008a	74 33		 je	 SHORT $LN4@createPerf
+  0008c	48 8b 4c 24 58	 mov	 rcx, QWORD PTR hResourceData$[rsp]
+  00091	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_LockResource
-  000bd	48 89 44 24 48	 mov	 QWORD PTR pDataPtr$[rsp], rax
-  000c2	48 83 7c 24 48
+  00097	48 89 44 24 48	 mov	 QWORD PTR pDataPtr$[rsp], rax
+  0009c	48 83 7c 24 48
 	00		 cmp	 QWORD PTR pDataPtr$[rsp], 0
-  000c8	74 1b		 je	 SHORT $LN4@createPerf
-  000ca	48 8b 54 24 50	 mov	 rdx, QWORD PTR hResource$[rsp]
-  000cf	48 8b 4c 24 60	 mov	 rcx, QWORD PTR hModule$[rsp]
-  000d4	ff 15 00 00 00
+  000a2	74 1b		 je	 SHORT $LN4@createPerf
+  000a4	48 8b 54 24 50	 mov	 rdx, QWORD PTR hResource$[rsp]
+  000a9	48 8b 4c 24 60	 mov	 rcx, QWORD PTR hModule$[rsp]
+  000ae	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_SizeofResource
-  000da	89 44 24 24	 mov	 DWORD PTR resourceSize$[rsp], eax
-  000de	83 7c 24 24 00	 cmp	 DWORD PTR resourceSize$[rsp], 0
-  000e3	75 0a		 jne	 SHORT $LN2@createPerf
+  000b4	89 44 24 24	 mov	 DWORD PTR resourceSize$[rsp], eax
+  000b8	83 7c 24 24 00	 cmp	 DWORD PTR resourceSize$[rsp], 0
+  000bd	75 0a		 jne	 SHORT $LN2@createPerf
 $LN4@createPerf:
 
-; 551  :         ret = 1;
+; 550  :         ret = 1;
 
-  000e5	c7 44 24 20 01
+  000bf	c7 44 24 20 01
 	00 00 00	 mov	 DWORD PTR ret$[rsp], 1
 
-; 552  :     } else
+; 551  :     } else
 
-  000ed	eb 67		 jmp	 SHORT $LN3@createPerf
+  000c7	eb 67		 jmp	 SHORT $LN3@createPerf
 $LN2@createPerf:
 
-; 553  : #else
-; 554  :     pDataPtr = _binary_PerfMonitor_perf_monitor_pyw_start;
-; 555  :     resourceSize = (uint32_t)(size_t)_binary_PerfMonitor_perf_monitor_pyw_size;
-; 556  : #endif //#if defined(_WIN32) || defined(_WIN64)
-; 557  :     if (_tfopen_s(&fp, pywPath, _T("wb")) || NULL == fp) {
+; 552  : #else
+; 553  :     pDataPtr = _binary_PerfMonitor_perf_monitor_pyw_start;
+; 554  :     resourceSize = (uint32_t)(size_t)_binary_PerfMonitor_perf_monitor_pyw_size;
+; 555  : #endif //#if defined(_WIN32) || defined(_WIN64)
+; 556  :     if (_tfopen_s(&fp, pywPath, _T("wb")) || NULL == fp) {
 
-  000ef	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117405
-  000f6	48 8b 94 24 88
+  000c9	4c 8d 05 00 00
+	00 00		 lea	 r8, OFFSET FLAT:$SG117403
+  000d0	48 8b 94 24 88
 	00 00 00	 mov	 rdx, QWORD PTR pywPath$[rsp]
-  000fe	48 8d 4c 24 38	 lea	 rcx, QWORD PTR fp$[rsp]
-  00103	ff 15 00 00 00
+  000d8	48 8d 4c 24 38	 lea	 rcx, QWORD PTR fp$[rsp]
+  000dd	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_fopen_s
-  00109	85 c0		 test	 eax, eax
-  0010b	75 08		 jne	 SHORT $LN7@createPerf
-  0010d	48 83 7c 24 38
+  000e3	85 c0		 test	 eax, eax
+  000e5	75 08		 jne	 SHORT $LN7@createPerf
+  000e7	48 83 7c 24 38
 	00		 cmp	 QWORD PTR fp$[rsp], 0
-  00113	75 0a		 jne	 SHORT $LN5@createPerf
+  000ed	75 0a		 jne	 SHORT $LN5@createPerf
 $LN7@createPerf:
 
-; 558  :         ret = 1;
+; 557  :         ret = 1;
 
-  00115	c7 44 24 20 01
+  000ef	c7 44 24 20 01
 	00 00 00	 mov	 DWORD PTR ret$[rsp], 1
-  0011d	eb 37		 jmp	 SHORT $LN6@createPerf
+  000f7	eb 37		 jmp	 SHORT $LN6@createPerf
 $LN5@createPerf:
 
-; 559  :     } else if (resourceSize != fwrite(pDataPtr, 1, resourceSize, fp)) {
+; 558  :     } else if (resourceSize != fwrite(pDataPtr, 1, resourceSize, fp)) {
 
-  0011f	8b 44 24 24	 mov	 eax, DWORD PTR resourceSize$[rsp]
-  00123	48 89 44 24 68	 mov	 QWORD PTR tv89[rsp], rax
-  00128	8b 4c 24 24	 mov	 ecx, DWORD PTR resourceSize$[rsp]
-  0012c	4c 8b 4c 24 38	 mov	 r9, QWORD PTR fp$[rsp]
-  00131	44 8b c1	 mov	 r8d, ecx
-  00134	ba 01 00 00 00	 mov	 edx, 1
-  00139	48 8b 4c 24 48	 mov	 rcx, QWORD PTR pDataPtr$[rsp]
-  0013e	ff 15 00 00 00
+  000f9	8b 44 24 24	 mov	 eax, DWORD PTR resourceSize$[rsp]
+  000fd	48 89 44 24 68	 mov	 QWORD PTR tv84[rsp], rax
+  00102	8b 4c 24 24	 mov	 ecx, DWORD PTR resourceSize$[rsp]
+  00106	4c 8b 4c 24 38	 mov	 r9, QWORD PTR fp$[rsp]
+  0010b	44 8b c1	 mov	 r8d, ecx
+  0010e	ba 01 00 00 00	 mov	 edx, 1
+  00113	48 8b 4c 24 48	 mov	 rcx, QWORD PTR pDataPtr$[rsp]
+  00118	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_fwrite
-  00144	48 8b 4c 24 68	 mov	 rcx, QWORD PTR tv89[rsp]
-  00149	48 3b c8	 cmp	 rcx, rax
-  0014c	74 08		 je	 SHORT $LN8@createPerf
+  0011e	48 8b 4c 24 68	 mov	 rcx, QWORD PTR tv84[rsp]
+  00123	48 3b c8	 cmp	 rcx, rax
+  00126	74 08		 je	 SHORT $LN8@createPerf
 
-; 560  :         ret = 1;
+; 559  :         ret = 1;
 
-  0014e	c7 44 24 20 01
+  00128	c7 44 24 20 01
 	00 00 00	 mov	 DWORD PTR ret$[rsp], 1
 $LN8@createPerf:
 $LN6@createPerf:
 $LN3@createPerf:
 
-; 561  :     }
-; 562  :     if (fp)
+; 560  :     }
+; 561  :     if (fp)
 
-  00156	48 83 7c 24 38
+  00130	48 83 7c 24 38
 	00		 cmp	 QWORD PTR fp$[rsp], 0
-  0015c	74 0b		 je	 SHORT $LN9@createPerf
+  00136	74 0b		 je	 SHORT $LN9@createPerf
 
-; 563  :         fclose(fp);
+; 562  :         fclose(fp);
 
-  0015e	48 8b 4c 24 38	 mov	 rcx, QWORD PTR fp$[rsp]
-  00163	ff 15 00 00 00
+  00138	48 8b 4c 24 38	 mov	 rcx, QWORD PTR fp$[rsp]
+  0013d	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_fclose
 $LN9@createPerf:
 
-; 564  :     return ret;
+; 563  :     return ret;
 
-  00169	8b 44 24 20	 mov	 eax, DWORD PTR ret$[rsp]
+  00143	8b 44 24 20	 mov	 eax, DWORD PTR ret$[rsp]
 
-; 565  : }
+; 564  : }
 
-  0016d	8b f8		 mov	 edi, eax
-  0016f	48 8b cc	 mov	 rcx, rsp
-  00172	48 8d 15 00 00
+  00147	8b f8		 mov	 edi, eax
+  00149	48 8b cc	 mov	 rcx, rsp
+  0014c	48 8d 15 00 00
 	00 00		 lea	 rdx, OFFSET FLAT:?createPerfMpnitorPyw@CPerfMonitor@@IEAAHPEBD@Z$rtcFrameData
-  00179	e8 00 00 00 00	 call	 _RTC_CheckStackVars
-  0017e	8b c7		 mov	 eax, edi
-  00180	48 83 c4 70	 add	 rsp, 112		; 00000070H
-  00184	5f		 pop	 rdi
-  00185	c3		 ret	 0
+  00153	e8 00 00 00 00	 call	 _RTC_CheckStackVars
+  00158	8b c7		 mov	 eax, edi
+  0015a	48 83 c4 70	 add	 rsp, 112		; 00000070H
+  0015e	5f		 pop	 rdi
+  0015f	c3		 ret	 0
 ?createPerfMpnitorPyw@CPerfMonitor@@IEAAHPEBD@Z ENDP	; CPerfMonitor::createPerfMpnitorPyw
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
@@ -31855,7 +31840,7 @@ thAudProcThread$ = 48
 thAudEncThread$ = 56
 ?SetThreadHandles@CPerfMonitor@@QEAAXPEAX0000@Z PROC	; CPerfMonitor::SetThreadHandles
 
-; 864  : void CPerfMonitor::SetThreadHandles(HANDLE thEncThread, HANDLE thInThread, HANDLE thOutThread, HANDLE thAudProcThread, HANDLE thAudEncThread) {
+; 863  : void CPerfMonitor::SetThreadHandles(HANDLE thEncThread, HANDLE thInThread, HANDLE thOutThread, HANDLE thAudProcThread, HANDLE thAudEncThread) {
 
 $LN3:
   00000	4c 89 4c 24 20	 mov	 QWORD PTR [rsp+32], r9
@@ -31864,42 +31849,42 @@ $LN3:
   0000f	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
   00014	57		 push	 rdi
 
-; 865  :     m_thEncThread = thEncThread;
+; 864  :     m_thEncThread = thEncThread;
 
   00015	48 8b 44 24 10	 mov	 rax, QWORD PTR this$[rsp]
   0001a	48 8b 4c 24 18	 mov	 rcx, QWORD PTR thEncThread$[rsp]
   0001f	48 89 88 18 0b
 	00 00		 mov	 QWORD PTR [rax+2840], rcx
 
-; 866  :     m_thInThread = thInThread;
+; 865  :     m_thInThread = thInThread;
 
   00026	48 8b 44 24 10	 mov	 rax, QWORD PTR this$[rsp]
   0002b	48 8b 4c 24 20	 mov	 rcx, QWORD PTR thInThread$[rsp]
   00030	48 89 88 20 0b
 	00 00		 mov	 QWORD PTR [rax+2848], rcx
 
-; 867  :     m_thOutThread = thOutThread;
+; 866  :     m_thOutThread = thOutThread;
 
   00037	48 8b 44 24 10	 mov	 rax, QWORD PTR this$[rsp]
   0003c	48 8b 4c 24 28	 mov	 rcx, QWORD PTR thOutThread$[rsp]
   00041	48 89 88 28 0b
 	00 00		 mov	 QWORD PTR [rax+2856], rcx
 
-; 868  :     m_thAudProcThread = thAudProcThread;
+; 867  :     m_thAudProcThread = thAudProcThread;
 
   00048	48 8b 44 24 10	 mov	 rax, QWORD PTR this$[rsp]
   0004d	48 8b 4c 24 30	 mov	 rcx, QWORD PTR thAudProcThread$[rsp]
   00052	48 89 88 30 0b
 	00 00		 mov	 QWORD PTR [rax+2864], rcx
 
-; 869  :     m_thAudEncThread = thAudEncThread;
+; 868  :     m_thAudEncThread = thAudEncThread;
 
   00059	48 8b 44 24 10	 mov	 rax, QWORD PTR this$[rsp]
   0005e	48 8b 4c 24 38	 mov	 rcx, QWORD PTR thAudEncThread$[rsp]
   00063	48 89 88 38 0b
 	00 00		 mov	 QWORD PTR [rax+2872], rcx
 
-; 870  : }
+; 869  : }
 
   0006a	5f		 pop	 rdi
   0006b	c3		 ret	 0
@@ -31914,7 +31899,7 @@ this$ = 272
 encStatus$ = 280
 ?SetEncStatus@CPerfMonitor@@QEAAXV?$shared_ptr@VEncodeStatus@@@std@@@Z PROC ; CPerfMonitor::SetEncStatus
 
-; 857  : void CPerfMonitor::SetEncStatus(std::shared_ptr<EncodeStatus> encStatus) {
+; 856  : void CPerfMonitor::SetEncStatus(std::shared_ptr<EncodeStatus> encStatus) {
 
 $LN4:
   00000	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
@@ -31934,7 +31919,7 @@ $LN4:
   00033	48 89 84 24 f0
 	00 00 00	 mov	 QWORD PTR __$ArrayPad$[rsp], rax
 
-; 858  :     m_pEncStatus = encStatus;
+; 857  :     m_pEncStatus = encStatus;
 
   0003b	48 8b 84 24 10
 	01 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -31945,7 +31930,7 @@ $LN4:
   00051	48 8b c8	 mov	 rcx, rax
   00054	e8 00 00 00 00	 call	 ??4?$shared_ptr@VEncodeStatus@@@std@@QEAAAEAV01@AEBV01@@Z ; std::shared_ptr<EncodeStatus>::operator=
 
-; 859  :     EncodeStatusData data = m_pEncStatus->GetEncodeData();
+; 858  :     EncodeStatusData data = m_pEncStatus->GetEncodeData();
 
   00059	48 8b 84 24 10
 	01 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -31957,7 +31942,7 @@ $LN4:
   00074	48 8b c8	 mov	 rcx, rax
   00077	e8 00 00 00 00	 call	 ?GetEncodeData@EncodeStatus@@QEAA?AUEncodeStatusData@@XZ ; EncodeStatus::GetEncodeData
 
-; 860  :     m_nOutputFPSScale = data.outputFPSScale;
+; 859  :     m_nOutputFPSScale = data.outputFPSScale;
 
   0007c	8b 44 24 34	 mov	 eax, DWORD PTR data$[rsp+4]
   00080	48 8b 8c 24 10
@@ -31965,7 +31950,7 @@ $LN4:
   00088	48 89 81 68 0b
 	00 00		 mov	 QWORD PTR [rcx+2920], rax
 
-; 861  :     m_nOutputFPSRate = data.outputFPSRate;
+; 860  :     m_nOutputFPSRate = data.outputFPSRate;
 
   0008f	8b 44 24 30	 mov	 eax, DWORD PTR data$[rsp]
   00093	48 8b 8c 24 10
@@ -31973,7 +31958,7 @@ $LN4:
   0009b	48 89 81 60 0b
 	00 00		 mov	 QWORD PTR [rcx+2912], rax
 
-; 862  : }
+; 861  : }
 
   000a2	48 8b 8c 24 18
 	01 00 00	 mov	 rcx, QWORD PTR encStatus$[rsp]
@@ -32498,7 +32483,7 @@ pRGYLog$ = 3368
 prm$ = 3376
 ?init@CPerfMonitor@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDHHHV?$unique_ptr@XUhandle_deleter@@@3@V?$shared_ptr@VRGYLog@@@3@PEAUCPerfMonitorPrm@@@Z PROC ; CPerfMonitor::init
 
-; 667  :     std::shared_ptr<RGYLog> pRGYLog, CPerfMonitorPrm *prm) {
+; 666  :     std::shared_ptr<RGYLog> pRGYLog, CPerfMonitorPrm *prm) {
 
 $LN35:
   00000	44 89 4c 24 20	 mov	 DWORD PTR [rsp+32], r9d
@@ -32520,13 +32505,13 @@ $LN35:
   0003d	48 89 84 24 d0
 	0c 00 00	 mov	 QWORD PTR __$ArrayPad$[rsp], rax
 
-; 668  :     clear();
+; 667  :     clear();
 
   00045	48 8b 8c 24 f0
 	0c 00 00	 mov	 rcx, QWORD PTR this$[rsp]
   0004d	e8 00 00 00 00	 call	 ?clear@CPerfMonitor@@QEAAXXZ ; CPerfMonitor::clear
 
-; 669  :     m_pRGYLog = pRGYLog;
+; 668  :     m_pRGYLog = pRGYLog;
 
   00052	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32537,8 +32522,8 @@ $LN35:
   00068	48 8b c8	 mov	 rcx, rax
   0006b	e8 00 00 00 00	 call	 ??4?$shared_ptr@VRGYLog@@@std@@QEAAAEAV01@AEBV01@@Z ; std::shared_ptr<RGYLog>::operator=
 
-; 670  : 
-; 671  :     m_nCreateTime100ns = (int64_t)(clock() * (1e7 / CLOCKS_PER_SEC) + 0.5);
+; 669  : 
+; 670  :     m_nCreateTime100ns = (int64_t)(clock() * (1e7 / CLOCKS_PER_SEC) + 0.5);
 
   00070	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_clock
@@ -32553,7 +32538,7 @@ $LN35:
   00097	48 89 81 70 0b
 	00 00		 mov	 QWORD PTR [rcx+2928], rax
 
-; 672  :     m_sMonitorFilename = filename;
+; 671  :     m_sMonitorFilename = filename;
 
   0009e	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32564,7 +32549,7 @@ $LN35:
   000b4	48 8b c8	 mov	 rcx, rax
   000b7	e8 00 00 00 00	 call	 ??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@AEBV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 
-; 673  :     m_nInterval = interval;
+; 672  :     m_nInterval = interval;
 
   000bc	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32573,7 +32558,7 @@ $LN35:
   000cb	89 88 7c 0b 00
 	00		 mov	 DWORD PTR [rax+2940], ecx
 
-; 674  :     m_nSelectOutputPlot = nSelectOutputPlot;
+; 673  :     m_nSelectOutputPlot = nSelectOutputPlot;
 
   000d1	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32582,7 +32567,7 @@ $LN35:
   000e0	89 88 b8 0b 00
 	00		 mov	 DWORD PTR [rax+3000], ecx
 
-; 675  :     m_nSelectOutputLog = nSelectOutputLog;
+; 674  :     m_nSelectOutputLog = nSelectOutputLog;
 
   000e6	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32591,7 +32576,7 @@ $LN35:
   000f5	89 88 b4 0b 00
 	00		 mov	 DWORD PTR [rax+2996], ecx
 
-; 676  :     m_nSelectCheck = m_nSelectOutputLog | m_nSelectOutputPlot;
+; 675  :     m_nSelectCheck = m_nSelectOutputLog | m_nSelectOutputPlot;
 
   000fb	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32607,7 +32592,7 @@ $LN35:
   00121	89 81 b0 0b 00
 	00		 mov	 DWORD PTR [rcx+2992], eax
 
-; 677  :     m_thMainThread = std::move(thMainThread);
+; 676  :     m_thMainThread = std::move(thMainThread);
 
   00127	48 8b 8c 24 20
 	0d 00 00	 mov	 rcx, QWORD PTR thMainThread$[rsp]
@@ -32619,8 +32604,8 @@ $LN35:
   00143	48 8b d0	 mov	 rdx, rax
   00146	e8 00 00 00 00	 call	 ??4?$unique_ptr@XUhandle_deleter@@@std@@QEAAAEAV01@$$QEAV01@@Z ; std::unique_ptr<void,handle_deleter>::operator=
 
-; 678  : 
-; 679  :     if (!m_fpLog && m_sMonitorFilename.length() > 0) {
+; 677  : 
+; 678  :     if (!m_fpLog && m_sMonitorFilename.length() > 0) {
 
   0014b	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32642,7 +32627,7 @@ $LN35:
   00185	0f 86 84 01 00
 	00		 jbe	 $LN2@init
 
-; 680  :         m_fpLog = std::unique_ptr<FILE, fp_deleter>(_tfopen(m_sMonitorFilename.c_str(), _T("a")));
+; 679  :         m_fpLog = std::unique_ptr<FILE, fp_deleter>(_tfopen(m_sMonitorFilename.c_str(), _T("a")));
 
   0018b	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32651,7 +32636,7 @@ $LN35:
   00199	48 8b c8	 mov	 rcx, rax
   0019c	e8 00 00 00 00	 call	 ?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBAPEBDXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::c_str
   001a1	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118201
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118199
   001a8	48 8b c8	 mov	 rcx, rax
   001ab	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_fopen
@@ -32678,7 +32663,7 @@ $LN35:
 	0b 00 00	 lea	 rcx, QWORD PTR $T25[rsp]
   00200	e8 00 00 00 00	 call	 ??1?$unique_ptr@U_iobuf@@Ufp_deleter@@@std@@QEAA@XZ ; std::unique_ptr<_iobuf,fp_deleter>::~unique_ptr<_iobuf,fp_deleter>
 
-; 681  :         if (!m_fpLog) {
+; 680  :         if (!m_fpLog) {
 
   00205	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32691,7 +32676,7 @@ $LN35:
   00220	0f 85 e9 00 00
 	00		 jne	 $LN2@init
 
-; 682  :             m_pRGYLog->write(RGY_LOG_WARN, _T("Failed to open performance monitor log file: %s\n"), m_sMonitorFilename.c_str());
+; 681  :             m_pRGYLog->write(RGY_LOG_WARN, _T("Failed to open performance monitor log file: %s\n"), m_sMonitorFilename.c_str());
 
   00226	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32714,7 +32699,7 @@ $LN35:
 	0b 00 00	 mov	 QWORD PTR tv559[rsp], rcx
   0026d	4c 8b c8	 mov	 r9, rax
   00270	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG118203
+	00 00		 lea	 r8, OFFSET FLAT:$SG118201
   00277	ba 01 00 00 00	 mov	 edx, 1
   0027c	48 8b 8c 24 80
 	0b 00 00	 mov	 rcx, QWORD PTR tv157[rsp]
@@ -32722,7 +32707,7 @@ $LN35:
 	0b 00 00	 mov	 rax, QWORD PTR tv559[rsp]
   0028c	ff 50 20	 call	 QWORD PTR [rax+32]
 
-; 683  :             m_pRGYLog->write(RGY_LOG_WARN, _T("performance monitoring disabled.\n"));
+; 682  :             m_pRGYLog->write(RGY_LOG_WARN, _T("performance monitoring disabled.\n"));
 
   0028f	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32736,13 +32721,13 @@ $LN35:
 	0b 00 00	 mov	 rax, QWORD PTR tv170[rsp]
   002b5	48 8b 00	 mov	 rax, QWORD PTR [rax]
   002b8	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG118204
+	00 00		 lea	 r8, OFFSET FLAT:$SG118202
   002bf	ba 01 00 00 00	 mov	 edx, 1
   002c4	48 8b 8c 24 90
 	0b 00 00	 mov	 rcx, QWORD PTR tv170[rsp]
   002cc	ff 50 20	 call	 QWORD PTR [rax+32]
 
-; 684  :             return 1;
+; 683  :             return 1;
 
   002cf	c7 84 24 08 0b
 	00 00 01 00 00
@@ -32763,82 +32748,82 @@ $LN35:
   0030a	e9 8b 0a 00 00	 jmp	 $LN1@init
 $LN2@init:
 
-; 685  :         }
-; 686  :     }
-; 687  : #if ENABLE_METRIC_FRAMEWORK
-; 688  :     //LoadAllを使用する場合、下記のように使わないモジュールを書くことで取得するモジュールを制限できる
-; 689  :     //putenv("GM_EXTENSION_LIB_SKIP_LIST=SEPPublisher,PVRPublisher,CPUInfoPublisher,RenderPerfPublisher");
-; 690  :     m_pLoader = ExtensionLoader::Create();
-; 691  :     //m_pLoader->AddSearchPath(loadPath.c_str());
-; 692  :     if (m_pLoader->Load("DefaultManager") == 0) {
-; 693  :         pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to load DefaultManager\n"));
-; 694  :     } else if (m_pLoader->CommitExtensions() == 0) {
-; 695  :     //} else if (m_pLoader->Load("LogPublisher") == 0) {
-; 696  :         //pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to load LogPublisher\n"));
-; 697  :     //下記のようにLoadAllでもよいが非常に重い
-; 698  :     //} else if (m_pLoader->LoadAll() == 0) {
-; 699  :         //pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to load Metric dlls\n"));
-; 700  :     //mfxの使用率をとるには下記の2つが必要
-; 701  :     } else if (m_pLoader->Load("MediaPerfPublisher") == 0) {
-; 702  :         pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to load MediaPerfPublisher\n"));
-; 703  :     } else if (m_pLoader->Load("RenderPerfPublisher") == 0) {
-; 704  :         pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to load RenderPerfPublisher\n"));
-; 705  :     //以下でGPU平均使用率などがとれるはずだが・・・
-; 706  :     //} else if (m_pLoader->Load("GfxDrvSampledPublisher") == 0) {
-; 707  :         //pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to load GfxDrvSampledPublisher\n"));
-; 708  :     } else if (m_pLoader->CommitExtensions() == 0) {
-; 709  :         //pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to CommitExtensions\n"));
-; 710  :     } else {
-; 711  :         //定義した情報の受け取り口を登録
-; 712  :         m_pLoader->AddExtension("CQSVConsumer", &m_Consumer);
-; 713  :         m_pManager.reset(GM_GET_DEFAULT_CLIENT_MANAGER(m_pLoader));
-; 714  :         if (m_pManager == nullptr) {
-; 715  :             pRGYLog->write(RGY_LOG_WARN, _T("No default Client Manager available\n"));
-; 716  :         } else {
-; 717  :             RegistrySearcher regsearcher(m_pManager.get(), RESOURCE_TYPE_METRIC, PAYLOAD_TYPE_ANY, 0);
-; 718  :             std::map<MetricHandle, std::string> validMetrics;
-; 719  :             for (int i = 0; i < _countof(METRIC_NAMES); i++) {
-; 720  :                 PathHandle h = regsearcher[METRIC_NAMES[i]];
-; 721  :                 if (h != 0) {
-; 722  :                     validMetrics[h] = METRIC_NAMES[i];
-; 723  :                 }
-; 724  :             }
-; 725  :             std::map<MetricHandle, std::string> subscribedMetrics;
-; 726  :             for (auto metric = validMetrics.cbegin(); metric != validMetrics.cend(); metric++) {
-; 727  :                 GM_STATUS status = m_pManager->SubscribeMetric(m_Consumer.GetHandle(), metric->first);
-; 728  :                 if (GM_STATUS_SUCCESS != status) {
-; 729  :                     pRGYLog->write(RGY_LOG_WARN, _T("Failure to subscribe %s metric: %d.\n"), char_to_tstring(metric->second).c_str(), status);
-; 730  :                 } else {
-; 731  :                     pRGYLog->write(RGY_LOG_DEBUG, _T("subscribed %s metric\n"), char_to_tstring(metric->second).c_str());
-; 732  :                     subscribedMetrics[metric->first] = metric->second;
-; 733  :                 }
-; 734  :             }
-; 735  :             m_Consumer.AddMetrics(subscribedMetrics);
-; 736  :             if (subscribedMetrics.size() != _countof(METRIC_NAMES)) {
-; 737  :                 pRGYLog->write(RGY_LOG_DEBUG, _T("metrics was not fully load, disable metric framework features.\n"));
-; 738  :                 if (m_pManager) {
-; 739  :                     const auto metricsUsed = m_Consumer.getMetricUsed();
-; 740  :                     for (auto metric = metricsUsed.cbegin(); metric != metricsUsed.cend(); metric++) {
-; 741  :                         m_pManager->UnsubscribeMetric(m_Consumer, metric->first);
-; 742  :                     }
-; 743  :                 }
-; 744  :                 m_pManager.reset();
-; 745  :             }
-; 746  :         }
-; 747  :     }
-; 748  : #endif //#if ENABLE_METRIC_FRAMEWORK
-; 749  : #if ENABLE_NVML
-; 750  :     auto nvml_ret = m_nvmlMonitor.Init(prm->pciBusId);
-; 751  :     if (nvml_ret != NVML_SUCCESS) {
-; 752  :         pRGYLog->write(RGY_LOG_INFO, _T("Failed to start NVML Monitoring for \"%s\": %s.\n"), char_to_tstring(prm->pciBusId).c_str(), nvmlErrStr(nvml_ret));
-; 753  :     } else {
-; 754  :         pRGYLog->write(RGY_LOG_DEBUG, _T("Eanble NVML Monitoring\n"));
-; 755  :     }
-; 756  : #else
-; 757  :     UNREFERENCED_PARAMETER(prm);
-; 758  : #endif //#if ENABLE_NVML
-; 759  : 
-; 760  :     if (m_nSelectOutputPlot) {
+; 684  :         }
+; 685  :     }
+; 686  : #if ENABLE_METRIC_FRAMEWORK
+; 687  :     //LoadAllを使用する場合、下記のように使わないモジュールを書くことで取得するモジュールを制限できる
+; 688  :     //putenv("GM_EXTENSION_LIB_SKIP_LIST=SEPPublisher,PVRPublisher,CPUInfoPublisher,RenderPerfPublisher");
+; 689  :     m_pLoader = ExtensionLoader::Create();
+; 690  :     //m_pLoader->AddSearchPath(loadPath.c_str());
+; 691  :     if (m_pLoader->Load("DefaultManager") == 0) {
+; 692  :         pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to load DefaultManager\n"));
+; 693  :     } else if (m_pLoader->CommitExtensions() == 0) {
+; 694  :     //} else if (m_pLoader->Load("LogPublisher") == 0) {
+; 695  :         //pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to load LogPublisher\n"));
+; 696  :     //下記のようにLoadAllでもよいが非常に重い
+; 697  :     //} else if (m_pLoader->LoadAll() == 0) {
+; 698  :         //pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to load Metric dlls\n"));
+; 699  :     //mfxの使用率をとるには下記の2つが必要
+; 700  :     } else if (m_pLoader->Load("MediaPerfPublisher") == 0) {
+; 701  :         pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to load MediaPerfPublisher\n"));
+; 702  :     } else if (m_pLoader->Load("RenderPerfPublisher") == 0) {
+; 703  :         pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to load RenderPerfPublisher\n"));
+; 704  :     //以下でGPU平均使用率などがとれるはずだが・・・
+; 705  :     //} else if (m_pLoader->Load("GfxDrvSampledPublisher") == 0) {
+; 706  :         //pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to load GfxDrvSampledPublisher\n"));
+; 707  :     } else if (m_pLoader->CommitExtensions() == 0) {
+; 708  :         //pRGYLog->write(RGY_LOG_DEBUG, _T("PerfMonitor: Failed to CommitExtensions\n"));
+; 709  :     } else {
+; 710  :         //定義した情報の受け取り口を登録
+; 711  :         m_pLoader->AddExtension("CQSVConsumer", &m_Consumer);
+; 712  :         m_pManager.reset(GM_GET_DEFAULT_CLIENT_MANAGER(m_pLoader));
+; 713  :         if (m_pManager == nullptr) {
+; 714  :             pRGYLog->write(RGY_LOG_WARN, _T("No default Client Manager available\n"));
+; 715  :         } else {
+; 716  :             RegistrySearcher regsearcher(m_pManager.get(), RESOURCE_TYPE_METRIC, PAYLOAD_TYPE_ANY, 0);
+; 717  :             std::map<MetricHandle, std::string> validMetrics;
+; 718  :             for (int i = 0; i < _countof(METRIC_NAMES); i++) {
+; 719  :                 PathHandle h = regsearcher[METRIC_NAMES[i]];
+; 720  :                 if (h != 0) {
+; 721  :                     validMetrics[h] = METRIC_NAMES[i];
+; 722  :                 }
+; 723  :             }
+; 724  :             std::map<MetricHandle, std::string> subscribedMetrics;
+; 725  :             for (auto metric = validMetrics.cbegin(); metric != validMetrics.cend(); metric++) {
+; 726  :                 GM_STATUS status = m_pManager->SubscribeMetric(m_Consumer.GetHandle(), metric->first);
+; 727  :                 if (GM_STATUS_SUCCESS != status) {
+; 728  :                     pRGYLog->write(RGY_LOG_WARN, _T("Failure to subscribe %s metric: %d.\n"), char_to_tstring(metric->second).c_str(), status);
+; 729  :                 } else {
+; 730  :                     pRGYLog->write(RGY_LOG_DEBUG, _T("subscribed %s metric\n"), char_to_tstring(metric->second).c_str());
+; 731  :                     subscribedMetrics[metric->first] = metric->second;
+; 732  :                 }
+; 733  :             }
+; 734  :             m_Consumer.AddMetrics(subscribedMetrics);
+; 735  :             if (subscribedMetrics.size() != _countof(METRIC_NAMES)) {
+; 736  :                 pRGYLog->write(RGY_LOG_DEBUG, _T("metrics was not fully load, disable metric framework features.\n"));
+; 737  :                 if (m_pManager) {
+; 738  :                     const auto metricsUsed = m_Consumer.getMetricUsed();
+; 739  :                     for (auto metric = metricsUsed.cbegin(); metric != metricsUsed.cend(); metric++) {
+; 740  :                         m_pManager->UnsubscribeMetric(m_Consumer, metric->first);
+; 741  :                     }
+; 742  :                 }
+; 743  :                 m_pManager.reset();
+; 744  :             }
+; 745  :         }
+; 746  :     }
+; 747  : #endif //#if ENABLE_METRIC_FRAMEWORK
+; 748  : #if ENABLE_NVML
+; 749  :     auto nvml_ret = m_nvmlMonitor.Init(prm->pciBusId);
+; 750  :     if (nvml_ret != NVML_SUCCESS) {
+; 751  :         pRGYLog->write(RGY_LOG_INFO, _T("Failed to start NVML Monitoring for \"%s\": %s.\n"), char_to_tstring(prm->pciBusId).c_str(), nvmlErrStr(nvml_ret));
+; 752  :     } else {
+; 753  :         pRGYLog->write(RGY_LOG_DEBUG, _T("Eanble NVML Monitoring\n"));
+; 754  :     }
+; 755  : #else
+; 756  :     UNREFERENCED_PARAMETER(prm);
+; 757  : #endif //#if ENABLE_NVML
+; 758  : 
+; 759  :     if (m_nSelectOutputPlot) {
 
   0030f	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32847,8 +32832,8 @@ $LN2@init:
   0031e	0f 84 51 07 00
 	00		 je	 $LN4@init
 
-; 761  : #if defined(_WIN32) || defined(_WIN64)
-; 762  :         m_pProcess = std::unique_ptr<RGYPipeProcess>(new RGYPipeProcessWin());
+; 760  : #if defined(_WIN32) || defined(_WIN64)
+; 761  :         m_pProcess = std::unique_ptr<RGYPipeProcess>(new RGYPipeProcessWin());
 
   00324	b9 28 00 00 00	 mov	 ecx, 40			; 00000028H
   00329	e8 00 00 00 00	 call	 ??2@YAPEAX_K@Z		; operator new
@@ -32896,14 +32881,14 @@ $LN11@init:
 	0b 00 00	 lea	 rcx, QWORD PTR $T27[rsp]
   003c8	e8 00 00 00 00	 call	 ??1?$unique_ptr@VRGYPipeProcess@@U?$default_delete@VRGYPipeProcess@@@std@@@std@@QEAA@XZ ; std::unique_ptr<RGYPipeProcess,std::default_delete<RGYPipeProcess> >::~unique_ptr<RGYPipeProcess,std::default_delete<RGYPipeProcess> >
 
-; 763  :         m_pipes.stdIn.mode = PIPE_MODE_ENABLE;
+; 762  :         m_pipes.stdIn.mode = PIPE_MODE_ENABLE;
 
   003cd	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
   003d5	c7 80 d0 02 00
 	00 01 00 00 00	 mov	 DWORD PTR [rax+720], 1
 
-; 764  :         TCHAR tempDir[1024] = { 0 };
+; 763  :         TCHAR tempDir[1024] = { 0 };
 
   003df	48 8d 44 24 50	 lea	 rax, QWORD PTR tempDir$8[rsp]
   003e4	48 8b f8	 mov	 rdi, rax
@@ -32911,7 +32896,7 @@ $LN11@init:
   003e9	b9 00 04 00 00	 mov	 ecx, 1024		; 00000400H
   003ee	f3 aa		 rep stosb
 
-; 765  :         TCHAR tempPath[1024] = { 0 };
+; 764  :         TCHAR tempPath[1024] = { 0 };
 
   003f0	48 8d 84 24 70
 	04 00 00	 lea	 rax, QWORD PTR tempPath$9[rsp]
@@ -32920,7 +32905,7 @@ $LN11@init:
   003fd	b9 00 04 00 00	 mov	 ecx, 1024		; 00000400H
   00402	f3 aa		 rep stosb
 
-; 766  :         GetModuleFileName(NULL, tempDir, _countof(tempDir));
+; 765  :         GetModuleFileName(NULL, tempDir, _countof(tempDir));
 
   00404	41 b8 00 04 00
 	00		 mov	 r8d, 1024		; 00000400H
@@ -32929,13 +32914,13 @@ $LN11@init:
   00411	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_GetModuleFileNameA
 
-; 767  :         PathRemoveFileSpec(tempDir);
+; 766  :         PathRemoveFileSpec(tempDir);
 
   00417	48 8d 4c 24 50	 lea	 rcx, QWORD PTR tempDir$8[rsp]
   0041c	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_PathRemoveFileSpecA
 
-; 768  :         PathCombine(tempPath, tempDir, strsprintf(_T("qsvencc_perf_monitor_%d.pyw"), GetProcessId(GetCurrentProcess())).c_str());
+; 767  :         PathCombine(tempPath, tempDir, strsprintf(_T("qsvencc_perf_monitor_%d.pyw"), GetProcessId(GetCurrentProcess())).c_str());
 
   00422	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_GetCurrentProcess
@@ -32944,7 +32929,7 @@ $LN11@init:
 	00		 call	 QWORD PTR __imp_GetProcessId
   00431	44 8b c0	 mov	 r8d, eax
   00434	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118208
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118206
   0043b	48 8d 8c 24 78
 	08 00 00	 lea	 rcx, QWORD PTR $T10[rsp]
   00443	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
@@ -32968,7 +32953,7 @@ $LN11@init:
 	08 00 00	 lea	 rcx, QWORD PTR $T10[rsp]
   0048c	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 769  :         m_sPywPath = tempPath;
+; 768  :         m_sPywPath = tempPath;
 
   00491	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -32978,19 +32963,19 @@ $LN11@init:
   004a5	48 8b c8	 mov	 rcx, rax
   004a8	e8 00 00 00 00	 call	 ??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 
-; 770  :         uint32_t priority = NORMAL_PRIORITY_CLASS;
+; 769  :         uint32_t priority = NORMAL_PRIORITY_CLASS;
 
   004ad	c7 84 24 a0 08
 	00 00 20 00 00
 	00		 mov	 DWORD PTR priority$11[rsp], 32 ; 00000020H
 
-; 771  : #else
-; 772  :         m_pProcess = std::unique_ptr<RGYPipeProcess>(new RGYPipeProcessLinux());
-; 773  :         m_pipes.stdIn.mode = PIPE_MODE_ENABLE;
-; 774  :         m_sPywPath = tstring(_T("/tmp/")) + strsprintf(_T("qsvencc_perf_monitor_%d.pyw"), (int)getpid());
-; 775  :         uint32_t priority = 0;
-; 776  : #endif
-; 777  :         tstring sPythonPath = (pPythonPath) ? pPythonPath : _T("python");
+; 770  : #else
+; 771  :         m_pProcess = std::unique_ptr<RGYPipeProcess>(new RGYPipeProcessLinux());
+; 772  :         m_pipes.stdIn.mode = PIPE_MODE_ENABLE;
+; 773  :         m_sPywPath = tstring(_T("/tmp/")) + strsprintf(_T("qsvencc_perf_monitor_%d.pyw"), (int)getpid());
+; 774  :         uint32_t priority = 0;
+; 775  : #endif
+; 776  :         tstring sPythonPath = (pPythonPath) ? pPythonPath : _T("python");
 
   004b8	48 83 bc 24 00
 	0d 00 00 00	 cmp	 QWORD PTR pPythonPath$[rsp], 0
@@ -33002,7 +32987,7 @@ $LN11@init:
   004d3	eb 0f		 jmp	 SHORT $LN13@init
 $LN12@init:
   004d5	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG118209
+	00 00		 lea	 rax, OFFSET FLAT:$SG118207
   004dc	48 89 84 24 c0
 	0b 00 00	 mov	 QWORD PTR tv235[rsp], rax
 $LN13@init:
@@ -33013,11 +32998,11 @@ $LN13@init:
   004f4	e8 00 00 00 00	 call	 ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
   004f9	90		 npad	 1
 
-; 778  : #if defined(_WIN32) || defined(_WIN64)
-; 779  :         sPythonPath = tstring(_T("\"")) + sPythonPath + tstring(_T("\""));
+; 777  : #if defined(_WIN32) || defined(_WIN64)
+; 778  :         sPythonPath = tstring(_T("\"")) + sPythonPath + tstring(_T("\""));
 
   004fa	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118210
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118208
   00501	48 8d 8c 24 38
 	09 00 00	 lea	 rcx, QWORD PTR $T15[rsp]
   00509	e8 00 00 00 00	 call	 ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
@@ -33028,7 +33013,7 @@ $LN13@init:
   0051e	48 89 84 24 d0
 	0b 00 00	 mov	 QWORD PTR tv514[rsp], rax
   00526	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118211
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118209
   0052d	48 8d 8c 24 e8
 	08 00 00	 lea	 rcx, QWORD PTR $T13[rsp]
   00535	e8 00 00 00 00	 call	 ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
@@ -33086,10 +33071,10 @@ $LN13@init:
 	09 00 00	 lea	 rcx, QWORD PTR $T15[rsp]
   00604	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 780  :         m_sPywPath = tstring(_T("\"")) + m_sPywPath + tstring(_T("\""));
+; 779  :         m_sPywPath = tstring(_T("\"")) + m_sPywPath + tstring(_T("\""));
 
   00609	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118212
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118210
   00610	48 8d 8c 24 d8
 	09 00 00	 lea	 rcx, QWORD PTR $T19[rsp]
   00618	e8 00 00 00 00	 call	 ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
@@ -33105,7 +33090,7 @@ $LN13@init:
   00641	48 89 84 24 18
 	0c 00 00	 mov	 QWORD PTR tv273[rsp], rax
   00649	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118213
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118211
   00650	48 8d 8c 24 88
 	09 00 00	 lea	 rcx, QWORD PTR $T17[rsp]
   00658	e8 00 00 00 00	 call	 ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
@@ -33166,19 +33151,19 @@ $LN13@init:
 	09 00 00	 lea	 rcx, QWORD PTR $T19[rsp]
   00731	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 781  : #else
-; 782  :         int ret = 0;
-; 783  :         if (0 > (ret = system((sPythonPath + " --version > /dev/null 2>&1").c_str()))) {
-; 784  :             m_pRGYLog->write(RGY_LOG_WARN, _T("Failed to run \"%s\". \n")
-; 785  :                 _T("--perf-monitor-plot requires python3.x, please set python3 path by \"--python\".\n"), sPythonPath.c_str());
-; 786  :             m_nSelectOutputPlot = 0;
-; 787  :         } else if (0 > (ret = system((sPythonPath + " -c \"print 'test'\" > /dev/null 2>&1").c_str())) || WEXITSTATUS(ret) == 0) {
-; 788  :             m_pRGYLog->write(RGY_LOG_WARN, _T("\"%s\" is not python3.x.\n")
-; 789  :                     _T("--perf-monitor-plot requires python3.x, please set python3 path by \"--python\".\n"), sPythonPath.c_str());
-; 790  :             m_nSelectOutputPlot = 0;
-; 791  :         }
-; 792  : #endif
-; 793  :         if (createPerfMpnitorPyw(m_sPywPath.c_str())) {
+; 780  : #else
+; 781  :         int ret = 0;
+; 782  :         if (0 > (ret = system((sPythonPath + " --version > /dev/null 2>&1").c_str()))) {
+; 783  :             m_pRGYLog->write(RGY_LOG_WARN, _T("Failed to run \"%s\". \n")
+; 784  :                 _T("--perf-monitor-plot requires python3.x, please set python3 path by \"--python\".\n"), sPythonPath.c_str());
+; 785  :             m_nSelectOutputPlot = 0;
+; 786  :         } else if (0 > (ret = system((sPythonPath + " -c \"print 'test'\" > /dev/null 2>&1").c_str())) || WEXITSTATUS(ret) == 0) {
+; 787  :             m_pRGYLog->write(RGY_LOG_WARN, _T("\"%s\" is not python3.x.\n")
+; 788  :                     _T("--perf-monitor-plot requires python3.x, please set python3 path by \"--python\".\n"), sPythonPath.c_str());
+; 789  :             m_nSelectOutputPlot = 0;
+; 790  :         }
+; 791  : #endif
+; 792  :         if (createPerfMpnitorPyw(m_sPywPath.c_str())) {
 
   00736	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33193,7 +33178,7 @@ $LN13@init:
   0075c	0f 84 97 00 00
 	00		 je	 $LN5@init
 
-; 794  :             m_pRGYLog->write(RGY_LOG_WARN, _T("Failed to create file qsvencc_perf_monitor.pyw for performance monitor plot.\n"));
+; 793  :             m_pRGYLog->write(RGY_LOG_WARN, _T("Failed to create file qsvencc_perf_monitor.pyw for performance monitor plot.\n"));
 
   00762	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33207,13 +33192,13 @@ $LN13@init:
 	0c 00 00	 mov	 rax, QWORD PTR tv299[rsp]
   00788	48 8b 00	 mov	 rax, QWORD PTR [rax]
   0078b	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG118216
+	00 00		 lea	 r8, OFFSET FLAT:$SG118214
   00792	ba 01 00 00 00	 mov	 edx, 1
   00797	48 8b 8c 24 50
 	0c 00 00	 mov	 rcx, QWORD PTR tv299[rsp]
   0079f	ff 50 20	 call	 QWORD PTR [rax+32]
 
-; 795  :             m_pRGYLog->write(RGY_LOG_WARN, _T("performance monitor plot disabled.\n"));
+; 794  :             m_pRGYLog->write(RGY_LOG_WARN, _T("performance monitor plot disabled.\n"));
 
   007a2	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33227,43 +33212,43 @@ $LN13@init:
 	0c 00 00	 mov	 rax, QWORD PTR tv308[rsp]
   007c8	48 8b 00	 mov	 rax, QWORD PTR [rax]
   007cb	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG118217
+	00 00		 lea	 r8, OFFSET FLAT:$SG118215
   007d2	ba 01 00 00 00	 mov	 edx, 1
   007d7	48 8b 8c 24 58
 	0c 00 00	 mov	 rcx, QWORD PTR tv308[rsp]
   007df	ff 50 20	 call	 QWORD PTR [rax+32]
 
-; 796  :             m_nSelectOutputPlot = 0;
+; 795  :             m_nSelectOutputPlot = 0;
 
   007e2	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
   007ea	c7 80 b8 0b 00
 	00 00 00 00 00	 mov	 DWORD PTR [rax+3000], 0
 
-; 797  :         } else {
+; 796  :         } else {
 
   007f4	e9 6f 02 00 00	 jmp	 $LN6@init
 $LN5@init:
 
-; 798  :             tstring sInterval = strsprintf(_T("%d"), interval);
+; 797  :             tstring sInterval = strsprintf(_T("%d"), interval);
 
   007f9	44 8b 84 24 08
 	0d 00 00	 mov	 r8d, DWORD PTR interval$[rsp]
   00801	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG118218
+	00 00		 lea	 rdx, OFFSET FLAT:$SG118216
   00808	48 8d 8c 24 38
 	0a 00 00	 lea	 rcx, QWORD PTR sInterval$21[rsp]
   00810	e8 00 00 00 00	 call	 ?strsprintf@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ ; strsprintf
   00815	90		 npad	 1
 
-; 799  :             std::vector<const TCHAR *> args;
+; 798  :             std::vector<const TCHAR *> args;
 
   00816	48 8d 8c 24 78
 	0a 00 00	 lea	 rcx, QWORD PTR args$22[rsp]
   0081e	e8 00 00 00 00	 call	 ??0?$vector@PEBDV?$allocator@PEBD@std@@@std@@QEAA@XZ ; std::vector<char const *,std::allocator<char const *> >::vector<char const *,std::allocator<char const *> >
   00823	90		 npad	 1
 
-; 800  :             args.push_back(sPythonPath.c_str());
+; 799  :             args.push_back(sPythonPath.c_str());
 
   00824	48 8d 8c 24 b8
 	08 00 00	 lea	 rcx, QWORD PTR sPythonPath$12[rsp]
@@ -33276,7 +33261,7 @@ $LN5@init:
 	0a 00 00	 lea	 rcx, QWORD PTR args$22[rsp]
   00849	e8 00 00 00 00	 call	 ?push_back@?$vector@PEBDV?$allocator@PEBD@std@@@std@@QEAAX$$QEAPEBD@Z ; std::vector<char const *,std::allocator<char const *> >::push_back
 
-; 801  :             args.push_back(m_sPywPath.c_str());
+; 800  :             args.push_back(m_sPywPath.c_str());
 
   0084e	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33291,10 +33276,10 @@ $LN5@init:
 	0a 00 00	 lea	 rcx, QWORD PTR args$22[rsp]
   0087a	e8 00 00 00 00	 call	 ?push_back@?$vector@PEBDV?$allocator@PEBD@std@@@std@@QEAAX$$QEAPEBD@Z ; std::vector<char const *,std::allocator<char const *> >::push_back
 
-; 802  :             args.push_back(_T("-i"));
+; 801  :             args.push_back(_T("-i"));
 
   0087f	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG118219
+	00 00		 lea	 rax, OFFSET FLAT:$SG118217
   00886	48 89 84 24 38
 	0b 00 00	 mov	 QWORD PTR $T32[rsp], rax
   0088e	48 8d 94 24 38
@@ -33303,7 +33288,7 @@ $LN5@init:
 	0a 00 00	 lea	 rcx, QWORD PTR args$22[rsp]
   0089e	e8 00 00 00 00	 call	 ?push_back@?$vector@PEBDV?$allocator@PEBD@std@@@std@@QEAAXAEBQEBD@Z ; std::vector<char const *,std::allocator<char const *> >::push_back
 
-; 803  :             args.push_back(sInterval.c_str());
+; 802  :             args.push_back(sInterval.c_str());
 
   008a3	48 8d 8c 24 38
 	0a 00 00	 lea	 rcx, QWORD PTR sInterval$21[rsp]
@@ -33316,7 +33301,7 @@ $LN5@init:
 	0a 00 00	 lea	 rcx, QWORD PTR args$22[rsp]
   008c8	e8 00 00 00 00	 call	 ?push_back@?$vector@PEBDV?$allocator@PEBD@std@@@std@@QEAAX$$QEAPEBD@Z ; std::vector<char const *,std::allocator<char const *> >::push_back
 
-; 804  :             args.push_back(nullptr);
+; 803  :             args.push_back(nullptr);
 
   008cd	48 c7 84 24 48
 	0b 00 00 00 00
@@ -33327,7 +33312,7 @@ $LN5@init:
 	0a 00 00	 lea	 rcx, QWORD PTR args$22[rsp]
   008e9	e8 00 00 00 00	 call	 ?push_back@?$vector@PEBDV?$allocator@PEBD@std@@@std@@QEAAX$$QEAPEBD@Z ; std::vector<char const *,std::allocator<char const *> >::push_back
 
-; 805  :             if (m_pProcess->run(args, nullptr, &m_pipes, priority, false, false)) {
+; 804  :             if (m_pProcess->run(args, nullptr, &m_pipes, priority, false, false)) {
 
   008ee	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33364,7 +33349,7 @@ $LN5@init:
   00965	0f 84 94 00 00
 	00		 je	 $LN7@init
 
-; 806  :                 m_pRGYLog->write(RGY_LOG_WARN, _T("Failed to run performance monitor plot.\n"));
+; 805  :                 m_pRGYLog->write(RGY_LOG_WARN, _T("Failed to run performance monitor plot.\n"));
 
   0096b	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33378,13 +33363,13 @@ $LN5@init:
 	0c 00 00	 mov	 rax, QWORD PTR tv391[rsp]
   00991	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00994	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG118222
+	00 00		 lea	 r8, OFFSET FLAT:$SG118220
   0099b	ba 01 00 00 00	 mov	 edx, 1
   009a0	48 8b 8c 24 70
 	0c 00 00	 mov	 rcx, QWORD PTR tv391[rsp]
   009a8	ff 50 20	 call	 QWORD PTR [rax+32]
 
-; 807  :                 m_pRGYLog->write(RGY_LOG_WARN, _T("performance monitor plot disabled.\n"));
+; 806  :                 m_pRGYLog->write(RGY_LOG_WARN, _T("performance monitor plot disabled.\n"));
 
   009ab	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33398,26 +33383,26 @@ $LN5@init:
 	0c 00 00	 mov	 rax, QWORD PTR tv400[rsp]
   009d1	48 8b 00	 mov	 rax, QWORD PTR [rax]
   009d4	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG118223
+	00 00		 lea	 r8, OFFSET FLAT:$SG118221
   009db	ba 01 00 00 00	 mov	 edx, 1
   009e0	48 8b 8c 24 78
 	0c 00 00	 mov	 rcx, QWORD PTR tv400[rsp]
   009e8	ff 50 20	 call	 QWORD PTR [rax+32]
 
-; 808  :                 m_nSelectOutputPlot = 0;
+; 807  :                 m_nSelectOutputPlot = 0;
 
   009eb	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
   009f3	c7 80 b8 0b 00
 	00 00 00 00 00	 mov	 DWORD PTR [rax+3000], 0
 
-; 809  : #if defined(_WIN32) || defined(_WIN64)
-; 810  :             } else {
+; 808  : #if defined(_WIN32) || defined(_WIN64)
+; 809  :             } else {
 
   009fd	eb 4d		 jmp	 SHORT $LN8@init
 $LN7@init:
 
-; 811  :                 WaitForInputIdle(dynamic_cast<RGYPipeProcessWin *>(m_pProcess.get())->getProcessInfo().hProcess, INFINITE);
+; 810  :                 WaitForInputIdle(dynamic_cast<RGYPipeProcessWin *>(m_pProcess.get())->getProcessInfo().hProcess, INFINITE);
 
   009ff	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33443,9 +33428,9 @@ $LN7@init:
   00a4b	90		 npad	 1
 $LN8@init:
 
-; 812  : #endif
-; 813  :             }
-; 814  :         }
+; 811  : #endif
+; 812  :             }
+; 813  :         }
 
   00a4c	48 8d 8c 24 78
 	0a 00 00	 lea	 rcx, QWORD PTR args$22[rsp]
@@ -33457,16 +33442,16 @@ $LN8@init:
   00a67	90		 npad	 1
 $LN6@init:
 
-; 815  :     }
+; 814  :     }
 
   00a68	48 8d 8c 24 b8
 	08 00 00	 lea	 rcx, QWORD PTR sPythonPath$12[rsp]
   00a70	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN4@init:
 
-; 816  : 
-; 817  :     //未実装
-; 818  :     m_nSelectCheck &= (~PERF_MONITOR_FRAME_IN);
+; 815  : 
+; 816  :     //未実装
+; 817  :     m_nSelectCheck &= (~PERF_MONITOR_FRAME_IN);
 
   00a75	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33478,22 +33463,22 @@ $LN4@init:
   00a8f	89 81 b0 0b 00
 	00		 mov	 DWORD PTR [rcx+2992], eax
 
-; 819  : 
-; 820  :     //未実装
-; 821  : #if !(defined(_WIN32) || defined(_WIN64))
-; 822  :     m_nSelectCheck &= (~PERF_MONITOR_THREAD_MAIN);
-; 823  :     m_nSelectCheck &= (~PERF_MONITOR_THREAD_ENC);
-; 824  :     m_nSelectCheck &= (~PERF_MONITOR_THREAD_AUDP);
-; 825  :     m_nSelectCheck &= (~PERF_MONITOR_THREAD_AUDE);
-; 826  :     m_nSelectCheck &= (~PERF_MONITOR_THREAD_OUT);
-; 827  :     m_nSelectCheck &= (~PERF_MONITOR_THREAD_IN);
-; 828  :     m_nSelectCheck &= (~PERF_MONITOR_GPU_CLOCK);
-; 829  :     m_nSelectCheck &= (~PERF_MONITOR_GPU_LOAD);
-; 830  :     m_nSelectCheck &= (~PERF_MONITOR_MFX_LOAD);
-; 831  : #endif //#if defined(_WIN32) || defined(_WIN64)
-; 832  : 
-; 833  : #if ENCODER_QSV
-; 834  :     m_nSelectCheck &= (~PERF_MONITOR_VED_LOAD);
+; 818  : 
+; 819  :     //未実装
+; 820  : #if !(defined(_WIN32) || defined(_WIN64))
+; 821  :     m_nSelectCheck &= (~PERF_MONITOR_THREAD_MAIN);
+; 822  :     m_nSelectCheck &= (~PERF_MONITOR_THREAD_ENC);
+; 823  :     m_nSelectCheck &= (~PERF_MONITOR_THREAD_AUDP);
+; 824  :     m_nSelectCheck &= (~PERF_MONITOR_THREAD_AUDE);
+; 825  :     m_nSelectCheck &= (~PERF_MONITOR_THREAD_OUT);
+; 826  :     m_nSelectCheck &= (~PERF_MONITOR_THREAD_IN);
+; 827  :     m_nSelectCheck &= (~PERF_MONITOR_GPU_CLOCK);
+; 828  :     m_nSelectCheck &= (~PERF_MONITOR_GPU_LOAD);
+; 829  :     m_nSelectCheck &= (~PERF_MONITOR_MFX_LOAD);
+; 830  : #endif //#if defined(_WIN32) || defined(_WIN64)
+; 831  : 
+; 832  : #if ENCODER_QSV
+; 833  :     m_nSelectCheck &= (~PERF_MONITOR_VED_LOAD);
 
   00a95	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33505,7 +33490,7 @@ $LN4@init:
   00aaf	89 81 b0 0b 00
 	00		 mov	 DWORD PTR [rcx+2992], eax
 
-; 835  :     m_nSelectCheck &= (~PERF_MONITOR_VEE_LOAD);
+; 834  :     m_nSelectCheck &= (~PERF_MONITOR_VEE_LOAD);
 
   00ab5	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33517,7 +33502,7 @@ $LN4@init:
   00acf	89 81 b0 0b 00
 	00		 mov	 DWORD PTR [rcx+2992], eax
 
-; 836  :     m_nSelectCheck &= (~PERF_MONITOR_VE_CLOCK);
+; 835  :     m_nSelectCheck &= (~PERF_MONITOR_VE_CLOCK);
 
   00ad5	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33529,14 +33514,14 @@ $LN4@init:
   00aef	89 81 b0 0b 00
 	00		 mov	 DWORD PTR [rcx+2992], eax
 
-; 837  : #endif
-; 838  : #if ENCODER_NVENC
-; 839  :     m_nSelectCheck &= (~PERF_MONITOR_MFX_LOAD);
-; 840  :     //うまくとれてなさそう
-; 841  :     m_nSelectCheck &= (~PERF_MONITOR_VED_LOAD);
-; 842  : #endif
-; 843  : 
-; 844  :     m_nSelectOutputLog &= m_nSelectCheck;
+; 836  : #endif
+; 837  : #if ENCODER_NVENC
+; 838  :     m_nSelectCheck &= (~PERF_MONITOR_MFX_LOAD);
+; 839  :     //うまくとれてなさそう
+; 840  :     m_nSelectCheck &= (~PERF_MONITOR_VED_LOAD);
+; 841  : #endif
+; 842  : 
+; 843  :     m_nSelectOutputLog &= m_nSelectCheck;
 
   00af5	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33552,7 +33537,7 @@ $LN4@init:
   00b1b	89 81 b4 0b 00
 	00		 mov	 DWORD PTR [rcx+2996], eax
 
-; 845  :     m_nSelectOutputPlot &= m_nSelectCheck;
+; 844  :     m_nSelectOutputPlot &= m_nSelectCheck;
 
   00b21	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33568,8 +33553,8 @@ $LN4@init:
   00b47	89 81 b8 0b 00
 	00		 mov	 DWORD PTR [rcx+3000], eax
 
-; 846  : 
-; 847  :     pRGYLog->write(RGY_LOG_DEBUG, _T("Performace Monitor: %s\n"), CPerfMonitor::SelectedCounters(m_nSelectOutputLog).c_str());
+; 845  : 
+; 846  :     pRGYLog->write(RGY_LOG_DEBUG, _T("Performace Monitor: %s\n"), CPerfMonitor::SelectedCounters(m_nSelectOutputLog).c_str());
 
   00b4d	48 8b 8c 24 28
 	0d 00 00	 mov	 rcx, QWORD PTR pRGYLog$[rsp]
@@ -33601,7 +33586,7 @@ $LN4@init:
 	0c 00 00	 mov	 QWORD PTR tv552[rsp], rcx
   00bbe	4c 8b c8	 mov	 r9, rax
   00bc1	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG118224
+	00 00		 lea	 r8, OFFSET FLAT:$SG118222
   00bc8	ba fe ff ff ff	 mov	 edx, -2
   00bcd	48 8b 8c 24 80
 	0c 00 00	 mov	 rcx, QWORD PTR tv443[rsp]
@@ -33613,7 +33598,7 @@ $LN4@init:
 	0a 00 00	 lea	 rcx, QWORD PTR $T23[rsp]
   00be9	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 848  :     pRGYLog->write(RGY_LOG_DEBUG, _T("Performace Plot   : %s\n"), CPerfMonitor::SelectedCounters(m_nSelectOutputPlot).c_str());
+; 847  :     pRGYLog->write(RGY_LOG_DEBUG, _T("Performace Plot   : %s\n"), CPerfMonitor::SelectedCounters(m_nSelectOutputPlot).c_str());
 
   00bee	48 8b 8c 24 28
 	0d 00 00	 mov	 rcx, QWORD PTR pRGYLog$[rsp]
@@ -33645,7 +33630,7 @@ $LN4@init:
 	0c 00 00	 mov	 QWORD PTR tv551[rsp], rcx
   00c5f	4c 8b c8	 mov	 r9, rax
   00c62	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG118225
+	00 00		 lea	 r8, OFFSET FLAT:$SG118223
   00c69	ba fe ff ff ff	 mov	 edx, -2
   00c6e	48 8b 8c 24 a0
 	0c 00 00	 mov	 rcx, QWORD PTR tv461[rsp]
@@ -33657,8 +33642,8 @@ $LN4@init:
 	0a 00 00	 lea	 rcx, QWORD PTR $T24[rsp]
   00c8a	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 849  : 
-; 850  :     write_header(m_fpLog.get(),   m_nSelectOutputLog);
+; 848  : 
+; 849  :     write_header(m_fpLog.get(),   m_nSelectOutputLog);
 
   00c8f	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33675,7 +33660,7 @@ $LN4@init:
 	0c 00 00	 mov	 rcx, QWORD PTR this$[rsp]
   00cbf	e8 00 00 00 00	 call	 ?write_header@CPerfMonitor@@IEAAXPEAU_iobuf@@H@Z ; CPerfMonitor::write_header
 
-; 851  :     write_header(m_pipes.f_stdin, m_nSelectOutputPlot);
+; 850  :     write_header(m_pipes.f_stdin, m_nSelectOutputPlot);
 
   00cc4	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33689,8 +33674,8 @@ $LN4@init:
 	0c 00 00	 mov	 rcx, QWORD PTR this$[rsp]
   00cea	e8 00 00 00 00	 call	 ?write_header@CPerfMonitor@@IEAAXPEAU_iobuf@@H@Z ; CPerfMonitor::write_header
 
-; 852  : 
-; 853  :     m_thCheck = std::thread(loader, this);
+; 851  : 
+; 852  :     m_thCheck = std::thread(loader, this);
 
   00cef	48 8b 84 24 f0
 	0c 00 00	 mov	 rax, QWORD PTR this$[rsp]
@@ -33722,7 +33707,7 @@ $LN4@init:
 	0b 00 00	 lea	 rcx, QWORD PTR $T35[rsp]
   00d5a	e8 00 00 00 00	 call	 ??1thread@std@@QEAA@XZ	; std::thread::~thread
 
-; 854  :     return 0;
+; 853  :     return 0;
 
   00d5f	c7 84 24 68 0b
 	00 00 00 00 00
@@ -33742,7 +33727,7 @@ $LN4@init:
 	00 00		 mov	 eax, DWORD PTR $T37[rsp]
 $LN1@init:
 
-; 855  : }
+; 854  : }
 
   00d9a	48 8b f8	 mov	 rdi, rax
   00d9d	48 8b cc	 mov	 rcx, rsp

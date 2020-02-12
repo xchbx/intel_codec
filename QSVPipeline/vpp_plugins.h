@@ -37,7 +37,6 @@
 
 #include "rotate/plugin_rotate.h"
 #include "delogo/plugin_delogo.h"
-#include "subburn/plugin_subburn.h"
 
 #define GPU_FILTER 0
 
@@ -152,11 +151,7 @@ public:
         } else if (0 == _tcsicmp(pluginName, _T("delogo"))) {
             m_pUsrPlugin.reset(new Delogo());
         } else
-#if ENABLE_AVSW_READER && ENABLE_LIBASS_SUBBURN
-        if (0 == _tcsicmp(pluginName, _T("subburn"))) {
-            m_pUsrPlugin.reset(new SubBurn());
-        }
-#endif //#if ENABLE_AVSW_READER && ENABLE_LIBASS_SUBBURN
+
         if (m_pUsrPlugin.get() == nullptr) {
             m_pQSVLog->write(RGY_LOG_ERROR, _T("CVPPPluginInit: plugin name \"%s\" could not be found."), pluginName);
             return MFX_ERR_NOT_FOUND;

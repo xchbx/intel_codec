@@ -14,12 +14,12 @@
   in file
   	D:\work\intel\intel_codec\mfx_dispatch\include\mfx_dxva2_device.h (51):
   Using of D3D9 enabled!
+  mfx_plugin_cfg_parser.cpp
+  mfx_plugin_hive.cpp
+  mfx_plugin_hive_linux.cpp
   ATTENTION:
   in file
   	D:\work\intel\intel_codec\mfx_dispatch\include\mfx_dxva2_device.h (51):
   Using of D3D9 enabled!
-  mfx_plugin_cfg_parser.cpp
-  mfx_plugin_hive.cpp
-  mfx_plugin_hive_linux.cpp
   mfx_win_reg_key.cpp
   libmfx.vcxproj -> D:\work\intel\intel_codec\_build\x64\Debug\libmfx.lib

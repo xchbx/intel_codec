@@ -77,8 +77,6 @@ void init_qsvp_prm(sInputParams *prm) {
     prm->simdCsp           = get_cx_value(list_simd, _T("auto"));
     prm->nAudioIgnoreDecodeError = QSV_DEFAULT_AUDIO_IGNORE_DECODE_ERROR;
 
-    prm->caption2ass = FORMAT_INVALID;
-
     prm->nDstWidth          = 0;
     prm->nDstHeight         = 0;
     prm->vpp.bEnable        = true;

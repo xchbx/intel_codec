@@ -6,618 +6,668 @@ INCLUDELIB MSVCRTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG126029 DB	'h264', 00H
+$SG116741 DB	'h264', 00H
 	ORG $+3
-$SG126030 DB	'hevc', 00H
+$SG116742 DB	'hevc', 00H
 	ORG $+3
-$SG126031 DB	'mpeg2', 00H
+$SG116743 DB	'mpeg2', 00H
 	ORG $+2
-$SG126032 DB	'vc-1', 00H
+$SG116744 DB	'vc-1', 00H
 	ORG $+3
-$SG126033 DB	'vp8', 00H
-$SG126034 DB	'raw', 00H
-$SG126036 DB	'CBR', 00H
-$SG126037 DB	'VBR', 00H
-$SG126038 DB	'CQP', 00H
-$SG126039 DB	'AVBR', 00H
+$SG116745 DB	'vp8', 00H
+$SG116746 DB	'raw', 00H
+$SG116748 DB	'CBR', 00H
+$SG116749 DB	'VBR', 00H
+$SG116750 DB	'CQP', 00H
+$SG116751 DB	'AVBR', 00H
 	ORG $+3
-$SG126040 DB	'LA', 00H
+$SG116752 DB	'LA', 00H
 	ORG $+1
-$SG126041 DB	'LA-EXT', 00H
+$SG116753 DB	'LA-EXT', 00H
 	ORG $+1
-$SG126042 DB	'LA-HRD', 00H
+$SG116754 DB	'LA-HRD', 00H
 	ORG $+1
-$SG126043 DB	'LA-ICQ', 00H
+$SG116755 DB	'LA-ICQ', 00H
 	ORG $+1
-$SG126044 DB	'ICQ', 00H
-$SG126045 DB	'QVBR', 00H
+$SG116756 DB	'ICQ', 00H
+$SG116757 DB	'QVBR', 00H
 	ORG $+3
-$SG126046 DB	'VCM', 00H
-$SG126048 DB	'auto', 00H
+$SG116758 DB	'VCM', 00H
+$SG116760 DB	'auto', 00H
 	ORG $+3
-?list_avc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG126048	; list_avc_profile
+?list_avc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG116760	; list_avc_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG126049
+	DQ	FLAT:$SG116761
 	DD	042H
 	ORG $+4
-	DQ	FLAT:$SG126050
+	DQ	FLAT:$SG116762
 	DD	04dH
 	ORG $+4
-	DQ	FLAT:$SG126051
+	DQ	FLAT:$SG116763
 	DD	064H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG126049 DB	'Baseline', 00H
+$SG116761 DB	'Baseline', 00H
 	ORG $+3
-$SG126050 DB	'Main', 00H
+$SG116762 DB	'Main', 00H
 	ORG $+3
-$SG126051 DB	'High', 00H
+$SG116763 DB	'High', 00H
 	ORG $+7
-?list_hevc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG126053	; list_hevc_profile
+?list_hevc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG116765	; list_hevc_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG126054
+	DQ	FLAT:$SG116766
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG126055
+	DQ	FLAT:$SG116767
 	DD	02H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG126053 DB	'auto', 00H
+$SG116765 DB	'auto', 00H
 	ORG $+3
-$SG126054 DB	'main', 00H
+$SG116766 DB	'main', 00H
 	ORG $+3
-$SG126055 DB	'main10', 00H
+$SG116767 DB	'main10', 00H
 	ORG $+1
-$SG126057 DB	'main', 00H
+$SG116769 DB	'main', 00H
 	ORG $+3
-$SG126058 DB	'high', 00H
+$SG116770 DB	'high', 00H
 	ORG $+3
-$SG126060 DB	'auto', 00H
+$SG116772 DB	'auto', 00H
 	ORG $+3
-?list_mpeg2_profile@@3QBUCX_DESC@@B DQ FLAT:$SG126060	; list_mpeg2_profile
+?list_mpeg2_profile@@3QBUCX_DESC@@B DQ FLAT:$SG116772	; list_mpeg2_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG126061
+	DQ	FLAT:$SG116773
 	DD	050H
 	ORG $+4
-	DQ	FLAT:$SG126062
+	DQ	FLAT:$SG116774
 	DD	040H
 	ORG $+4
-	DQ	FLAT:$SG126063
+	DQ	FLAT:$SG116775
 	DD	010H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG126061 DB	'Simple', 00H
+$SG116773 DB	'Simple', 00H
 	ORG $+1
-$SG126062 DB	'Main', 00H
+$SG116774 DB	'Main', 00H
 	ORG $+3
-$SG126063 DB	'High', 00H
+$SG116775 DB	'High', 00H
 	ORG $+3
-$SG126065 DB	'auto', 00H
+$SG116777 DB	'auto', 00H
 	ORG $+3
-?list_vc1_profile@@3QBUCX_DESC@@B DQ FLAT:$SG126065	; list_vc1_profile
+?list_vc1_profile@@3QBUCX_DESC@@B DQ FLAT:$SG116777	; list_vc1_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG126066
+	DQ	FLAT:$SG116778
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG126067
+	DQ	FLAT:$SG116779
 	DD	05H
 	ORG $+4
-	DQ	FLAT:$SG126068
+	DQ	FLAT:$SG116780
 	DD	0dH
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG126066 DB	'Simple', 00H
+$SG116778 DB	'Simple', 00H
 	ORG $+1
-$SG126067 DB	'Main', 00H
+$SG116779 DB	'Main', 00H
 	ORG $+3
-$SG126068 DB	'Advanced', 00H
+$SG116780 DB	'Advanced', 00H
 	ORG $+7
-?list_vp8_profile@@3QBUCX_DESC@@B DQ FLAT:$SG126070	; list_vp8_profile
+?list_vp8_profile@@3QBUCX_DESC@@B DQ FLAT:$SG116782	; list_vp8_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG126071
+	DQ	FLAT:$SG116783
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG126072
+	DQ	FLAT:$SG116784
 	DD	02H
 	ORG $+4
-	DQ	FLAT:$SG126073
+	DQ	FLAT:$SG116785
 	DD	03H
 	ORG $+4
-	DQ	FLAT:$SG126074
+	DQ	FLAT:$SG116786
 	DD	04H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG126070 DB	'auto', 00H
+$SG116782 DB	'auto', 00H
 	ORG $+3
-$SG126071 DB	'0', 00H
+$SG116783 DB	'0', 00H
 	ORG $+2
-$SG126072 DB	'1', 00H
+$SG116784 DB	'1', 00H
 	ORG $+2
-$SG126073 DB	'2', 00H
+$SG116785 DB	'2', 00H
 	ORG $+2
-$SG126074 DB	'3', 00H
+$SG116786 DB	'3', 00H
 	ORG $+2
-$SG126076 DB	'auto', 00H
+$SG116788 DB	'auto', 00H
 	ORG $+3
-?list_vp9_profile@@3QBUCX_DESC@@B DQ FLAT:$SG126076	; list_vp9_profile
+?list_vp9_profile@@3QBUCX_DESC@@B DQ FLAT:$SG116788	; list_vp9_profile
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG126077
+	DQ	FLAT:$SG116789
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG126078
+	DQ	FLAT:$SG116790
 	DD	02H
 	ORG $+4
-	DQ	FLAT:$SG126079
+	DQ	FLAT:$SG116791
 	DD	03H
 	ORG $+4
-	DQ	FLAT:$SG126080
+	DQ	FLAT:$SG116792
 	DD	04H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG126077 DB	'0', 00H
+$SG116789 DB	'0', 00H
 	ORG $+2
-$SG126078 DB	'1', 00H
+$SG116790 DB	'1', 00H
 	ORG $+2
-$SG126079 DB	'2', 00H
+$SG116791 DB	'2', 00H
 	ORG $+2
-$SG126080 DB	'3', 00H
+$SG116792 DB	'3', 00H
 	ORG $+2
-$SG126082 DB	'8', 00H
+$SG116794 DB	'8', 00H
 	ORG $+2
-$SG126083 DB	'10', 00H
+$SG116795 DB	'10', 00H
 	ORG $+1
-$SG126085 DB	'progressive', 00H
-$SG126091 DB	'it', 00H
+$SG116797 DB	'progressive', 00H
+$SG116803 DB	'it', 00H
 	ORG $+1
-$SG126086 DB	'interlaced(tff)', 00H
-$SG126087 DB	'interlaced(bff)', 00H
-$SG126089 DB	'none', 00H
+$SG116798 DB	'interlaced(tff)', 00H
+$SG116799 DB	'interlaced(bff)', 00H
+$SG116801 DB	'none', 00H
 	ORG $+3
-$SG126090 DB	'normal', 00H
+$SG116802 DB	'normal', 00H
 	ORG $+1
-$SG126092 DB	'bob', 00H
-$SG126094 DB	'32', 00H
+$SG116804 DB	'bob', 00H
+$SG116806 DB	'32', 00H
 	ORG $+1
-$SG126095 DB	'2332', 00H
+$SG116807 DB	'2332', 00H
 	ORG $+3
-$SG126096 DB	'repeat', 00H
+$SG116808 DB	'repeat', 00H
 	ORG $+1
-$SG126097 DB	'41', 00H
+$SG116809 DB	'41', 00H
 	ORG $+1
-$SG126099 DB	'auto', 00H
+$SG116811 DB	'auto', 00H
 	ORG $+7
-?list_avc_level@@3QBUCX_DESC@@B DQ FLAT:$SG126099	; list_avc_level
+?list_avc_level@@3QBUCX_DESC@@B DQ FLAT:$SG116811	; list_avc_level
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG126100
+	DQ	FLAT:$SG116812
 	DD	0aH
 	ORG $+4
-	DQ	FLAT:$SG126101
+	DQ	FLAT:$SG116813
 	DD	09H
 	ORG $+4
-	DQ	FLAT:$SG126102
+	DQ	FLAT:$SG116814
 	DD	0bH
 	ORG $+4
-	DQ	FLAT:$SG126103
+	DQ	FLAT:$SG116815
 	DD	0cH
 	ORG $+4
-	DQ	FLAT:$SG126104
+	DQ	FLAT:$SG116816
 	DD	0dH
 	ORG $+4
-	DQ	FLAT:$SG126105
+	DQ	FLAT:$SG116817
 	DD	014H
 	ORG $+4
-	DQ	FLAT:$SG126106
+	DQ	FLAT:$SG116818
 	DD	015H
 	ORG $+4
-	DQ	FLAT:$SG126107
+	DQ	FLAT:$SG116819
 	DD	016H
 	ORG $+4
-	DQ	FLAT:$SG126108
+	DQ	FLAT:$SG116820
 	DD	01eH
 	ORG $+4
-	DQ	FLAT:$SG126109
+	DQ	FLAT:$SG116821
 	DD	01fH
 	ORG $+4
-	DQ	FLAT:$SG126110
+	DQ	FLAT:$SG116822
 	DD	020H
 	ORG $+4
-	DQ	FLAT:$SG126111
+	DQ	FLAT:$SG116823
 	DD	028H
 	ORG $+4
-	DQ	FLAT:$SG126112
+	DQ	FLAT:$SG116824
 	DD	029H
 	ORG $+4
-	DQ	FLAT:$SG126113
+	DQ	FLAT:$SG116825
 	DD	02aH
 	ORG $+4
-	DQ	FLAT:$SG126114
+	DQ	FLAT:$SG116826
 	DD	032H
 	ORG $+4
-	DQ	FLAT:$SG126115
+	DQ	FLAT:$SG116827
 	DD	033H
 	ORG $+4
-	DQ	FLAT:$SG126116
+	DQ	FLAT:$SG116828
 	DD	034H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG126100 DB	'1', 00H
+$SG116812 DB	'1', 00H
 	ORG $+2
-$SG126101 DB	'1b', 00H
+$SG116813 DB	'1b', 00H
 	ORG $+1
-$SG126102 DB	'1.1', 00H
-$SG126103 DB	'1.2', 00H
-$SG126104 DB	'1.3', 00H
-$SG126105 DB	'2', 00H
+$SG116814 DB	'1.1', 00H
+$SG116815 DB	'1.2', 00H
+$SG116816 DB	'1.3', 00H
+$SG116817 DB	'2', 00H
 	ORG $+2
-$SG126106 DB	'2.1', 00H
-$SG126107 DB	'2.2', 00H
-$SG126108 DB	'3', 00H
+$SG116818 DB	'2.1', 00H
+$SG116819 DB	'2.2', 00H
+$SG116820 DB	'3', 00H
 	ORG $+2
-$SG126109 DB	'3.1', 00H
-$SG126110 DB	'3.2', 00H
-$SG126111 DB	'4', 00H
+$SG116821 DB	'3.1', 00H
+$SG116822 DB	'3.2', 00H
+$SG116823 DB	'4', 00H
 	ORG $+2
-$SG126112 DB	'4.1', 00H
-$SG126113 DB	'4.2', 00H
-$SG126114 DB	'5', 00H
+$SG116824 DB	'4.1', 00H
+$SG116825 DB	'4.2', 00H
+$SG116826 DB	'5', 00H
 	ORG $+2
-$SG126115 DB	'5.1', 00H
-$SG126116 DB	'5.2', 00H
-$SG126118 DB	'auto', 00H
+$SG116827 DB	'5.1', 00H
+$SG116828 DB	'5.2', 00H
+$SG116830 DB	'auto', 00H
 	ORG $+7
-?list_hevc_level@@3QBUCX_DESC@@B DQ FLAT:$SG126118	; list_hevc_level
+?list_hevc_level@@3QBUCX_DESC@@B DQ FLAT:$SG116830	; list_hevc_level
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG126119
+	DQ	FLAT:$SG116831
 	DD	0aH
 	ORG $+4
-	DQ	FLAT:$SG126120
+	DQ	FLAT:$SG116832
 	DD	014H
 	ORG $+4
-	DQ	FLAT:$SG126121
+	DQ	FLAT:$SG116833
 	DD	015H
 	ORG $+4
-	DQ	FLAT:$SG126122
+	DQ	FLAT:$SG116834
 	DD	01eH
 	ORG $+4
-	DQ	FLAT:$SG126123
+	DQ	FLAT:$SG116835
 	DD	01fH
 	ORG $+4
-	DQ	FLAT:$SG126124
+	DQ	FLAT:$SG116836
 	DD	028H
 	ORG $+4
-	DQ	FLAT:$SG126125
+	DQ	FLAT:$SG116837
 	DD	029H
 	ORG $+4
-	DQ	FLAT:$SG126126
+	DQ	FLAT:$SG116838
 	DD	032H
 	ORG $+4
-	DQ	FLAT:$SG126127
+	DQ	FLAT:$SG116839
 	DD	033H
 	ORG $+4
-	DQ	FLAT:$SG126128
+	DQ	FLAT:$SG116840
 	DD	034H
 	ORG $+4
-	DQ	FLAT:$SG126129
+	DQ	FLAT:$SG116841
 	DD	03cH
 	ORG $+4
-	DQ	FLAT:$SG126130
+	DQ	FLAT:$SG116842
 	DD	03dH
 	ORG $+4
-	DQ	FLAT:$SG126131
+	DQ	FLAT:$SG116843
 	DD	03eH
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG126119 DB	'1', 00H
+$SG116831 DB	'1', 00H
 	ORG $+2
-$SG126120 DB	'2', 00H
+$SG116832 DB	'2', 00H
 	ORG $+2
-$SG126121 DB	'2.1', 00H
-$SG126122 DB	'3', 00H
+$SG116833 DB	'2.1', 00H
+$SG116834 DB	'3', 00H
 	ORG $+2
-$SG126123 DB	'3.1', 00H
-$SG126124 DB	'4', 00H
+$SG116835 DB	'3.1', 00H
+$SG116836 DB	'4', 00H
 	ORG $+2
-$SG126125 DB	'4.1', 00H
-$SG126126 DB	'5', 00H
+$SG116837 DB	'4.1', 00H
+$SG116838 DB	'5', 00H
 	ORG $+2
-$SG126127 DB	'5.1', 00H
-$SG126128 DB	'5.2', 00H
-$SG126129 DB	'6', 00H
+$SG116839 DB	'5.1', 00H
+$SG116840 DB	'5.2', 00H
+$SG116841 DB	'6', 00H
 	ORG $+2
-$SG126130 DB	'6.1', 00H
-$SG126131 DB	'6.2', 00H
-$SG126133 DB	'auto', 00H
+$SG116842 DB	'6.1', 00H
+$SG116843 DB	'6.2', 00H
+$SG116845 DB	'auto', 00H
 	ORG $+7
-?list_mpeg2_level@@3QBUCX_DESC@@B DQ FLAT:$SG126133	; list_mpeg2_level
+?list_mpeg2_level@@3QBUCX_DESC@@B DQ FLAT:$SG116845	; list_mpeg2_level
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG126134
+	DQ	FLAT:$SG116846
 	DD	0aH
 	ORG $+4
-	DQ	FLAT:$SG126135
+	DQ	FLAT:$SG116847
 	DD	08H
 	ORG $+4
-	DQ	FLAT:$SG126136
+	DQ	FLAT:$SG116848
 	DD	04H
 	ORG $+4
-	DQ	FLAT:$SG126137
+	DQ	FLAT:$SG116849
 	DD	06H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG126134 DB	'low', 00H
-$SG126135 DB	'main', 00H
+$SG116846 DB	'low', 00H
+$SG116847 DB	'main', 00H
 	ORG $+3
-$SG126136 DB	'high', 00H
+$SG116848 DB	'high', 00H
 	ORG $+3
-$SG126140 DB	'low', 00H
-$SG126137 DB	'high1440', 00H
+$SG116852 DB	'low', 00H
+$SG116849 DB	'high1440', 00H
 	ORG $+3
-$SG126139 DB	'auto', 00H
+$SG116851 DB	'auto', 00H
 	ORG $+7
-?list_vc1_level@@3QBUCX_DESC@@B DQ FLAT:$SG126139	; list_vc1_level
+?list_vc1_level@@3QBUCX_DESC@@B DQ FLAT:$SG116851	; list_vc1_level
 	DD	00H
 	ORG $+4
-	DQ	FLAT:$SG126140
+	DQ	FLAT:$SG116852
 	DD	01H
 	ORG $+4
-	DQ	FLAT:$SG126141
+	DQ	FLAT:$SG116853
 	DD	03H
 	ORG $+4
-	DQ	FLAT:$SG126142
+	DQ	FLAT:$SG116854
 	DD	05H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG126141 DB	'median', 00H
+$SG116853 DB	'median', 00H
 	ORG $+1
-$SG126142 DB	'high', 00H
+$SG116854 DB	'high', 00H
 	ORG $+3
-$SG126144 DB	'auto', 00H
+$SG116856 DB	'auto', 00H
 	ORG $+3
-$SG126145 DB	'0', 00H
+$SG116857 DB	'0', 00H
 	ORG $+2
-$SG126146 DB	'1', 00H
+$SG116858 DB	'1', 00H
 	ORG $+2
-$SG126147 DB	'2', 00H
+$SG116859 DB	'2', 00H
 	ORG $+2
-$SG126148 DB	'3', 00H
+$SG116860 DB	'3', 00H
 	ORG $+2
-$SG126149 DB	'4', 00H
+$SG116861 DB	'4', 00H
 	ORG $+2
-$SG126156 DB	'off', 00H
-?list_vp8_level@@3QBUCX_DESC@@B DQ FLAT:$SG126151	; list_vp8_level
+$SG116868 DB	'off', 00H
+?list_vp8_level@@3QBUCX_DESC@@B DQ FLAT:$SG116863	; list_vp8_level
 	DD	00H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG126151 DB	'auto', 00H
+$SG116863 DB	'auto', 00H
 	ORG $+3
-?list_vp9_level@@3QBUCX_DESC@@B DQ FLAT:$SG126153	; list_vp9_level
+?list_vp9_level@@3QBUCX_DESC@@B DQ FLAT:$SG116865	; list_vp9_level
 	DD	00H
 	ORG $+4
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG126153 DB	'auto', 00H
+$SG116865 DB	'auto', 00H
 	ORG $+3
-$SG126155 DB	'Auto', 00H
+$SG116867 DB	'Auto', 00H
 	ORG $+3
-$SG126157 DB	'for I frames', 00H
+$SG116869 DB	'for I frames', 00H
 	ORG $+3
-$SG126158 DB	'for I,P frames', 00H
+$SG116870 DB	'for I,P frames', 00H
 	ORG $+1
-$SG126159 DB	'for All frames', 00H
+$SG116871 DB	'for All frames', 00H
 	ORG $+1
-$SG126161 DB	'auto', 00H
+$SG116873 DB	'auto', 00H
 	ORG $+3
-$SG126162 DB	'off', 00H
-$SG126163 DB	'i', 00H
+$SG116874 DB	'off', 00H
+$SG116875 DB	'i', 00H
 	ORG $+2
-$SG126164 DB	'ip', 00H
+$SG116876 DB	'ip', 00H
 	ORG $+1
-$SG126165 DB	'all', 00H
-$SG126166 DB	'ipb', 00H
-$SG126167 DB	'ib', 00H
+$SG116877 DB	'all', 00H
+$SG116878 DB	'ipb', 00H
+$SG116879 DB	'ib', 00H
 	ORG $+1
-$SG126168 DB	'p', 00H
+$SG116880 DB	'p', 00H
 	ORG $+2
-$SG126169 DB	'pb', 00H
+$SG116881 DB	'pb', 00H
 	ORG $+1
-$SG126170 DB	'b', 00H
+$SG116882 DB	'b', 00H
 	ORG $+2
-$SG126172 DB	'auto', 00H
+$SG116884 DB	'auto', 00H
 	ORG $+3
-$SG126173 DB	'slow', 00H
+$SG116885 DB	'slow', 00H
 	ORG $+3
-$SG126174 DB	'medium', 00H
+$SG116886 DB	'medium', 00H
 	ORG $+1
-$SG126175 DB	'fast', 00H
+$SG116887 DB	'fast', 00H
 	ORG $+3
-$SG126178 DB	'0', 00H
+$SG116890 DB	'0', 00H
 	ORG $+2
-$SG126177 DB	'default', 00H
-$SG126179 DB	'1', 00H
+$SG116889 DB	'default', 00H
+$SG116891 DB	'1', 00H
 	ORG $+2
-$SG126180 DB	'2', 00H
+$SG116892 DB	'2', 00H
 	ORG $+2
-$SG126181 DB	'3', 00H
+$SG116893 DB	'3', 00H
 	ORG $+2
-$SG126182 DB	'4', 00H
+$SG116894 DB	'4', 00H
 	ORG $+2
-$SG126184 DB	'low', 00H
-$SG126185 DB	'normal', 00H
+$SG116896 DB	'low', 00H
+$SG116897 DB	'normal', 00H
 	ORG $+1
-$SG126186 DB	'high', 00H
+$SG116898 DB	'high', 00H
 	ORG $+3
-$SG126198 DB	'none', 00H
+$SG116910 DB	'none', 00H
 	ORG $+3
-$SG126199 DB	'copy', 00H
+$SG116911 DB	'copy', 00H
 	ORG $+3
-$SG126200 DB	'aac', 00H
-$SG126201 DB	'libmp3lame', 00H
+$SG116912 DB	'aac', 00H
+$SG116913 DB	'libmp3lame', 00H
 	ORG $+1
-$SG126206 DB	'ac3', 00H
-$SG126202 DB	'libtwolame', 00H
+$SG116918 DB	'ac3', 00H
+$SG116914 DB	'libtwolame', 00H
 	ORG $+1
-$SG126237 DB	'tff', 00H
-$SG126203 DB	'libvorbis', 00H
+$SG116949 DB	'tff', 00H
+$SG116915 DB	'libvorbis', 00H
 	ORG $+2
-$SG126238 DB	'bff', 00H
-$SG126204 DB	'pcm_s16le', 00H
+$SG116950 DB	'bff', 00H
+$SG116916 DB	'pcm_s16le', 00H
 	ORG $+2
-$SG126249 DB	'higher', 00H
+$SG116961 DB	'higher', 00H
 	ORG $+1
-$SG126263 DB	'8x8', 00H
-$SG126205 DB	'libopus', 00H
-$SG126236 DB	'none', 00H
+$SG116975 DB	'8x8', 00H
+$SG116917 DB	'libopus', 00H
+$SG116948 DB	'none', 00H
 	ORG $+3
-$SG126240 DB	' 1 - best quality', 00H
+$SG116952 DB	' 1 - best quality', 00H
 	ORG $+2
-$SG126253 DB	'faster', 00H
+$SG116965 DB	'faster', 00H
 	ORG $+1
-$SG126264 DB	'4x4', 00H
-$SG126241 DB	' 2 - higher', 00H
-$SG126267 DB	'16', 00H
+$SG116976 DB	'4x4', 00H
+$SG116953 DB	' 2 - higher', 00H
+$SG116979 DB	'16', 00H
 	ORG $+1
-$SG126242 DB	' 3 - high quality', 00H
+$SG116954 DB	' 3 - high quality', 00H
 	ORG $+2
-$SG126268 DB	'32', 00H
+$SG116980 DB	'32', 00H
 	ORG $+1
-$SG126243 DB	' 4 - balanced', 00H
+$SG116955 DB	' 4 - balanced', 00H
 	ORG $+2
-$SG126244 DB	' 5 - fast', 00H
+$SG116956 DB	' 5 - fast', 00H
 	ORG $+2
-$SG126269 DB	'64', 00H
+$SG116981 DB	'64', 00H
 	ORG $+1
-$SG126245 DB	' 6 - faster', 00H
-$SG126277 DB	'all', 00H
-$SG126246 DB	' 7 - fastest', 00H
+$SG116957 DB	' 6 - faster', 00H
+$SG116989 DB	'all', 00H
+$SG116958 DB	' 7 - fastest', 00H
 	ORG $+3
-$SG126248 DB	'best', 00H
+$SG116960 DB	'best', 00H
 	ORG $+3
-$SG126250 DB	'high', 00H
+$SG116962 DB	'high', 00H
 	ORG $+3
-$SG126251 DB	'balanced', 00H
+$SG116963 DB	'balanced', 00H
 	ORG $+3
-$SG126252 DB	'fast', 00H
+$SG116964 DB	'fast', 00H
 	ORG $+3
-$SG126259 DB	'Q-pel', 00H
+$SG116971 DB	'Q-pel', 00H
 	ORG $+2
-$SG126276 DB	'chroma', 00H
+$SG116988 DB	'chroma', 00H
 	ORG $+1
-$SG126281 DB	'box', 00H
-$SG126254 DB	'fastest', 00H
-$SG126256 DB	'Auto', 00H
+$SG116993 DB	'box', 00H
+$SG116966 DB	'fastest', 00H
+$SG116968 DB	'Auto', 00H
 	ORG $+3
-$SG126257 DB	'full-pel', 00H
+$SG116969 DB	'full-pel', 00H
 	ORG $+3
-$SG126262 DB	'16x16', 00H
+$SG116974 DB	'16x16', 00H
 	ORG $+2
-$SG126283 DB	'off', 00H
-$SG126258 DB	'half-pel', 00H
+$SG116995 DB	'off', 00H
+$SG116970 DB	'half-pel', 00H
 	ORG $+3
-$SG126261 DB	'Auto', 00H
+$SG116973 DB	'Auto', 00H
 	ORG $+3
-$SG126266 DB	'auto', 00H
+$SG116978 DB	'auto', 00H
 	ORG $+3
-$SG126273 DB	'auto', 00H
+$SG116985 DB	'auto', 00H
 	ORG $+3
-$SG126274 DB	'none', 00H
+$SG116986 DB	'none', 00H
 	ORG $+3
-$SG126275 DB	'luma', 00H
+$SG116987 DB	'luma', 00H
 	ORG $+3
-$SG126279 DB	'none', 00H
+$SG116991 DB	'none', 00H
 	ORG $+3
-$SG126284 DB	'x2', 00H
+$SG116996 DB	'x2', 00H
 	ORG $+1
-$SG126280 DB	'upscale', 00H
-$SG126285 DB	'x2.5', 00H
+$SG116992 DB	'upscale', 00H
+$SG116997 DB	'x2.5', 00H
 	ORG $+3
-$SG126287 DB	'simple', 00H
+$SG116999 DB	'simple', 00H
 	ORG $+1
-$SG126288 DB	'complex', 00H
-$SG126290 DB	'0', 00H
+$SG117000 DB	'complex', 00H
+$SG117002 DB	'0', 00H
 	ORG $+2
-$SG126291 DB	'90', 00H
+$SG117003 DB	'90', 00H
 	ORG $+1
-$SG126292 DB	'180', 00H
-$SG126293 DB	'270', 00H
-$SG126295 DB	'n', 00H
+$SG117004 DB	'180', 00H
+$SG117005 DB	'270', 00H
+$SG117007 DB	'n', 00H
 	ORG $+2
-$SG126296 DB	'h', 00H
+$SG117008 DB	'h', 00H
 	ORG $+2
-$SG126297 DB	'v', 00H
+$SG117009 DB	'v', 00H
 	ORG $+2
-$SG126299 DB	'auto', 00H
+$SG117011 DB	'auto', 00H
 	ORG $+3
-$SG126300 DB	'simple', 00H
+$SG117012 DB	'simple', 00H
 	ORG $+1
-$SG126301 DB	'fine', 00H
+$SG117013 DB	'fine', 00H
 	ORG $+3
-$SG126303 DB	'auto', 00H
+$SG117015 DB	'auto', 00H
 	ORG $+3
-$SG126304 DB	'none', 00H
+$SG117016 DB	'none', 00H
 	ORG $+3
-$SG126305 DB	'sse2', 00H
+$SG117017 DB	'sse2', 00H
 	ORG $+3
-$SG126306 DB	'sse3', 00H
+$SG117018 DB	'sse3', 00H
 	ORG $+3
-$SG126307 DB	'ssse3', 00H
+$SG117019 DB	'ssse3', 00H
 	ORG $+2
-$SG126308 DB	'sse41', 00H
+$SG117020 DB	'sse41', 00H
 	ORG $+2
-$SG126309 DB	'avx', 00H
-$SG126310 DB	'avx2', 00H
+$SG117021 DB	'avx', 00H
+$SG117022 DB	'avx2', 00H
 	ORG $+3
-$SG126702 DB	'%s', 00H
+$SG117414 DB	'%s', 00H
 	ORG $+1
-$SG110661 DB	'rgb', 00H
-$SG126912 DB	'QSVAllocatorSys::FrameLock Failed to Lock frmame mid 0x%'
+$SG126494 DB	'%s', 00H
+	ORG $+1
+$SG117628 DB	'QSVAllocatorSys::FrameLock Failed to Lock frmame mid 0x%'
 	DB	'x: %s', 0aH, 00H
 	ORG $+1
-$SG126914 DB	'QSVAllocatorSys::FrameLock Invalid mem handle', 0aH, 00H
+$SG117630 DB	'QSVAllocatorSys::FrameLock Invalid mem handle', 0aH, 00H
 	ORG $+1
-$SG126927 DB	'QSVAllocatorSys::FrameLock success mid 0x%x', 0aH, 00H
+$SG117643 DB	'QSVAllocatorSys::FrameLock success mid 0x%x', 0aH, 00H
 	ORG $+3
-$SG126936 DB	'QSVAllocatorSys::FrameUnlock failed to unlock frame mid '
+$SG117652 DB	'QSVAllocatorSys::FrameUnlock failed to unlock frame mid '
 	DB	'0x%x: %s', 0aH, 00H
 	ORG $+2
 $SG110633 DB	'yuv422', 00H
 	ORG $+1
-$SG110663 DB	'gbr', 00H
-$SG126938 DB	'QSVAllocatorSys::FrameUnlock success mid 0x%x', 0aH, 00H
+$SG110661 DB	'rgb', 00H
+$SG117654 DB	'QSVAllocatorSys::FrameUnlock success mid 0x%x', 0aH, 00H
 	ORG $+1
-$SG110629 DB	'Invalid', 00H
+$SG117948 DB	'QSVAllocatorSys::AllocImpl allocating %d frames...', 0aH
+	DB	00H
 $SG110630 DB	'nv12', 00H
+	ORG $+7
+$SG117950 DB	'QSVAllocatorSys::AllocImpl failed to allocate frame #%d,'
+	DB	' size %d: %s', 0aH, 00H
+	ORG $+2
+$SG117958 DB	'QSVAllocatorSys::AllocImpl Success.', 0aH, 00H
 	ORG $+3
+$SG117953 DB	'QSVAllocatorSys::AllocImpl failed to unlock frame mid 0x'
+	DB	'%x: %s', 0aH, 00H
+$SG117956 DB	'QSVAllocatorSys::AllocImpl failed to unlock frame mid 0x'
+	DB	'%x: %s', 0aH, 00H
+$SG117976 DB	'QSVAllocatorSys::ReleaseResponse Success.', 0aH, 00H
+	ORG $+1
+$SG110663 DB	'gbr', 00H
+$SG126493 DB	'invalid argument', 00H
+	ORG $+7
+$SG126498 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
+	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
+	ORG $+2
+$SG126495 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
+$SG110629 DB	'Invalid', 00H
+$SG126496 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
+	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
+	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
+	DB	00H, 'r', 00H, 'o', 00H, 's', 00H, 'o', 00H, 'f', 00H, 't', 00H
+	DB	' ', 00H, 'V', 00H, 'i', 00H, 's', 00H, 'u', 00H, 'a', 00H, 'l'
+	DB	00H, ' ', 00H, 'S', 00H, 't', 00H, 'u', 00H, 'd', 00H, 'i', 00H
+	DB	'o', 00H, '\', 00H, '2', 00H, '0', 00H, '1', 00H, '9', 00H, '\'
+	DB	00H, 'C', 00H, 'o', 00H, 'm', 00H, 'm', 00H, 'u', 00H, 'n', 00H
+	DB	'i', 00H, 't', 00H, 'y', 00H, '\', 00H, 'V', 00H, 'C', 00H, '\'
+	DB	00H, 'T', 00H, 'o', 00H, 'o', 00H, 'l', 00H, 's', 00H, '\', 00H
+	DB	'M', 00H, 'S', 00H, 'V', 00H, 'C', 00H, '\', 00H, '1', 00H, '4'
+	DB	00H, '.', 00H, '2', 00H, '3', 00H, '.', 00H, '2', 00H, '8', 00H
+	DB	'1', 00H, '0', 00H, '5', 00H, '\', 00H, 'i', 00H, 'n', 00H, 'c'
+	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
+	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
+	DB	00H
+$SG126497 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
+	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
+	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
+	DB	00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, '_', 00H, 'a', 00H
+	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
+	DB	00H
+	ORG $+2
+$SG126543 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
 $SG110631 DB	'yv12', 00H
 	ORG $+3
 $SG110632 DB	'yuy2', 00H
@@ -631,18 +681,17 @@ $SG110636 DB	'yv12(9bit)', 00H
 $SG110666 DB	'y8', 00H
 	ORG $+1
 $SG110637 DB	'yv12(10bit)', 00H
-$SG135980 DB	'%s', 00H
-	ORG $+1
-$SG110638 DB	'yv12(12bit)', 00H
 $SG111611 DB	'VP8', 00H
-$SG110639 DB	'yv12(14bit)', 00H
+$SG110638 DB	'yv12(12bit)', 00H
 $SG111613 DB	'VP9', 00H
+$SG110639 DB	'yv12(14bit)', 00H
+$SG112224 DB	'fcc', 00H
 $SG110640 DB	'yv12(16bit)', 00H
 $SG110641 DB	'p010', 00H
 	ORG $+3
 $SG110655 DB	'rgb24r', 00H
 	ORG $+1
-$SG112224 DB	'fcc', 00H
+$SG112225 DB	'GBR', 00H
 $SG110642 DB	'yuv422(9bit)', 00H
 	ORG $+3
 $SG110643 DB	'yuv422(10bit)', 00H
@@ -686,58 +735,6 @@ $SG110665 DB	'yc48', 00H
 	ORG $+3
 $SG110667 DB	'yc16', 00H
 	ORG $+3
-$SG127232 DB	'QSVAllocatorSys::AllocImpl allocating %d frames...', 0aH
-	DB	00H
-	ORG $+4
-$SG127234 DB	'QSVAllocatorSys::AllocImpl failed to allocate frame #%d,'
-	DB	' size %d: %s', 0aH, 00H
-	ORG $+2
-$SG127242 DB	'QSVAllocatorSys::AllocImpl Success.', 0aH, 00H
-	ORG $+3
-$SG127237 DB	'QSVAllocatorSys::AllocImpl failed to unlock frame mid 0x'
-	DB	'%x: %s', 0aH, 00H
-$SG127240 DB	'QSVAllocatorSys::AllocImpl failed to unlock frame mid 0x'
-	DB	'%x: %s', 0aH, 00H
-$SG127260 DB	'QSVAllocatorSys::ReleaseResponse Success.', 0aH, 00H
-	ORG $+1
-$SG112225 DB	'GBR', 00H
-$SG135979 DB	'invalid argument', 00H
-	ORG $+7
-$SG135984 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
-	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
-	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
-	ORG $+2
-$SG135981 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
-	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
-$SG111603 DB	'MPEG2', 00H
-	ORG $+2
-$SG135982 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
-	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
-	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
-	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
-	DB	00H, 'r', 00H, 'o', 00H, 's', 00H, 'o', 00H, 'f', 00H, 't', 00H
-	DB	' ', 00H, 'V', 00H, 'i', 00H, 's', 00H, 'u', 00H, 'a', 00H, 'l'
-	DB	00H, ' ', 00H, 'S', 00H, 't', 00H, 'u', 00H, 'd', 00H, 'i', 00H
-	DB	'o', 00H, '\', 00H, '2', 00H, '0', 00H, '1', 00H, '9', 00H, '\'
-	DB	00H, 'C', 00H, 'o', 00H, 'm', 00H, 'm', 00H, 'u', 00H, 'n', 00H
-	DB	'i', 00H, 't', 00H, 'y', 00H, '\', 00H, 'V', 00H, 'C', 00H, '\'
-	DB	00H, 'T', 00H, 'o', 00H, 'o', 00H, 'l', 00H, 's', 00H, '\', 00H
-	DB	'M', 00H, 'S', 00H, 'V', 00H, 'C', 00H, '\', 00H, '1', 00H, '4'
-	DB	00H, '.', 00H, '2', 00H, '3', 00H, '.', 00H, '2', 00H, '8', 00H
-	DB	'1', 00H, '0', 00H, '5', 00H, '\', 00H, 'i', 00H, 'n', 00H, 'c'
-	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
-	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
-	DB	00H
-$SG135983 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
-	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
-	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
-	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
-	DB	00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, '_', 00H, 'a', 00H
-	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
-	DB	00H
-	ORG $+2
-$SG136045 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
-	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
 $SG111599 DB	'H.264/AVC', 00H
 	ORG $+2
 $SG112376 DB	'bt470m', 00H
@@ -745,6 +742,8 @@ $SG112376 DB	'bt470m', 00H
 $SG112538 DB	'pal', 00H
 $SG111601 DB	'H.265/HEVC', 00H
 	ORG $+1
+$SG111603 DB	'MPEG2', 00H
+	ORG $+2
 $SG111605 DB	'MPEG1', 00H
 	ORG $+2
 $SG111607 DB	'VC-1', 00H
@@ -928,16 +927,15 @@ $SG112552 DB	'pc', 00H
 	ORG $+1
 $SG112386 DB	'bt2020-12', 00H
 	ORG $+2
-$SG121748 DB	'.', 0aH, 00H
-	ORG $+1
+$SG113641 DB	'cfr', 00H
 $SG112387 DB	'smpte2084', 00H
 	ORG $+2
-$SG121828 DB	'srt', 00H
+$SG113642 DB	'vfr', 00H
 $SG112388 DB	'smpte428', 00H
 	ORG $+3
 $SG112521 DB	'undef', 00H
 	ORG $+2
-$SG121829 DB	'ass', 00H
+$SG113645 DB	'swr', 00H
 $SG112389 DB	'arib-srd-b67', 00H
 	ORG $+3
 $SG112522 DB	'auto', 00H
@@ -987,16 +985,14 @@ $SG112522 DB	'auto', 00H
 $SG112523 DB	'bt709', 00H
 	ORG $+2
 $SG112524 DB	'smpte170m', 00H
-	ORG $+2
-$SG113641 DB	'cfr', 00H
+	ORG $+6
 $SG112526 DB	'bt470bg', 00H
 $SG112527 DB	'smpte240m', 00H
 	ORG $+2
 $SG112528 DB	'film', 00H
 	ORG $+3
 $SG112530 DB	'st428', 00H
-	ORG $+2
-$SG113642 DB	'vfr', 00H
+	ORG $+6
 $SG112531 DB	'st431-2', 00H
 $SG112532 DB	'st432-1', 00H
 $SG112533 DB	'ebu3213-e', 00H
@@ -1029,45 +1025,15 @@ $SG112536 DB	'ntsc', 00H
 $SG112537 DB	'component', 00H
 	ORG $+2
 $SG112539 DB	'secam', 00H
-	ORG $+2
-$SG113645 DB	'swr', 00H
+	ORG $+6
 $SG112549 DB	'limited', 00H
 $SG112550 DB	'full', 00H
 	ORG $+3
-?HW_DECODE_LIST@@3QBUCodecMap@@B DD 01bH		; HW_DECODE_LIST
-	DD	01H
-	DD	0adH
-	DD	02H
-	DD	02H
-	DD	04H
-	DD	08bH
-	DD	06H
-	DD	0a7H
-	DD	07H
-	DD	046H
-	DD	08H
-$SG121621 DB	'auto', 00H
-	ORG $+3
-$SG121623 DB	'copy', 00H
-	ORG $+3
-$SG121749 DB	' for ', 00H
-	ORG $+2
-$SG121752 DB	'avcodec-58.dll', 00H
-	ORG $+1
-$SG121753 DB	'avformat-58.dll', 00H
-$SG121754 DB	'avutil-56.dll', 00H
-	ORG $+2
-$SG121755 DB	'avfilter-7.dll', 00H
-	ORG $+1
-$SG121756 DB	'swresample-3.dll', 00H
-	ORG $+3
-$SG113634 DB	'trace', 00H
-	ORG $+2
-$SG121838 DB	'box', 00H
 ?list_empty@@3QBUCX_DESC@@B DQ 0000000000000000H	; list_empty
 	DD	00H
 	ORG $+4
-$SG121827 DB	'invalid', 00H
+$SG113634 DB	'trace', 00H
+	ORG $+2
 $SG113635 DB	'debug', 00H
 	ORG $+2
 $SG113636 DB	'more', 00H
@@ -1080,12 +1046,7 @@ $SG113639 DB	'error', 00H
 	ORG $+2
 $SG113643 DB	'forcecfr', 00H
 	ORG $+3
-$SG121837 DB	'kigou', 00H
-	ORG $+6
-$SG121836 DB	'invalid', 00H
 $SG113646 DB	'soxr', 00H
-	ORG $+3
-$SG121839 DB	'draw', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPEAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPEAX_K@Z		; __empty_global_delete
@@ -1127,8 +1088,8 @@ PUBLIC	??B?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAlloc
 PUBLIC	?reset@?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAllocatorSys@@@std@@@std@@QEAAXPEAVQSVBufferAllocatorSys@@@Z ; std::unique_ptr<QSVBufferAllocatorSys,std::default_delete<QSVBufferAllocatorSys> >::reset
 PUBLIC	?_Get_first@?$_Compressed_pair@U?$default_delete@VQSVBufferAllocatorSys@@@std@@PEAVQSVBufferAllocatorSys@@$00@std@@QEAAAEAU?$default_delete@VQSVBufferAllocatorSys@@@2@XZ ; std::_Compressed_pair<std::default_delete<QSVBufferAllocatorSys>,QSVBufferAllocatorSys *,1>::_Get_first
 PUBLIC	??_GQSVAllocatorSys@@UEAAPEAXI@Z		; QSVAllocatorSys::`scalar deleting destructor'
-PUBLIC	??$?CVRGYLog@@$0A@@?$shared_ptr@VRGYLog@@@std@@QEBAPEAVRGYLog@@XZ ; std::shared_ptr<RGYLog>::operator-><RGYLog,0>
 PUBLIC	??$?0U?$default_delete@VQSVBufferAllocatorSys@@@std@@$0A@@?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAllocatorSys@@@std@@@std@@QEAA@XZ ; std::unique_ptr<QSVBufferAllocatorSys,std::default_delete<QSVBufferAllocatorSys> >::unique_ptr<QSVBufferAllocatorSys,std::default_delete<QSVBufferAllocatorSys> ><std::default_delete<QSVBufferAllocatorSys>,0>
+PUBLIC	??$?CVRGYLog@@$0A@@?$shared_ptr@VRGYLog@@@std@@QEBAPEAVRGYLog@@XZ ; std::shared_ptr<RGYLog>::operator-><RGYLog,0>
 PUBLIC	??1?$unique_ptr@$$BY0A@PEAXU?$default_delete@$$BY0A@PEAX@std@@@std@@QEAA@XZ ; std::unique_ptr<void * [0],std::default_delete<void * [0]> >::~unique_ptr<void * [0],std::default_delete<void * [0]> >
 PUBLIC	?get@?$unique_ptr@$$BY0A@PEAXU?$default_delete@$$BY0A@PEAX@std@@@std@@QEBAPEAPEAXXZ ; std::unique_ptr<void * [0],std::default_delete<void * [0]> >::get
 PUBLIC	?release@?$unique_ptr@$$BY0A@PEAXU?$default_delete@$$BY0A@PEAX@std@@@std@@QEAAPEAPEAXXZ ; std::unique_ptr<void * [0],std::default_delete<void * [0]> >::release
@@ -1476,15 +1437,15 @@ $pdata$??_GQSVAllocatorSys@@UEAAPEAXI@Z DD imagerel $LN4
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
-$pdata$??$?CVRGYLog@@$0A@@?$shared_ptr@VRGYLog@@@std@@QEBAPEAVRGYLog@@XZ DD imagerel $LN3
-	DD	imagerel $LN3+46
-	DD	imagerel $unwind$??$?CVRGYLog@@$0A@@?$shared_ptr@VRGYLog@@@std@@QEBAPEAVRGYLog@@XZ
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
 $pdata$??$?0U?$default_delete@VQSVBufferAllocatorSys@@@std@@$0A@@?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAllocatorSys@@@std@@@std@@QEAA@XZ DD imagerel $LN3
 	DD	imagerel $LN3+60
 	DD	imagerel $unwind$??$?0U?$default_delete@VQSVBufferAllocatorSys@@@std@@$0A@@?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAllocatorSys@@@std@@@std@@QEAA@XZ
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
+$pdata$??$?CVRGYLog@@$0A@@?$shared_ptr@VRGYLog@@@std@@QEBAPEAVRGYLog@@XZ DD imagerel $LN3
+	DD	imagerel $LN3+46
+	DD	imagerel $unwind$??$?CVRGYLog@@$0A@@?$shared_ptr@VRGYLog@@@std@@QEBAPEAVRGYLog@@XZ
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
@@ -1969,6 +1930,11 @@ $unwind$??1?$unique_ptr@$$BY0A@PEAXU?$default_delete@$$BY0A@PEAX@std@@@std@@QEAA
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
+$unwind$??$?CVRGYLog@@$0A@@?$shared_ptr@VRGYLog@@@std@@QEBAPEAVRGYLog@@XZ DD 021e01H
+	DD	07006320aH
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
 $ip2state$??$?0U?$default_delete@VQSVBufferAllocatorSys@@@std@@$0A@@?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAllocatorSys@@@std@@@std@@QEAA@XZ DB 02H
 	DB	00H
 	DB	00H
@@ -1984,11 +1950,6 @@ $unwind$??$?0U?$default_delete@VQSVBufferAllocatorSys@@@std@@$0A@@?$unique_ptr@V
 	DD	07006520aH
 	DD	imagerel __CxxFrameHandler4
 	DD	imagerel $cppxdata$??$?0U?$default_delete@VQSVBufferAllocatorSys@@@std@@$0A@@?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAllocatorSys@@@std@@@std@@QEAA@XZ
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$??$?CVRGYLog@@$0A@@?$shared_ptr@VRGYLog@@@std@@QEBAPEAVRGYLog@@XZ DD 021e01H
-	DD	07006320aH
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
@@ -2043,7 +2004,11 @@ CONST	SEGMENT
 ?FrameLock@QSVAllocatorSys@@UEAA?AW4mfxStatus@@PEAXPEAUmfxFrameData@@@Z$rtcName$0 DB 066H ; QSVAllocatorSys::FrameLock
 	DB	073H
 	DB	00H
-	ORG $+5
+	ORG $+1
+?FrameLock@QSVAllocatorSys@@UEAA?AW4mfxStatus@@PEAXPEAUmfxFrameData@@@Z$rtcVarDesc DD 038H ; QSVAllocatorSys::FrameLock
+	DD	08H
+	DQ	FLAT:?FrameLock@QSVAllocatorSys@@UEAA?AW4mfxStatus@@PEAXPEAUmfxFrameData@@@Z$rtcName$0
+	ORG $+48
 ?FrameLock@QSVAllocatorSys@@UEAA?AW4mfxStatus@@PEAXPEAUmfxFrameData@@@Z$rtcFrameData DD 01H ; QSVAllocatorSys::FrameLock
 	DD	00H
 	DQ	FLAT:?FrameLock@QSVAllocatorSys@@UEAA?AW4mfxStatus@@PEAXPEAUmfxFrameData@@@Z$rtcVarDesc
@@ -2053,24 +2018,20 @@ CONST	SEGMENT
 	DB	073H
 	DB	00H
 	ORG $+3
-?FrameLock@QSVAllocatorSys@@UEAA?AW4mfxStatus@@PEAXPEAUmfxFrameData@@@Z$rtcVarDesc DD 038H ; QSVAllocatorSys::FrameLock
-	DD	08H
-	DQ	FLAT:?FrameLock@QSVAllocatorSys@@UEAA?AW4mfxStatus@@PEAXPEAUmfxFrameData@@@Z$rtcName$0
-	ORG $+48
 ?AllocImpl@QSVAllocatorSys@@MEAA?AW4mfxStatus@@PEAUmfxFrameAllocRequest@@PEAUmfxFrameAllocResponse@@@Z$rtcName$1 DB 066H ; QSVAllocatorSys::AllocImpl
 	DB	073H
 	DB	00H
 	ORG $+5
-?AllocImpl@QSVAllocatorSys@@MEAA?AW4mfxStatus@@PEAUmfxFrameAllocRequest@@PEAUmfxFrameAllocResponse@@@Z$rtcFrameData DD 02H ; QSVAllocatorSys::AllocImpl
-	DD	00H
-	DQ	FLAT:?AllocImpl@QSVAllocatorSys@@MEAA?AW4mfxStatus@@PEAUmfxFrameAllocRequest@@PEAUmfxFrameAllocResponse@@@Z$rtcVarDesc
-	ORG $+8
 ?AllocImpl@QSVAllocatorSys@@MEAA?AW4mfxStatus@@PEAUmfxFrameAllocRequest@@PEAUmfxFrameAllocResponse@@@Z$rtcVarDesc DD 068H ; QSVAllocatorSys::AllocImpl
 	DD	08H
 	DQ	FLAT:?AllocImpl@QSVAllocatorSys@@MEAA?AW4mfxStatus@@PEAUmfxFrameAllocRequest@@PEAUmfxFrameAllocResponse@@@Z$rtcName$1
 	DD	048H
 	DD	08H
 	DQ	FLAT:?AllocImpl@QSVAllocatorSys@@MEAA?AW4mfxStatus@@PEAUmfxFrameAllocRequest@@PEAUmfxFrameAllocResponse@@@Z$rtcName$0
+	ORG $+96
+?AllocImpl@QSVAllocatorSys@@MEAA?AW4mfxStatus@@PEAUmfxFrameAllocRequest@@PEAUmfxFrameAllocResponse@@@Z$rtcFrameData DD 02H ; QSVAllocatorSys::AllocImpl
+	DD	00H
+	DQ	FLAT:?AllocImpl@QSVAllocatorSys@@MEAA?AW4mfxStatus@@PEAUmfxFrameAllocRequest@@PEAUmfxFrameAllocResponse@@@Z$rtcVarDesc
 CONST	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
@@ -2990,36 +2951,6 @@ $LN2@unique_ptr:
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory
-;	COMDAT ??$?0U?$default_delete@VQSVBufferAllocatorSys@@@std@@$0A@@?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAllocatorSys@@@std@@@std@@QEAA@XZ
-_TEXT	SEGMENT
-$T1 = 32
-this$ = 64
-??$?0U?$default_delete@VQSVBufferAllocatorSys@@@std@@$0A@@?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAllocatorSys@@@std@@@std@@QEAA@XZ PROC ; std::unique_ptr<QSVBufferAllocatorSys,std::default_delete<QSVBufferAllocatorSys> >::unique_ptr<QSVBufferAllocatorSys,std::default_delete<QSVBufferAllocatorSys> ><std::default_delete<QSVBufferAllocatorSys>,0>, COMDAT
-
-; 1809 :     constexpr unique_ptr() noexcept : _Mypair(_Zero_then_variadic_args_t()) {}
-
-$LN3:
-  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
-  00005	57		 push	 rdi
-  00006	48 83 ec 30	 sub	 rsp, 48			; 00000030H
-  0000a	48 8b fc	 mov	 rdi, rsp
-  0000d	b9 0c 00 00 00	 mov	 ecx, 12
-  00012	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
-  00017	f3 ab		 rep stosd
-  00019	48 8b 4c 24 40	 mov	 rcx, QWORD PTR [rsp+64]
-  0001e	48 8b 44 24 40	 mov	 rax, QWORD PTR this$[rsp]
-  00023	0f b6 54 24 20	 movzx	 edx, BYTE PTR $T1[rsp]
-  00028	48 8b c8	 mov	 rcx, rax
-  0002b	e8 00 00 00 00	 call	 ??$?0$$V@?$_Compressed_pair@U?$default_delete@VQSVBufferAllocatorSys@@@std@@PEAVQSVBufferAllocatorSys@@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::default_delete<QSVBufferAllocatorSys>,QSVBufferAllocatorSys *,1>::_Compressed_pair<std::default_delete<QSVBufferAllocatorSys>,QSVBufferAllocatorSys *,1><>
-  00030	90		 npad	 1
-  00031	48 8b 44 24 40	 mov	 rax, QWORD PTR this$[rsp]
-  00036	48 83 c4 30	 add	 rsp, 48			; 00000030H
-  0003a	5f		 pop	 rdi
-  0003b	c3		 ret	 0
-??$?0U?$default_delete@VQSVBufferAllocatorSys@@@std@@$0A@@?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAllocatorSys@@@std@@@std@@QEAA@XZ ENDP ; std::unique_ptr<QSVBufferAllocatorSys,std::default_delete<QSVBufferAllocatorSys> >::unique_ptr<QSVBufferAllocatorSys,std::default_delete<QSVBufferAllocatorSys> ><std::default_delete<QSVBufferAllocatorSys>,0>
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory
 ;	COMDAT ??$?CVRGYLog@@$0A@@?$shared_ptr@VRGYLog@@@std@@QEBAPEAVRGYLog@@XZ
 _TEXT	SEGMENT
 this$ = 48
@@ -3048,6 +2979,36 @@ $LN3:
   0002c	5f		 pop	 rdi
   0002d	c3		 ret	 0
 ??$?CVRGYLog@@$0A@@?$shared_ptr@VRGYLog@@@std@@QEBAPEAVRGYLog@@XZ ENDP ; std::shared_ptr<RGYLog>::operator-><RGYLog,0>
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory
+;	COMDAT ??$?0U?$default_delete@VQSVBufferAllocatorSys@@@std@@$0A@@?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAllocatorSys@@@std@@@std@@QEAA@XZ
+_TEXT	SEGMENT
+$T1 = 32
+this$ = 64
+??$?0U?$default_delete@VQSVBufferAllocatorSys@@@std@@$0A@@?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAllocatorSys@@@std@@@std@@QEAA@XZ PROC ; std::unique_ptr<QSVBufferAllocatorSys,std::default_delete<QSVBufferAllocatorSys> >::unique_ptr<QSVBufferAllocatorSys,std::default_delete<QSVBufferAllocatorSys> ><std::default_delete<QSVBufferAllocatorSys>,0>, COMDAT
+
+; 1809 :     constexpr unique_ptr() noexcept : _Mypair(_Zero_then_variadic_args_t()) {}
+
+$LN3:
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	57		 push	 rdi
+  00006	48 83 ec 30	 sub	 rsp, 48			; 00000030H
+  0000a	48 8b fc	 mov	 rdi, rsp
+  0000d	b9 0c 00 00 00	 mov	 ecx, 12
+  00012	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
+  00017	f3 ab		 rep stosd
+  00019	48 8b 4c 24 40	 mov	 rcx, QWORD PTR [rsp+64]
+  0001e	48 8b 44 24 40	 mov	 rax, QWORD PTR this$[rsp]
+  00023	0f b6 54 24 20	 movzx	 edx, BYTE PTR $T1[rsp]
+  00028	48 8b c8	 mov	 rcx, rax
+  0002b	e8 00 00 00 00	 call	 ??$?0$$V@?$_Compressed_pair@U?$default_delete@VQSVBufferAllocatorSys@@@std@@PEAVQSVBufferAllocatorSys@@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::default_delete<QSVBufferAllocatorSys>,QSVBufferAllocatorSys *,1>::_Compressed_pair<std::default_delete<QSVBufferAllocatorSys>,QSVBufferAllocatorSys *,1><>
+  00030	90		 npad	 1
+  00031	48 8b 44 24 40	 mov	 rax, QWORD PTR this$[rsp]
+  00036	48 83 c4 30	 add	 rsp, 48			; 00000030H
+  0003a	5f		 pop	 rdi
+  0003b	c3		 ret	 0
+??$?0U?$default_delete@VQSVBufferAllocatorSys@@@std@@$0A@@?$unique_ptr@VQSVBufferAllocatorSys@@U?$default_delete@VQSVBufferAllocatorSys@@@std@@@std@@QEAA@XZ ENDP ; std::unique_ptr<QSVBufferAllocatorSys,std::default_delete<QSVBufferAllocatorSys> >::unique_ptr<QSVBufferAllocatorSys,std::default_delete<QSVBufferAllocatorSys> ><std::default_delete<QSVBufferAllocatorSys>,0>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ;	COMDAT ??_GQSVAllocatorSys@@UEAAPEAXI@Z
@@ -3704,7 +3665,7 @@ $LN18@AllocImpl:
 	00 00 00	 mov	 QWORD PTR tv362[rsp], rcx
   002f4	44 8b c8	 mov	 r9d, eax
   002f7	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG127232
+	00 00		 lea	 r8, OFFSET FLAT:$SG117948
   002fe	ba fe ff ff ff	 mov	 edx, -2
   00303	48 8b 8c 24 a0
 	00 00 00	 mov	 rcx, QWORD PTR tv174[rsp]
@@ -3803,7 +3764,7 @@ $LN6@AllocImpl:
   0042a	48 89 4c 24 20	 mov	 QWORD PTR [rsp+32], rcx
   0042f	44 8b 4c 24 54	 mov	 r9d, DWORD PTR numAllocated$[rsp]
   00434	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG127234
+	00 00		 lea	 r8, OFFSET FLAT:$SG117950
   0043b	ba 02 00 00 00	 mov	 edx, 2
   00440	48 8b 8c 24 c8
 	00 00 00	 mov	 rcx, QWORD PTR tv225[rsp]
@@ -3896,7 +3857,7 @@ $LN19@AllocImpl:
 	01 00 00	 mov	 rdx, QWORD PTR tv279[rsp]
   00567	4c 8b 0c d0	 mov	 r9, QWORD PTR [rax+rdx*8]
   0056b	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG127237
+	00 00		 lea	 r8, OFFSET FLAT:$SG117953
   00572	ba 02 00 00 00	 mov	 edx, 2
   00577	48 8b 8c 24 f0
 	00 00 00	 mov	 rcx, QWORD PTR tv271[rsp]
@@ -4003,7 +3964,7 @@ $LN20@AllocImpl:
 	01 00 00	 mov	 rdx, QWORD PTR tv330[rsp]
   006c0	4c 8b 0c d0	 mov	 r9, QWORD PTR [rax+rdx*8]
   006c4	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG127240
+	00 00		 lea	 r8, OFFSET FLAT:$SG117956
   006cb	ba 02 00 00 00	 mov	 edx, 2
   006d0	48 8b 8c 24 28
 	01 00 00	 mov	 rcx, QWORD PTR tv322[rsp]
@@ -4058,7 +4019,7 @@ $LN5@AllocImpl:
 	01 00 00	 mov	 rax, QWORD PTR tv348[rsp]
   00754	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00757	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG127242
+	00 00		 lea	 r8, OFFSET FLAT:$SG117958
   0075e	ba fe ff ff ff	 mov	 edx, -2
   00763	48 8b 8c 24 48
 	01 00 00	 mov	 rcx, QWORD PTR tv348[rsp]
@@ -4366,7 +4327,7 @@ $LN7@ReleaseRes:
   0015a	48 8b 44 24 50	 mov	 rax, QWORD PTR tv148[rsp]
   0015f	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00162	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG127260
+	00 00		 lea	 r8, OFFSET FLAT:$SG117976
   00169	ba fe ff ff ff	 mov	 edx, -2
   0016e	48 8b 4c 24 50	 mov	 rcx, QWORD PTR tv148[rsp]
   00173	ff 50 20	 call	 QWORD PTR [rax+32]
@@ -4559,7 +4520,7 @@ $LN2@FrameUnloc:
   000bd	48 89 44 24 20	 mov	 QWORD PTR [rsp+32], rax
   000c2	4c 8b 4c 24 78	 mov	 r9, QWORD PTR mid$[rsp]
   000c7	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126936
+	00 00		 lea	 r8, OFFSET FLAT:$SG117652
   000ce	ba 02 00 00 00	 mov	 edx, 2
   000d3	48 8b 4c 24 40	 mov	 rcx, QWORD PTR tv129[rsp]
   000d8	48 8b 44 24 48	 mov	 rax, QWORD PTR tv158[rsp]
@@ -4620,7 +4581,7 @@ $LN4@FrameUnloc:
   0014d	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00150	4c 8b 4c 24 78	 mov	 r9, QWORD PTR mid$[rsp]
   00155	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126938
+	00 00		 lea	 r8, OFFSET FLAT:$SG117654
   0015c	ba fd ff ff ff	 mov	 edx, -3
   00161	48 8b 4c 24 50	 mov	 rcx, QWORD PTR tv151[rsp]
   00166	ff 50 20	 call	 QWORD PTR [rax+32]
@@ -4756,7 +4717,7 @@ $LN5@FrameLock:
   000fa	4c 8b 8c 24 b8
 	00 00 00	 mov	 r9, QWORD PTR mid$[rsp]
   00102	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126912
+	00 00		 lea	 r8, OFFSET FLAT:$SG117628
   00109	ba 02 00 00 00	 mov	 edx, 2
   0010e	48 8b 4c 24 58	 mov	 rcx, QWORD PTR tv131[rsp]
   00113	48 8b 44 24 60	 mov	 rax, QWORD PTR tv368[rsp]
@@ -4814,7 +4775,7 @@ $LN6@FrameLock:
   001ac	4c 8b 8c 24 b8
 	00 00 00	 mov	 r9, QWORD PTR mid$[rsp]
   001b4	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126914
+	00 00		 lea	 r8, OFFSET FLAT:$SG117630
   001bb	ba 02 00 00 00	 mov	 edx, 2
   001c0	48 8b 4c 24 70	 mov	 rcx, QWORD PTR tv168[rsp]
   001c5	48 8b 44 24 78	 mov	 rax, QWORD PTR tv367[rsp]
@@ -5397,7 +5358,7 @@ $LN2@FrameLock:
   0074b	4c 8b 8c 24 b8
 	00 00 00	 mov	 r9, QWORD PTR mid$[rsp]
   00753	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126927
+	00 00		 lea	 r8, OFFSET FLAT:$SG117643
   0075a	ba fd ff ff ff	 mov	 edx, -3
   0075f	48 8b 8c 24 90
 	00 00 00	 mov	 rcx, QWORD PTR tv338[rsp]

@@ -275,7 +275,8 @@ copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)"
       <TargetMachine>MachineX64</TargetMachine>
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <DelayLoadDLLs>avcodec-58.dll;avformat-58.dll;avutil-56.dll;avfilter-7.dll;swresample-3.dll</DelayLoadDLLs>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateMapFile>true</GenerateMapFile>
     </Link>
@@ -559,7 +560,7 @@ copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)"
       <AssemblerOutput>All</AssemblerOutput>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\_build\QSVCommon\$(Platform);..\MediaSDK\lib\$(Platform);..\ffmpeg_lgpl\lib\$(Platform);$(SolutionDir)libass\lib\$(Platform);$(INTELOCLSDKROOT)lib\x64;$(INTEL_METRIC_FRAMEWORK_SDK)\build\visual_studio_2015_x64\bin\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\_build\QSVCommon\$(Platform);..\MediaSDK\lib\$(Platform);$(INTELOCLSDKROOT)lib\x64;$(INTEL_METRIC_FRAMEWORK_SDK)\build\visual_studio_2015_x64\bin\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
@@ -569,7 +570,6 @@ copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)"
       <TargetMachine>MachineX64</TargetMachine>
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <DelayLoadDLLs>avcodec-58.dll;avformat-58.dll;avutil-56.dll;avfilter-7.dll;swresample-3.dll;libass-9.dll</DelayLoadDLLs>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateMapFile>true</GenerateMapFile>
     </Link>
@@ -585,22 +585,11 @@ copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)"
     <Manifest>
       <AdditionalManifestFiles>QSVEncC.manifest</AdditionalManifestFiles>
     </Manifest>
-    <PostBuildEvent>
-      <Command>copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avcodec-*.dll"  "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avfilter-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avformat-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avutil-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\swresample-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)" &gt; NUL</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="QSVEncC.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ChapterRW\ChapterRW.vcxproj">
-      <Project>{6a9832b8-fe45-415c-a162-7d07e5e4fa2b}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\QSVPipeline\QSVPipeline.vcxproj">
       <Project>{a63ce263-8735-4405-8860-011a12a80def}</Project>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
@@ -615,27 +604,9 @@ copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)"
     <ProjectReference Include="..\QSVPlugins\rotate\rotate.vcxproj">
       <Project>{d5ccf0c0-32f6-4777-aa6c-6a249016db26}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\QSVPlugins\subburn\subburn.vcxproj">
-      <Project>{7fd81cce-cf2e-4800-8cbc-72a4ffa1264b}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\tinyxml2\tinyxml2.vcxproj">
-      <Project>{a34ca86d-6c2b-482f-984e-2687459e65e9}</Project>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QSVEncC_version.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="QSVEncC_version.rc">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\QSVPipeline</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='DebugStatic|Win32'">..\QSVPipeline</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\QSVPipeline</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">..\QSVPipeline</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\QSVPipeline</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='DebugStatic|x64'">..\QSVPipeline</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\QSVPipeline</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|x64'">..\QSVPipeline</AdditionalIncludeDirectories>
-    </ResourceCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

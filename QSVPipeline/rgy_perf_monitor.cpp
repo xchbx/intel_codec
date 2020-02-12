@@ -544,7 +544,6 @@ int CPerfMonitor::createPerfMpnitorPyw(const TCHAR *pywPath) {
     HMODULE hModule = GetModuleHandleA(NULL);
 #endif
     if (   NULL == hModule
-        || NULL == (hResource = FindResource(hModule, _T("PERF_MONITOR_PYW"), _T("PERF_MONITOR_SRC")))
         || NULL == (hResourceData = LoadResource(hModule, hResource))
         || NULL == (pDataPtr = (const char *)LockResource(hResourceData))
         || 0    == (resourceSize = SizeofResource(hModule, hResource))) {

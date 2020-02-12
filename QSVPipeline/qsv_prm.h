@@ -36,7 +36,6 @@
 #include "mfxvp8.h"
 #include "mfxvp9.h"
 #include "convert_csp.h"
-#include "rgy_caption.h"
 #include "rgy_simd.h"
 
 #define QSVENCC_ABORT_EVENT _T("QSVEncC_abort_%u")
@@ -329,8 +328,6 @@ struct sInputParams
     int        hevc_sao;
     int        hevc_tskip;
     int        hevc_tier;
-
-    C2AFormat  caption2ass;
 
     int8_t     Reserved[980];
 

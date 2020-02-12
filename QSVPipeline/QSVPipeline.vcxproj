@@ -198,7 +198,7 @@ if exist rgy_rev.h.%PID%.tmp del rgy_rev.h.%PID%.tmp &gt; nul 2&gt;&amp;1</Comma
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>D:\work\intel\QSVEnc-master\libass;D:\work\intel\QSVEnc-master\Caption2Ass_PCR\src\common;D:\Program\ffmpeg\ffmpeg-latest-win64-dev\include;.;include;include\vm;..\MediaSDK\include;..\QSVPipeline;..\QSVPlugins;..\ChapterRW;$(INTELOCLSDKROOT)include;$(INTEL_METRIC_FRAMEWORK_SDK)\include;..\ffmpeg_lgpl\include;..\ttmath;$(SolutionDir)libass\include;$(AVISYNTH_SDK)\include;$(VAPOURSYNTH_SDK)\include;$(VAPOURSYNTH_SDK)\include\vapoursynth;$(OPENCL_HEADERS);$(CAPTION2ASS_SRC)\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;include;include\vm;..\MediaSDK\include;..\QSVPipeline;..\QSVPlugins;$(INTELOCLSDKROOT)include;$(INTEL_METRIC_FRAMEWORK_SDK)\include;..\ttmath;$(OPENCL_HEADERS);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN64;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Async</ExceptionHandling>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -454,21 +454,13 @@ if exist rgy_rev.h.%PID%.tmp del rgy_rev.h.%PID%.tmp &gt; nul 2&gt;&amp;1</Comma
     <ClCompile Include="qsv_query.cpp" />
     <ClCompile Include="qsv_task.cpp" />
     <ClCompile Include="qsv_util.cpp" />
-    <ClCompile Include="rgy_avlog.cpp" />
-    <ClCompile Include="rgy_avutil.cpp" />
     <ClCompile Include="rgy_bitstream.cpp" />
-    <ClCompile Include="rgy_caption.cpp" />
     <ClCompile Include="rgy_event.cpp" />
     <ClCompile Include="rgy_ini.cpp" />
     <ClCompile Include="rgy_input.cpp" />
-    <ClCompile Include="rgy_input_avcodec.cpp" />
-    <ClCompile Include="rgy_input_avi.cpp" />
-    <ClCompile Include="rgy_input_avs.cpp" />
     <ClCompile Include="rgy_input_raw.cpp" />
-    <ClCompile Include="rgy_input_vpy.cpp" />
     <ClCompile Include="rgy_log.cpp" />
     <ClCompile Include="rgy_output.cpp" />
-    <ClCompile Include="rgy_output_avcodec.cpp" />
     <ClCompile Include="rgy_perf_monitor.cpp" />
     <ClCompile Include="rgy_pipe.cpp" />
     <ClCompile Include="rgy_simd.cpp" />
@@ -505,22 +497,15 @@ if exist rgy_rev.h.%PID%.tmp del rgy_rev.h.%PID%.tmp &gt; nul 2&gt;&amp;1</Comma
     <ClInclude Include="qsv_query.h" />
     <ClInclude Include="qsv_task.h" />
     <ClInclude Include="qsv_util.h" />
-    <ClInclude Include="rgy_avlog.h" />
-    <ClInclude Include="rgy_avutil.h" />
     <ClInclude Include="rgy_bitstream.h" />
     <ClInclude Include="rgy_caption.h" />
     <ClInclude Include="rgy_event.h" />
     <ClInclude Include="rgy_ini.h" />
     <ClInclude Include="rgy_input.h" />
-    <ClInclude Include="rgy_input_avcodec.h" />
-    <ClInclude Include="rgy_input_avi.h" />
-    <ClInclude Include="rgy_input_avs.h" />
     <ClInclude Include="rgy_input_raw.h" />
-    <ClInclude Include="rgy_input_vpy.h" />
     <ClInclude Include="rgy_log.h" />
     <ClInclude Include="rgy_osdep.h" />
     <ClInclude Include="rgy_output.h" />
-    <ClInclude Include="rgy_output_avcodec.h" />
     <ClInclude Include="rgy_perf_monitor.h" />
     <ClInclude Include="rgy_pipe.h" />
     <ClInclude Include="rgy_queue.h" />

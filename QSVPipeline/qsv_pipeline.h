@@ -84,7 +84,7 @@ struct mfxParamSet {
     mfxExtCodingOption3 cop3;
     mfxExtHEVCParam hevc;
 };
-
+#define AV_NOPTS_VALUE (0x8000000000000000)
 const uint32_t QSV_PTS_SORT_SIZE = 16u;
 
 class CQSVPipeline
@@ -183,9 +183,6 @@ protected:
     mfxExtVPPScaling m_ExtScaling;
     vector<mfxU32> m_VppDoNotUseList;
     vector<mfxU32> m_VppDoUseList;
-#if ENABLE_AVSW_READER
-    vector<unique_ptr<AVChapter>> m_AVChapterFromFile;
-#endif
 
     unique_ptr<QSVAllocator> m_pMFXAllocator;
     unique_ptr<mfxAllocatorParams> m_pmfxAllocatorParams;

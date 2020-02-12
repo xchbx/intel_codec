@@ -6,75 +6,632 @@ INCLUDELIB MSVCRTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-?HW_DECODE_LIST@@3QBUCodecMap@@B DD 01bH		; HW_DECODE_LIST
+$SG143219 DB	'h264', 00H
+$SG143954 DB	00H
+	ORG $+2
+$SG143220 DB	'hevc', 00H
+	ORG $+3
+$SG143221 DB	'mpeg2', 00H
+	ORG $+2
+$SG143222 DB	'vc-1', 00H
+	ORG $+3
+$SG143223 DB	'vp8', 00H
+$SG143224 DB	'raw', 00H
+$SG143226 DB	'CBR', 00H
+$SG143227 DB	'VBR', 00H
+$SG143228 DB	'CQP', 00H
+$SG143229 DB	'AVBR', 00H
+	ORG $+3
+$SG143230 DB	'LA', 00H
+	ORG $+1
+$SG143231 DB	'LA-EXT', 00H
+	ORG $+1
+$SG143232 DB	'LA-HRD', 00H
+	ORG $+1
+$SG143233 DB	'LA-ICQ', 00H
+	ORG $+1
+$SG143234 DB	'ICQ', 00H
+$SG143235 DB	'QVBR', 00H
+	ORG $+3
+$SG143236 DB	'VCM', 00H
+$SG143238 DB	'auto', 00H
+	ORG $+3
+?list_avc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG143238	; list_avc_profile
+	DD	00H
+	ORG $+4
+	DQ	FLAT:$SG143239
+	DD	042H
+	ORG $+4
+	DQ	FLAT:$SG143240
+	DD	04dH
+	ORG $+4
+	DQ	FLAT:$SG143241
+	DD	064H
+	ORG $+4
+	DQ	0000000000000000H
+	DD	00H
+	ORG $+4
+$SG143239 DB	'Baseline', 00H
+	ORG $+3
+$SG143240 DB	'Main', 00H
+	ORG $+3
+$SG143241 DB	'High', 00H
+	ORG $+7
+?list_hevc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG143243	; list_hevc_profile
+	DD	00H
+	ORG $+4
+	DQ	FLAT:$SG143244
 	DD	01H
-	DD	0adH
+	ORG $+4
+	DQ	FLAT:$SG143245
 	DD	02H
+	ORG $+4
+	DQ	0000000000000000H
+	DD	00H
+	ORG $+4
+$SG143243 DB	'auto', 00H
+	ORG $+3
+$SG143244 DB	'main', 00H
+	ORG $+3
+$SG143245 DB	'main10', 00H
+	ORG $+1
+$SG143247 DB	'main', 00H
+	ORG $+3
+$SG143248 DB	'high', 00H
+	ORG $+3
+$SG143250 DB	'auto', 00H
+	ORG $+3
+?list_mpeg2_profile@@3QBUCX_DESC@@B DQ FLAT:$SG143250	; list_mpeg2_profile
+	DD	00H
+	ORG $+4
+	DQ	FLAT:$SG143251
+	DD	050H
+	ORG $+4
+	DQ	FLAT:$SG143252
+	DD	040H
+	ORG $+4
+	DQ	FLAT:$SG143253
+	DD	010H
+	ORG $+4
+	DQ	0000000000000000H
+	DD	00H
+	ORG $+4
+$SG143251 DB	'Simple', 00H
+	ORG $+1
+$SG143252 DB	'Main', 00H
+	ORG $+3
+$SG143253 DB	'High', 00H
+	ORG $+3
+$SG143255 DB	'auto', 00H
+	ORG $+3
+?list_vc1_profile@@3QBUCX_DESC@@B DQ FLAT:$SG143255	; list_vc1_profile
+	DD	00H
+	ORG $+4
+	DQ	FLAT:$SG143256
+	DD	01H
+	ORG $+4
+	DQ	FLAT:$SG143257
+	DD	05H
+	ORG $+4
+	DQ	FLAT:$SG143258
+	DD	0dH
+	ORG $+4
+	DQ	0000000000000000H
+	DD	00H
+	ORG $+4
+$SG143256 DB	'Simple', 00H
+	ORG $+1
+$SG143257 DB	'Main', 00H
+	ORG $+3
+$SG143258 DB	'Advanced', 00H
+	ORG $+7
+?list_vp8_profile@@3QBUCX_DESC@@B DQ FLAT:$SG143260	; list_vp8_profile
+	DD	00H
+	ORG $+4
+	DQ	FLAT:$SG143261
+	DD	01H
+	ORG $+4
+	DQ	FLAT:$SG143262
 	DD	02H
+	ORG $+4
+	DQ	FLAT:$SG143263
+	DD	03H
+	ORG $+4
+	DQ	FLAT:$SG143264
 	DD	04H
-	DD	08bH
-	DD	06H
-	DD	0a7H
-	DD	07H
-	DD	046H
+	ORG $+4
+	DQ	0000000000000000H
+	DD	00H
+	ORG $+4
+$SG143260 DB	'auto', 00H
+	ORG $+3
+$SG143261 DB	'0', 00H
+	ORG $+2
+$SG143262 DB	'1', 00H
+	ORG $+2
+$SG143263 DB	'2', 00H
+	ORG $+2
+$SG143264 DB	'3', 00H
+	ORG $+2
+$SG143266 DB	'auto', 00H
+	ORG $+3
+?list_vp9_profile@@3QBUCX_DESC@@B DQ FLAT:$SG143266	; list_vp9_profile
+	DD	00H
+	ORG $+4
+	DQ	FLAT:$SG143267
+	DD	01H
+	ORG $+4
+	DQ	FLAT:$SG143268
+	DD	02H
+	ORG $+4
+	DQ	FLAT:$SG143269
+	DD	03H
+	ORG $+4
+	DQ	FLAT:$SG143270
+	DD	04H
+	ORG $+4
+	DQ	0000000000000000H
+	DD	00H
+	ORG $+4
+$SG143267 DB	'0', 00H
+	ORG $+2
+$SG143268 DB	'1', 00H
+	ORG $+2
+$SG143269 DB	'2', 00H
+	ORG $+2
+$SG143270 DB	'3', 00H
+	ORG $+2
+$SG143272 DB	'8', 00H
+	ORG $+2
+$SG143273 DB	'10', 00H
+	ORG $+1
+$SG143275 DB	'progressive', 00H
+$SG143281 DB	'it', 00H
+	ORG $+1
+$SG143276 DB	'interlaced(tff)', 00H
+$SG143277 DB	'interlaced(bff)', 00H
+$SG143279 DB	'none', 00H
+	ORG $+3
+$SG143280 DB	'normal', 00H
+	ORG $+1
+$SG143282 DB	'bob', 00H
+$SG143284 DB	'32', 00H
+	ORG $+1
+$SG143285 DB	'2332', 00H
+	ORG $+3
+$SG143286 DB	'repeat', 00H
+	ORG $+1
+$SG143287 DB	'41', 00H
+	ORG $+1
+$SG143289 DB	'auto', 00H
+	ORG $+7
+?list_avc_level@@3QBUCX_DESC@@B DQ FLAT:$SG143289	; list_avc_level
+	DD	00H
+	ORG $+4
+	DQ	FLAT:$SG143290
+	DD	0aH
+	ORG $+4
+	DQ	FLAT:$SG143291
+	DD	09H
+	ORG $+4
+	DQ	FLAT:$SG143292
+	DD	0bH
+	ORG $+4
+	DQ	FLAT:$SG143293
+	DD	0cH
+	ORG $+4
+	DQ	FLAT:$SG143294
+	DD	0dH
+	ORG $+4
+	DQ	FLAT:$SG143295
+	DD	014H
+	ORG $+4
+	DQ	FLAT:$SG143296
+	DD	015H
+	ORG $+4
+	DQ	FLAT:$SG143297
+	DD	016H
+	ORG $+4
+	DQ	FLAT:$SG143298
+	DD	01eH
+	ORG $+4
+	DQ	FLAT:$SG143299
+	DD	01fH
+	ORG $+4
+	DQ	FLAT:$SG143300
+	DD	020H
+	ORG $+4
+	DQ	FLAT:$SG143301
+	DD	028H
+	ORG $+4
+	DQ	FLAT:$SG143302
+	DD	029H
+	ORG $+4
+	DQ	FLAT:$SG143303
+	DD	02aH
+	ORG $+4
+	DQ	FLAT:$SG143304
+	DD	032H
+	ORG $+4
+	DQ	FLAT:$SG143305
+	DD	033H
+	ORG $+4
+	DQ	FLAT:$SG143306
+	DD	034H
+	ORG $+4
+	DQ	0000000000000000H
+	DD	00H
+	ORG $+4
+$SG143290 DB	'1', 00H
+	ORG $+2
+$SG143291 DB	'1b', 00H
+	ORG $+1
+$SG143292 DB	'1.1', 00H
+$SG143293 DB	'1.2', 00H
+$SG143294 DB	'1.3', 00H
+$SG143295 DB	'2', 00H
+	ORG $+2
+$SG143296 DB	'2.1', 00H
+$SG143297 DB	'2.2', 00H
+$SG143298 DB	'3', 00H
+	ORG $+2
+$SG143299 DB	'3.1', 00H
+$SG143300 DB	'3.2', 00H
+$SG143301 DB	'4', 00H
+	ORG $+2
+$SG143302 DB	'4.1', 00H
+$SG143303 DB	'4.2', 00H
+$SG143304 DB	'5', 00H
+	ORG $+2
+$SG143305 DB	'5.1', 00H
+$SG143306 DB	'5.2', 00H
+$SG143308 DB	'auto', 00H
+	ORG $+7
+?list_hevc_level@@3QBUCX_DESC@@B DQ FLAT:$SG143308	; list_hevc_level
+	DD	00H
+	ORG $+4
+	DQ	FLAT:$SG143309
+	DD	0aH
+	ORG $+4
+	DQ	FLAT:$SG143310
+	DD	014H
+	ORG $+4
+	DQ	FLAT:$SG143311
+	DD	015H
+	ORG $+4
+	DQ	FLAT:$SG143312
+	DD	01eH
+	ORG $+4
+	DQ	FLAT:$SG143313
+	DD	01fH
+	ORG $+4
+	DQ	FLAT:$SG143314
+	DD	028H
+	ORG $+4
+	DQ	FLAT:$SG143315
+	DD	029H
+	ORG $+4
+	DQ	FLAT:$SG143316
+	DD	032H
+	ORG $+4
+	DQ	FLAT:$SG143317
+	DD	033H
+	ORG $+4
+	DQ	FLAT:$SG143318
+	DD	034H
+	ORG $+4
+	DQ	FLAT:$SG143319
+	DD	03cH
+	ORG $+4
+	DQ	FLAT:$SG143320
+	DD	03dH
+	ORG $+4
+	DQ	FLAT:$SG143321
+	DD	03eH
+	ORG $+4
+	DQ	0000000000000000H
+	DD	00H
+	ORG $+4
+$SG143309 DB	'1', 00H
+	ORG $+2
+$SG143310 DB	'2', 00H
+	ORG $+2
+$SG143311 DB	'2.1', 00H
+$SG143312 DB	'3', 00H
+	ORG $+2
+$SG143313 DB	'3.1', 00H
+$SG143314 DB	'4', 00H
+	ORG $+2
+$SG143315 DB	'4.1', 00H
+$SG143316 DB	'5', 00H
+	ORG $+2
+$SG143317 DB	'5.1', 00H
+$SG143318 DB	'5.2', 00H
+$SG143319 DB	'6', 00H
+	ORG $+2
+$SG143320 DB	'6.1', 00H
+$SG143321 DB	'6.2', 00H
+$SG143323 DB	'auto', 00H
+	ORG $+7
+?list_mpeg2_level@@3QBUCX_DESC@@B DQ FLAT:$SG143323	; list_mpeg2_level
+	DD	00H
+	ORG $+4
+	DQ	FLAT:$SG143324
+	DD	0aH
+	ORG $+4
+	DQ	FLAT:$SG143325
 	DD	08H
-$SG148099 DB	'auto', 00H
-$SG153630 DB	00H
-	ORG $+2
-$SG148101 DB	'copy', 00H
+	ORG $+4
+	DQ	FLAT:$SG143326
+	DD	04H
+	ORG $+4
+	DQ	FLAT:$SG143327
+	DD	06H
+	ORG $+4
+	DQ	0000000000000000H
+	DD	00H
+	ORG $+4
+$SG143324 DB	'low', 00H
+$SG143325 DB	'main', 00H
 	ORG $+3
-$SG148226 DB	'.', 0aH, 00H
-	ORG $+1
-$SG148227 DB	' for ', 00H
-	ORG $+2
-$SG148525 DB	'srt', 00H
-$SG148230 DB	'avcodec-58.dll', 00H
-	ORG $+1
-$SG148231 DB	'avformat-58.dll', 00H
-$SG148232 DB	'avutil-56.dll', 00H
-	ORG $+2
-$SG148233 DB	'avfilter-7.dll', 00H
-	ORG $+1
-$SG148234 DB	'swresample-3.dll', 00H
+$SG143326 DB	'high', 00H
 	ORG $+3
-$SG148526 DB	'ass', 00H
-$SG148524 DB	'invalid', 00H
-$SG148533 DB	'invalid', 00H
-$SG148534 DB	'kigou', 00H
-	ORG $+2
-$SG148535 DB	'box', 00H
-$SG148536 DB	'draw', 00H
+$SG143330 DB	'low', 00H
+$SG143327 DB	'high1440', 00H
 	ORG $+3
-$SG135300 DB	'yuv422', 00H
+$SG143329 DB	'auto', 00H
+	ORG $+7
+?list_vc1_level@@3QBUCX_DESC@@B DQ FLAT:$SG143329	; list_vc1_level
+	DD	00H
+	ORG $+4
+	DQ	FLAT:$SG143330
+	DD	01H
+	ORG $+4
+	DQ	FLAT:$SG143331
+	DD	03H
+	ORG $+4
+	DQ	FLAT:$SG143332
+	DD	05H
+	ORG $+4
+	DQ	0000000000000000H
+	DD	00H
+	ORG $+4
+$SG143331 DB	'median', 00H
 	ORG $+1
-$SG135328 DB	'rgb', 00H
+$SG143332 DB	'high', 00H
+	ORG $+3
+$SG143334 DB	'auto', 00H
+	ORG $+3
+$SG143335 DB	'0', 00H
+	ORG $+2
+$SG143336 DB	'1', 00H
+	ORG $+2
+$SG143337 DB	'2', 00H
+	ORG $+2
+$SG143338 DB	'3', 00H
+	ORG $+2
+$SG143339 DB	'4', 00H
+	ORG $+2
+$SG143346 DB	'off', 00H
+?list_vp8_level@@3QBUCX_DESC@@B DQ FLAT:$SG143341	; list_vp8_level
+	DD	00H
+	ORG $+4
+	DQ	0000000000000000H
+	DD	00H
+	ORG $+4
+$SG143341 DB	'auto', 00H
+	ORG $+3
+?list_vp9_level@@3QBUCX_DESC@@B DQ FLAT:$SG143343	; list_vp9_level
+	DD	00H
+	ORG $+4
+	DQ	0000000000000000H
+	DD	00H
+	ORG $+4
+$SG143343 DB	'auto', 00H
+	ORG $+3
+$SG143345 DB	'Auto', 00H
+	ORG $+3
+$SG143347 DB	'for I frames', 00H
+	ORG $+3
+$SG143348 DB	'for I,P frames', 00H
+	ORG $+1
+$SG143349 DB	'for All frames', 00H
+	ORG $+1
+$SG143351 DB	'auto', 00H
+	ORG $+3
+$SG143352 DB	'off', 00H
+$SG143353 DB	'i', 00H
+	ORG $+2
+$SG143354 DB	'ip', 00H
+	ORG $+1
+$SG143355 DB	'all', 00H
+$SG143356 DB	'ipb', 00H
+$SG143357 DB	'ib', 00H
+	ORG $+1
+$SG143358 DB	'p', 00H
+	ORG $+2
+$SG143359 DB	'pb', 00H
+	ORG $+1
+$SG143360 DB	'b', 00H
+	ORG $+2
+$SG143362 DB	'auto', 00H
+	ORG $+3
+$SG143363 DB	'slow', 00H
+	ORG $+3
+$SG143364 DB	'medium', 00H
+	ORG $+1
+$SG143365 DB	'fast', 00H
+	ORG $+3
+$SG143368 DB	'0', 00H
+	ORG $+2
+$SG143367 DB	'default', 00H
+$SG143369 DB	'1', 00H
+	ORG $+2
+$SG143370 DB	'2', 00H
+	ORG $+2
+$SG143371 DB	'3', 00H
+	ORG $+2
+$SG143372 DB	'4', 00H
+	ORG $+2
+$SG143374 DB	'low', 00H
+$SG143375 DB	'normal', 00H
+	ORG $+1
+$SG143376 DB	'high', 00H
+	ORG $+3
+$SG143388 DB	'none', 00H
+	ORG $+3
+$SG143389 DB	'copy', 00H
+	ORG $+3
+$SG143390 DB	'aac', 00H
+$SG143391 DB	'libmp3lame', 00H
+	ORG $+1
+$SG143396 DB	'ac3', 00H
+$SG143392 DB	'libtwolame', 00H
+	ORG $+1
+$SG143427 DB	'tff', 00H
+$SG143393 DB	'libvorbis', 00H
+	ORG $+2
+$SG143428 DB	'bff', 00H
+$SG143394 DB	'pcm_s16le', 00H
+	ORG $+2
+$SG143439 DB	'higher', 00H
+	ORG $+1
+$SG143453 DB	'8x8', 00H
+$SG143395 DB	'libopus', 00H
+$SG143426 DB	'none', 00H
+	ORG $+3
+$SG143430 DB	' 1 - best quality', 00H
+	ORG $+2
+$SG143443 DB	'faster', 00H
+	ORG $+1
+$SG143454 DB	'4x4', 00H
+$SG143431 DB	' 2 - higher', 00H
+$SG143457 DB	'16', 00H
+	ORG $+1
+$SG143432 DB	' 3 - high quality', 00H
+	ORG $+2
+$SG143458 DB	'32', 00H
+	ORG $+1
+$SG143433 DB	' 4 - balanced', 00H
+	ORG $+2
+$SG143434 DB	' 5 - fast', 00H
+	ORG $+2
+$SG143459 DB	'64', 00H
+	ORG $+1
+$SG143435 DB	' 6 - faster', 00H
+$SG143467 DB	'all', 00H
+$SG143436 DB	' 7 - fastest', 00H
+	ORG $+3
+$SG143438 DB	'best', 00H
+	ORG $+3
+$SG143440 DB	'high', 00H
+	ORG $+3
+$SG143441 DB	'balanced', 00H
+	ORG $+3
+$SG143442 DB	'fast', 00H
+	ORG $+3
+$SG143449 DB	'Q-pel', 00H
+	ORG $+2
+$SG143466 DB	'chroma', 00H
+	ORG $+1
+$SG143471 DB	'box', 00H
+$SG143444 DB	'fastest', 00H
+$SG143446 DB	'Auto', 00H
+	ORG $+3
+$SG143447 DB	'full-pel', 00H
+	ORG $+3
+$SG143452 DB	'16x16', 00H
+	ORG $+2
+$SG143473 DB	'off', 00H
+$SG143448 DB	'half-pel', 00H
+	ORG $+3
+$SG143451 DB	'Auto', 00H
+	ORG $+3
+$SG143456 DB	'auto', 00H
+	ORG $+3
+$SG143463 DB	'auto', 00H
+	ORG $+3
+$SG143464 DB	'none', 00H
+	ORG $+3
+$SG143465 DB	'luma', 00H
+	ORG $+3
+$SG143469 DB	'none', 00H
+	ORG $+3
+$SG143474 DB	'x2', 00H
+	ORG $+1
+$SG143470 DB	'upscale', 00H
+$SG143475 DB	'x2.5', 00H
+	ORG $+3
+$SG143477 DB	'simple', 00H
+	ORG $+1
+$SG143478 DB	'complex', 00H
+$SG143480 DB	'0', 00H
+	ORG $+2
+$SG143481 DB	'90', 00H
+	ORG $+1
+$SG143482 DB	'180', 00H
+$SG143483 DB	'270', 00H
+$SG143485 DB	'n', 00H
+	ORG $+2
+$SG143486 DB	'h', 00H
+	ORG $+2
+$SG143487 DB	'v', 00H
+	ORG $+2
+$SG143490 DB	'simple', 00H
+	ORG $+1
+$SG143499 DB	'avx', 00H
 $SG135296 DB	'Invalid', 00H
+$SG143489 DB	'auto', 00H
+	ORG $+3
 $SG135297 DB	'nv12', 00H
 	ORG $+3
 $SG135298 DB	'yv12', 00H
 	ORG $+3
+$SG143491 DB	'fine', 00H
+	ORG $+3
 $SG135299 DB	'yuy2', 00H
+	ORG $+3
+$SG135300 DB	'yuv422', 00H
+	ORG $+1
+$SG143493 DB	'auto', 00H
 	ORG $+3
 $SG135301 DB	'nv16', 00H
 	ORG $+3
+$SG143494 DB	'none', 00H
+	ORG $+3
 $SG135302 DB	'yuv444', 00H
 	ORG $+1
+$SG143495 DB	'sse2', 00H
+	ORG $+3
 $SG135303 DB	'yv12(9bit)', 00H
 	ORG $+1
-$SG135330 DB	'gbr', 00H
-$SG135304 DB	'yv12(10bit)', 00H
-$SG135333 DB	'y8', 00H
-	ORG $+1
-$SG135305 DB	'yv12(12bit)', 00H
-$SG136278 DB	'VP8', 00H
-$SG135306 DB	'yv12(14bit)', 00H
-$SG136280 DB	'VP9', 00H
-$SG135307 DB	'yv12(16bit)', 00H
-$SG135308 DB	'p010', 00H
+$SG143496 DB	'sse3', 00H
 	ORG $+3
+$SG143497 DB	'ssse3', 00H
+	ORG $+2
 $SG135322 DB	'rgb24r', 00H
 	ORG $+1
-$SG152900 DB	'vp8', 00H
+$SG135328 DB	'rgb', 00H
+$SG135304 DB	'yv12(10bit)', 00H
+$SG135330 DB	'gbr', 00H
+$SG135305 DB	'yv12(12bit)', 00H
+$SG143498 DB	'sse41', 00H
+	ORG $+2
+$SG135323 DB	'rgb32r', 00H
+	ORG $+1
+$SG135333 DB	'y8', 00H
+	ORG $+1
+$SG135306 DB	'yv12(14bit)', 00H
+$SG143892 DB	'%s', 00H
+	ORG $+1
+$SG135307 DB	'yv12(16bit)', 00H
+$SG143500 DB	'avx2', 00H
+	ORG $+3
+$SG135308 DB	'p010', 00H
+	ORG $+3
+$SG135324 DB	'rgb24', 00H
+	ORG $+2
+$SG136278 DB	'VP8', 00H
 $SG135309 DB	'yuv422(9bit)', 00H
 	ORG $+3
 $SG135310 DB	'yuv422(10bit)', 00H
@@ -100,10 +657,6 @@ $SG135319 DB	'yuv444(16bit)', 00H
 $SG135320 DB	'yuva444', 00H
 $SG135321 DB	'yuva444(16bit)', 00H
 	ORG $+1
-$SG135323 DB	'rgb32r', 00H
-	ORG $+1
-$SG135324 DB	'rgb24', 00H
-	ORG $+2
 $SG135325 DB	'rgb32', 00H
 	ORG $+2
 $SG135326 DB	'bgr24', 00H
@@ -118,9 +671,180 @@ $SG135332 DB	'yc48', 00H
 	ORG $+3
 $SG135334 DB	'yc16', 00H
 	ORG $+3
+$SG143958 DB	'Haswell', 00H
+?CPU_GEN_STR@@3QBQEBDB DQ FLAT:$SG143954		; CPU_GEN_STR
+	DQ	FLAT:$SG143955
+	DQ	FLAT:$SG143956
+	DQ	FLAT:$SG143957
+	DQ	FLAT:$SG143958
+	DQ	FLAT:$SG143959
+	DQ	FLAT:$SG143960
+	DQ	FLAT:$SG143961
+	DQ	FLAT:$SG143962
+	DQ	FLAT:$SG143963
+	DQ	FLAT:$SG143964
+	DQ	FLAT:$SG143965
+	DQ	FLAT:$SG143966
+	DQ	FLAT:$SG143967
+$SG143955 DB	'SandyBridge', 00H
+$SG136280 DB	'VP9', 00H
+$SG143956 DB	'IvyBridge', 00H
+	ORG $+2
+$SG153182 DB	'%s', 00H
+	ORG $+1
+$SG143957 DB	'Silvermont', 00H
+	ORG $+1
+$SG136891 DB	'fcc', 00H
+$SG143959 DB	'Airmont', 00H
+$SG143960 DB	'Broadwell', 00H
+	ORG $+2
+$SG136892 DB	'GBR', 00H
+$SG143961 DB	'Skylake', 00H
+$SG143962 DB	'Apollolake', 00H
+	ORG $+1
+$SG137205 DB	'pal', 00H
+$SG143963 DB	'Kabylake', 00H
+	ORG $+3
+$SG144056 DB	'CBR  ', 00H
+	ORG $+2
+$SG137043 DB	'bt470m', 00H
+	ORG $+1
+$SG137207 DB	'mac', 00H
+$SG143964 DB	'Geminilake', 00H
+	ORG $+1
+$SG137209 DB	'0', 00H
+	ORG $+2
+$SG143965 DB	'Coffeelake', 00H
+	ORG $+1
+$SG137210 DB	'1', 00H
+	ORG $+2
+$SG143966 DB	'Cannonlake', 00H
+	ORG $+1
+$SG137211 DB	'2', 00H
+	ORG $+2
+$SG143967 DB	'Icelake', 00H
+$SG144057 DB	'VBR  ', 00H
+	ORG $+2
+$SG144058 DB	'AVBR ', 00H
+	ORG $+2
+$SG144059 DB	'QVBR ', 00H
+	ORG $+2
+$SG144060 DB	'CQP  ', 00H
+	ORG $+2
+$SG144061 DB	'LA   ', 00H
+	ORG $+2
+$SG144062 DB	'LAHRD', 00H
+	ORG $+2
+$SG144063 DB	'ICQ  ', 00H
+	ORG $+2
+$SG144064 DB	'LAICQ', 00H
+	ORG $+2
+$SG144065 DB	'VCM  ', 00H
+	ORG $+2
+$SG144067 DB	'RC mode      ', 00H
+	ORG $+2
+$SG144068 DB	'10bit depth  ', 00H
+	ORG $+2
+$SG144069 DB	'Fixed Func   ', 00H
+	ORG $+2
+$SG144070 DB	'Interlace    ', 00H
+	ORG $+2
+$SG144071 DB	'VUI info     ', 00H
+	ORG $+2
+$SG144072 DB	'Trellis      ', 00H
+	ORG $+2
+$SG144073 DB	'Adaptive_I   ', 00H
+	ORG $+2
+$SG144074 DB	'Adaptive_B   ', 00H
+	ORG $+2
+$SG144075 DB	'WeightP      ', 00H
+	ORG $+2
+$SG144076 DB	'WeightB      ', 00H
+	ORG $+2
+$SG144077 DB	'FadeDetect   ', 00H
+	ORG $+2
+$SG144078 DB	'B_Pyramid    ', 00H
+	ORG $+2
+$SG144079 DB	' +ManyBframes', 00H
+	ORG $+2
+$SG144080 DB	'PyramQPOffset', 00H
+	ORG $+2
+$SG144081 DB	'MBBRC        ', 00H
+	ORG $+2
+$SG144082 DB	'ExtBRC       ', 00H
+	ORG $+2
+$SG144083 DB	'Adaptive_LTR ', 00H
+	ORG $+2
+$SG144084 DB	'LA Quality   ', 00H
+	ORG $+2
+$SG144085 DB	'QP Min/Max   ', 00H
+	ORG $+2
+$SG144086 DB	'IntraRefresh ', 00H
+	ORG $+2
+$SG144087 DB	'No Deblock   ', 00H
+	ORG $+2
+$SG144088 DB	'No GPB       ', 00H
+	ORG $+2
+$SG144089 DB	'Windowed BRC ', 00H
+	ORG $+2
+$SG144090 DB	'PerMBQP(CQP) ', 00H
+	ORG $+2
+$SG144091 DB	'DirectBiasAdj', 00H
+	ORG $+2
+$SG144092 DB	'MVCostScaling', 00H
+	ORG $+2
+$SG144093 DB	'SAO          ', 00H
+	ORG $+2
+$SG144094 DB	'Max CTU Size ', 00H
+	ORG $+2
+$SG144095 DB	'TSkip        ', 00H
+	ORG $+2
+$SG144097 DB	'Resize               ', 00H
+	ORG $+2
+$SG144098 DB	'Deinterlace          ', 00H
+	ORG $+2
+$SG144099 DB	'Scaling Quality      ', 00H
+	ORG $+2
+$SG144100 DB	'Denoise              ', 00H
+	ORG $+2
+$SG144101 DB	'Mctf                 ', 00H
+	ORG $+2
+$SG144102 DB	'Rotate               ', 00H
+	ORG $+2
+$SG144103 DB	'Mirror               ', 00H
+	ORG $+2
+$SG144104 DB	'Detail Enhancement   ', 00H
+	ORG $+2
+$SG144105 DB	'Proc Amp.            ', 00H
+	ORG $+2
+$SG144106 DB	'Image Stabilization  ', 00H
+	ORG $+2
+$SG144107 DB	'Video Signal Info    ', 00H
+	ORG $+2
+$SG144108 DB	'FPS Conversion       ', 00H
+	ORG $+2
+$SG144109 DB	'FPS Conversion (Adv.)', 00H
+	ORG $+2
+$SG144200 DB	' @ %.2fGHz', 00H
+	ORG $+1
+$SG137212 DB	'3', 00H
+	ORG $+2
+$SG144202 DB	' [TB: %.2fGHz]', 00H
+	ORG $+1
+$SG144203 DB	' (%dC/%dT)', 00H
+	ORG $+1
+$SG144205 DB	' <%s>', 00H
+	ORG $+2
+$SG137046 DB	'linear', 00H
+	ORG $+1
+$SG137213 DB	'4', 00H
+	ORG $+2
 $SG136266 DB	'H.264/AVC', 00H
 	ORG $+2
-$SG152901 DB	'raw', 00H
+$SG137047 DB	'log100', 00H
+	ORG $+1
+$SG137214 DB	'5', 00H
+	ORG $+2
 $SG136268 DB	'H.265/HEVC', 00H
 	ORG $+1
 $SG136270 DB	'MPEG2', 00H
@@ -131,600 +855,49 @@ $SG136274 DB	'VC-1', 00H
 	ORG $+3
 $SG136276 DB	'MPEG4', 00H
 	ORG $+2
-$SG152903 DB	'CBR', 00H
+$SG137048 DB	'log316', 00H
+	ORG $+1
+$SG137218 DB	'tv', 00H
+	ORG $+1
 $SG136282 DB	'unknown', 00H
 $SG136389 DB	'unknown', 00H
-$SG152896 DB	'h264', 00H
-	ORG $+3
-$SG152897 DB	'hevc', 00H
-	ORG $+3
-$SG152898 DB	'mpeg2', 00H
-	ORG $+2
-$SG152899 DB	'vc-1', 00H
-	ORG $+3
-$SG152904 DB	'VBR', 00H
-$SG152905 DB	'CQP', 00H
-$SG152906 DB	'AVBR', 00H
-	ORG $+3
-$SG152907 DB	'LA', 00H
-	ORG $+1
-$SG152908 DB	'LA-EXT', 00H
-	ORG $+1
-$SG152909 DB	'LA-HRD', 00H
-	ORG $+1
-$SG152910 DB	'LA-ICQ', 00H
-	ORG $+1
-$SG152911 DB	'ICQ', 00H
-$SG152912 DB	'QVBR', 00H
-	ORG $+3
-$SG152913 DB	'VCM', 00H
-	ORG $+4
-?list_avc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG152915	; list_avc_profile
-	DD	00H
-	ORG $+4
-	DQ	FLAT:$SG152916
-	DD	042H
-	ORG $+4
-	DQ	FLAT:$SG152917
-	DD	04dH
-	ORG $+4
-	DQ	FLAT:$SG152918
-	DD	064H
-	ORG $+4
-	DQ	0000000000000000H
-	DD	00H
-	ORG $+4
-$SG152915 DB	'auto', 00H
-	ORG $+3
-$SG152916 DB	'Baseline', 00H
-	ORG $+3
-$SG152917 DB	'Main', 00H
-	ORG $+3
-$SG152918 DB	'High', 00H
-	ORG $+3
-$SG152920 DB	'auto', 00H
+$SG153181 DB	'invalid argument', 00H
 	ORG $+7
-?list_hevc_profile@@3QBUCX_DESC@@B DQ FLAT:$SG152920	; list_hevc_profile
-	DD	00H
-	ORG $+4
-	DQ	FLAT:$SG152921
-	DD	01H
-	ORG $+4
-	DQ	FLAT:$SG152922
-	DD	02H
-	ORG $+4
-	DQ	0000000000000000H
-	DD	00H
-	ORG $+4
-$SG152921 DB	'main', 00H
-	ORG $+3
-$SG152922 DB	'main10', 00H
-	ORG $+1
-$SG152924 DB	'main', 00H
-	ORG $+3
-$SG152925 DB	'high', 00H
-	ORG $+3
-?list_mpeg2_profile@@3QBUCX_DESC@@B DQ FLAT:$SG152927	; list_mpeg2_profile
-	DD	00H
-	ORG $+4
-	DQ	FLAT:$SG152928
-	DD	050H
-	ORG $+4
-	DQ	FLAT:$SG152929
-	DD	040H
-	ORG $+4
-	DQ	FLAT:$SG152930
-	DD	010H
-	ORG $+4
-	DQ	0000000000000000H
-	DD	00H
-	ORG $+4
-$SG152927 DB	'auto', 00H
-	ORG $+3
-$SG152928 DB	'Simple', 00H
-	ORG $+1
-$SG152929 DB	'Main', 00H
-	ORG $+3
-$SG152930 DB	'High', 00H
-	ORG $+3
-?list_vc1_profile@@3QBUCX_DESC@@B DQ FLAT:$SG152932	; list_vc1_profile
-	DD	00H
-	ORG $+4
-	DQ	FLAT:$SG152933
-	DD	01H
-	ORG $+4
-	DQ	FLAT:$SG152934
-	DD	05H
-	ORG $+4
-	DQ	FLAT:$SG152935
-	DD	0dH
-	ORG $+4
-	DQ	0000000000000000H
-	DD	00H
-	ORG $+4
-$SG152932 DB	'auto', 00H
-	ORG $+3
-$SG152933 DB	'Simple', 00H
-	ORG $+1
-$SG152934 DB	'Main', 00H
-	ORG $+3
-$SG152935 DB	'Advanced', 00H
-	ORG $+3
-$SG152937 DB	'auto', 00H
-	ORG $+7
-?list_vp8_profile@@3QBUCX_DESC@@B DQ FLAT:$SG152937	; list_vp8_profile
-	DD	00H
-	ORG $+4
-	DQ	FLAT:$SG152938
-	DD	01H
-	ORG $+4
-	DQ	FLAT:$SG152939
-	DD	02H
-	ORG $+4
-	DQ	FLAT:$SG152940
-	DD	03H
-	ORG $+4
-	DQ	FLAT:$SG152941
-	DD	04H
-	ORG $+4
-	DQ	0000000000000000H
-	DD	00H
-	ORG $+4
-$SG152938 DB	'0', 00H
+$SG153183 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
+$SG153186 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
+	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG152939 DB	'1', 00H
+$SG153184 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
+	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
+	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
+	DB	00H, 'r', 00H, 'o', 00H, 's', 00H, 'o', 00H, 'f', 00H, 't', 00H
+	DB	' ', 00H, 'V', 00H, 'i', 00H, 's', 00H, 'u', 00H, 'a', 00H, 'l'
+	DB	00H, ' ', 00H, 'S', 00H, 't', 00H, 'u', 00H, 'd', 00H, 'i', 00H
+	DB	'o', 00H, '\', 00H, '2', 00H, '0', 00H, '1', 00H, '9', 00H, '\'
+	DB	00H, 'C', 00H, 'o', 00H, 'm', 00H, 'm', 00H, 'u', 00H, 'n', 00H
+	DB	'i', 00H, 't', 00H, 'y', 00H, '\', 00H, 'V', 00H, 'C', 00H, '\'
+	DB	00H, 'T', 00H, 'o', 00H, 'o', 00H, 'l', 00H, 's', 00H, '\', 00H
+	DB	'M', 00H, 'S', 00H, 'V', 00H, 'C', 00H, '\', 00H, '1', 00H, '4'
+	DB	00H, '.', 00H, '2', 00H, '3', 00H, '.', 00H, '2', 00H, '8', 00H
+	DB	'1', 00H, '0', 00H, '5', 00H, '\', 00H, 'i', 00H, 'n', 00H, 'c'
+	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
+	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
+	DB	00H
+$SG153185 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
+	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
+	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
+	DB	00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, '_', 00H, 'a', 00H
+	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
+	DB	00H
 	ORG $+2
-$SG152940 DB	'2', 00H
+$SG153232 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
+$SG136884 DB	'undef', 00H
 	ORG $+2
-$SG152941 DB	'3', 00H
-	ORG $+2
-?list_vp9_profile@@3QBUCX_DESC@@B DQ FLAT:$SG152943	; list_vp9_profile
-	DD	00H
-	ORG $+4
-	DQ	FLAT:$SG152944
-	DD	01H
-	ORG $+4
-	DQ	FLAT:$SG152945
-	DD	02H
-	ORG $+4
-	DQ	FLAT:$SG152946
-	DD	03H
-	ORG $+4
-	DQ	FLAT:$SG152947
-	DD	04H
-	ORG $+4
-	DQ	0000000000000000H
-	DD	00H
-	ORG $+4
-$SG152943 DB	'auto', 00H
-	ORG $+3
-$SG152944 DB	'0', 00H
-	ORG $+2
-$SG152945 DB	'1', 00H
-	ORG $+2
-$SG152946 DB	'2', 00H
-	ORG $+2
-$SG152947 DB	'3', 00H
-	ORG $+2
-$SG152949 DB	'8', 00H
-	ORG $+2
-$SG152950 DB	'10', 00H
-	ORG $+1
-$SG152952 DB	'progressive', 00H
-$SG152958 DB	'it', 00H
-	ORG $+1
-$SG152953 DB	'interlaced(tff)', 00H
-$SG152954 DB	'interlaced(bff)', 00H
-$SG152956 DB	'none', 00H
-	ORG $+3
-$SG152957 DB	'normal', 00H
-	ORG $+1
-$SG152959 DB	'bob', 00H
-$SG152961 DB	'32', 00H
-	ORG $+1
-$SG152962 DB	'2332', 00H
-	ORG $+3
-$SG152963 DB	'repeat', 00H
-	ORG $+1
-$SG152964 DB	'41', 00H
-	ORG $+5
-?list_avc_level@@3QBUCX_DESC@@B DQ FLAT:$SG152966	; list_avc_level
-	DD	00H
-	ORG $+4
-	DQ	FLAT:$SG152967
-	DD	0aH
-	ORG $+4
-	DQ	FLAT:$SG152968
-	DD	09H
-	ORG $+4
-	DQ	FLAT:$SG152969
-	DD	0bH
-	ORG $+4
-	DQ	FLAT:$SG152970
-	DD	0cH
-	ORG $+4
-	DQ	FLAT:$SG152971
-	DD	0dH
-	ORG $+4
-	DQ	FLAT:$SG152972
-	DD	014H
-	ORG $+4
-	DQ	FLAT:$SG152973
-	DD	015H
-	ORG $+4
-	DQ	FLAT:$SG152974
-	DD	016H
-	ORG $+4
-	DQ	FLAT:$SG152975
-	DD	01eH
-	ORG $+4
-	DQ	FLAT:$SG152976
-	DD	01fH
-	ORG $+4
-	DQ	FLAT:$SG152977
-	DD	020H
-	ORG $+4
-	DQ	FLAT:$SG152978
-	DD	028H
-	ORG $+4
-	DQ	FLAT:$SG152979
-	DD	029H
-	ORG $+4
-	DQ	FLAT:$SG152980
-	DD	02aH
-	ORG $+4
-	DQ	FLAT:$SG152981
-	DD	032H
-	ORG $+4
-	DQ	FLAT:$SG152982
-	DD	033H
-	ORG $+4
-	DQ	FLAT:$SG152983
-	DD	034H
-	ORG $+4
-	DQ	0000000000000000H
-	DD	00H
-	ORG $+4
-$SG152966 DB	'auto', 00H
-	ORG $+3
-$SG152967 DB	'1', 00H
-	ORG $+2
-$SG152968 DB	'1b', 00H
-	ORG $+1
-$SG152969 DB	'1.1', 00H
-$SG152970 DB	'1.2', 00H
-$SG152971 DB	'1.3', 00H
-$SG152972 DB	'2', 00H
-	ORG $+2
-$SG152973 DB	'2.1', 00H
-$SG152974 DB	'2.2', 00H
-$SG152975 DB	'3', 00H
-	ORG $+2
-$SG152976 DB	'3.1', 00H
-$SG152977 DB	'3.2', 00H
-$SG152978 DB	'4', 00H
-	ORG $+2
-$SG152979 DB	'4.1', 00H
-$SG152980 DB	'4.2', 00H
-$SG152981 DB	'5', 00H
-	ORG $+2
-$SG152982 DB	'5.1', 00H
-$SG152983 DB	'5.2', 00H
-	ORG $+4
-?list_hevc_level@@3QBUCX_DESC@@B DQ FLAT:$SG152985	; list_hevc_level
-	DD	00H
-	ORG $+4
-	DQ	FLAT:$SG152986
-	DD	0aH
-	ORG $+4
-	DQ	FLAT:$SG152987
-	DD	014H
-	ORG $+4
-	DQ	FLAT:$SG152988
-	DD	015H
-	ORG $+4
-	DQ	FLAT:$SG152989
-	DD	01eH
-	ORG $+4
-	DQ	FLAT:$SG152990
-	DD	01fH
-	ORG $+4
-	DQ	FLAT:$SG152991
-	DD	028H
-	ORG $+4
-	DQ	FLAT:$SG152992
-	DD	029H
-	ORG $+4
-	DQ	FLAT:$SG152993
-	DD	032H
-	ORG $+4
-	DQ	FLAT:$SG152994
-	DD	033H
-	ORG $+4
-	DQ	FLAT:$SG152995
-	DD	034H
-	ORG $+4
-	DQ	FLAT:$SG152996
-	DD	03cH
-	ORG $+4
-	DQ	FLAT:$SG152997
-	DD	03dH
-	ORG $+4
-	DQ	FLAT:$SG152998
-	DD	03eH
-	ORG $+4
-	DQ	0000000000000000H
-	DD	00H
-	ORG $+4
-$SG152985 DB	'auto', 00H
-	ORG $+3
-$SG152986 DB	'1', 00H
-	ORG $+2
-$SG152987 DB	'2', 00H
-	ORG $+2
-$SG152988 DB	'2.1', 00H
-$SG152989 DB	'3', 00H
-	ORG $+2
-$SG152990 DB	'3.1', 00H
-$SG152991 DB	'4', 00H
-	ORG $+2
-$SG152992 DB	'4.1', 00H
-$SG152993 DB	'5', 00H
-	ORG $+2
-$SG152994 DB	'5.1', 00H
-$SG152995 DB	'5.2', 00H
-$SG152996 DB	'6', 00H
-	ORG $+2
-$SG152997 DB	'6.1', 00H
-$SG152998 DB	'6.2', 00H
-	ORG $+4
-?list_mpeg2_level@@3QBUCX_DESC@@B DQ FLAT:$SG153000	; list_mpeg2_level
-	DD	00H
-	ORG $+4
-	DQ	FLAT:$SG153001
-	DD	0aH
-	ORG $+4
-	DQ	FLAT:$SG153002
-	DD	08H
-	ORG $+4
-	DQ	FLAT:$SG153003
-	DD	04H
-	ORG $+4
-	DQ	FLAT:$SG153004
-	DD	06H
-	ORG $+4
-	DQ	0000000000000000H
-	DD	00H
-	ORG $+4
-$SG153000 DB	'auto', 00H
-	ORG $+3
-$SG153001 DB	'low', 00H
-$SG153002 DB	'main', 00H
-	ORG $+3
-$SG153003 DB	'high', 00H
-	ORG $+3
-$SG153007 DB	'low', 00H
-$SG153004 DB	'high1440', 00H
-	ORG $+7
-?list_vc1_level@@3QBUCX_DESC@@B DQ FLAT:$SG153006	; list_vc1_level
-	DD	00H
-	ORG $+4
-	DQ	FLAT:$SG153007
-	DD	01H
-	ORG $+4
-	DQ	FLAT:$SG153008
-	DD	03H
-	ORG $+4
-	DQ	FLAT:$SG153009
-	DD	05H
-	ORG $+4
-	DQ	0000000000000000H
-	DD	00H
-	ORG $+4
-$SG153006 DB	'auto', 00H
-	ORG $+3
-$SG153008 DB	'median', 00H
-	ORG $+1
-$SG153009 DB	'high', 00H
-	ORG $+3
-$SG153011 DB	'auto', 00H
-	ORG $+3
-$SG153012 DB	'0', 00H
-	ORG $+2
-$SG153013 DB	'1', 00H
-	ORG $+2
-$SG153014 DB	'2', 00H
-	ORG $+2
-$SG153015 DB	'3', 00H
-	ORG $+2
-$SG153016 DB	'4', 00H
-	ORG $+2
-$SG153023 DB	'off', 00H
-?list_vp8_level@@3QBUCX_DESC@@B DQ FLAT:$SG153018	; list_vp8_level
-	DD	00H
-	ORG $+4
-	DQ	0000000000000000H
-	DD	00H
-	ORG $+4
-$SG153018 DB	'auto', 00H
-	ORG $+3
-?list_vp9_level@@3QBUCX_DESC@@B DQ FLAT:$SG153020	; list_vp9_level
-	DD	00H
-	ORG $+4
-	DQ	0000000000000000H
-	DD	00H
-	ORG $+4
-$SG153020 DB	'auto', 00H
-	ORG $+3
-$SG153022 DB	'Auto', 00H
-	ORG $+3
-$SG153024 DB	'for I frames', 00H
-	ORG $+3
-$SG153025 DB	'for I,P frames', 00H
-	ORG $+1
-$SG153026 DB	'for All frames', 00H
-	ORG $+1
-$SG153028 DB	'auto', 00H
-	ORG $+3
-$SG153029 DB	'off', 00H
-$SG153030 DB	'i', 00H
-	ORG $+2
-$SG153031 DB	'ip', 00H
-	ORG $+1
-$SG153032 DB	'all', 00H
-$SG153033 DB	'ipb', 00H
-$SG153034 DB	'ib', 00H
-	ORG $+1
-$SG153035 DB	'p', 00H
-	ORG $+2
-$SG153036 DB	'pb', 00H
-	ORG $+1
-$SG153037 DB	'b', 00H
-	ORG $+2
-$SG153039 DB	'auto', 00H
-	ORG $+3
-$SG153040 DB	'slow', 00H
-	ORG $+3
-$SG153041 DB	'medium', 00H
-	ORG $+1
-$SG153042 DB	'fast', 00H
-	ORG $+3
-$SG153045 DB	'0', 00H
-	ORG $+2
-$SG153044 DB	'default', 00H
-$SG153046 DB	'1', 00H
-	ORG $+2
-$SG153047 DB	'2', 00H
-	ORG $+2
-$SG153048 DB	'3', 00H
-	ORG $+2
-$SG153049 DB	'4', 00H
-	ORG $+2
-$SG153051 DB	'low', 00H
-$SG153052 DB	'normal', 00H
-	ORG $+1
-$SG153053 DB	'high', 00H
-	ORG $+3
-$SG153065 DB	'none', 00H
-	ORG $+3
-$SG153066 DB	'copy', 00H
-	ORG $+3
-$SG153067 DB	'aac', 00H
-$SG153068 DB	'libmp3lame', 00H
-	ORG $+1
-$SG153073 DB	'ac3', 00H
-$SG153069 DB	'libtwolame', 00H
-	ORG $+1
-$SG153104 DB	'tff', 00H
-$SG153070 DB	'libvorbis', 00H
-	ORG $+2
-$SG153105 DB	'bff', 00H
-$SG153071 DB	'pcm_s16le', 00H
-	ORG $+2
-$SG153116 DB	'higher', 00H
-	ORG $+1
-$SG153130 DB	'8x8', 00H
-$SG153072 DB	'libopus', 00H
-$SG153103 DB	'none', 00H
-	ORG $+3
-$SG153107 DB	' 1 - best quality', 00H
-	ORG $+2
-$SG153120 DB	'faster', 00H
-	ORG $+1
-$SG153131 DB	'4x4', 00H
-$SG153108 DB	' 2 - higher', 00H
-$SG153134 DB	'16', 00H
-	ORG $+1
-$SG153109 DB	' 3 - high quality', 00H
-	ORG $+2
-$SG153135 DB	'32', 00H
-	ORG $+1
-$SG153110 DB	' 4 - balanced', 00H
-	ORG $+2
-$SG153111 DB	' 5 - fast', 00H
-	ORG $+2
-$SG153136 DB	'64', 00H
-	ORG $+1
-$SG153112 DB	' 6 - faster', 00H
-$SG153144 DB	'all', 00H
-$SG153113 DB	' 7 - fastest', 00H
-	ORG $+3
-$SG153115 DB	'best', 00H
-	ORG $+3
-$SG153117 DB	'high', 00H
-	ORG $+3
-$SG153118 DB	'balanced', 00H
-	ORG $+3
-$SG153119 DB	'fast', 00H
-	ORG $+3
-$SG153126 DB	'Q-pel', 00H
-	ORG $+2
-$SG153143 DB	'chroma', 00H
-	ORG $+1
-$SG153148 DB	'box', 00H
-$SG153121 DB	'fastest', 00H
-$SG153123 DB	'Auto', 00H
-	ORG $+3
-$SG153124 DB	'full-pel', 00H
-	ORG $+3
-$SG153129 DB	'16x16', 00H
-	ORG $+2
-$SG153150 DB	'off', 00H
-$SG153125 DB	'half-pel', 00H
-	ORG $+3
-$SG153128 DB	'Auto', 00H
-	ORG $+3
-$SG153133 DB	'auto', 00H
-	ORG $+3
-$SG153140 DB	'auto', 00H
-	ORG $+3
-$SG153141 DB	'none', 00H
-	ORG $+3
-$SG153142 DB	'luma', 00H
-	ORG $+3
-$SG153146 DB	'none', 00H
-	ORG $+3
-$SG153151 DB	'x2', 00H
-	ORG $+1
-$SG153147 DB	'upscale', 00H
-$SG153152 DB	'x2.5', 00H
-	ORG $+3
-$SG153154 DB	'simple', 00H
-	ORG $+1
-$SG153155 DB	'complex', 00H
-$SG153157 DB	'0', 00H
-	ORG $+2
-$SG153158 DB	'90', 00H
-	ORG $+1
-$SG153159 DB	'180', 00H
-$SG153160 DB	'270', 00H
-$SG153162 DB	'n', 00H
-	ORG $+2
-$SG153163 DB	'h', 00H
-	ORG $+2
-$SG153164 DB	'v', 00H
-	ORG $+2
-$SG153166 DB	'auto', 00H
-	ORG $+3
-$SG153167 DB	'simple', 00H
-	ORG $+1
-$SG153168 DB	'fine', 00H
-	ORG $+3
-$SG153170 DB	'auto', 00H
-	ORG $+3
-$SG153171 DB	'none', 00H
-	ORG $+3
-$SG153172 DB	'sse2', 00H
-	ORG $+3
-$SG153173 DB	'sse3', 00H
-	ORG $+3
-$SG153174 DB	'ssse3', 00H
-	ORG $+2
-$SG153175 DB	'sse41', 00H
-	ORG $+2
-$SG153176 DB	'avx', 00H
-$SG153177 DB	'avx2', 00H
-	ORG $+3
 ?list_colormatrix@@3QBUCX_DESC@@B DQ FLAT:$SG136884	; list_colormatrix
 	DD	02H
 	ORG $+4
@@ -773,35 +946,35 @@ $SG153177 DB	'avx2', 00H
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG136884 DB	'undef', 00H
-	ORG $+2
 $SG136885 DB	'auto', 00H
 	ORG $+3
 $SG136886 DB	'bt709', 00H
 	ORG $+2
 $SG136887 DB	'smpte170m', 00H
 	ORG $+2
-$SG136891 DB	'fcc', 00H
+$SG137192 DB	'bt470m', 00H
+	ORG $+1
+$SG137219 DB	'pc', 00H
+	ORG $+1
 $SG136888 DB	'bt470bg', 00H
 $SG136889 DB	'smpte240m', 00H
 	ORG $+2
 $SG136890 DB	'YCgCo', 00H
 	ORG $+2
-$SG136892 DB	'GBR', 00H
+$SG137196 DB	'bt2020', 00H
+	ORG $+1
+$SG138308 DB	'cfr', 00H
 $SG136893 DB	'bt2020nc', 00H
 	ORG $+3
 $SG136897 DB	'ictco', 00H
 	ORG $+2
-$SG137043 DB	'bt470m', 00H
-	ORG $+1
-$SG153569 DB	'%s', 00H
-	ORG $+1
+$SG138309 DB	'vfr', 00H
 $SG136894 DB	'bt2020c', 00H
 $SG136895 DB	'derived-ncl', 00H
-$SG137205 DB	'pal', 00H
+$SG138312 DB	'swr', 00H
 $SG136896 DB	'derived-cl', 00H
 	ORG $+1
-$SG137207 DB	'mac', 00H
+$SG138663 DB	'(R)', 00H
 $SG136898 DB	'2100-lms', 00H
 	ORG $+7
 ?list_transfer@@3QBUCX_DESC@@B DQ FLAT:$SG137039	; list_transfer
@@ -869,19 +1042,11 @@ $SG137041 DB	'bt709', 00H
 	ORG $+2
 $SG137042 DB	'smpte170m', 00H
 	ORG $+2
-$SG137046 DB	'linear', 00H
-	ORG $+1
-$SG137209 DB	'0', 00H
-	ORG $+2
+$SG138665 DB	'CPU', 00H
 $SG137044 DB	'bt470bg', 00H
 $SG137045 DB	'smpte240m', 00H
 	ORG $+2
-$SG137047 DB	'log100', 00H
-	ORG $+1
-$SG137048 DB	'log316', 00H
-	ORG $+1
-$SG137210 DB	'1', 00H
-	ORG $+2
+$SG138699 DB	'MHz', 00H
 $SG137049 DB	'iec61966-2-4', 00H
 	ORG $+3
 $SG137050 DB	'bt1361e', 00H
@@ -889,30 +1054,18 @@ $SG137051 DB	'iec61966-2-1', 00H
 	ORG $+3
 $SG137052 DB	'bt2020-10', 00H
 	ORG $+2
-$SG137192 DB	'bt470m', 00H
-	ORG $+1
-$SG137211 DB	'2', 00H
-	ORG $+2
+$SG138700 DB	'GHz', 00H
 $SG137053 DB	'bt2020-12', 00H
 	ORG $+2
-$SG137196 DB	'bt2020', 00H
-	ORG $+1
-$SG137212 DB	'3', 00H
-	ORG $+2
+$SG138702 DB	'%lf', 00H
 $SG137054 DB	'smpte2084', 00H
-	ORG $+2
-$SG137213 DB	'4', 00H
-	ORG $+2
+	ORG $+6
 $SG137055 DB	'smpte428', 00H
+	ORG $+7
+$SG137056 DB	'arib-srd-b67', 00H
 	ORG $+3
 $SG137188 DB	'undef', 00H
 	ORG $+2
-$SG137214 DB	'5', 00H
-	ORG $+2
-$SG137056 DB	'arib-srd-b67', 00H
-	ORG $+3
-$SG137189 DB	'auto', 00H
-	ORG $+3
 ?list_colorprim@@3QBUCX_DESC@@B DQ FLAT:$SG137188	; list_colorprim
 	DD	02H
 	ORG $+4
@@ -955,24 +1108,24 @@ $SG137189 DB	'auto', 00H
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
+$SG137189 DB	'auto', 00H
+	ORG $+3
 $SG137190 DB	'bt709', 00H
 	ORG $+2
 $SG137191 DB	'smpte170m', 00H
-	ORG $+2
-$SG137218 DB	'tv', 00H
-	ORG $+1
+	ORG $+6
 $SG137193 DB	'bt470bg', 00H
 $SG137194 DB	'smpte240m', 00H
 	ORG $+2
 $SG137195 DB	'film', 00H
 	ORG $+3
 $SG137197 DB	'st428', 00H
-	ORG $+2
-$SG137219 DB	'pc', 00H
-	ORG $+1
+	ORG $+6
 $SG137198 DB	'st431-2', 00H
 $SG137199 DB	'st432-1', 00H
 $SG137200 DB	'ebu3213-e', 00H
+	ORG $+2
+$SG137202 DB	'undef', 00H
 	ORG $+6
 ?list_videoformat@@3QBUCX_DESC@@B DQ FLAT:$SG137202	; list_videoformat
 	DD	05H
@@ -995,174 +1148,15 @@ $SG137200 DB	'ebu3213-e', 00H
 	DQ	0000000000000000H
 	DD	00H
 	ORG $+4
-$SG137202 DB	'undef', 00H
-	ORG $+2
 $SG137203 DB	'ntsc', 00H
 	ORG $+3
 $SG137204 DB	'component', 00H
 	ORG $+2
 $SG137206 DB	'secam', 00H
-	ORG $+2
-$SG138308 DB	'cfr', 00H
+	ORG $+6
 $SG137216 DB	'limited', 00H
 $SG137217 DB	'full', 00H
 	ORG $+3
-$SG153634 DB	'Haswell', 00H
-?CPU_GEN_STR@@3QBQEBDB DQ FLAT:$SG153630		; CPU_GEN_STR
-	DQ	FLAT:$SG153631
-	DQ	FLAT:$SG153632
-	DQ	FLAT:$SG153633
-	DQ	FLAT:$SG153634
-	DQ	FLAT:$SG153635
-	DQ	FLAT:$SG153636
-	DQ	FLAT:$SG153637
-	DQ	FLAT:$SG153638
-	DQ	FLAT:$SG153639
-	DQ	FLAT:$SG153640
-	DQ	FLAT:$SG153641
-	DQ	FLAT:$SG153642
-	DQ	FLAT:$SG153643
-$SG153631 DB	'SandyBridge', 00H
-$SG138309 DB	'vfr', 00H
-$SG153632 DB	'IvyBridge', 00H
-	ORG $+2
-$SG138312 DB	'swr', 00H
-$SG153633 DB	'Silvermont', 00H
-	ORG $+1
-$SG163064 DB	'%s', 00H
-	ORG $+1
-$SG153635 DB	'Airmont', 00H
-$SG153636 DB	'Broadwell', 00H
-	ORG $+2
-$SG138663 DB	'(R)', 00H
-$SG153637 DB	'Skylake', 00H
-$SG153638 DB	'Apollolake', 00H
-	ORG $+1
-$SG138665 DB	'CPU', 00H
-$SG153639 DB	'Kabylake', 00H
-	ORG $+3
-$SG153732 DB	'CBR  ', 00H
-	ORG $+2
-$SG138699 DB	'MHz', 00H
-$SG153640 DB	'Geminilake', 00H
-	ORG $+1
-$SG138700 DB	'GHz', 00H
-$SG153641 DB	'Coffeelake', 00H
-	ORG $+1
-$SG138702 DB	'%lf', 00H
-$SG153642 DB	'Cannonlake', 00H
-	ORG $+5
-$SG153643 DB	'Icelake', 00H
-$SG153733 DB	'VBR  ', 00H
-	ORG $+2
-$SG153734 DB	'AVBR ', 00H
-	ORG $+2
-$SG153735 DB	'QVBR ', 00H
-	ORG $+2
-$SG153736 DB	'CQP  ', 00H
-	ORG $+2
-$SG153737 DB	'LA   ', 00H
-	ORG $+2
-$SG153738 DB	'LAHRD', 00H
-	ORG $+2
-$SG153739 DB	'ICQ  ', 00H
-	ORG $+2
-$SG153740 DB	'LAICQ', 00H
-	ORG $+2
-$SG153741 DB	'VCM  ', 00H
-	ORG $+2
-$SG153743 DB	'RC mode      ', 00H
-	ORG $+2
-$SG153744 DB	'10bit depth  ', 00H
-	ORG $+2
-$SG153745 DB	'Fixed Func   ', 00H
-	ORG $+2
-$SG153746 DB	'Interlace    ', 00H
-	ORG $+2
-$SG153747 DB	'VUI info     ', 00H
-	ORG $+2
-$SG153748 DB	'Trellis      ', 00H
-	ORG $+2
-$SG153749 DB	'Adaptive_I   ', 00H
-	ORG $+2
-$SG153750 DB	'Adaptive_B   ', 00H
-	ORG $+2
-$SG153751 DB	'WeightP      ', 00H
-	ORG $+2
-$SG153752 DB	'WeightB      ', 00H
-	ORG $+2
-$SG153753 DB	'FadeDetect   ', 00H
-	ORG $+2
-$SG153754 DB	'B_Pyramid    ', 00H
-	ORG $+2
-$SG153755 DB	' +ManyBframes', 00H
-	ORG $+2
-$SG153756 DB	'PyramQPOffset', 00H
-	ORG $+2
-$SG153757 DB	'MBBRC        ', 00H
-	ORG $+2
-$SG153758 DB	'ExtBRC       ', 00H
-	ORG $+2
-$SG153759 DB	'Adaptive_LTR ', 00H
-	ORG $+2
-$SG153760 DB	'LA Quality   ', 00H
-	ORG $+2
-$SG153761 DB	'QP Min/Max   ', 00H
-	ORG $+2
-$SG153762 DB	'IntraRefresh ', 00H
-	ORG $+2
-$SG153763 DB	'No Deblock   ', 00H
-	ORG $+2
-$SG153764 DB	'No GPB       ', 00H
-	ORG $+2
-$SG153765 DB	'Windowed BRC ', 00H
-	ORG $+2
-$SG153766 DB	'PerMBQP(CQP) ', 00H
-	ORG $+2
-$SG153767 DB	'DirectBiasAdj', 00H
-	ORG $+2
-$SG153768 DB	'MVCostScaling', 00H
-	ORG $+2
-$SG153769 DB	'SAO          ', 00H
-	ORG $+2
-$SG153770 DB	'Max CTU Size ', 00H
-	ORG $+2
-$SG153771 DB	'TSkip        ', 00H
-	ORG $+2
-$SG153773 DB	'Resize               ', 00H
-	ORG $+2
-$SG153774 DB	'Deinterlace          ', 00H
-	ORG $+2
-$SG153775 DB	'Scaling Quality      ', 00H
-	ORG $+2
-$SG153776 DB	'Denoise              ', 00H
-	ORG $+2
-$SG153777 DB	'Mctf                 ', 00H
-	ORG $+2
-$SG153778 DB	'Rotate               ', 00H
-	ORG $+2
-$SG153779 DB	'Mirror               ', 00H
-	ORG $+2
-$SG153780 DB	'Detail Enhancement   ', 00H
-	ORG $+2
-$SG153781 DB	'Proc Amp.            ', 00H
-	ORG $+2
-$SG153782 DB	'Image Stabilization  ', 00H
-	ORG $+2
-$SG153783 DB	'Video Signal Info    ', 00H
-	ORG $+2
-$SG153784 DB	'FPS Conversion       ', 00H
-	ORG $+2
-$SG153785 DB	'FPS Conversion (Adv.)', 00H
-	ORG $+2
-$SG153876 DB	' @ %.2fGHz', 00H
-	ORG $+5
-$SG153878 DB	' [TB: %.2fGHz]', 00H
-	ORG $+1
-$SG153879 DB	' (%dC/%dT)', 00H
-	ORG $+1
-$SG153881 DB	' <%s>', 00H
-	ORG $+6
 ?list_empty@@3QBUCX_DESC@@B DQ 0000000000000000H	; list_empty
 	DD	00H
 	ORG $+4
@@ -1181,44 +1175,9 @@ $SG138306 DB	'error', 00H
 $SG138310 DB	'forcecfr', 00H
 	ORG $+3
 $SG138313 DB	'soxr', 00H
-	ORG $+7
-$SG163063 DB	'invalid argument', 00H
-	ORG $+7
-$SG163068 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
-	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
-	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
-	ORG $+2
-$SG163065 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
-	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
-$SG138664 DB	'(TM)', 00H
 	ORG $+3
-$SG163066 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
-	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
-	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
-	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
-	DB	00H, 'r', 00H, 'o', 00H, 's', 00H, 'o', 00H, 'f', 00H, 't', 00H
-	DB	' ', 00H, 'V', 00H, 'i', 00H, 's', 00H, 'u', 00H, 'a', 00H, 'l'
-	DB	00H, ' ', 00H, 'S', 00H, 't', 00H, 'u', 00H, 'd', 00H, 'i', 00H
-	DB	'o', 00H, '\', 00H, '2', 00H, '0', 00H, '1', 00H, '9', 00H, '\'
-	DB	00H, 'C', 00H, 'o', 00H, 'm', 00H, 'm', 00H, 'u', 00H, 'n', 00H
-	DB	'i', 00H, 't', 00H, 'y', 00H, '\', 00H, 'V', 00H, 'C', 00H, '\'
-	DB	00H, 'T', 00H, 'o', 00H, 'o', 00H, 'l', 00H, 's', 00H, '\', 00H
-	DB	'M', 00H, 'S', 00H, 'V', 00H, 'C', 00H, '\', 00H, '1', 00H, '4'
-	DB	00H, '.', 00H, '2', 00H, '3', 00H, '.', 00H, '2', 00H, '8', 00H
-	DB	'1', 00H, '0', 00H, '5', 00H, '\', 00H, 'i', 00H, 'n', 00H, 'c'
-	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
-	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
-	DB	00H
-$SG163067 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
-	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
-	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
-	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
-	DB	00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, '_', 00H, 'a', 00H
-	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
-	DB	00H
-	ORG $+2
-$SG163130 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
-	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
+$SG138664 DB	'(TM)', 00H
+	ORG $+7
 $SG138750 DB	'GetLogicalProcessorInformation', 00H
 	ORG $+1
 $SG138751 DB	'kernel32', 00H
@@ -1893,6 +1852,14 @@ CONST	SEGMENT
 	DB	067H
 	DB	00H
 	ORG $+2
+?getCPUName@@YAHPEAD_K@Z$rtcFrameData DD 02H		; getCPUName
+	DD	00H
+	DQ	FLAT:?getCPUName@@YAHPEAD_K@Z$rtcVarDesc
+?get_cpu_info@@YA?AUcpu_info_t@@XZ$rtcName$0 DB 063H	; get_cpu_info
+	DB	070H
+	DB	075H
+	DB	00H
+	ORG $+4
 ?getCPUName@@YAHPEAD_K@Z$rtcVarDesc DD 054H		; getCPUName
 	DD	01H
 	DQ	FLAT:?getCPUName@@YAHPEAD_K@Z$rtcName$1
@@ -1900,9 +1867,6 @@ CONST	SEGMENT
 	DD	010H
 	DQ	FLAT:?getCPUName@@YAHPEAD_K@Z$rtcName$0
 	ORG $+96
-?getCPUName@@YAHPEAD_K@Z$rtcFrameData DD 02H		; getCPUName
-	DD	00H
-	DQ	FLAT:?getCPUName@@YAHPEAD_K@Z$rtcVarDesc
 ?get_cpu_info@@YA_NPEAUcpu_info_t@@@Z$rtcName$0 DB 072H	; get_cpu_info
 	DB	065H
 	DB	074H
@@ -1924,18 +1888,6 @@ CONST	SEGMENT
 ?get_cpu_info@@YA_NPEAUcpu_info_t@@@Z$rtcFrameData DD 01H ; get_cpu_info
 	DD	00H
 	DQ	FLAT:?get_cpu_info@@YA_NPEAUcpu_info_t@@@Z$rtcVarDesc
-?get_cpu_info@@YA?AUcpu_info_t@@XZ$rtcName$0 DB 063H	; get_cpu_info
-	DB	070H
-	DB	075H
-	DB	00H
-?getCPUDefaultClockFromCPUName@@YANXZ$rtcName$1 DB 062H	; getCPUDefaultClockFromCPUName
-	DB	075H
-	DB	066H
-	DB	066H
-	DB	065H
-	DB	072H
-	DB	00H
-	ORG $+5
 ?get_cpu_info@@YA?AUcpu_info_t@@XZ$rtcVarDesc DD 030H	; get_cpu_info
 	DD	070H
 	DQ	FLAT:?get_cpu_info@@YA?AUcpu_info_t@@XZ$rtcName$0
@@ -2011,11 +1963,14 @@ CONST	SEGMENT
 ?GetProcessAvgCPUUsage@@YANPEAXPEAUPROCESS_TIME@@@Z$rtcFrameData DD 02H ; GetProcessAvgCPUUsage
 	DD	00H
 	DQ	FLAT:?GetProcessAvgCPUUsage@@YANPEAXPEAUPROCESS_TIME@@@Z$rtcVarDesc
-?get_tick_per_clock@@YANXZ$rtcName$1 DB 072H		; get_tick_per_clock
+?getCPUDefaultClockFromCPUName@@YANXZ$rtcName$1 DB 062H	; getCPUDefaultClockFromCPUName
+	DB	075H
+	DB	066H
+	DB	066H
 	DB	065H
-	DB	074H
+	DB	072H
 	DB	00H
-	ORG $+4
+	ORG $+1
 ?GetProcessAvgCPUUsage@@YANPEAXPEAUPROCESS_TIME@@@Z$rtcVarDesc DD 080H ; GetProcessAvgCPUUsage
 	DD	070H
 	DQ	FLAT:?GetProcessAvgCPUUsage@@YANPEAXPEAUPROCESS_TIME@@@Z$rtcName$1
@@ -2056,7 +2011,11 @@ CONST	SEGMENT
 	DB	069H
 	DB	06eH
 	DB	00H
-	ORG $+7
+	ORG $+3
+?get_tick_per_clock@@YANXZ$rtcName$1 DB 072H		; get_tick_per_clock
+	DB	065H
+	DB	074H
+	DB	00H
 ?get_tick_per_clock@@YANXZ$rtcVarDesc DD 068H		; get_tick_per_clock
 	DD	08H
 	DQ	FLAT:?get_tick_per_clock@@YANXZ$rtcName$1
@@ -5047,7 +5006,7 @@ $LN5@getCPUInfo:
 	c8 00 00 00	 movsd	 xmm3, QWORD PTR defaultClock$4[rsp]
   00170	66 49 0f 7e d9	 movq	 r9, xmm3
   00175	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG153876
+	00 00		 lea	 r8, OFFSET FLAT:$SG144200
   0017c	48 8b 8c 24 f8
 	00 00 00	 mov	 rcx, QWORD PTR tv91[rsp]
   00184	48 8b d1	 mov	 rdx, rcx
@@ -5095,7 +5054,7 @@ $LN7@getCPUInfo:
 	d8 00 00 00	 movsd	 xmm3, QWORD PTR maxFrequency$6[rsp]
   00200	66 49 0f 7e d9	 movq	 r9, xmm3
   00205	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG153878
+	00 00		 lea	 r8, OFFSET FLAT:$SG144202
   0020c	48 8b 8c 24 00
 	01 00 00	 mov	 rcx, QWORD PTR tv136[rsp]
   00214	48 8b d1	 mov	 rdx, rcx
@@ -5128,7 +5087,7 @@ $LN6@getCPUInfo:
   00261	89 4c 24 20	 mov	 DWORD PTR [rsp+32], ecx
   00265	44 8b 4c 24 54	 mov	 r9d, DWORD PTR cpu_info$[rsp+4]
   0026a	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG153879
+	00 00		 lea	 r8, OFFSET FLAT:$SG144203
   00271	48 8b 8c 24 08
 	01 00 00	 mov	 rcx, QWORD PTR tv147[rsp]
   00279	48 8b d1	 mov	 rdx, rcx
@@ -5183,7 +5142,7 @@ $LN6@getCPUInfo:
 	01 00 00	 mov	 rdx, QWORD PTR tv156[rsp]
   00313	4c 8b 0c d1	 mov	 r9, QWORD PTR [rcx+rdx*8]
   00317	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG153881
+	00 00		 lea	 r8, OFFSET FLAT:$SG144205
   0031e	48 8b 8c 24 20
 	01 00 00	 mov	 rcx, QWORD PTR tv163[rsp]
   00326	48 8b d1	 mov	 rdx, rcx
