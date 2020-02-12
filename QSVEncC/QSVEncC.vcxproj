@@ -145,7 +145,7 @@
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)64</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\Program\ffmpeg\ffmpeg-latest-win64-dev\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(IncludePath)</IncludePath>
     <ReferencePath>$(ReferencePath)</ReferencePath>
     <LibraryPath>D:\Program\ffmpeg\ffmpeg-latest-win64-dev\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
   </PropertyGroup>
@@ -238,14 +238,6 @@ copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)"
     <Manifest>
       <AdditionalManifestFiles>QSVEncC.manifest</AdditionalManifestFiles>
     </Manifest>
-    <PostBuildEvent>
-      <Command>copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avcodec-*.dll"  "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avfilter-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avformat-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avutil-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\swresample-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)" &gt; NUL</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
@@ -268,7 +260,7 @@ copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)"
       <AssemblerOutput>All</AssemblerOutput>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\_build\QSVCommon\$(Platform);..\MediaSDK\lib\$(Platform);..\ffmpeg_lgpl\lib\$(Platform);$(INTELOCLSDKROOT)lib\x64;$(INTEL_METRIC_FRAMEWORK_SDK)\build\visual_studio_2015_x64\bin\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\_build\QSVCommon\$(Platform);..\MediaSDK\lib\$(Platform);$(INTELOCLSDKROOT)lib\x64;$(INTEL_METRIC_FRAMEWORK_SDK)\build\visual_studio_2015_x64\bin\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libcmt.lib;libcpmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
@@ -292,13 +284,6 @@ copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)"
     <Manifest>
       <AdditionalManifestFiles>QSVEncC.manifest</AdditionalManifestFiles>
     </Manifest>
-    <PostBuildEvent>
-      <Command>xcopy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avcodec-58.dll"  "$(OutDir)" &gt; NUL
-xcopy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avfilter-*.dll" "$(OutDir)" &gt; NUL
-xcopy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avformat-*.dll" "$(OutDir)" &gt; NUL
-xcopy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avutil-*.dll" "$(OutDir)" &gt; NUL
-xcopy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\swresample-*.dll" "$(OutDir)" &gt; NUL</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugStatic|x64'">
     <Midl>
@@ -344,14 +329,6 @@ xcopy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\swresample-*.dll" "$(Out
     <Manifest>
       <AdditionalManifestFiles>QSVEncC.manifest</AdditionalManifestFiles>
     </Manifest>
-    <PostBuildEvent>
-      <Command>copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avcodec-*.dll"  "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avfilter-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avformat-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avutil-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\swresample-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)" &gt; NUL</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -403,14 +380,6 @@ copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)"
     <Manifest>
       <AdditionalManifestFiles>QSVEncC.manifest</AdditionalManifestFiles>
     </Manifest>
-    <PostBuildEvent>
-      <Command>copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avcodec-*.dll"  "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avfilter-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avformat-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avutil-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\swresample-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)" &gt; NUL</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">
     <ClCompile>
@@ -462,14 +431,6 @@ copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)"
     <Manifest>
       <AdditionalManifestFiles>QSVEncC.manifest</AdditionalManifestFiles>
     </Manifest>
-    <PostBuildEvent>
-      <Command>copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avcodec-*.dll"  "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avfilter-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avformat-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avutil-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\swresample-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)" &gt; NUL</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
@@ -524,14 +485,6 @@ copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)"
     <Manifest>
       <AdditionalManifestFiles>QSVEncC.manifest</AdditionalManifestFiles>
     </Manifest>
-    <PostBuildEvent>
-      <Command>copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avcodec-*.dll"  "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avfilter-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avformat-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\avutil-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\swresample-*.dll" "$(OutDir)" &gt; NUL
-copy /y "$(SolutionDir)ffmpeg_lgpl\lib\$(PlatformName)\libass-*.dll" "$(OutDir)" &gt; NUL</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|x64'">
     <Midl>

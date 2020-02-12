@@ -1,4 +1,0 @@
-﻿LIBRARY "QSVEnc.auo"
-
-EXPORTS
-    GetOutputPluginTable

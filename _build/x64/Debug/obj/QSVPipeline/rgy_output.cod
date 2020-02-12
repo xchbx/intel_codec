@@ -51,155 +51,155 @@ $SG116329 DB	'cpu_aud_enc', 00H
 $SG116342 DB	'gpu', 00H
 $SG116330 DB	'cpu_out', 00H
 $SG116332 DB	'mem_private', 00H
-$SG124543 DB	'Ip ', 00H
+$SG124538 DB	'Ip ', 00H
 $SG116333 DB	'mem_virtual', 00H
-$SG124546 DB	'It ', 00H
+$SG124541 DB	'It ', 00H
 $SG116335 DB	'io_read', 00H
 $SG116336 DB	'io_write', 00H
 	ORG $+3
 $SG116349 DB	'queue', 00H
 	ORG $+2
-$SG124548 DB	'Ib ', 00H
+$SG124543 DB	'Ib ', 00H
 $SG116338 DB	'fps_avg', 00H
 $SG116339 DB	'bitrate', 00H
 $SG116340 DB	'bitrate_avg', 00H
-$SG124862 DB	'-', 00H
+$SG124857 DB	'-', 00H
 	ORG $+2
 $SG116341 DB	'frame_out', 00H
 	ORG $+2
-$SG124864 DB	'wb+', 00H
+$SG124859 DB	'wb+', 00H
+$SG124535 DB	'YUV4MPEG2 ', 00H
+	ORG $+1
+$SG125111 DB	'-', 00H
+	ORG $+2
 $SG116343 DB	'gpu_load', 00H
 	ORG $+3
-$SG125116 DB	'-', 00H
-	ORG $+2
-$SG116344 DB	'gpu_clock', 00H
-	ORG $+2
-$SG125118 DB	'wb', 00H
+$SG125113 DB	'wb', 00H
 	ORG $+1
-$SG116345 DB	'vee_load', 00H
+$SG124536 DB	'W%d H%d ', 00H
 	ORG $+3
-$SG125354 DB	'FRAME', 0aH, 00H
+$SG125349 DB	'FRAME', 0aH, 00H
 	ORG $+1
 $SG119144 DB	'vp8', 00H
-$SG116346 DB	'ved_load', 00H
-	ORG $+3
-$SG125355 DB	'FRAME', 0aH, 00H
+$SG116344 DB	'gpu_clock', 00H
+	ORG $+2
+$SG125350 DB	'FRAME', 0aH, 00H
 	ORG $+1
 $SG119145 DB	'raw', 00H
-$SG116347 DB	'pcie_load', 00H
-	ORG $+2
-$SG125356 DB	'FRAME', 0aH, 00H
+$SG124537 DB	'F%d:%d ', 00H
+$SG116345 DB	'vee_load', 00H
+	ORG $+3
+$SG125351 DB	'FRAME', 0aH, 00H
 	ORG $+1
 $SG119147 DB	'CBR', 00H
-$SG124540 DB	'YUV4MPEG2 ', 00H
-	ORG $+1
-$SG119148 DB	'VBR', 00H
-$SG116348 DB	've_clock', 00H
+$SG116346 DB	'ved_load', 00H
 	ORG $+3
 $SG119142 DB	'mpeg2', 00H
 	ORG $+2
+$SG119148 DB	'VBR', 00H
+$SG116347 DB	'pcie_load', 00H
+	ORG $+2
 $SG119149 DB	'CQP', 00H
-$SG124541 DB	'W%d H%d ', 00H
+$SG116348 DB	've_clock', 00H
 	ORG $+3
 $SG119151 DB	'LA', 00H
 	ORG $+1
-$SG124542 DB	'F%d:%d ', 00H
-$SG124549 DB	'A%d:%d ', 00H
-$SG124550 DB	'C420mpeg2', 0aH, 00H
+$SG124544 DB	'A%d:%d ', 00H
+$SG124545 DB	'C420mpeg2', 0aH, 00H
 	ORG $+1
 $SG119155 DB	'ICQ', 00H
-$SG124551 DB	'C420mpeg2', 0aH, 00H
+$SG124546 DB	'C420mpeg2', 0aH, 00H
 	ORG $+1
 $SG119157 DB	'VCM', 00H
-$SG124670 DB	'Closing...', 0aH, 00H
+$SG124665 DB	'Closing...', 0aH, 00H
 $SG119182 DB	'0', 00H
 	ORG $+2
-$SG124672 DB	'Closed file pointer.', 0aH, 00H
+$SG124667 DB	'Closed file pointer.', 0aH, 00H
 	ORG $+2
-$SG124673 DB	'Closed.', 0aH, 00H
+$SG124668 DB	'Closed.', 0aH, 00H
 	ORG $+3
 $SG119152 DB	'LA-EXT', 00H
 	ORG $+1
 $SG119183 DB	'1', 00H
 	ORG $+2
-$SG124680 DB	'bitstream', 00H
+$SG124675 DB	'bitstream', 00H
 	ORG $+2
 $SG119153 DB	'LA-HRD', 00H
 	ORG $+1
 $SG119184 DB	'2', 00H
 	ORG $+2
-$SG124856 DB	'output filename not set.', 0aH, 00H
+$SG124851 DB	'output filename not set.', 0aH, 00H
 	ORG $+2
 $SG119154 DB	'LA-ICQ', 00H
 	ORG $+1
 $SG119185 DB	'3', 00H
 	ORG $+2
-$SG124859 DB	'no output for benchmark mode.', 0aH, 00H
+$SG124854 DB	'no output for benchmark mode.', 0aH, 00H
 	ORG $+1
-$SG124863 DB	'using stdout', 0aH, 00H
+$SG124858 DB	'using stdout', 0aH, 00H
 	ORG $+2
-$SG124867 DB	'failed to open output file "%s": %s', 0aH, 00H
+$SG124862 DB	'failed to open output file "%s": %s', 0aH, 00H
 	ORG $+3
-$SG124868 DB	'Opened file "%s"', 0aH, 00H
+$SG124863 DB	'Opened file "%s"', 0aH, 00H
 	ORG $+2
 $SG119166 DB	'main10', 00H
 	ORG $+1
 $SG119188 DB	'0', 00H
 	ORG $+2
-$SG124871 DB	'Added %d MB output buffer.', 0aH, 00H
+$SG124866 DB	'Added %d MB output buffer.', 0aH, 00H
 $SG119189 DB	'1', 00H
 	ORG $+2
-$SG125078 DB	'Invalid call: WriteNextFrame', 0aH, 00H
+$SG125073 DB	'Invalid call: WriteNextFrame', 0aH, 00H
 	ORG $+2
-$SG125085 DB	'Unexpected HEVC header.', 0aH, 00H
+$SG125080 DB	'Unexpected HEVC header.', 0aH, 00H
 	ORG $+3
 $SG119172 DB	'Simple', 00H
 	ORG $+1
 $SG119190 DB	'2', 00H
 	ORG $+2
-$SG125088 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
+$SG125083 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
 	DB	00H
 $SG119191 DB	'3', 00H
 	ORG $+2
-$SG125096 DB	'yuv writer', 00H
+$SG125091 DB	'yuv writer', 00H
 	ORG $+1
 $SG119193 DB	'8', 00H
 	ORG $+2
-$SG125117 DB	'using stdout', 0aH, 00H
+$SG125112 DB	'using stdout', 0aH, 00H
 	ORG $+2
-$SG125121 DB	'failed to open file "%s": %s', 0aH, 00H
+$SG125116 DB	'failed to open file "%s": %s', 0aH, 00H
 	ORG $+2
-$SG125357 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
+$SG125352 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
 	DB	00H
 $SG119194 DB	'10', 00H
 	ORG $+1
-$SG125363 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
+$SG125358 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
 	DB	00H
 $SG119202 DB	'it', 00H
 	ORG $+1
-$SG125365 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
+$SG125360 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
 	DB	00H
 $SG119203 DB	'bob', 00H
-$SG125369 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
+$SG125364 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
 	DB	00H
 $SG119205 DB	'32', 00H
 	ORG $+1
-$SG125371 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
+$SG125366 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
 	DB	00H
 $SG119208 DB	'41', 00H
 	ORG $+1
-$SG125378 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
+$SG125373 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
 	DB	00H
 $SG119211 DB	'1', 00H
 	ORG $+2
-$SG125380 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
+$SG125375 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
 	DB	00H
 $SG119212 DB	'1b', 00H
 	ORG $+1
-$SG125384 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
+$SG125379 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
 	DB	00H
 $SG119213 DB	'1.1', 00H
-$SG125389 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
+$SG125384 DB	'Error writing file.', 0aH, 'Not enough disk space!', 0aH
 	DB	00H
 $SG119140 DB	'h264', 00H
 	ORG $+3
@@ -770,7 +770,7 @@ $SG112622 DB	'p010', 00H
 	ORG $+3
 $SG112636 DB	'rgb24r', 00H
 	ORG $+1
-$SG138571 DB	'%s', 00H
+$SG138566 DB	'%s', 00H
 	ORG $+1
 $SG112623 DB	'yuv422(9bit)', 00H
 	ORG $+3
@@ -831,17 +831,17 @@ $SG113590 DB	'MPEG4', 00H
 $SG114206 DB	'GBR', 00H
 $SG113596 DB	'unknown', 00H
 $SG113703 DB	'unknown', 00H
-$SG138570 DB	'invalid argument', 00H
+$SG138565 DB	'invalid argument', 00H
 	ORG $+7
-$SG138575 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG138570 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG138572 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG138567 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
 $SG114198 DB	'undef', 00H
 	ORG $+2
-$SG138573 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG138568 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -858,7 +858,7 @@ $SG138573 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG138574 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG138569 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -951,7 +951,7 @@ $SG114212 DB	'2100-lms', 00H
 	ORG $+3
 $SG114353 DB	'undef', 00H
 	ORG $+6
-$SG138830 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG138825 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
 $SG114354 DB	'auto', 00H
 	ORG $+3
@@ -11094,16 +11094,16 @@ $LN4@Allocate_m:
 $LN9@Allocate_m:
 $LN7@Allocate_m:
   00056	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG138570
+	00 00		 lea	 rax, OFFSET FLAT:$SG138565
   0005d	48 89 44 24 28	 mov	 QWORD PTR [rsp+40], rax
   00062	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG138571
+	00 00		 lea	 rax, OFFSET FLAT:$SG138566
   00069	48 89 44 24 20	 mov	 QWORD PTR [rsp+32], rax
   0006e	45 33 c9	 xor	 r9d, r9d
   00071	41 b8 5b 00 00
 	00		 mov	 r8d, 91			; 0000005bH
   00077	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG138572
+	00 00		 lea	 rdx, OFFSET FLAT:$SG138567
   0007e	b9 02 00 00 00	 mov	 ecx, 2
   00083	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp__CrtDbgReport
@@ -11117,11 +11117,11 @@ $LN12@Allocate_m:
   0009a	41 b9 5b 00 00
 	00		 mov	 r9d, 91			; 0000005bH
   000a0	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG138573
+	00 00		 lea	 r8, OFFSET FLAT:$SG138568
   000a7	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG138574
+	00 00		 lea	 rdx, OFFSET FLAT:$SG138569
   000ae	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:$SG138575
+	00 00		 lea	 rcx, OFFSET FLAT:$SG138570
   000b5	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp__invalid_parameter
   000bb	33 c0		 xor	 eax, eax
@@ -16591,7 +16591,7 @@ info$ = 408
   00064	41 b8 0a 00 00
 	00		 mov	 r8d, 10
   0006a	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG124540
+	00 00		 lea	 rdx, OFFSET FLAT:$SG124535
   00071	48 8b 8c 24 48
 	01 00 00	 mov	 rcx, QWORD PTR ptr$[rsp]
   00079	e8 00 00 00 00	 call	 memcpy
@@ -16626,7 +16626,7 @@ info$ = 408
 	01 00 00	 mov	 rdx, QWORD PTR info$[rsp]
   000cd	44 8b 4a 18	 mov	 r9d, DWORD PTR [rdx+24]
   000d1	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124541
+	00 00		 lea	 r8, OFFSET FLAT:$SG124536
   000d8	48 8b d0	 mov	 rdx, rax
   000db	e8 00 00 00 00	 call	 sprintf_s
   000e0	8b 8c 24 50 01
@@ -16657,7 +16657,7 @@ info$ = 408
 	01 00 00	 mov	 rdx, QWORD PTR info$[rsp]
   00130	44 8b 4a 2c	 mov	 r9d, DWORD PTR [rdx+44]
   00134	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124542
+	00 00		 lea	 r8, OFFSET FLAT:$SG124537
   0013b	48 8b d0	 mov	 rdx, rax
   0013e	e8 00 00 00 00	 call	 sprintf_s
   00143	8b 8c 24 50 01
@@ -16671,7 +16671,7 @@ info$ = 408
 ; 42   :     const char *picstruct = "Ip ";
 
   00155	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG124543
+	00 00		 lea	 rax, OFFSET FLAT:$SG124538
   0015c	48 89 84 24 58
 	01 00 00	 mov	 QWORD PTR picstruct$[rsp], rax
 
@@ -16688,7 +16688,7 @@ info$ = 408
 ; 44   :         picstruct = "It ";
 
   0017d	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG124546
+	00 00		 lea	 rax, OFFSET FLAT:$SG124541
   00184	48 89 84 24 58
 	01 00 00	 mov	 QWORD PTR picstruct$[rsp], rax
   0018c	eb 28		 jmp	 SHORT $LN3@WriteY4MHe
@@ -16707,7 +16707,7 @@ $LN2@WriteY4MHe:
 ; 46   :         picstruct = "Ib ";
 
   001a7	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG124548
+	00 00		 lea	 rax, OFFSET FLAT:$SG124543
   001ae	48 89 84 24 58
 	01 00 00	 mov	 QWORD PTR picstruct$[rsp], rax
 $LN4@WriteY4MHe:
@@ -16763,7 +16763,7 @@ $LN3@WriteY4MHe:
 	01 00 00	 mov	 rax, QWORD PTR info$[rsp]
   00251	44 8b 4c 08 44	 mov	 r9d, DWORD PTR [rax+rcx+68]
   00256	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124549
+	00 00		 lea	 r8, OFFSET FLAT:$SG124544
   0025d	48 8b cf	 mov	 rcx, rdi
   00260	e8 00 00 00 00	 call	 sprintf_s
   00265	8b 8c 24 50 01
@@ -16787,12 +16787,12 @@ $LN3@WriteY4MHe:
   00298	48 03 d1	 add	 rdx, rcx
   0029b	48 8b ca	 mov	 rcx, rdx
   0029e	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124550
+	00 00		 lea	 r8, OFFSET FLAT:$SG124545
   002a5	48 8b d0	 mov	 rdx, rax
   002a8	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_strcpy_s
   002ae	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:$SG124551
+	00 00		 lea	 rcx, OFFSET FLAT:$SG124546
   002b5	e8 00 00 00 00	 call	 strlen
   002ba	8b 8c 24 50 01
 	00 00		 mov	 ecx, DWORD PTR len$[rsp]
@@ -20864,7 +20864,7 @@ $LN9:
 ; 220  :     if (_tcscmp(strFileName, _T("-")) == 0) {
 
   0002d	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG125116
+	00 00		 lea	 rdx, OFFSET FLAT:$SG125111
   00034	48 8b 4c 24 78	 mov	 rcx, QWORD PTR strFileName$[rsp]
   00039	e8 00 00 00 00	 call	 _tcscmp
   0003e	85 c0		 test	 eax, eax
@@ -20888,7 +20888,7 @@ $LN9:
 ; 223  :         AddMessage(RGY_LOG_DEBUG, _T("using stdout\n"));
 
   00067	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125117
+	00 00		 lea	 r8, OFFSET FLAT:$SG125112
   0006e	ba fe ff ff ff	 mov	 edx, -2
   00073	48 8b 4c 24 70	 mov	 rcx, QWORD PTR this$[rsp]
   00078	e8 00 00 00 00	 call	 ?AddMessage@RGYOutput@@QEAAXHPEBDZZ ; RGYOutput::AddMessage
@@ -20906,7 +20906,7 @@ $LN2@Init:
 ; 226  :         int error = _tfopen_s(&fp, strFileName, _T("wb"));
 
   00088	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125118
+	00 00		 lea	 r8, OFFSET FLAT:$SG125113
   0008f	48 8b 54 24 78	 mov	 rdx, QWORD PTR strFileName$[rsp]
   00094	48 8d 4c 24 38	 lea	 rcx, QWORD PTR fp$4[rsp]
   00099	ff 15 00 00 00
@@ -20930,7 +20930,7 @@ $LN5@Init:
   000bc	48 89 44 24 20	 mov	 QWORD PTR [rsp+32], rax
   000c1	4c 8b 4c 24 78	 mov	 r9, QWORD PTR strFileName$[rsp]
   000c6	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125121
+	00 00		 lea	 r8, OFFSET FLAT:$SG125116
   000cd	ba fe ff ff ff	 mov	 edx, -2
   000d2	48 8b 4c 24 70	 mov	 rcx, QWORD PTR this$[rsp]
   000d7	e8 00 00 00 00	 call	 ?AddMessage@RGYOutput@@QEAAXHPEBDZZ ; RGYOutput::AddMessage
@@ -21253,7 +21253,7 @@ $LN30@WriteNextF:
   00144	48 89 84 24 c0
 	02 00 00	 mov	 QWORD PTR tv173[rsp], rax
   0014c	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:$SG125354
+	00 00		 lea	 rcx, OFFSET FLAT:$SG125349
   00153	e8 00 00 00 00	 call	 strlen
   00158	48 8b 8c 24 c0
 	02 00 00	 mov	 rcx, QWORD PTR tv173[rsp]
@@ -21261,20 +21261,20 @@ $LN30@WriteNextF:
   00163	4c 8b c0	 mov	 r8, rax
   00166	ba 01 00 00 00	 mov	 edx, 1
   0016b	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:$SG125355
+	00 00		 lea	 rcx, OFFSET FLAT:$SG125350
   00172	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_fwrite
   00178	48 89 84 24 c8
 	02 00 00	 mov	 QWORD PTR tv166[rsp], rax
   00180	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:$SG125356
+	00 00		 lea	 rcx, OFFSET FLAT:$SG125351
   00187	e8 00 00 00 00	 call	 strlen
   0018c	48 8b 8c 24 c8
 	02 00 00	 mov	 rcx, QWORD PTR tv166[rsp]
   00194	48 3b c8	 cmp	 rcx, rax
   00197	74 23		 je	 SHORT $LN31@WriteNextF
   00199	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125357
+	00 00		 lea	 r8, OFFSET FLAT:$SG125352
   001a0	ba 02 00 00 00	 mov	 edx, 2
   001a5	48 8b 8c 24 10
 	04 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -21500,7 +21500,7 @@ $LN4@WriteNextF:
   00401	48 3b c1	 cmp	 rax, rcx
   00404	74 23		 je	 SHORT $LN36@WriteNextF
   00406	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125363
+	00 00		 lea	 r8, OFFSET FLAT:$SG125358
   0040d	ba 02 00 00 00	 mov	 edx, 2
   00412	48 8b 8c 24 10
 	04 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -21585,7 +21585,7 @@ $LN7@WriteNextF:
   004ff	48 3b c1	 cmp	 rax, rcx
   00502	74 23		 je	 SHORT $LN37@WriteNextF
   00504	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125365
+	00 00		 lea	 r8, OFFSET FLAT:$SG125360
   0050b	ba 02 00 00 00	 mov	 edx, 2
   00510	48 8b 8c 24 10
 	04 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -21763,7 +21763,7 @@ $LN10@WriteNextF:
   006ef	48 3b c1	 cmp	 rax, rcx
   006f2	74 23		 je	 SHORT $LN40@WriteNextF
   006f4	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125369
+	00 00		 lea	 r8, OFFSET FLAT:$SG125364
   006fb	ba 02 00 00 00	 mov	 edx, 2
   00700	48 8b 8c 24 10
 	04 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -21867,7 +21867,7 @@ $LN13@WriteNextF:
   00835	48 3b c1	 cmp	 rax, rcx
   00838	74 23		 je	 SHORT $LN41@WriteNextF
   0083a	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125371
+	00 00		 lea	 r8, OFFSET FLAT:$SG125366
   00841	ba 02 00 00 00	 mov	 edx, 2
   00846	48 8b 8c 24 10
 	04 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -22285,7 +22285,7 @@ $LN15@WriteNextF:
   00cee	48 3b c1	 cmp	 rax, rcx
   00cf1	74 23		 je	 SHORT $LN47@WriteNextF
   00cf3	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125378
+	00 00		 lea	 r8, OFFSET FLAT:$SG125373
   00cfa	ba 02 00 00 00	 mov	 edx, 2
   00cff	48 8b 8c 24 10
 	04 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -22337,7 +22337,7 @@ $LN47@WriteNextF:
   00da1	48 3b c1	 cmp	 rax, rcx
   00da4	74 23		 je	 SHORT $LN48@WriteNextF
   00da6	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125380
+	00 00		 lea	 r8, OFFSET FLAT:$SG125375
   00dad	ba 02 00 00 00	 mov	 edx, 2
   00db2	48 8b 8c 24 10
 	04 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -22509,7 +22509,7 @@ $LN22@WriteNextF:
   00fc9	48 3b c8	 cmp	 rcx, rax
   00fcc	74 23		 je	 SHORT $LN51@WriteNextF
   00fce	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125384
+	00 00		 lea	 r8, OFFSET FLAT:$SG125379
   00fd5	ba 02 00 00 00	 mov	 edx, 2
   00fda	48 8b 8c 24 10
 	04 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -22680,7 +22680,7 @@ $LN25@WriteNextF:
   011ba	48 3b c1	 cmp	 rax, rcx
   011bd	74 20		 je	 SHORT $LN55@WriteNextF
   011bf	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125389
+	00 00		 lea	 r8, OFFSET FLAT:$SG125384
   011c6	ba 02 00 00 00	 mov	 edx, 2
   011cb	48 8b 8c 24 10
 	04 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -22882,7 +22882,7 @@ $LN4:
   00044	48 8b 44 24 30	 mov	 rax, QWORD PTR this$[rsp]
   00049	48 83 c0 30	 add	 rax, 48			; 00000030H
   0004d	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG125096
+	00 00		 lea	 rdx, OFFSET FLAT:$SG125091
   00054	48 8b c8	 mov	 rcx, rax
   00057	e8 00 00 00 00	 call	 ??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 
@@ -23034,7 +23034,7 @@ $LN19:
 ; 120  :         AddMessage(RGY_LOG_ERROR, _T("output filename not set.\n"));
 
   00070	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124856
+	00 00		 lea	 r8, OFFSET FLAT:$SG124851
   00077	ba 02 00 00 00	 mov	 edx, 2
   0007c	48 8b 8c 24 10
 	01 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -23064,7 +23064,7 @@ $LN2@Init:
 ; 126  :         AddMessage(RGY_LOG_DEBUG, _T("no output for benchmark mode.\n"));
 
   000ab	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124859
+	00 00		 lea	 r8, OFFSET FLAT:$SG124854
   000b2	ba fe ff ff ff	 mov	 edx, -2
   000b7	48 8b 8c 24 10
 	01 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -23078,7 +23078,7 @@ $LN3@Init:
 ; 128  :         if (_tcscmp(strFileName, _T("-")) == 0) {
 
   000c9	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG124862
+	00 00		 lea	 rdx, OFFSET FLAT:$SG124857
   000d0	48 8b 8c 24 18
 	01 00 00	 mov	 rcx, QWORD PTR strFileName$[rsp]
   000d8	e8 00 00 00 00	 call	 _tcscmp
@@ -23105,7 +23105,7 @@ $LN3@Init:
 ; 131  :             AddMessage(RGY_LOG_DEBUG, _T("using stdout\n"));
 
   0010c	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124863
+	00 00		 lea	 r8, OFFSET FLAT:$SG124858
   00113	ba fe ff ff ff	 mov	 edx, -2
   00118	48 8b 8c 24 10
 	01 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -23155,7 +23155,7 @@ $LN5@Init:
 ; 135  :             int error = _tfopen_s(&fp, strFileName, _T("wb+"));
 
   001a2	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124864
+	00 00		 lea	 r8, OFFSET FLAT:$SG124859
   001a9	48 8b 94 24 18
 	01 00 00	 mov	 rdx, QWORD PTR strFileName$[rsp]
   001b1	48 8d 8c 24 98
@@ -23185,7 +23185,7 @@ $LN8@Init:
   001ed	4c 8b 8c 24 18
 	01 00 00	 mov	 r9, QWORD PTR strFileName$[rsp]
   001f5	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124867
+	00 00		 lea	 r8, OFFSET FLAT:$SG124862
   001fc	ba 02 00 00 00	 mov	 edx, 2
   00201	48 8b 8c 24 10
 	01 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -23213,7 +23213,7 @@ $LN7@Init:
   00234	4c 8b 8c 24 18
 	01 00 00	 mov	 r9, QWORD PTR strFileName$[rsp]
   0023c	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124868
+	00 00		 lea	 r8, OFFSET FLAT:$SG124863
   00243	ba fe ff ff ff	 mov	 edx, -2
   00248	48 8b 8c 24 10
 	01 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -23340,7 +23340,7 @@ $LN16@Init:
   00397	c1 f8 14	 sar	 eax, 20
   0039a	44 8b c8	 mov	 r9d, eax
   0039d	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124871
+	00 00		 lea	 r8, OFFSET FLAT:$SG124866
   003a4	ba fe ff ff ff	 mov	 edx, -2
   003a9	48 8b 8c 24 10
 	01 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -23657,7 +23657,7 @@ $LN35:
 ; 166  :         AddMessage(RGY_LOG_ERROR, _T("Invalid call: WriteNextFrame\n"));
 
   0003f	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125078
+	00 00		 lea	 r8, OFFSET FLAT:$SG125073
   00046	ba 02 00 00 00	 mov	 edx, 2
   0004b	48 8b 8c 24 50
 	03 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -24197,7 +24197,7 @@ $LN9@WriteNextF:
 ; 189  :                 AddMessage(RGY_LOG_ERROR, _T("Unexpected HEVC header.\n"));
 
   00743	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125085
+	00 00		 lea	 r8, OFFSET FLAT:$SG125080
   0074a	ba 02 00 00 00	 mov	 edx, 2
   0074f	48 8b 8c 24 50
 	03 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -24292,7 +24292,7 @@ $LN7@WriteNextF:
   00865	48 39 44 24 20	 cmp	 QWORD PTR nBytesWritten$[rsp], rax
   0086a	74 20		 je	 SHORT $LN6@WriteNextF
   0086c	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG125088
+	00 00		 lea	 r8, OFFSET FLAT:$SG125083
   00873	ba 02 00 00 00	 mov	 edx, 2
   00878	48 8b 8c 24 50
 	03 00 00	 mov	 rcx, QWORD PTR this$[rsp]
@@ -26645,7 +26645,7 @@ $LN5:
   0004c	48 8b 44 24 30	 mov	 rax, QWORD PTR this$[rsp]
   00051	48 83 c0 30	 add	 rax, 48			; 00000030H
   00055	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG124680
+	00 00		 lea	 rdx, OFFSET FLAT:$SG124675
   0005c	48 8b c8	 mov	 rcx, rax
   0005f	e8 00 00 00 00	 call	 ??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 
@@ -29649,7 +29649,7 @@ $LN4:
 ; 86   :     AddMessage(RGY_LOG_DEBUG, _T("Closing...\n"));
 
   0001e	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124670
+	00 00		 lea	 r8, OFFSET FLAT:$SG124665
   00025	ba fe ff ff ff	 mov	 edx, -2
   0002a	48 8b 4c 24 30	 mov	 rcx, QWORD PTR this$[rsp]
   0002f	e8 00 00 00 00	 call	 ?AddMessage@RGYOutput@@QEAAXHPEBDZZ ; RGYOutput::AddMessage
@@ -29675,7 +29675,7 @@ $LN4:
 ; 89   :         AddMessage(RGY_LOG_DEBUG, _T("Closed file pointer.\n"));
 
   0005f	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124672
+	00 00		 lea	 r8, OFFSET FLAT:$SG124667
   00066	ba fe ff ff ff	 mov	 edx, -2
   0006b	48 8b 4c 24 30	 mov	 rcx, QWORD PTR this$[rsp]
   00070	e8 00 00 00 00	 call	 ?AddMessage@RGYOutput@@QEAAXHPEBDZZ ; RGYOutput::AddMessage
@@ -29740,7 +29740,7 @@ $LN2@Close:
 ; 100  :     AddMessage(RGY_LOG_DEBUG, _T("Closed.\n"));
 
   000e9	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG124673
+	00 00		 lea	 r8, OFFSET FLAT:$SG124668
   000f0	ba fe ff ff ff	 mov	 edx, -2
   000f5	48 8b 4c 24 30	 mov	 rcx, QWORD PTR this$[rsp]
   000fa	e8 00 00 00 00	 call	 ?AddMessage@RGYOutput@@QEAAXHPEBDZZ ; RGYOutput::AddMessage

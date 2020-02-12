@@ -247,6 +247,8 @@ protected:
 
     mfxStatus CheckParamList(int value, const CX_DESC *list, const char *param_name);
     int clamp_param_int(int value, int low, int high, const TCHAR *param_name);
+	
+	int64_t rational_rescalex(int64_t v, rgy_rational<int> from, rgy_rational<int> to);
 };
 
 #endif // __PIPELINE_ENCODE_H__

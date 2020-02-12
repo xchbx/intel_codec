@@ -208,7 +208,7 @@ $SG147766 DB	'%s', 00H
 	ORG $+5
 $SG132782 DB	'atlTraceGeneral', 00H
 $SG132831 DB	'atlTraceCOM', 00H
-$SG158851 DB	'%s', 00H
+$SG158846 DB	'%s', 00H
 	ORG $+1
 $SG132880 DB	'atlTraceQI', 00H
 	ORG $+1
@@ -218,34 +218,34 @@ $SG132929 DB	'atlTraceRegistrar', 00H
 	ORG $+2
 $SG143041 DB	'M', 00H
 	ORG $+2
-$SG149328 DB	'D3D11Device: Init...', 0aH, 00H
+$SG149323 DB	'D3D11Device: Init...', 0aH, 00H
 	ORG $+2
-$SG149331 DB	'D3D11Device: CreateDXGIFactory: %d', 0aH, 00H
+$SG149326 DB	'D3D11Device: CreateDXGIFactory: %d', 0aH, 00H
 $SG143043 DB	'D', 00H
 	ORG $+2
-$SG149334 DB	'D3D11Device: EnumAdapters: %d', 0aH, 00H
+$SG149329 DB	'D3D11Device: EnumAdapters: %d', 0aH, 00H
 	ORG $+1
-$SG149336 DB	'D3D11Device: CreateDXGIFactory Success.', 0aH, 00H
+$SG149331 DB	'D3D11Device: CreateDXGIFactory Success.', 0aH, 00H
 	ORG $+3
 $SG143045 DB	'B', 00H
 	ORG $+2
-$SG149338 DB	'D3D11Device: D3D11CreateDevice: %d', 0aH, 00H
+$SG149333 DB	'D3D11Device: D3D11CreateDevice: %d', 0aH, 00H
 $SG143047 DB	'Val', 00H
-$SG149340 DB	'D3D11Device: D3D11CreateDevice Success.', 0aH, 00H
+$SG149335 DB	'D3D11Device: D3D11CreateDevice Success.', 0aH, 00H
 	ORG $+3
 $SG143053 DB	'Delete', 00H
 	ORG $+1
 $SG110661 DB	'rgb', 00H
-$SG149346 DB	'D3D11Device: SetMultithreadProtected Success.', 0aH, 00H
+$SG149341 DB	'D3D11Device: SetMultithreadProtected Success.', 0aH, 00H
 	ORG $+1
-$SG149351 DB	'D3D11Device: CreateSwapChainForHwnd: %d', 0aH, 00H
+$SG149346 DB	'D3D11Device: CreateSwapChainForHwnd: %d', 0aH, 00H
 	ORG $+3
 $SG110633 DB	'yuv422', 00H
 	ORG $+1
 $SG110663 DB	'gbr', 00H
-$SG149353 DB	'D3D11Device: CreateSwapChainForHwnd Success.', 0aH, 00H
+$SG149348 DB	'D3D11Device: CreateSwapChainForHwnd Success.', 0aH, 00H
 	ORG $+2
-$SG149354 DB	'D3D11Device: Init Success.', 0aH, 00H
+$SG149349 DB	'D3D11Device: Init Success.', 0aH, 00H
 $SG110666 DB	'y8', 00H
 	ORG $+1
 $SG132978 DB	'atlTraceRefcount', 00H
@@ -253,31 +253,31 @@ $SG132978 DB	'atlTraceRefcount', 00H
 $SG110635 DB	'yuv444', 00H
 	ORG $+1
 $SG143833 DB	'SAM', 00H
-$SG149383 DB	'D3D11Device: CreateVideoProcessor...', 0aH, 00H
+$SG149378 DB	'D3D11Device: CreateVideoProcessor...', 0aH, 00H
 	ORG $+2
-$SG149388 DB	'D3D11Device: CreateVideoProcessorEnumerator: %d', 0aH, 00H
+$SG149383 DB	'D3D11Device: CreateVideoProcessorEnumerator: %d', 0aH, 00H
 	ORG $+3
 $SG110655 DB	'rgb24r', 00H
 	ORG $+1
 $SG111611 DB	'VP8', 00H
-$SG149390 DB	'D3D11Device: CreateVideoProcessor: %d', 0aH, 00H
+$SG149385 DB	'D3D11Device: CreateVideoProcessor: %d', 0aH, 00H
 	ORG $+1
-$SG149391 DB	'D3D11Device: CreateVideoProcessor Success.', 0aH, 00H
+$SG149386 DB	'D3D11Device: CreateVideoProcessor Success.', 0aH, 00H
 $SG111613 DB	'VP9', 00H
-$SG149402 DB	'D3D11Device: CreateSwapChainForHwnd: %d', 0aH, 00H
+$SG149397 DB	'D3D11Device: CreateSwapChainForHwnd: %d', 0aH, 00H
 	ORG $+3
 $SG110656 DB	'rgb32r', 00H
 	ORG $+1
 $SG112224 DB	'fcc', 00H
-$SG149403 DB	'D3D11Device: Reset Success.', 0aH, 00H
+$SG149398 DB	'D3D11Device: Reset Success.', 0aH, 00H
 	ORG $+3
+$SG149408 DB	'D3D11Device: Closed.', 0aH, 00H
+	ORG $+2
 $SG133027 DB	'atlTraceWindowing', 00H
 	ORG $+2
 $SG143835 DB	'SYSTEM', 00H
 	ORG $+1
 $SG112225 DB	'GBR', 00H
-$SG149413 DB	'D3D11Device: Closed.', 0aH, 00H
-	ORG $+2
 $SG133076 DB	'atlTraceControls', 00H
 	ORG $+3
 $SG110657 DB	'rgb24', 00H
@@ -334,16 +334,16 @@ $SG133767 DB	'atlTraceSync', 00H
 	ORG $+3
 $SG133816 DB	'atlTraceISAPI', 00H
 	ORG $+2
-$SG158850 DB	'invalid argument', 00H
+$SG158845 DB	'invalid argument', 00H
 	ORG $+7
-$SG158855 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG158850 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG158852 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG158847 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
 $SG110629 DB	'Invalid', 00H
-$SG158853 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG158848 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -360,7 +360,7 @@ $SG158853 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG158854 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG158849 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -368,7 +368,7 @@ $SG158854 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG158900 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG158895 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
 $SG143049 DB	'ForceRemove', 00H
 $SG112547 DB	'5', 00H
@@ -13048,7 +13048,7 @@ $LN8:
   00054	48 8b 44 24 60	 mov	 rax, QWORD PTR tv72[rsp]
   00059	48 8b 00	 mov	 rax, QWORD PTR [rax]
   0005c	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149383
+	00 00		 lea	 r8, OFFSET FLAT:$SG149378
   00063	ba fe ff ff ff	 mov	 edx, -2
   00068	48 8b 4c 24 60	 mov	 rcx, QWORD PTR tv72[rsp]
   0006d	ff 50 20	 call	 QWORD PTR [rax+32]
@@ -13182,7 +13182,7 @@ $LN2@CreateVide:
   00193	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00196	44 8b 4c 24 54	 mov	 r9d, DWORD PTR hr$[rsp]
   0019b	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149388
+	00 00		 lea	 r8, OFFSET FLAT:$SG149383
   001a2	ba 02 00 00 00	 mov	 edx, 2
   001a7	48 8b 4c 24 78	 mov	 rcx, QWORD PTR tv166[rsp]
   001ac	ff 50 20	 call	 QWORD PTR [rax+32]
@@ -13247,7 +13247,7 @@ $LN4@CreateVide:
   0026d	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00270	44 8b 4c 24 54	 mov	 r9d, DWORD PTR hr$[rsp]
   00275	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149390
+	00 00		 lea	 r8, OFFSET FLAT:$SG149385
   0027c	ba 02 00 00 00	 mov	 edx, 2
   00281	48 8b 8c 24 98
 	00 00 00	 mov	 rcx, QWORD PTR tv214[rsp]
@@ -13274,7 +13274,7 @@ $LN5@CreateVide:
 	00 00 00	 mov	 rax, QWORD PTR tv228[rsp]
   002b7	48 8b 00	 mov	 rax, QWORD PTR [rax]
   002ba	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149391
+	00 00		 lea	 r8, OFFSET FLAT:$SG149386
   002c1	ba fe ff ff ff	 mov	 edx, -2
   002c6	48 8b 8c 24 a0
 	00 00 00	 mov	 rcx, QWORD PTR tv228[rsp]
@@ -13444,7 +13444,7 @@ $LN3:
   00044	48 8b 44 24 20	 mov	 rax, QWORD PTR tv73[rsp]
   00049	48 8b 00	 mov	 rax, QWORD PTR [rax]
   0004c	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149413
+	00 00		 lea	 r8, OFFSET FLAT:$SG149408
   00053	ba fe ff ff ff	 mov	 edx, -2
   00058	48 8b 4c 24 20	 mov	 rcx, QWORD PTR tv73[rsp]
   0005d	ff 50 20	 call	 QWORD PTR [rax+32]
@@ -13639,7 +13639,7 @@ $LN2@Reset:
   0014e	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00151	44 8b 4c 24 40	 mov	 r9d, DWORD PTR hr$[rsp]
   00156	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149402
+	00 00		 lea	 r8, OFFSET FLAT:$SG149397
   0015d	ba 02 00 00 00	 mov	 edx, 2
   00162	48 8b 8c 24 b8
 	00 00 00	 mov	 rcx, QWORD PTR tv159[rsp]
@@ -13665,7 +13665,7 @@ $LN3@Reset:
 	00 00 00	 mov	 rax, QWORD PTR tv173[rsp]
   00198	48 8b 00	 mov	 rax, QWORD PTR [rax]
   0019b	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149403
+	00 00		 lea	 r8, OFFSET FLAT:$SG149398
   001a2	ba fe ff ff ff	 mov	 edx, -2
   001a7	48 8b 8c 24 c0
 	00 00 00	 mov	 rcx, QWORD PTR tv173[rsp]
@@ -13772,7 +13772,7 @@ $LN15:
 	01 00 00	 mov	 rax, QWORD PTR tv68[rsp]
   0006a	48 8b 00	 mov	 rax, QWORD PTR [rax]
   0006d	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149328
+	00 00		 lea	 r8, OFFSET FLAT:$SG149323
   00074	ba fe ff ff ff	 mov	 edx, -2
   00079	48 8b 8c 24 10
 	01 00 00	 mov	 rcx, QWORD PTR tv68[rsp]
@@ -13826,7 +13826,7 @@ $LN15:
   00109	48 8b 00	 mov	 rax, QWORD PTR [rax]
   0010c	44 8b 4c 24 50	 mov	 r9d, DWORD PTR hr$[rsp]
   00111	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149331
+	00 00		 lea	 r8, OFFSET FLAT:$SG149326
   00118	ba 02 00 00 00	 mov	 edx, 2
   0011d	48 8b 8c 24 18
 	01 00 00	 mov	 rcx, QWORD PTR tv132[rsp]
@@ -13891,7 +13891,7 @@ $LN2@Init:
   001e0	48 8b 00	 mov	 rax, QWORD PTR [rax]
   001e3	44 8b 4c 24 50	 mov	 r9d, DWORD PTR hr$[rsp]
   001e8	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149334
+	00 00		 lea	 r8, OFFSET FLAT:$SG149329
   001ef	ba 02 00 00 00	 mov	 edx, 2
   001f4	48 8b 8c 24 30
 	01 00 00	 mov	 rcx, QWORD PTR tv172[rsp]
@@ -13924,7 +13924,7 @@ $LN3@Init:
 	01 00 00	 mov	 rax, QWORD PTR tv186[rsp]
   00247	48 8b 00	 mov	 rax, QWORD PTR [rax]
   0024a	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149336
+	00 00		 lea	 r8, OFFSET FLAT:$SG149331
   00251	ba fe ff ff ff	 mov	 edx, -2
   00256	48 8b 8c 24 38
 	01 00 00	 mov	 rcx, QWORD PTR tv186[rsp]
@@ -13997,7 +13997,7 @@ $LN3@Init:
   00326	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00329	44 8b 4c 24 50	 mov	 r9d, DWORD PTR hr$[rsp]
   0032e	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149338
+	00 00		 lea	 r8, OFFSET FLAT:$SG149333
   00335	ba 02 00 00 00	 mov	 edx, 2
   0033a	48 8b 8c 24 50
 	01 00 00	 mov	 rcx, QWORD PTR tv232[rsp]
@@ -14030,7 +14030,7 @@ $LN5@Init:
 	01 00 00	 mov	 rax, QWORD PTR tv246[rsp]
   0038d	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00390	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149340
+	00 00		 lea	 r8, OFFSET FLAT:$SG149335
   00397	ba fe ff ff ff	 mov	 edx, -2
   0039c	48 8b 8c 24 58
 	01 00 00	 mov	 rcx, QWORD PTR tv246[rsp]
@@ -14176,7 +14176,7 @@ $LN8@Init:
 	01 00 00	 mov	 rax, QWORD PTR tv360[rsp]
   0052f	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00532	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149346
+	00 00		 lea	 r8, OFFSET FLAT:$SG149341
   00539	ba fe ff ff ff	 mov	 edx, -2
   0053e	48 8b 8c 24 68
 	01 00 00	 mov	 rcx, QWORD PTR tv360[rsp]
@@ -14294,7 +14294,7 @@ $LN10@Init:
   00692	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00695	44 8b 4c 24 50	 mov	 r9d, DWORD PTR hr$[rsp]
   0069a	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149351
+	00 00		 lea	 r8, OFFSET FLAT:$SG149346
   006a1	ba 02 00 00 00	 mov	 edx, 2
   006a6	48 8b 8c 24 88
 	01 00 00	 mov	 rcx, QWORD PTR tv428[rsp]
@@ -14331,7 +14331,7 @@ $LN11@Init:
 	01 00 00	 mov	 rax, QWORD PTR tv442[rsp]
   00707	48 8b 00	 mov	 rax, QWORD PTR [rax]
   0070a	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149353
+	00 00		 lea	 r8, OFFSET FLAT:$SG149348
   00711	ba fe ff ff ff	 mov	 edx, -2
   00716	48 8b 8c 24 90
 	01 00 00	 mov	 rcx, QWORD PTR tv442[rsp]
@@ -14352,7 +14352,7 @@ $LN9@Init:
 	01 00 00	 mov	 rax, QWORD PTR tv455[rsp]
   00745	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00748	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG149354
+	00 00		 lea	 r8, OFFSET FLAT:$SG149349
   0074f	ba fe ff ff ff	 mov	 edx, -2
   00754	48 8b 8c 24 98
 	01 00 00	 mov	 rcx, QWORD PTR tv455[rsp]

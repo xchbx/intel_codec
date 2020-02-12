@@ -6,20 +6,20 @@ INCLUDELIB MSVCRTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG140563 DB	'invalid argument', 00H
+$SG140558 DB	'invalid argument', 00H
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+2
-$SG140564 DB	'%s', 00H
+$SG140559 DB	'%s', 00H
 	ORG $+1
-$SG140568 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG140563 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG140565 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG140560 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
 $SG116307 DB	'all', 00H
 	ORG $+4
-$SG140566 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG140561 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -36,7 +36,7 @@ $SG140566 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG140567 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG140562 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -44,7 +44,7 @@ $SG140567 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG140724 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG140719 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
 $SG116308 DB	'cpu', 00H
 $SG116318 DB	'mem', 00H
@@ -125,16 +125,16 @@ $SG119141 DB	'LA-ICQ', 00H
 	ORG $+1
 $SG119169 DB	'0', 00H
 	ORG $+2
-$SG126682 DB	'WaitToFinish: Encode Aborted, putting abort flag on.', 0aH
+$SG126677 DB	'WaitToFinish: Encode Aborted, putting abort flag on.', 0aH
 	DB	00H
 	ORG $+2
-$SG126684 DB	'WaitToFinish: Settings event on.', 0aH, 00H
+$SG126679 DB	'WaitToFinish: Settings event on.', 0aH, 00H
 	ORG $+2
 $SG119153 DB	'main10', 00H
 	ORG $+1
 $SG119170 DB	'1', 00H
 	ORG $+2
-$SG126685 DB	'WaitToFinish: Encode thread shut down.', 0aH, 00H
+$SG126680 DB	'WaitToFinish: Encode thread shut down.', 0aH, 00H
 $SG110586 DB	'Invalid', 00H
 $SG110587 DB	'nv12', 00H
 	ORG $+3
@@ -3912,7 +3912,7 @@ $LN5@WaitToFini:
   00075	48 8b 44 24 30	 mov	 rax, QWORD PTR tv73[rsp]
   0007a	48 8b 00	 mov	 rax, QWORD PTR [rax]
   0007d	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126682
+	00 00		 lea	 r8, OFFSET FLAT:$SG126677
   00084	ba fe ff ff ff	 mov	 edx, -2
   00089	48 8b 4c 24 30	 mov	 rcx, QWORD PTR tv73[rsp]
   0008e	ff 50 20	 call	 QWORD PTR [rax+32]
@@ -3938,7 +3938,7 @@ $LN5@WaitToFini:
   000bb	48 8b 44 24 38	 mov	 rax, QWORD PTR tv90[rsp]
   000c0	48 8b 00	 mov	 rax, QWORD PTR [rax]
   000c3	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126684
+	00 00		 lea	 r8, OFFSET FLAT:$SG126679
   000ca	ba fe ff ff ff	 mov	 edx, -2
   000cf	48 8b 4c 24 38	 mov	 rcx, QWORD PTR tv90[rsp]
   000d4	ff 50 20	 call	 QWORD PTR [rax+32]
@@ -3991,7 +3991,7 @@ $LN6@WaitToFini:
   00138	48 8b 44 24 40	 mov	 rax, QWORD PTR tv142[rsp]
   0013d	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00140	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG126685
+	00 00		 lea	 r8, OFFSET FLAT:$SG126680
   00147	ba fe ff ff ff	 mov	 edx, -2
   0014c	48 8b 4c 24 40	 mov	 rcx, QWORD PTR tv142[rsp]
   00151	ff 50 20	 call	 QWORD PTR [rax+32]

@@ -2737,7 +2737,7 @@ $SG133620 DB	'NoRemove', 00H
 $SG133622 DB	'Delete', 00H
 	ORG $+1
 $SG110660 DB	'rgb', 00H
-$SG142481 DB	'QSVAllocatorD3D9::FrameLock Failed GetDesc mid 0x%x: %d', 0aH
+$SG142476 DB	'QSVAllocatorD3D9::FrameLock Failed GetDesc mid 0x%x: %d', 0aH
 	DB	00H
 	ORG $+3
 $SG134395 DB	'AppID', 00H
@@ -2745,15 +2745,15 @@ $SG134395 DB	'AppID', 00H
 $SG134404 DB	'SYSTEM', 00H
 	ORG $+1
 $SG110662 DB	'gbr', 00H
-$SG142483 DB	'QSVAllocatorD3D9::Unsupported format.', 0aH, 00H
+$SG142478 DB	'QSVAllocatorD3D9::Unsupported format.', 0aH, 00H
 	ORG $+1
-$SG142485 DB	'QSVAllocatorD3D9::FrameLock Failed to Lock frame mid 0x%'
+$SG142480 DB	'QSVAllocatorD3D9::FrameLock Failed to Lock frame mid 0x%'
 	DB	'x: %d', 0aH, 00H
 	ORG $+1
-$SG142495 DB	'QSVAllocatorD3D9::FrameLock Success.', 0aH, 00H
+$SG142490 DB	'QSVAllocatorD3D9::FrameLock Success.', 0aH, 00H
 	ORG $+2
-$SG142507 DB	'QSVAllocatorD3D9::FrameUnlock Success.', 0aH, 00H
-$SG142543 DB	'QSVAllocatorD3D9::ReleaseResponse Success.', 0aH, 00H
+$SG142502 DB	'QSVAllocatorD3D9::FrameUnlock Success.', 0aH, 00H
+$SG142538 DB	'QSVAllocatorD3D9::ReleaseResponse Success.', 0aH, 00H
 $SG134396 DB	'CLSID', 00H
 	ORG $+2
 $SG110632 DB	'yuv422', 00H
@@ -2778,7 +2778,7 @@ $SG134401 DB	'Mime', 00H
 	ORG $+3
 $SG110655 DB	'rgb32r', 00H
 	ORG $+1
-$SG153169 DB	'%s', 00H
+$SG153164 DB	'%s', 00H
 	ORG $+1
 $SG134403 DB	'SECURITY', 00H
 	ORG $+3
@@ -2791,44 +2791,44 @@ $SG110657 DB	'rgb32', 00H
 	ORG $+2
 $SG112224 DB	'GBR', 00H
 $SG134406 DB	'TypeLib', 00H
-$SG142934 DB	'QSVAllocatorD3D9::AllocImpl unsupported format.', 0aH, 00H
+$SG142929 DB	'QSVAllocatorD3D9::AllocImpl unsupported format.', 0aH, 00H
 	ORG $+7
-$SG142941 DB	'QSVAllocatorD3D9::AllocImpl unsupported mem type.', 0aH, 00H
+$SG142936 DB	'QSVAllocatorD3D9::AllocImpl unsupported mem type.', 0aH, 00H
 	ORG $+5
-$SG142937 DB	'QSVAllocatorD3D9::AllocImpl select DXVA2_VideoDecoderRen'
+$SG142932 DB	'QSVAllocatorD3D9::AllocImpl select DXVA2_VideoDecoderRen'
 	DB	'derTarget.', 0aH, 00H
 $SG110629 DB	'nv12', 00H
 	ORG $+7
-$SG142940 DB	'QSVAllocatorD3D9::AllocImpl select DXVA2_VideoProcessorR'
+$SG142935 DB	'QSVAllocatorD3D9::AllocImpl select DXVA2_VideoProcessorR'
 	DB	'enderTarget.', 0aH, 00H
 	ORG $+2
-$SG142956 DB	'QSVAllocatorD3D9::AllocImpl GetVideoService Success.', 0aH
+$SG142951 DB	'QSVAllocatorD3D9::AllocImpl GetVideoService Success.', 0aH
 	DB	00H
 	ORG $+2
-$SG142947 DB	'QSVAllocatorD3D9::AllocImpl failed OpenDeviceHandle(Proc'
+$SG142942 DB	'QSVAllocatorD3D9::AllocImpl failed OpenDeviceHandle(Proc'
 	DB	'essor): %d.', 0aH, 00H
 	ORG $+3
-$SG142959 DB	'QSVAllocatorD3D9::AllocImpl allocate surface...', 0aH, 00H
+$SG142954 DB	'QSVAllocatorD3D9::AllocImpl allocate surface...', 0aH, 00H
 	ORG $+7
-$SG142949 DB	'QSVAllocatorD3D9::AllocImpl failed GetVideoService(Decod'
+$SG142944 DB	'QSVAllocatorD3D9::AllocImpl failed GetVideoService(Decod'
 	DB	'er): %d.', 0aH, 00H
 	ORG $+6
-$SG142969 DB	'QSVAllocatorD3D9::AllocImpl Success.', 0aH, 00H
+$SG142964 DB	'QSVAllocatorD3D9::AllocImpl Success.', 0aH, 00H
 	ORG $+2
-$SG142953 DB	'QSVAllocatorD3D9::AllocImpl failed OpenDeviceHandle(Deco'
+$SG142948 DB	'QSVAllocatorD3D9::AllocImpl failed OpenDeviceHandle(Deco'
 	DB	'der): %d.', 0aH, 00H
 	ORG $+5
 $SG110628 DB	'Invalid', 00H
-$SG142955 DB	'QSVAllocatorD3D9::AllocImpl failed GetVideoService(Decod'
+$SG142950 DB	'QSVAllocatorD3D9::AllocImpl failed GetVideoService(Decod'
 	DB	'er): %d.', 0aH, 00H
 	ORG $+2
 $SG110630 DB	'yv12', 00H
 	ORG $+7
-$SG142963 DB	'QSVAllocatorD3D9::AllocImpl failed to CreateSurface(exte'
+$SG142958 DB	'QSVAllocatorD3D9::AllocImpl failed to CreateSurface(exte'
 	DB	'rnal) #%d: %d.', 0aH, 00H
 $SG110631 DB	'yuy2', 00H
 	ORG $+3
-$SG142967 DB	'QSVAllocatorD3D9::AllocImpl failed to CreateSurface(othe'
+$SG142962 DB	'QSVAllocatorD3D9::AllocImpl failed to CreateSurface(othe'
 	DB	'r) %d frmaes: %d.', 0aH, 00H
 	ORG $+1
 $SG110633 DB	'nv16', 00H
@@ -2943,17 +2943,17 @@ $SG112551 DB	'pc', 00H
 	ORG $+1
 $SG111614 DB	'unknown', 00H
 $SG111721 DB	'unknown', 00H
-$SG153168 DB	'invalid argument', 00H
+$SG153163 DB	'invalid argument', 00H
 	ORG $+7
-$SG153173 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG153168 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG153170 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG153165 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
 $SG112216 DB	'undef', 00H
 	ORG $+2
-$SG153171 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG153166 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -2970,7 +2970,7 @@ $SG153171 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG153172 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG153167 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -3055,7 +3055,7 @@ $SG112230 DB	'2100-lms', 00H
 	ORG $+3
 $SG112371 DB	'undef', 00H
 	ORG $+6
-$SG153246 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG153241 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
 $SG112372 DB	'auto', 00H
 	ORG $+3
@@ -13269,16 +13269,16 @@ $LN4@Allocate_m:
 $LN9@Allocate_m:
 $LN7@Allocate_m:
   00056	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG153168
+	00 00		 lea	 rax, OFFSET FLAT:$SG153163
   0005d	48 89 44 24 28	 mov	 QWORD PTR [rsp+40], rax
   00062	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG153169
+	00 00		 lea	 rax, OFFSET FLAT:$SG153164
   00069	48 89 44 24 20	 mov	 QWORD PTR [rsp+32], rax
   0006e	45 33 c9	 xor	 r9d, r9d
   00071	41 b8 5b 00 00
 	00		 mov	 r8d, 91			; 0000005bH
   00077	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG153170
+	00 00		 lea	 rdx, OFFSET FLAT:$SG153165
   0007e	b9 02 00 00 00	 mov	 ecx, 2
   00083	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp__CrtDbgReport
@@ -13292,11 +13292,11 @@ $LN12@Allocate_m:
   0009a	41 b9 5b 00 00
 	00		 mov	 r9d, 91			; 0000005bH
   000a0	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG153171
+	00 00		 lea	 r8, OFFSET FLAT:$SG153166
   000a7	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG153172
+	00 00		 lea	 rdx, OFFSET FLAT:$SG153167
   000ae	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:$SG153173
+	00 00		 lea	 rcx, OFFSET FLAT:$SG153168
   000b5	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp__invalid_parameter
   000bb	33 c0		 xor	 eax, eax
@@ -20801,7 +20801,7 @@ $LN8@AllocImpl:
 	01 00 00	 mov	 rax, QWORD PTR tv133[rsp]
   00116	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00119	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142934
+	00 00		 lea	 r8, OFFSET FLAT:$SG142929
   00120	ba 02 00 00 00	 mov	 edx, 2
   00125	48 8b 8c 24 30
 	01 00 00	 mov	 rcx, QWORD PTR tv133[rsp]
@@ -20850,7 +20850,7 @@ $LN9@AllocImpl:
 	01 00 00	 mov	 rax, QWORD PTR tv155[rsp]
   00192	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00195	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142937
+	00 00		 lea	 r8, OFFSET FLAT:$SG142932
   0019c	ba fe ff ff ff	 mov	 edx, -2
   001a1	48 8b 8c 24 38
 	01 00 00	 mov	 rcx, QWORD PTR tv155[rsp]
@@ -20885,7 +20885,7 @@ $LN10@AllocImpl:
 	01 00 00	 mov	 rax, QWORD PTR tv172[rsp]
   001f0	48 8b 00	 mov	 rax, QWORD PTR [rax]
   001f3	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142940
+	00 00		 lea	 r8, OFFSET FLAT:$SG142935
   001fa	ba fe ff ff ff	 mov	 edx, -2
   001ff	48 8b 8c 24 40
 	01 00 00	 mov	 rcx, QWORD PTR tv172[rsp]
@@ -20914,7 +20914,7 @@ $LN12@AllocImpl:
 	01 00 00	 mov	 rax, QWORD PTR tv185[rsp]
   00238	48 8b 00	 mov	 rax, QWORD PTR [rax]
   0023b	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142941
+	00 00		 lea	 r8, OFFSET FLAT:$SG142936
   00242	ba fe ff ff ff	 mov	 edx, -2
   00247	48 8b 8c 24 48
 	01 00 00	 mov	 rcx, QWORD PTR tv185[rsp]
@@ -20997,7 +20997,7 @@ $LN11@AllocImpl:
   00312	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00315	44 8b 4c 24 58	 mov	 r9d, DWORD PTR hr$[rsp]
   0031a	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142947
+	00 00		 lea	 r8, OFFSET FLAT:$SG142942
   00321	ba 02 00 00 00	 mov	 edx, 2
   00326	48 8b 8c 24 60
 	01 00 00	 mov	 rcx, QWORD PTR tv220[rsp]
@@ -21061,7 +21061,7 @@ $LN17@AllocImpl:
   003e2	48 8b 00	 mov	 rax, QWORD PTR [rax]
   003e5	44 8b 4c 24 58	 mov	 r9d, DWORD PTR hr$[rsp]
   003ea	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142949
+	00 00		 lea	 r8, OFFSET FLAT:$SG142944
   003f1	ba 02 00 00 00	 mov	 edx, 2
   003f6	48 8b 8c 24 78
 	01 00 00	 mov	 rcx, QWORD PTR tv262[rsp]
@@ -21142,7 +21142,7 @@ $LN14@AllocImpl:
   004c5	48 8b 00	 mov	 rax, QWORD PTR [rax]
   004c8	44 8b 4c 24 58	 mov	 r9d, DWORD PTR hr$[rsp]
   004cd	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142953
+	00 00		 lea	 r8, OFFSET FLAT:$SG142948
   004d4	ba 02 00 00 00	 mov	 edx, 2
   004d9	48 8b 8c 24 90
 	01 00 00	 mov	 rcx, QWORD PTR tv308[rsp]
@@ -21206,7 +21206,7 @@ $LN21@AllocImpl:
   00595	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00598	44 8b 4c 24 58	 mov	 r9d, DWORD PTR hr$[rsp]
   0059d	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142955
+	00 00		 lea	 r8, OFFSET FLAT:$SG142950
   005a4	ba 02 00 00 00	 mov	 edx, 2
   005a9	48 8b 8c 24 a8
 	01 00 00	 mov	 rcx, QWORD PTR tv350[rsp]
@@ -21245,7 +21245,7 @@ $LN15@AllocImpl:
 	01 00 00	 mov	 rax, QWORD PTR tv375[rsp]
   005fd	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00600	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142956
+	00 00		 lea	 r8, OFFSET FLAT:$SG142951
   00607	ba fe ff ff ff	 mov	 edx, -2
   0060c	48 8b 8c 24 b0
 	01 00 00	 mov	 rcx, QWORD PTR tv375[rsp]
@@ -21318,7 +21318,7 @@ $LN24@AllocImpl:
 	01 00 00	 mov	 rax, QWORD PTR tv408[rsp]
   006ae	48 8b 00	 mov	 rax, QWORD PTR [rax]
   006b1	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142959
+	00 00		 lea	 r8, OFFSET FLAT:$SG142954
   006b8	ba fe ff ff ff	 mov	 edx, -2
   006bd	48 8b 8c 24 b8
 	01 00 00	 mov	 rcx, QWORD PTR tv408[rsp]
@@ -21450,7 +21450,7 @@ $LN4@AllocImpl:
   00834	44 8b 8c 24 a4
 	00 00 00	 mov	 r9d, DWORD PTR i$6[rsp]
   0083c	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142963
+	00 00		 lea	 r8, OFFSET FLAT:$SG142958
   00843	ba 02 00 00 00	 mov	 edx, 2
   00848	48 8b 8c 24 c8
 	01 00 00	 mov	 rcx, QWORD PTR tv466[rsp]
@@ -21616,7 +21616,7 @@ $LN29@AllocImpl:
   00a24	89 54 24 20	 mov	 DWORD PTR [rsp+32], edx
   00a28	44 8b c8	 mov	 r9d, eax
   00a2b	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142967
+	00 00		 lea	 r8, OFFSET FLAT:$SG142962
   00a32	ba 02 00 00 00	 mov	 edx, 2
   00a37	48 8b 8c 24 e8
 	01 00 00	 mov	 rcx, QWORD PTR tv534[rsp]
@@ -21711,7 +21711,7 @@ $LN27@AllocImpl:
 	01 00 00	 mov	 rax, QWORD PTR tv571[rsp]
   00b2c	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00b2f	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142969
+	00 00		 lea	 r8, OFFSET FLAT:$SG142964
   00b36	ba fe ff ff ff	 mov	 edx, -2
   00b3b	48 8b 8c 24 f8
 	01 00 00	 mov	 rcx, QWORD PTR tv571[rsp]
@@ -22242,7 +22242,7 @@ $LN6@ReleaseRes:
   000e7	48 8b 44 24 30	 mov	 rax, QWORD PTR tv137[rsp]
   000ec	48 8b 00	 mov	 rax, QWORD PTR [rax]
   000ef	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142543
+	00 00		 lea	 r8, OFFSET FLAT:$SG142538
   000f6	ba fe ff ff ff	 mov	 edx, -2
   000fb	48 8b 4c 24 30	 mov	 rcx, QWORD PTR tv137[rsp]
   00100	ff 50 20	 call	 QWORD PTR [rax+32]
@@ -22483,7 +22483,7 @@ $LN4@FrameUnloc:
   000b6	48 8b 44 24 28	 mov	 rax, QWORD PTR tv83[rsp]
   000bb	48 8b 00	 mov	 rax, QWORD PTR [rax]
   000be	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142507
+	00 00		 lea	 r8, OFFSET FLAT:$SG142502
   000c5	ba fd ff ff ff	 mov	 edx, -3
   000ca	48 8b 4c 24 28	 mov	 rcx, QWORD PTR tv83[rsp]
   000cf	ff 50 20	 call	 QWORD PTR [rax+32]
@@ -22632,7 +22632,7 @@ $LN7@FrameLock:
   000da	4c 8b 8c 24 98
 	02 00 00	 mov	 r9, QWORD PTR mid$[rsp]
   000e2	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142481
+	00 00		 lea	 r8, OFFSET FLAT:$SG142476
   000e9	ba 02 00 00 00	 mov	 edx, 2
   000ee	48 8b 8c 24 30
 	02 00 00	 mov	 rcx, QWORD PTR tv82[rsp]
@@ -22828,7 +22828,7 @@ $LN2@FrameLock:
 	02 00 00	 mov	 rax, QWORD PTR tv173[rsp]
   00356	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00359	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142483
+	00 00		 lea	 r8, OFFSET FLAT:$SG142478
   00360	ba 02 00 00 00	 mov	 edx, 2
   00365	48 8b 8c 24 40
 	02 00 00	 mov	 rcx, QWORD PTR tv173[rsp]
@@ -22874,7 +22874,7 @@ $LN9@FrameLock:
   003d5	4c 8b 8c 24 98
 	02 00 00	 mov	 r9, QWORD PTR mid$[rsp]
   003dd	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142485
+	00 00		 lea	 r8, OFFSET FLAT:$SG142480
   003e4	ba 02 00 00 00	 mov	 edx, 2
   003e9	48 8b 8c 24 48
 	02 00 00	 mov	 rcx, QWORD PTR tv194[rsp]
@@ -23439,7 +23439,7 @@ $LN3@FrameLock:
 	02 00 00	 mov	 rax, QWORD PTR tv351[rsp]
   00950	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00953	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG142495
+	00 00		 lea	 r8, OFFSET FLAT:$SG142490
   0095a	ba fd ff ff ff	 mov	 edx, -3
   0095f	48 8b 8c 24 60
 	02 00 00	 mov	 rcx, QWORD PTR tv351[rsp]

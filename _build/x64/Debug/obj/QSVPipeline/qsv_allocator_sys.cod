@@ -599,49 +599,49 @@ $SG117022 DB	'avx2', 00H
 	ORG $+3
 $SG117414 DB	'%s', 00H
 	ORG $+1
-$SG126494 DB	'%s', 00H
+$SG126489 DB	'%s', 00H
 	ORG $+1
-$SG117628 DB	'QSVAllocatorSys::FrameLock Failed to Lock frmame mid 0x%'
+$SG117623 DB	'QSVAllocatorSys::FrameLock Failed to Lock frmame mid 0x%'
 	DB	'x: %s', 0aH, 00H
 	ORG $+1
-$SG117630 DB	'QSVAllocatorSys::FrameLock Invalid mem handle', 0aH, 00H
+$SG117625 DB	'QSVAllocatorSys::FrameLock Invalid mem handle', 0aH, 00H
 	ORG $+1
-$SG117643 DB	'QSVAllocatorSys::FrameLock success mid 0x%x', 0aH, 00H
+$SG117638 DB	'QSVAllocatorSys::FrameLock success mid 0x%x', 0aH, 00H
 	ORG $+3
-$SG117652 DB	'QSVAllocatorSys::FrameUnlock failed to unlock frame mid '
+$SG117647 DB	'QSVAllocatorSys::FrameUnlock failed to unlock frame mid '
 	DB	'0x%x: %s', 0aH, 00H
 	ORG $+2
 $SG110633 DB	'yuv422', 00H
 	ORG $+1
 $SG110661 DB	'rgb', 00H
-$SG117654 DB	'QSVAllocatorSys::FrameUnlock success mid 0x%x', 0aH, 00H
+$SG117649 DB	'QSVAllocatorSys::FrameUnlock success mid 0x%x', 0aH, 00H
 	ORG $+1
-$SG117948 DB	'QSVAllocatorSys::AllocImpl allocating %d frames...', 0aH
+$SG117943 DB	'QSVAllocatorSys::AllocImpl allocating %d frames...', 0aH
 	DB	00H
 $SG110630 DB	'nv12', 00H
 	ORG $+7
-$SG117950 DB	'QSVAllocatorSys::AllocImpl failed to allocate frame #%d,'
+$SG117945 DB	'QSVAllocatorSys::AllocImpl failed to allocate frame #%d,'
 	DB	' size %d: %s', 0aH, 00H
 	ORG $+2
-$SG117958 DB	'QSVAllocatorSys::AllocImpl Success.', 0aH, 00H
+$SG117953 DB	'QSVAllocatorSys::AllocImpl Success.', 0aH, 00H
 	ORG $+3
-$SG117953 DB	'QSVAllocatorSys::AllocImpl failed to unlock frame mid 0x'
+$SG117948 DB	'QSVAllocatorSys::AllocImpl failed to unlock frame mid 0x'
 	DB	'%x: %s', 0aH, 00H
-$SG117956 DB	'QSVAllocatorSys::AllocImpl failed to unlock frame mid 0x'
+$SG117951 DB	'QSVAllocatorSys::AllocImpl failed to unlock frame mid 0x'
 	DB	'%x: %s', 0aH, 00H
-$SG117976 DB	'QSVAllocatorSys::ReleaseResponse Success.', 0aH, 00H
+$SG117971 DB	'QSVAllocatorSys::ReleaseResponse Success.', 0aH, 00H
 	ORG $+1
 $SG110663 DB	'gbr', 00H
-$SG126493 DB	'invalid argument', 00H
+$SG126488 DB	'invalid argument', 00H
 	ORG $+7
-$SG126498 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG126493 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG126495 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG126490 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
 $SG110629 DB	'Invalid', 00H
-$SG126496 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG126491 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -658,7 +658,7 @@ $SG126496 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG126497 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG126492 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -666,7 +666,7 @@ $SG126497 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG126543 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG126538 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
 $SG110631 DB	'yv12', 00H
 	ORG $+3
@@ -3665,7 +3665,7 @@ $LN18@AllocImpl:
 	00 00 00	 mov	 QWORD PTR tv362[rsp], rcx
   002f4	44 8b c8	 mov	 r9d, eax
   002f7	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117948
+	00 00		 lea	 r8, OFFSET FLAT:$SG117943
   002fe	ba fe ff ff ff	 mov	 edx, -2
   00303	48 8b 8c 24 a0
 	00 00 00	 mov	 rcx, QWORD PTR tv174[rsp]
@@ -3764,7 +3764,7 @@ $LN6@AllocImpl:
   0042a	48 89 4c 24 20	 mov	 QWORD PTR [rsp+32], rcx
   0042f	44 8b 4c 24 54	 mov	 r9d, DWORD PTR numAllocated$[rsp]
   00434	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117950
+	00 00		 lea	 r8, OFFSET FLAT:$SG117945
   0043b	ba 02 00 00 00	 mov	 edx, 2
   00440	48 8b 8c 24 c8
 	00 00 00	 mov	 rcx, QWORD PTR tv225[rsp]
@@ -3857,7 +3857,7 @@ $LN19@AllocImpl:
 	01 00 00	 mov	 rdx, QWORD PTR tv279[rsp]
   00567	4c 8b 0c d0	 mov	 r9, QWORD PTR [rax+rdx*8]
   0056b	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117953
+	00 00		 lea	 r8, OFFSET FLAT:$SG117948
   00572	ba 02 00 00 00	 mov	 edx, 2
   00577	48 8b 8c 24 f0
 	00 00 00	 mov	 rcx, QWORD PTR tv271[rsp]
@@ -3964,7 +3964,7 @@ $LN20@AllocImpl:
 	01 00 00	 mov	 rdx, QWORD PTR tv330[rsp]
   006c0	4c 8b 0c d0	 mov	 r9, QWORD PTR [rax+rdx*8]
   006c4	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117956
+	00 00		 lea	 r8, OFFSET FLAT:$SG117951
   006cb	ba 02 00 00 00	 mov	 edx, 2
   006d0	48 8b 8c 24 28
 	01 00 00	 mov	 rcx, QWORD PTR tv322[rsp]
@@ -4019,7 +4019,7 @@ $LN5@AllocImpl:
 	01 00 00	 mov	 rax, QWORD PTR tv348[rsp]
   00754	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00757	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117958
+	00 00		 lea	 r8, OFFSET FLAT:$SG117953
   0075e	ba fe ff ff ff	 mov	 edx, -2
   00763	48 8b 8c 24 48
 	01 00 00	 mov	 rcx, QWORD PTR tv348[rsp]
@@ -4327,7 +4327,7 @@ $LN7@ReleaseRes:
   0015a	48 8b 44 24 50	 mov	 rax, QWORD PTR tv148[rsp]
   0015f	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00162	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117976
+	00 00		 lea	 r8, OFFSET FLAT:$SG117971
   00169	ba fe ff ff ff	 mov	 edx, -2
   0016e	48 8b 4c 24 50	 mov	 rcx, QWORD PTR tv148[rsp]
   00173	ff 50 20	 call	 QWORD PTR [rax+32]
@@ -4520,7 +4520,7 @@ $LN2@FrameUnloc:
   000bd	48 89 44 24 20	 mov	 QWORD PTR [rsp+32], rax
   000c2	4c 8b 4c 24 78	 mov	 r9, QWORD PTR mid$[rsp]
   000c7	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117652
+	00 00		 lea	 r8, OFFSET FLAT:$SG117647
   000ce	ba 02 00 00 00	 mov	 edx, 2
   000d3	48 8b 4c 24 40	 mov	 rcx, QWORD PTR tv129[rsp]
   000d8	48 8b 44 24 48	 mov	 rax, QWORD PTR tv158[rsp]
@@ -4581,7 +4581,7 @@ $LN4@FrameUnloc:
   0014d	48 8b 00	 mov	 rax, QWORD PTR [rax]
   00150	4c 8b 4c 24 78	 mov	 r9, QWORD PTR mid$[rsp]
   00155	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117654
+	00 00		 lea	 r8, OFFSET FLAT:$SG117649
   0015c	ba fd ff ff ff	 mov	 edx, -3
   00161	48 8b 4c 24 50	 mov	 rcx, QWORD PTR tv151[rsp]
   00166	ff 50 20	 call	 QWORD PTR [rax+32]
@@ -4717,7 +4717,7 @@ $LN5@FrameLock:
   000fa	4c 8b 8c 24 b8
 	00 00 00	 mov	 r9, QWORD PTR mid$[rsp]
   00102	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117628
+	00 00		 lea	 r8, OFFSET FLAT:$SG117623
   00109	ba 02 00 00 00	 mov	 edx, 2
   0010e	48 8b 4c 24 58	 mov	 rcx, QWORD PTR tv131[rsp]
   00113	48 8b 44 24 60	 mov	 rax, QWORD PTR tv368[rsp]
@@ -4775,7 +4775,7 @@ $LN6@FrameLock:
   001ac	4c 8b 8c 24 b8
 	00 00 00	 mov	 r9, QWORD PTR mid$[rsp]
   001b4	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117630
+	00 00		 lea	 r8, OFFSET FLAT:$SG117625
   001bb	ba 02 00 00 00	 mov	 edx, 2
   001c0	48 8b 4c 24 70	 mov	 rcx, QWORD PTR tv168[rsp]
   001c5	48 8b 44 24 78	 mov	 rax, QWORD PTR tv367[rsp]
@@ -5358,7 +5358,7 @@ $LN2@FrameLock:
   0074b	4c 8b 8c 24 b8
 	00 00 00	 mov	 r9, QWORD PTR mid$[rsp]
   00753	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG117643
+	00 00		 lea	 r8, OFFSET FLAT:$SG117638
   0075a	ba fd ff ff ff	 mov	 edx, -3
   0075f	48 8b 8c 24 90
 	00 00 00	 mov	 rcx, QWORD PTR tv338[rsp]

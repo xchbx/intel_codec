@@ -3234,7 +3234,7 @@ mfxStatus CQSVPipeline::RunEncode() {
     const auto calcTimebase = rgy_rational<int>(1, 4) * inputFpsTimebase;
     m_nAVSyncMode = RGY_AVSYNC_ASSUME_CFR;
 
-    const auto nOutFrameDuration = std::max<int64_t>(1, rational_rescale(1, inputFpsTimebase, calcTimebase)); //固定fpsを仮定した時の1フレームのduration (スケール: calcTimebase)
+    const auto nOutFrameDuration = std::max<int64_t>(1, rational_rescalex(1, inputFpsTimebase, calcTimebase)); //固定fpsを仮定した時の1フレームのduration (スケール: calcTimebase)
 
     CProcSpeedControl speedCtrl(m_nProcSpeedLimit);
 
@@ -3403,9 +3403,9 @@ mfxStatus CQSVPipeline::RunEncode() {
         int64_t outPts = nOutEstimatedPts; //(calcTimebase基準)
         nOutEstimatedPts += outDuration;
         prevPts = outPts;
-        pNextFrame->Data.TimeStamp = rational_rescale(outPts, calcTimebase, hw_timebase);
+        pNextFrame->Data.TimeStamp = rational_rescalex(outPts, calcTimebase, hw_timebase);
         pNextFrame->Data.DataFlag &= (~MFX_FRAMEDATA_ORIGINAL_TIMESTAMP);
-        m_outputTimestamp.add(pNextFrame->Data.TimeStamp, rational_rescale(outDuration, calcTimebase, hw_timebase));
+        m_outputTimestamp.add(pNextFrame->Data.TimeStamp, rational_rescalex(outDuration, calcTimebase, hw_timebase));
         return MFX_ERR_NONE;
     };
 
@@ -4317,5 +4317,25 @@ mfxStatus CQSVPipeline::CheckCurrentVideoParam(TCHAR *str, mfxU32 bufSize) {
     return MFX_ERR_NONE;
 #undef PRINT_INFO
 #undef PRINT_INT_AUTO
+}
+
+#include "ttmath/ttmath.h"
+
+int64_t CQSVPipeline::rational_rescalex(int64_t v, rgy_rational<int> from, rgy_rational<int> to) {
+    auto mul = rgy_rational<int64_t>((int64_t)from.n() * (int64_t)to.d(), (int64_t)from.d() * (int64_t)to.n());
+
+#if _M_IX86
+#define RESCALE_INT_SIZE 4
+#else
+#define RESCALE_INT_SIZE 2
+#endif
+    ttmath::Int<RESCALE_INT_SIZE> tmp1 = v;
+    tmp1 *= mul.n();
+    ttmath::Int<RESCALE_INT_SIZE> tmp2 = mul.d();
+
+    tmp1 = (tmp1 + tmp2 - 1) / tmp2;
+    int64_t ret;
+    tmp1.ToInt(ret);
+    return ret;
 }
 

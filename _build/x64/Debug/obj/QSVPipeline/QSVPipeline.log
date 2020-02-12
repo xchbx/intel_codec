@@ -32,12 +32,12 @@
   qsv_task.cpp
   qsv_util.cpp
   rgy_bitstream.cpp
+D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(1739,9): warning C4477: “printf”: 格式字符串“%ws”需要类型“wchar_t *”的参数，但可变参数 1 拥有了类型“const TCHAR *[]”
   rgy_event.cpp
   rgy_ini.cpp
+D:\work\intel\intel_codec\QSVPipeline\qsv_pipeline.cpp(313,56): warning C4100: “pInParams”: 未引用的形参
   rgy_input.cpp
   rgy_input_raw.cpp
-D:\work\intel\intel_codec\QSVPipeline\qsv_cmd.cpp(1739,9): warning C4477: “printf”: 格式字符串“%ws”需要类型“wchar_t *”的参数，但可变参数 1 拥有了类型“const TCHAR *[]”
-D:\work\intel\intel_codec\QSVPipeline\qsv_pipeline.cpp(313,56): warning C4100: “pInParams”: 未引用的形参
 D:\work\intel\intel_codec\QSVPipeline\qsv_pipeline.cpp(2183,21): warning C4189: “subBurnTrackPtr”: 局部变量已初始化但不引用
 D:\work\intel\intel_codec\QSVPipeline\qsv_pipeline.cpp(3230,13): warning C4189: “nOutFirstPts”: 局部变量已初始化但不引用
   rgy_log.cpp

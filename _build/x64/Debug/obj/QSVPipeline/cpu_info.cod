@@ -7,7 +7,7 @@ INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
 $SG143219 DB	'h264', 00H
-$SG143954 DB	00H
+$SG143949 DB	00H
 	ORG $+2
 $SG143220 DB	'hevc', 00H
 	ORG $+3
@@ -671,8 +671,13 @@ $SG135332 DB	'yc48', 00H
 	ORG $+3
 $SG135334 DB	'yc16', 00H
 	ORG $+3
-$SG143958 DB	'Haswell', 00H
-?CPU_GEN_STR@@3QBQEBDB DQ FLAT:$SG143954		; CPU_GEN_STR
+$SG143953 DB	'Haswell', 00H
+?CPU_GEN_STR@@3QBQEBDB DQ FLAT:$SG143949		; CPU_GEN_STR
+	DQ	FLAT:$SG143950
+	DQ	FLAT:$SG143951
+	DQ	FLAT:$SG143952
+	DQ	FLAT:$SG143953
+	DQ	FLAT:$SG143954
 	DQ	FLAT:$SG143955
 	DQ	FLAT:$SG143956
 	DQ	FLAT:$SG143957
@@ -681,159 +686,154 @@ $SG143958 DB	'Haswell', 00H
 	DQ	FLAT:$SG143960
 	DQ	FLAT:$SG143961
 	DQ	FLAT:$SG143962
-	DQ	FLAT:$SG143963
-	DQ	FLAT:$SG143964
-	DQ	FLAT:$SG143965
-	DQ	FLAT:$SG143966
-	DQ	FLAT:$SG143967
-$SG143955 DB	'SandyBridge', 00H
+$SG143950 DB	'SandyBridge', 00H
 $SG136280 DB	'VP9', 00H
-$SG143956 DB	'IvyBridge', 00H
+$SG143951 DB	'IvyBridge', 00H
 	ORG $+2
-$SG153182 DB	'%s', 00H
+$SG153177 DB	'%s', 00H
 	ORG $+1
-$SG143957 DB	'Silvermont', 00H
+$SG143952 DB	'Silvermont', 00H
 	ORG $+1
 $SG136891 DB	'fcc', 00H
-$SG143959 DB	'Airmont', 00H
-$SG143960 DB	'Broadwell', 00H
+$SG143954 DB	'Airmont', 00H
+$SG143955 DB	'Broadwell', 00H
 	ORG $+2
 $SG136892 DB	'GBR', 00H
-$SG143961 DB	'Skylake', 00H
-$SG143962 DB	'Apollolake', 00H
+$SG143956 DB	'Skylake', 00H
+$SG143957 DB	'Apollolake', 00H
 	ORG $+1
 $SG137205 DB	'pal', 00H
-$SG143963 DB	'Kabylake', 00H
+$SG143958 DB	'Kabylake', 00H
 	ORG $+3
-$SG144056 DB	'CBR  ', 00H
+$SG144051 DB	'CBR  ', 00H
 	ORG $+2
 $SG137043 DB	'bt470m', 00H
 	ORG $+1
 $SG137207 DB	'mac', 00H
-$SG143964 DB	'Geminilake', 00H
+$SG143959 DB	'Geminilake', 00H
 	ORG $+1
 $SG137209 DB	'0', 00H
 	ORG $+2
-$SG143965 DB	'Coffeelake', 00H
+$SG143960 DB	'Coffeelake', 00H
 	ORG $+1
 $SG137210 DB	'1', 00H
 	ORG $+2
-$SG143966 DB	'Cannonlake', 00H
+$SG143961 DB	'Cannonlake', 00H
 	ORG $+1
 $SG137211 DB	'2', 00H
 	ORG $+2
-$SG143967 DB	'Icelake', 00H
-$SG144057 DB	'VBR  ', 00H
+$SG143962 DB	'Icelake', 00H
+$SG144052 DB	'VBR  ', 00H
 	ORG $+2
-$SG144058 DB	'AVBR ', 00H
+$SG144053 DB	'AVBR ', 00H
 	ORG $+2
-$SG144059 DB	'QVBR ', 00H
+$SG144054 DB	'QVBR ', 00H
 	ORG $+2
-$SG144060 DB	'CQP  ', 00H
+$SG144055 DB	'CQP  ', 00H
 	ORG $+2
-$SG144061 DB	'LA   ', 00H
+$SG144056 DB	'LA   ', 00H
 	ORG $+2
-$SG144062 DB	'LAHRD', 00H
+$SG144057 DB	'LAHRD', 00H
 	ORG $+2
-$SG144063 DB	'ICQ  ', 00H
+$SG144058 DB	'ICQ  ', 00H
 	ORG $+2
-$SG144064 DB	'LAICQ', 00H
+$SG144059 DB	'LAICQ', 00H
 	ORG $+2
-$SG144065 DB	'VCM  ', 00H
+$SG144060 DB	'VCM  ', 00H
 	ORG $+2
-$SG144067 DB	'RC mode      ', 00H
+$SG144062 DB	'RC mode      ', 00H
 	ORG $+2
-$SG144068 DB	'10bit depth  ', 00H
+$SG144063 DB	'10bit depth  ', 00H
 	ORG $+2
-$SG144069 DB	'Fixed Func   ', 00H
+$SG144064 DB	'Fixed Func   ', 00H
 	ORG $+2
-$SG144070 DB	'Interlace    ', 00H
+$SG144065 DB	'Interlace    ', 00H
 	ORG $+2
-$SG144071 DB	'VUI info     ', 00H
+$SG144066 DB	'VUI info     ', 00H
 	ORG $+2
-$SG144072 DB	'Trellis      ', 00H
+$SG144067 DB	'Trellis      ', 00H
 	ORG $+2
-$SG144073 DB	'Adaptive_I   ', 00H
+$SG144068 DB	'Adaptive_I   ', 00H
 	ORG $+2
-$SG144074 DB	'Adaptive_B   ', 00H
+$SG144069 DB	'Adaptive_B   ', 00H
 	ORG $+2
-$SG144075 DB	'WeightP      ', 00H
+$SG144070 DB	'WeightP      ', 00H
 	ORG $+2
-$SG144076 DB	'WeightB      ', 00H
+$SG144071 DB	'WeightB      ', 00H
 	ORG $+2
-$SG144077 DB	'FadeDetect   ', 00H
+$SG144072 DB	'FadeDetect   ', 00H
 	ORG $+2
-$SG144078 DB	'B_Pyramid    ', 00H
+$SG144073 DB	'B_Pyramid    ', 00H
 	ORG $+2
-$SG144079 DB	' +ManyBframes', 00H
+$SG144074 DB	' +ManyBframes', 00H
 	ORG $+2
-$SG144080 DB	'PyramQPOffset', 00H
+$SG144075 DB	'PyramQPOffset', 00H
 	ORG $+2
-$SG144081 DB	'MBBRC        ', 00H
+$SG144076 DB	'MBBRC        ', 00H
 	ORG $+2
-$SG144082 DB	'ExtBRC       ', 00H
+$SG144077 DB	'ExtBRC       ', 00H
 	ORG $+2
-$SG144083 DB	'Adaptive_LTR ', 00H
+$SG144078 DB	'Adaptive_LTR ', 00H
 	ORG $+2
-$SG144084 DB	'LA Quality   ', 00H
+$SG144079 DB	'LA Quality   ', 00H
 	ORG $+2
-$SG144085 DB	'QP Min/Max   ', 00H
+$SG144080 DB	'QP Min/Max   ', 00H
 	ORG $+2
-$SG144086 DB	'IntraRefresh ', 00H
+$SG144081 DB	'IntraRefresh ', 00H
 	ORG $+2
-$SG144087 DB	'No Deblock   ', 00H
+$SG144082 DB	'No Deblock   ', 00H
 	ORG $+2
-$SG144088 DB	'No GPB       ', 00H
+$SG144083 DB	'No GPB       ', 00H
 	ORG $+2
-$SG144089 DB	'Windowed BRC ', 00H
+$SG144084 DB	'Windowed BRC ', 00H
 	ORG $+2
-$SG144090 DB	'PerMBQP(CQP) ', 00H
+$SG144085 DB	'PerMBQP(CQP) ', 00H
 	ORG $+2
-$SG144091 DB	'DirectBiasAdj', 00H
+$SG144086 DB	'DirectBiasAdj', 00H
 	ORG $+2
-$SG144092 DB	'MVCostScaling', 00H
+$SG144087 DB	'MVCostScaling', 00H
 	ORG $+2
-$SG144093 DB	'SAO          ', 00H
+$SG144088 DB	'SAO          ', 00H
 	ORG $+2
-$SG144094 DB	'Max CTU Size ', 00H
+$SG144089 DB	'Max CTU Size ', 00H
 	ORG $+2
-$SG144095 DB	'TSkip        ', 00H
+$SG144090 DB	'TSkip        ', 00H
 	ORG $+2
-$SG144097 DB	'Resize               ', 00H
+$SG144092 DB	'Resize               ', 00H
 	ORG $+2
-$SG144098 DB	'Deinterlace          ', 00H
+$SG144093 DB	'Deinterlace          ', 00H
 	ORG $+2
-$SG144099 DB	'Scaling Quality      ', 00H
+$SG144094 DB	'Scaling Quality      ', 00H
 	ORG $+2
-$SG144100 DB	'Denoise              ', 00H
+$SG144095 DB	'Denoise              ', 00H
 	ORG $+2
-$SG144101 DB	'Mctf                 ', 00H
+$SG144096 DB	'Mctf                 ', 00H
 	ORG $+2
-$SG144102 DB	'Rotate               ', 00H
+$SG144097 DB	'Rotate               ', 00H
 	ORG $+2
-$SG144103 DB	'Mirror               ', 00H
+$SG144098 DB	'Mirror               ', 00H
 	ORG $+2
-$SG144104 DB	'Detail Enhancement   ', 00H
+$SG144099 DB	'Detail Enhancement   ', 00H
 	ORG $+2
-$SG144105 DB	'Proc Amp.            ', 00H
+$SG144100 DB	'Proc Amp.            ', 00H
 	ORG $+2
-$SG144106 DB	'Image Stabilization  ', 00H
+$SG144101 DB	'Image Stabilization  ', 00H
 	ORG $+2
-$SG144107 DB	'Video Signal Info    ', 00H
+$SG144102 DB	'Video Signal Info    ', 00H
 	ORG $+2
-$SG144108 DB	'FPS Conversion       ', 00H
+$SG144103 DB	'FPS Conversion       ', 00H
 	ORG $+2
-$SG144109 DB	'FPS Conversion (Adv.)', 00H
+$SG144104 DB	'FPS Conversion (Adv.)', 00H
 	ORG $+2
-$SG144200 DB	' @ %.2fGHz', 00H
+$SG144195 DB	' @ %.2fGHz', 00H
 	ORG $+1
 $SG137212 DB	'3', 00H
 	ORG $+2
-$SG144202 DB	' [TB: %.2fGHz]', 00H
+$SG144197 DB	' [TB: %.2fGHz]', 00H
 	ORG $+1
-$SG144203 DB	' (%dC/%dT)', 00H
+$SG144198 DB	' (%dC/%dT)', 00H
 	ORG $+1
-$SG144205 DB	' <%s>', 00H
+$SG144200 DB	' <%s>', 00H
 	ORG $+2
 $SG137046 DB	'linear', 00H
 	ORG $+1
@@ -861,15 +861,15 @@ $SG137218 DB	'tv', 00H
 	ORG $+1
 $SG136282 DB	'unknown', 00H
 $SG136389 DB	'unknown', 00H
-$SG153181 DB	'invalid argument', 00H
+$SG153176 DB	'invalid argument', 00H
 	ORG $+7
-$SG153183 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG153178 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
-$SG153186 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG153181 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG153184 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG153179 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -886,7 +886,7 @@ $SG153184 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG153185 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG153180 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -894,7 +894,7 @@ $SG153185 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG153232 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG153227 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
 $SG136884 DB	'undef', 00H
 	ORG $+2
@@ -5006,7 +5006,7 @@ $LN5@getCPUInfo:
 	c8 00 00 00	 movsd	 xmm3, QWORD PTR defaultClock$4[rsp]
   00170	66 49 0f 7e d9	 movq	 r9, xmm3
   00175	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG144200
+	00 00		 lea	 r8, OFFSET FLAT:$SG144195
   0017c	48 8b 8c 24 f8
 	00 00 00	 mov	 rcx, QWORD PTR tv91[rsp]
   00184	48 8b d1	 mov	 rdx, rcx
@@ -5054,7 +5054,7 @@ $LN7@getCPUInfo:
 	d8 00 00 00	 movsd	 xmm3, QWORD PTR maxFrequency$6[rsp]
   00200	66 49 0f 7e d9	 movq	 r9, xmm3
   00205	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG144202
+	00 00		 lea	 r8, OFFSET FLAT:$SG144197
   0020c	48 8b 8c 24 00
 	01 00 00	 mov	 rcx, QWORD PTR tv136[rsp]
   00214	48 8b d1	 mov	 rdx, rcx
@@ -5087,7 +5087,7 @@ $LN6@getCPUInfo:
   00261	89 4c 24 20	 mov	 DWORD PTR [rsp+32], ecx
   00265	44 8b 4c 24 54	 mov	 r9d, DWORD PTR cpu_info$[rsp+4]
   0026a	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG144203
+	00 00		 lea	 r8, OFFSET FLAT:$SG144198
   00271	48 8b 8c 24 08
 	01 00 00	 mov	 rcx, QWORD PTR tv147[rsp]
   00279	48 8b d1	 mov	 rdx, rcx
@@ -5142,7 +5142,7 @@ $LN6@getCPUInfo:
 	01 00 00	 mov	 rdx, QWORD PTR tv156[rsp]
   00313	4c 8b 0c d1	 mov	 r9, QWORD PTR [rcx+rdx*8]
   00317	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG144205
+	00 00		 lea	 r8, OFFSET FLAT:$SG144200
   0031e	48 8b 8c 24 20
 	01 00 00	 mov	 rcx, QWORD PTR tv163[rsp]
   00326	48 8b d1	 mov	 rdx, rcx

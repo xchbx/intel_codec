@@ -6,10 +6,10 @@ INCLUDELIB MSVCRTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG123528 DB	'unknown', 00H
-$SG123547 DB	'Closing...', 0aH, 00H
+$SG123523 DB	'unknown', 00H
+$SG123542 DB	'Closing...', 0aH, 00H
 $SG115372 DB	'all', 00H
-$SG123548 DB	'Close...', 0aH, 00H
+$SG123543 DB	'Close...', 0aH, 00H
 	ORG $+2
 $SG115373 DB	'cpu', 00H
 $SG115374 DB	'cpu_total', 00H
@@ -32,49 +32,49 @@ $SG115381 DB	'cpu_aud_enc', 00H
 $SG115394 DB	'gpu', 00H
 $SG115382 DB	'cpu_out', 00H
 $SG115384 DB	'mem_private', 00H
-$SG123859 DB	')', 00H
+$SG123854 DB	')', 00H
 	ORG $+2
 $SG115385 DB	'mem_virtual', 00H
-$SG123860 DB	'(', 00H
+$SG123855 DB	'(', 00H
 	ORG $+2
 $SG115387 DB	'io_read', 00H
 $SG115388 DB	'io_write', 00H
 	ORG $+3
 $SG115401 DB	'queue', 00H
 	ORG $+2
-$SG123861 DB	'->', 00H
+$SG123856 DB	'->', 00H
 	ORG $+1
 $SG115390 DB	'fps_avg', 00H
 $SG115391 DB	'bitrate', 00H
 $SG115392 DB	'bitrate_avg', 00H
-$SG123863 DB	']', 00H
+$SG123858 DB	']', 00H
 	ORG $+2
 $SG115393 DB	'frame_out', 00H
 	ORG $+2
-$SG123864 DB	' [', 00H
+$SG123859 DB	' [', 00H
 	ORG $+1
 $SG115395 DB	'gpu_load', 00H
 	ORG $+3
-$SG123865 DB	', ', 00H
+$SG123860 DB	', ', 00H
 	ORG $+1
 $SG115396 DB	'gpu_clock', 00H
 	ORG $+2
-$SG123866 DB	', ', 00H
+$SG123861 DB	', ', 00H
 	ORG $+1
 $SG115397 DB	'vee_load', 00H
 	ORG $+3
-$SG123867 DB	'x', 00H
+$SG123862 DB	'x', 00H
 	ORG $+2
 $SG115398 DB	'ved_load', 00H
 	ORG $+3
-$SG123869 DB	'/', 00H
+$SG123864 DB	'/', 00H
 	ORG $+2
 $SG115399 DB	'pcie_load', 00H
 	ORG $+2
 $SG118196 DB	'vp8', 00H
 $SG115400 DB	've_clock', 00H
 	ORG $+3
-$SG123868 DB	' fps', 00H
+$SG123863 DB	' fps', 00H
 	ORG $+3
 $SG118192 DB	'h264', 00H
 	ORG $+3
@@ -938,7 +938,7 @@ $SG113217 DB	'pc', 00H
 	ORG $+1
 $SG113052 DB	'smpte2084', 00H
 	ORG $+2
-$SG138320 DB	'%s', 00H
+$SG138315 DB	'%s', 00H
 	ORG $+1
 $SG113053 DB	'smpte428', 00H
 	ORG $+3
@@ -1040,17 +1040,17 @@ $SG113204 DB	'secam', 00H
 $SG113214 DB	'limited', 00H
 $SG113215 DB	'full', 00H
 	ORG $+3
-$SG138319 DB	'invalid argument', 00H
+$SG138314 DB	'invalid argument', 00H
 	ORG $+7
-$SG138324 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG138319 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG138321 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG138316 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xmemory', 00H
 $SG114299 DB	'trace', 00H
 	ORG $+2
-$SG138322 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG138317 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -1067,7 +1067,7 @@ $SG138322 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG138323 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG138318 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -1075,7 +1075,7 @@ $SG138323 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG138759 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG138754 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.23.28105\include\xlocale', 00H
 ?list_empty@@3QBUCX_DESC@@B DQ 0000000000000000H	; list_empty
 	DD	00H
@@ -21059,16 +21059,16 @@ $LN4@Allocate_m:
 $LN9@Allocate_m:
 $LN7@Allocate_m:
   00056	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG138319
+	00 00		 lea	 rax, OFFSET FLAT:$SG138314
   0005d	48 89 44 24 28	 mov	 QWORD PTR [rsp+40], rax
   00062	48 8d 05 00 00
-	00 00		 lea	 rax, OFFSET FLAT:$SG138320
+	00 00		 lea	 rax, OFFSET FLAT:$SG138315
   00069	48 89 44 24 20	 mov	 QWORD PTR [rsp+32], rax
   0006e	45 33 c9	 xor	 r9d, r9d
   00071	41 b8 5b 00 00
 	00		 mov	 r8d, 91			; 0000005bH
   00077	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG138321
+	00 00		 lea	 rdx, OFFSET FLAT:$SG138316
   0007e	b9 02 00 00 00	 mov	 ecx, 2
   00083	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp__CrtDbgReport
@@ -21082,11 +21082,11 @@ $LN12@Allocate_m:
   0009a	41 b9 5b 00 00
 	00		 mov	 r9d, 91			; 0000005bH
   000a0	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG138322
+	00 00		 lea	 r8, OFFSET FLAT:$SG138317
   000a7	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG138323
+	00 00		 lea	 rdx, OFFSET FLAT:$SG138318
   000ae	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:$SG138324
+	00 00		 lea	 rcx, OFFSET FLAT:$SG138319
   000b5	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp__invalid_parameter
   000bb	33 c0		 xor	 eax, eax
@@ -41823,7 +41823,7 @@ $LN6:
 
   00070	48 8d 44 24 40	 lea	 rax, QWORD PTR ss$[rsp+16]
   00075	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG123860
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123855
   0007c	48 8b c8	 mov	 rcx, rax
   0007f	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
   00084	48 8b 94 24 a0
@@ -41831,7 +41831,7 @@ $LN6:
   0008c	48 8b c8	 mov	 rcx, rax
   0008f	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
   00094	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG123859
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123854
   0009b	48 8b c8	 mov	 rcx, rax
   0009e	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
 
@@ -41839,7 +41839,7 @@ $LN6:
 
   000a3	48 8d 44 24 40	 lea	 rax, QWORD PTR ss$[rsp+16]
   000a8	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG123861
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123856
   000af	48 8b c8	 mov	 rcx, rax
   000b2	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
   000b7	48 8b 94 24 a8
@@ -41862,7 +41862,7 @@ $LN6:
 
   000e4	48 8d 44 24 40	 lea	 rax, QWORD PTR ss$[rsp+16]
   000e9	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG123864
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123859
   000f0	48 8b c8	 mov	 rcx, rax
   000f3	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
   000f8	48 8b 94 24 b0
@@ -41870,7 +41870,7 @@ $LN6:
   00100	48 8b c8	 mov	 rcx, rax
   00103	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
   00108	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG123863
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123858
   0010f	48 8b c8	 mov	 rcx, rax
   00112	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
 $LN2@CreateInpu:
@@ -41880,7 +41880,7 @@ $LN2@CreateInpu:
 
   00117	48 8d 44 24 40	 lea	 rax, QWORD PTR ss$[rsp+16]
   0011c	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG123865
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123860
   00123	48 8b c8	 mov	 rcx, rax
   00126	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
 
@@ -41894,7 +41894,7 @@ $LN2@CreateInpu:
   0013e	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@I@Z
   00144	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG123867
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123862
   0014b	48 8b c8	 mov	 rcx, rax
   0014e	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
   00153	48 8b 8c 24 b8
@@ -41904,7 +41904,7 @@ $LN2@CreateInpu:
   00161	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@I@Z
   00167	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG123866
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123861
   0016e	48 8b c8	 mov	 rcx, rax
   00171	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
 
@@ -41918,7 +41918,7 @@ $LN2@CreateInpu:
   00189	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z
   0018f	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG123869
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123864
   00196	48 8b c8	 mov	 rcx, rax
   00199	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
   0019e	48 8b 8c 24 b8
@@ -41928,7 +41928,7 @@ $LN2@CreateInpu:
   001ac	ff 15 00 00 00
 	00		 call	 QWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z
   001b2	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG123868
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123863
   001b9	48 8b c8	 mov	 rcx, rax
   001bc	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
 
@@ -43016,7 +43016,7 @@ $LN3:
 ; 175  :     AddMessage(RGY_LOG_DEBUG, _T("Closing...\n"));
 
   0001e	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG123547
+	00 00		 lea	 r8, OFFSET FLAT:$SG123542
   00025	ba fe ff ff ff	 mov	 edx, -2
   0002a	48 8b 4c 24 30	 mov	 rcx, QWORD PTR this$[rsp]
   0002f	e8 00 00 00 00	 call	 ?AddMessage@RGYInput@@QEAAXHPEBDZZ ; RGYInput::AddMessage
@@ -43065,7 +43065,7 @@ $LN3:
 ; 184  :     AddMessage(RGY_LOG_DEBUG, _T("Close...\n"));
 
   0008f	4c 8d 05 00 00
-	00 00		 lea	 r8, OFFSET FLAT:$SG123548
+	00 00		 lea	 r8, OFFSET FLAT:$SG123543
   00096	ba fe ff ff ff	 mov	 edx, -2
   0009b	48 8b 4c 24 30	 mov	 rcx, QWORD PTR this$[rsp]
   000a0	e8 00 00 00 00	 call	 ?AddMessage@RGYInput@@QEAAXHPEBDZZ ; RGYInput::AddMessage
@@ -43535,7 +43535,7 @@ $LN9:
   000b7	48 05 f0 00 00
 	00		 add	 rax, 240		; 000000f0H
   000bd	48 8d 15 00 00
-	00 00		 lea	 rdx, OFFSET FLAT:$SG123528
+	00 00		 lea	 rdx, OFFSET FLAT:$SG123523
   000c4	48 8b c8	 mov	 rcx, rax
   000c7	e8 00 00 00 00	 call	 ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
   000cc	90		 npad	 1

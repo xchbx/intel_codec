@@ -21,10 +21,14 @@ D:\work\intel\intel_codec\QSVEncC\QSVEncC.cpp(911,44): warning C4244:         wi
 D:\work\intel\intel_codec\QSVEncC\QSVEncC.cpp(911,44): warning C4244:         [
 D:\work\intel\intel_codec\QSVEncC\QSVEncC.cpp(911,44): warning C4244:             _Ty2=int
 D:\work\intel\intel_codec\QSVEncC\QSVEncC.cpp(911,44): warning C4244:         ]
-LINK : warning LNK4199: 已忽略 /DELAYLOAD:avcodec-58.dll；未找到来自 avcodec-58.dll 的导入
-LINK : warning LNK4199: 已忽略 /DELAYLOAD:avformat-58.dll；未找到来自 avformat-58.dll 的导入
-LINK : warning LNK4199: 已忽略 /DELAYLOAD:avutil-56.dll；未找到来自 avutil-56.dll 的导入
-LINK : warning LNK4199: 已忽略 /DELAYLOAD:avfilter-7.dll；未找到来自 avfilter-7.dll 的导入
-LINK : warning LNK4199: 已忽略 /DELAYLOAD:swresample-3.dll；未找到来自 swresample-3.dll 的导入
-QSVPipeline.lib(qsv_pipeline.obj) : error LNK2019: 无法解析的外部符号 "__int64 __cdecl rational_rescale(__int64,class rgy_rational<int>,class rgy_rational<int>)" (?rational_rescale@@YA_J_JV?$rgy_rational@H@@1@Z)，该符号在函数 "public: virtual enum mfxStatus __cdecl CQSVPipeline::RunEncode(void)" (?RunEncode@CQSVPipeline@@UEAA?AW4mfxStatus@@XZ) 中被引用
-D:\work\intel\intel_codec\_build\x64\Debug\QSVEncC64.exe : fatal error LNK1120: 1 个无法解析的外部命令
+libmfx_vs2015.lib(main.obj) : warning LNK4099: 未找到 PDB“libmfx_vs2015.pdb”(使用“libmfx_vs2015.lib(main.obj)”或在“D:\work\intel\intel_codec\_build\x64\Debug\libmfx_vs2015.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+libmfx_vs2015.lib(mfx_critical_section.obj) : warning LNK4099: 未找到 PDB“libmfx_vs2015.pdb”(使用“libmfx_vs2015.lib(mfx_critical_section.obj)”或在“D:\work\intel\intel_codec\_build\x64\Debug\libmfx_vs2015.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+libmfx_vs2015.lib(mfx_dispatcher.obj) : warning LNK4099: 未找到 PDB“libmfx_vs2015.pdb”(使用“libmfx_vs2015.lib(mfx_dispatcher.obj)”或在“D:\work\intel\intel_codec\_build\x64\Debug\libmfx_vs2015.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+libmfx_vs2015.lib(mfx_dxva2_device.obj) : warning LNK4099: 未找到 PDB“libmfx_vs2015.pdb”(使用“libmfx_vs2015.lib(mfx_dxva2_device.obj)”或在“D:\work\intel\intel_codec\_build\x64\Debug\libmfx_vs2015.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+libmfx_vs2015.lib(mfx_function_table.obj) : warning LNK4099: 未找到 PDB“libmfx_vs2015.pdb”(使用“libmfx_vs2015.lib(mfx_function_table.obj)”或在“D:\work\intel\intel_codec\_build\x64\Debug\libmfx_vs2015.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+libmfx_vs2015.lib(mfx_library_iterator.obj) : warning LNK4099: 未找到 PDB“libmfx_vs2015.pdb”(使用“libmfx_vs2015.lib(mfx_library_iterator.obj)”或在“D:\work\intel\intel_codec\_build\x64\Debug\libmfx_vs2015.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+libmfx_vs2015.lib(mfx_load_dll.obj) : warning LNK4099: 未找到 PDB“libmfx_vs2015.pdb”(使用“libmfx_vs2015.lib(mfx_load_dll.obj)”或在“D:\work\intel\intel_codec\_build\x64\Debug\libmfx_vs2015.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+libmfx_vs2015.lib(mfx_load_plugin.obj) : warning LNK4099: 未找到 PDB“libmfx_vs2015.pdb”(使用“libmfx_vs2015.lib(mfx_load_plugin.obj)”或在“D:\work\intel\intel_codec\_build\x64\Debug\libmfx_vs2015.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+libmfx_vs2015.lib(mfx_plugin_hive.obj) : warning LNK4099: 未找到 PDB“libmfx_vs2015.pdb”(使用“libmfx_vs2015.lib(mfx_plugin_hive.obj)”或在“D:\work\intel\intel_codec\_build\x64\Debug\libmfx_vs2015.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+libmfx_vs2015.lib(mfx_win_reg_key.obj) : warning LNK4099: 未找到 PDB“libmfx_vs2015.pdb”(使用“libmfx_vs2015.lib(mfx_win_reg_key.obj)”或在“D:\work\intel\intel_codec\_build\x64\Debug\libmfx_vs2015.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  QSVEncC.vcxproj -> D:\work\intel\intel_codec\_build\x64\Debug\QSVEncC64.exe
