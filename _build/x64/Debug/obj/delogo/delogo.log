@@ -1,6 +1,0 @@
-﻿  delogo_process_avx.cpp
-  delogo_process_avx2.cpp
-  delogo_process_sse41.cpp
-  logo.cpp
-  plugin_delogo.cpp
-  delogo.vcxproj -> D:\work\intel\intel_codec\_build\x64\Debug\delogo.lib
