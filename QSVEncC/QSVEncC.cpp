@@ -170,13 +170,13 @@ static tstring help() {
         _T("output format will be automatically set by the output extension.\n")
         _T("when output filename is set to \"-\", H.264/AVC ES output is thrown to stdout.\n")
         _T("\n")
-        _T("Example:\n")
-        _T("  QSVEncC -i \"<avsfilename>\" -o \"<outfilename>\"\n")
-        _T("  avs2pipemod -y4mp \"<avsfile>\" | QSVEncC --y4m -i - -o \"<outfilename>\"\n")
-        _T("\n")
         _T("Example for Benchmark:\n")
         _T("  QSVEncC -i \"<avsfilename>\" --benchmark \"<benchmark_result.txt>\"\n")
-        );
+        ,
+        (ENABLE_AVSW_READER) ? _T("Also, ") : _T(""),
+        (ENABLE_AVI_READER)         ? _T("avi, ") : _T(""),
+        (ENABLE_AVISYNTH_READER)    ? _T("avs, ") : _T(""),
+        (ENABLE_VAPOURSYNTH_READER) ? _T("vpy, ") : _T(""));
     str += strsprintf(_T("\n")
         _T("Information Options: \n")
         _T("-h,-? --help                    show help\n")
@@ -262,8 +262,6 @@ static tstring help() {
         _T("                                 AVBR mode is only supported with API v1.3\n")
         _T("   --avbr-unitsize <int>        avbr calculation period in x100 frames\n")
         _T("                                 default %d (= unit size %d00 frames)\n")
-        //_T("   --avbr-range <float>           avbr accuracy range from bitrate set\n)"
-        //_T("                                   in percentage, defalut %.1f(%%)\n)"
         _T("   --qvbr <int>                 set bitrate in Quality VBR mode.\n")
         _T("                                 requires --qvbr-q option to be set as well\n")
         _T("   --qvbr-q <int>  or           set quality used in qvbr mode. default: %d\n")
@@ -404,13 +402,6 @@ static tstring help() {
         _T("                                 -1: auto (= default)\n")
         _T("                                  0: disable (slow, but less memory usage)\n")
         _T("                                  1: use one thread\n")
-#if 0
-        _T("   --audio-thread <int>         set audio thread num, available only with output thread\n")
-        _T("                                 -1: auto (= default)\n")
-        _T("                                  0: disable (slow, but less memory usage)\n")
-        _T("                                  1: use one thread\n")
-        _T("                                  2: use two thread\n")
-#endif //#if ENABLE_AVCODEC_AUDPROCESS_THREAD
 #endif //#if ENABLE_AVCODEC_OUT_THREAD
         _T("   --min-memory                 minimize memory usage of QSVEncC.\n")
         _T("                                 same as --output-thread 0 --audio-thread 0\n")
@@ -490,22 +481,6 @@ static tstring help() {
         _T("                                  default: enabled\n")
 #endif //#if defined(_WIN32) || defined(_WIN64)
         );
-#if 0
-    str += strsprintf(_T("\n")
-        _T(" Settings below are available only for software ecoding.\n")
-        _T("   --cavlc                      use cavlc instead of cabac\n")
-        _T("   --rdo                        use rate distortion optmization\n")
-        _T("   --inter-pred <int>           set minimum block size used for\n")
-        _T("   --intra-pred <int>           inter/intra prediction\n")
-        _T("                                  0: auto(default)   1: 16x16\n")
-        _T("                                  2: 8x8             3: 4x4\n")
-        _T("   --mv-search <int>            set window size for mv search\n")
-        _T("                                  default: 0 (auto)\n")
-        _T("   --mv-precision <int>         set precision of mv search\n")
-        _T("                                  0: auto(default)   1: full-pell\n")
-        _T("                                  2: half-pell       3: quater-pell\n")
-        );
-#endif
     str += strsprintf(_T("\nVPP Options:\n")
         _T("   --vpp-denoise <int>          use vpp denoise, set strength (%d-%d)\n")
         _T("   --vpp-mctf [\"auto\" or <int>] use vpp motion compensated temporal filter(mctf)\n")
@@ -1032,7 +1007,7 @@ mfxStatus run_benchmark(sInputParams *params) {
 }
 
 int run(int argc, TCHAR *argv[]) {
-	printf("-----------------------------------------> run start\r\n");
+	printf("-----------------------------------------> run start argc=%d\r\n",argc);
 
     if (argc == 1) {
         show_version();
@@ -1072,6 +1047,7 @@ int run(int argc, TCHAR *argv[]) {
     int ret = parse_cmd(&Params, argvCopy.data(), (mfxU8)argc, err);
     if (ret >= 1) {
         show_help();
+		printf("\r\n----------------------------------------->show_help end.\r\n");
         return 0;
     }
 	printf("\r\n----------------------------------------->parse_cmd end.\r\n");

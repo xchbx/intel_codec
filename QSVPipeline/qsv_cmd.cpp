@@ -47,8 +47,8 @@ tstring GetQSVEncVersion() {
     tstring version;
     version += get_encoder_version();
     version += _T("\n");
-    strsprintf(_T(" Intel Media SDK API v%d.%d\n"), MFX_VERSION_MAJOR, MFX_VERSION_MINOR);
-    version += _T(" reader: raw");
+    version += strsprintf(_T("--Intel Media SDK API v%d.%d\n"), MFX_VERSION_MAJOR, MFX_VERSION_MINOR);
+    version += _T("--reader: raw");
 #if !(defined(_WIN32) || defined(_WIN64))
     version += _T("\n vpp:    resize, deinterlace, denoise, detail-enhance, image-stab");
     if (ENABLE_CUSTOM_VPP) version += _T(", delego");

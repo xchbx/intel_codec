@@ -34,7 +34,7 @@
 #define STRING(str) #str
 
 const TCHAR *get_encoder_version() {
-    return
+		return
         _T(ENCODER_NAME) _T(" (")
         BUILD_ARCH_STR _T(") ") VER_STR_FILEVERSION_TCHAR _T(" (r") ENCODER_REV _T(") by happy, ")  _T(__DATE__) _T(" ") _T(__TIME__)
 #if defined(_MSC_VER)
