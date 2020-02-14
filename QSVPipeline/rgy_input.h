@@ -105,17 +105,17 @@ public:
 
 #pragma warning(push)
 #pragma warning(disable: 4100)
-    //動画ストリームの1フレーム分のデータをbitstreamに追加する (リーダー側のデータは消す)
+    //将一帧视频流数据添加到比特流中（在队首删除数据）
     virtual RGY_ERR GetNextBitstream(RGYBitstream *pBitstream) {
         return RGY_ERR_NONE;
     }
 
-    //動画ストリームの1フレーム分のデータをbitstreamに追加する (リーダー側のデータは残す)
+    //将一帧视频流数据添加到比特流中（将数据留在队首）
     virtual RGY_ERR GetNextBitstreamNoDelete(RGYBitstream *pBitstream) {
         return RGY_ERR_NONE;
     }
 
-    //ストリームのヘッダ部分を取得する
+    //获取比特流头
     virtual RGY_ERR GetHeader(RGYBitstream *pBitstream) {
         return RGY_ERR_NONE;
     }
@@ -141,15 +141,15 @@ public:
         m_inputVideoInfo.frames = frames;
     }
 
-    //入力ファイルに存在する音声のトラック数を返す
+    //返回输入文件中存在的音轨数
     virtual int GetAudioTrackCount() {
         return 0;
     }
-    //入力ファイルに存在する字幕のトラック数を返す
+    //返回输入文件中存在的字幕轨道的数量
     virtual int GetSubtitleTrackCount() {
         return 0;
     }
-    //入力ファイルに存在するデータのトラック数を返す
+    //返回输入文件中现有数据的磁道数
     virtual int GetDataTrackCount() {
         return 0;
     }
@@ -183,8 +183,8 @@ public:
         AddMessage(log_level, buffer);
     }
 
-    //HWデコードを行う場合のコーデックを返す
-    //行わない場合はRGY_CODEC_UNKNOWNを返す
+    //返回用于硬件解码的编解码器
+    //否则返回RGY_CODEC_UNKNOWN
     RGY_CODEC getInputCodec() {
         return m_inputVideoInfo.codec;
     }

@@ -32,7 +32,7 @@
 #include "rgy_input.h"
 
 std::vector<int> read_keyfile(tstring keyfile) {
-    std::set<int> s; //重複回避のため
+    std::set<int> s; //避免重复
     std::ifstream ifs(keyfile);
     if (ifs.is_open()) {
         std::string buff;
@@ -99,6 +99,7 @@ const ConvertCSP *RGYConvertCSP::getFunc(RGY_CSP csp_from, RGY_CSP csp_to, bool 
         m_uv_only = uv_only;
         m_csp = get_convert_csp_func(csp_from, csp_to, uv_only, simd);
     }
+	printf("RGYConvertCSP|getFunc...m_csp=%p,from = %d,to = %d,uv_only=%d\n",m_csp,csp_from,csp_to,uv_only);
     return m_csp;
 }
 

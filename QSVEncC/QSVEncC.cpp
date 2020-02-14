@@ -184,17 +184,7 @@ static tstring help() {
         _T("   --check-hw                   check if QuickSyncVideo is available\n")
         _T("   --check-lib                  check lib API version installed\n")
         _T("   --check-features [<string>]  check encode/vpp features\n")
-        _T("                                 with no option value, result will on stdout,\n")
-        _T("                                 otherwise, it is written to file path set\n")
-        _T("                                 and opened by default application.\n")
-        _T("                                 when writing to file, txt/html/csv format\n")
-        _T("                                 is available, chosen by the extension\n")
-        _T("                                 of the output file.\n")
-        _T("   --check-features-html [<string>]\n")
-        _T("                                check encode/vpp features and write html report to\n")
-        _T("                                 specified path. With no value, \"qsv_check.html\"\n")
-        _T("                                 will be created to current directory.\n")
-        _T("   --check-environment          check environment info\n")
+        _T("   --check-env					check environment info\n")
         _T("\n"));
 
     str += strsprintf(_T("\n")
@@ -643,9 +633,14 @@ int parse_print_options(const TCHAR *option_name, const TCHAR *arg1) {
         show_version();
         return 1;
     }
-    if (0 == _tcscmp(option_name, _T("check-environment"))) {
+    if (0 == _tcscmp(option_name, _T("check-env"))) {
         show_version();
         _ftprintf(stdout, _T("%s"), getEnviromentInfo(true).c_str());
+	    mfxVersion lib = get_mfx_libhw_version();
+        mfxVersion test = { 0, 1 };
+        if (check_lib_version(lib, test)) {
+            _ftprintf(stdout, _T("Media SDK Version: Hardware API v%d.%d\n\n"), lib.Major, lib.Minor);
+        }
         return 1;
     }
     if (0 == _tcscmp(option_name, _T("check-environment-auo"))) {
@@ -665,11 +660,6 @@ int parse_print_options(const TCHAR *option_name, const TCHAR *arg1) {
     }
     if (0 == _tcscmp(option_name, _T("check-features-auo"))) {
         writeFeatureList(_T(""), true);
-        return 1;
-    }
-    if (0 == _tcscmp(option_name, _T("check-features-html"))) {
-        tstring output = (arg1[0] != _T('-')) ? arg1 : _T("");
-        writeFeatureList(output, false, FEATURE_LIST_STR_TYPE_HTML);
         return 1;
     }
     if (0 == _tcscmp(option_name, _T("check-hw"))

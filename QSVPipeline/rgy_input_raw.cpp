@@ -174,6 +174,7 @@ RGY_ERR RGYInputRaw::Init(const TCHAR *strFileName, VideoInfo *pInputInfo, const
     memcpy(&m_inputVideoInfo, pInputInfo, sizeof(m_inputVideoInfo));
 
     m_strReaderName = (m_inputVideoInfo.type == RGY_INPUT_FMT_Y4M) ? _T("y4m") : _T("raw");
+	AddMessage(RGY_LOG_ERROR, _T("[debug]===>open file \"%s\" threadCsp=%d\n"), strFileName,prm->threadCsp);
 
     m_sConvert = std::make_unique<RGYConvertCSP>(prm->threadCsp);
 
@@ -240,7 +241,7 @@ RGY_ERR RGYInputRaw::Init(const TCHAR *strFileName, VideoInfo *pInputInfo, const
             AddMessage(RGY_LOG_ERROR, _T("yuv422 not supported as input color format."));
             return RGY_ERR_INVALID_FORMAT;
         }
-        //yuv422読み込みは、出力フォーマットへの直接変換を持たないのでNV16に変換する
+        //yuv422 read没有直接转换为输出格式，因此转换为NV16
         nOutputCSP = RGY_CSP_NV16;
         output_csp_if_lossless = RGY_CSP_YUV444;
         break;
@@ -254,9 +255,9 @@ RGY_ERR RGYInputRaw::Init(const TCHAR *strFileName, VideoInfo *pInputInfo, const
             AddMessage(RGY_LOG_ERROR, _T("yuv422 not supported as input color format."));
             return RGY_ERR_INVALID_FORMAT;
         }
-        //yuv422読み込みは、出力フォーマットへの直接変換を持たないのでP210に変換する
+        //yuv422 read转换为P210，因为它没有直接转换为输出格式
         nOutputCSP = RGY_CSP_P210;
-        //m_inputVideoInfo.shiftも出力フォーマットに対応する値でなく入力フォーマットに対するものに
+        //m_inputVideoInfo.shift也适用于输入格式，而不适用于输出格式
         m_inputVideoInfo.shift = 16 - RGY_CSP_BIT_DEPTH[m_InputCsp];
         output_csp_if_lossless = RGY_CSP_YUV444_16;
         break;
@@ -284,7 +285,7 @@ RGY_ERR RGYInputRaw::Init(const TCHAR *strFileName, VideoInfo *pInputInfo, const
                 && RGY_CSP_BIT_PER_PIXEL[m_InputCsp] < RGY_CSP_BIT_PER_PIXEL[nOutputCSP])
             ? output_csp_if_lossless : nOutputCSP;
     } else {
-        //ロスレスの場合は、入力側で出力フォーマットを決める
+        //在无损的情况下，请确定输入端的输出格式
         m_inputVideoInfo.csp = output_csp_if_lossless;
     }
 
@@ -295,6 +296,10 @@ RGY_ERR RGYInputRaw::Init(const TCHAR *strFileName, VideoInfo *pInputInfo, const
     }
 
     m_inputVideoInfo.shift = ((m_inputVideoInfo.csp == RGY_CSP_P010 || m_inputVideoInfo.csp == RGY_CSP_P210) && m_inputVideoInfo.shift) ? m_inputVideoInfo.shift : 0;
+
+
+	AddMessage(RGY_LOG_ERROR, _T("raw/y4m: color conversion : %s -> %s. simdCsp=%d\n"),
+						RGY_CSP_NAMES[m_InputCsp], RGY_CSP_NAMES[m_inputVideoInfo.csp],prm->simdCsp);
 
     if (m_sConvert->getFunc(m_InputCsp, m_inputVideoInfo.csp, false, prm->simdCsp) == nullptr) {
         AddMessage(RGY_LOG_ERROR, _T("raw/y4m: color conversion not supported: %s -> %s.\n"),
@@ -309,8 +314,8 @@ RGY_ERR RGYInputRaw::Init(const TCHAR *strFileName, VideoInfo *pInputInfo, const
 }
 
 RGY_ERR RGYInputRaw::LoadNextFrame(RGYFrame *pSurface) {
-    //m_pEncSatusInfo->m_nInputFramesがtrimの結果必要なフレーム数を大きく超えたら、エンコードを打ち切る
-    //ちょうどのところで打ち切ると他のストリームに影響があるかもしれないので、余分に取得しておく
+    //如果修剪导致m_pEncSatusInfo-> m_nInputFrames大大超出了所需的帧数，请停止编码。
+    //如果中途终止可能会影响其他流获取更多的帧数据。
     if (getVideoTrimMaxFramIdx() < (int)m_pEncSatusInfo->m_sData.frameIn - TRIM_OVERREAD_FRAMES) {
         return RGY_ERR_MORE_DATA;
     }
