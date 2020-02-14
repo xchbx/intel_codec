@@ -1415,7 +1415,7 @@ static bool inline trim_active(const sTrimParam *pTrim) {
     return true;
 }
 
-//block index (空白がtrimで削除された領域)
+//block index (Areas where white space was removed in trim)
 //       #0       #0         #1         #1       #2    #2
 //   |        |----------|         |----------|     |------
 static std::pair<bool, int> inline frame_inside_range(int frame, const std::vector<sTrim>& trimList) {

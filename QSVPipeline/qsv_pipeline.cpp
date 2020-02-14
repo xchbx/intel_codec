@@ -2120,9 +2120,9 @@ mfxStatus CQSVPipeline::InitOutput(sInputParams *pParams) {
 mfxStatus CQSVPipeline::InitInput(sInputParams *pParams) {
     RGY_ERR ret = RGY_ERR_NONE;
 
-    int sourceAudioTrackIdStart = 1;    //トラック番号は1スタート
-    int sourceSubtitleTrackIdStart = 1; //トラック番号は1スタート
-    int sourceDataTrackIdStart = 1; //トラック番号は1スタート
+    int sourceAudioTrackIdStart = 1;    //音频轨迹开始1
+    int sourceSubtitleTrackIdStart = 1; //音频轨迹开始1
+    int sourceDataTrackIdStart = 1; //数据轨迹开始1
     if (!m_pEncSatusInfo) {
         m_pEncSatusInfo = std::make_shared<EncodeStatus>();
     }
@@ -2153,36 +2153,13 @@ mfxStatus CQSVPipeline::InitInput(sInputParams *pParams) {
     inputPrm.simdCsp = pParams->simdCsp;
     RGYInputPrm *pInputPrm = &inputPrm;
 
-    //まずavs or vpy readerをためす
     m_pFileReader = nullptr;
-    if (   inputVideo.type == RGY_INPUT_FMT_VPY
-        || inputVideo.type == RGY_INPUT_FMT_VPY_MT
-        || inputVideo.type == RGY_INPUT_FMT_AVS) {
-        if (NULL == m_pFileReader) {
-            //aviリーダーに切り替え再試行する
-            inputVideo.type = RGY_INPUT_FMT_AVI;
-        } else {
-            ret = m_pFileReader->Init(pParams->strSrcFile, &inputVideo, pInputPrm, m_pQSVLog, m_pEncSatusInfo);
-            if (ret == RGY_ERR_INVALID_COLOR_FORMAT) {
-                //入力色空間の制限で使用できない場合はaviリーダーに切り替え再試行する
-                PrintMes(RGY_LOG_WARN, m_pFileReader->GetInputMessage());
-                m_pFileReader.reset();
-                ret = RGY_ERR_NONE;
-                PrintMes(RGY_LOG_WARN, _T("Input: switching to avi reader.\n"));
-                inputVideo.type = RGY_INPUT_FMT_AVI;
-            }
-            if (ret != RGY_ERR_NONE) {
-                PrintMes(RGY_LOG_ERROR, m_pFileReader->GetInputMessage());
-                return err_to_mfx(ret);
-            }
-        }
-    }
-
     auto subBurnTrack = std::unique_ptr<SubtitleSelect>(new SubtitleSelect());
     subBurnTrack->trackID = pParams->vpp.subburn.nTrack;
     SubtitleSelect *subBurnTrackPtr = subBurnTrack.get();
     if (m_pFileReader == nullptr) {
-        switch (inputVideo.type) {
+        switch (inputVideo.type) 
+		{
 #if ENABLE_RAW_READER
             case RGY_INPUT_FMT_Y4M:
             case RGY_INPUT_FMT_RAW:
@@ -2208,13 +2185,13 @@ mfxStatus CQSVPipeline::InitInput(sInputParams *pParams) {
 
     if (
         pParams->pTrimList && pParams->nTrimCount > 0) {
-        //avhw/avswリーダー以外は、trimは自分ではセットされないので、ここでセットする
+        //除了avhw/avsw文件句柄以外，截断不是自己设置的，因此请在此处设置
         sTrimParam trimParam;
         trimParam.list = make_vector(pParams->pTrimList, pParams->nTrimCount);
         trimParam.offset = 0;
         m_pFileReader->SetTrimParam(trimParam);
     }
-    //trim情報をリーダーから取得する
+    //从文件句柄获取截断信息
     m_trimParam = *m_pFileReader->GetTrimParam();
     if (m_trimParam.list.size()) {
         PrintMes(RGY_LOG_DEBUG, _T("Input: trim options\n"));
@@ -3591,14 +3568,14 @@ mfxStatus CQSVPipeline::RunEncode() {
                 //}
 
                 if (m_pFileReader->getInputCodec() == RGY_CODEC_UNKNOWN) {
-                    //読み込み側の該当フレームの読み込み終了を待機(pInputBuf->heInputDone)して、読み込んだフレームを取得
-                    //この関数がRGY_ERR_NONE以外を返すことでRunEncodeは終了処理に入る
+					//Wait for the reading end of the corresponding frame on the reading side (pInputBuf->heInputDone)and acquire the read frame. 
+					//When this function returns anything other than RGY_ERR_NONE, RunEncode enters the end processing.
                     sts = GetNextFrame(&pNextFrame);
                     if (sts != MFX_ERR_NONE) {
                         break;
                     }
                     pNextFrame->Data.TimeStamp = (mfxU64)MFX_TIMESTAMP_UNKNOWN;
-                    //フレーム読み込みの場合には、必要ならここでロックする
+                    //For frame loading, lock here if necessary
                     if (m_bExternalAlloc) {
                         if (MFX_ERR_NONE != (sts = m_pMFXAllocator->Unlock(m_pMFXAllocator->pthis, (pNextFrame)->Data.MemId, &((pNextFrame)->Data))))
                             break;
@@ -3607,10 +3584,10 @@ mfxStatus CQSVPipeline::RunEncode() {
                             break;
                     }
 
-                    //空いているフレームを読み込み側に渡す
+                    //Pass free frames to the reader
                     SetNextSurface(pSurfInputBuf);
                 } else {
-                    //フレーム読み込みでない場合には、フレームバッファをm_pFileReaderを通さずに直接渡す
+                    //If the frame is not read, pass the frame buffer directly without passing through m_pFileReader
                     pNextFrame = pSurfInputBuf;
                     if (m_EncThread.m_bthForceAbort) {
                         sts = m_EncThread.m_stsThread;
@@ -3624,7 +3601,7 @@ mfxStatus CQSVPipeline::RunEncode() {
                     break;
                 }
 
-                //この関数がMFX_ERR_MORE_BITSTREAMを返せば、入力は終了
+                //如果此函数返回MFX_ERR_MORE_BITSTREAM，则输入完成
                 sts = decode_one_frame(true);
                 if (sts == MFX_ERR_MORE_DATA || sts == MFX_ERR_MORE_SURFACE)
                     continue;
