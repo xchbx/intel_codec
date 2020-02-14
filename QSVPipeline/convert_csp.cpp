@@ -1060,11 +1060,8 @@ static const ConvertCSP funcList[] = {
 
 const ConvertCSP *get_convert_csp_func(RGY_CSP csp_from, RGY_CSP csp_to, bool uv_only, uint32_t simd) {
     uint32_t availableSIMD = get_availableSIMD() & simd;
-	printf("availableSIMD = %d,simd=%d\r\n",availableSIMD,simd);
     const ConvertCSP *convert = nullptr;
     for (int i = 0; i < _countof(funcList); i++) {
-		printf("getFunc[%d]...from = %d,to = %d,uv_only=%d\r\n",i,funcList[i].csp_from,funcList[i].csp_to,funcList[i].uv_only);
-		printf("getFunc[%d]... simd= %d,xxx = %d\r\n",i,funcList[i].simd,(availableSIMD & funcList[i].simd));
 		if (csp_from != funcList[i].csp_from)
             continue;
 
@@ -1078,7 +1075,6 @@ const ConvertCSP *get_convert_csp_func(RGY_CSP csp_from, RGY_CSP csp_to, bool uv
             continue;
 
         convert = &funcList[i];
-		printf("convert = %p,i=%d\r\n",convert,i);
         break;
     }
     return convert;

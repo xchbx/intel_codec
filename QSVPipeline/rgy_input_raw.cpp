@@ -297,10 +297,6 @@ RGY_ERR RGYInputRaw::Init(const TCHAR *strFileName, VideoInfo *pInputInfo, const
 
     m_inputVideoInfo.shift = ((m_inputVideoInfo.csp == RGY_CSP_P010 || m_inputVideoInfo.csp == RGY_CSP_P210) && m_inputVideoInfo.shift) ? m_inputVideoInfo.shift : 0;
 
-
-	AddMessage(RGY_LOG_ERROR, _T("raw/y4m: color conversion : %s -> %s. simdCsp=%d\n"),
-						RGY_CSP_NAMES[m_InputCsp], RGY_CSP_NAMES[m_inputVideoInfo.csp],prm->simdCsp);
-
     if (m_sConvert->getFunc(m_InputCsp, m_inputVideoInfo.csp, false, prm->simdCsp) == nullptr) {
         AddMessage(RGY_LOG_ERROR, _T("raw/y4m: color conversion not supported: %s -> %s.\n"),
             RGY_CSP_NAMES[m_InputCsp], RGY_CSP_NAMES[m_inputVideoInfo.csp]);
