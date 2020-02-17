@@ -289,7 +289,7 @@ bool CQSVPipeline::CompareParam(const mfxParamSet& prmIn, const mfxParamSet& prm
     return ret;
 }
 
-//範囲チェック
+//param check
 mfxStatus CQSVPipeline::CheckParamList(int value, const CX_DESC *list, const char *param_name) {
     for (int i = 0; list[i].desc; i++)
         if (list[i].value == value)
@@ -343,13 +343,13 @@ mfxStatus CQSVPipeline::InitMfxEncParams(sInputParams *pInParams) {
             return MFX_ERR_UNSUPPORTED;
         }
     }
-    //エンコードモードのチェック
+    //Check encoding mode
     auto availableFeaures = CheckEncodeFeature(m_mfxSession, m_mfxVer, pInParams->nEncMode, pInParams->CodecId);
     PrintMes(RGY_LOG_DEBUG, _T("Detected avaliable features for hw API v%d.%d, %s, %s\n%s\n"),
         m_mfxVer.Major, m_mfxVer.Minor,
         CodecIdToStr(pInParams->CodecId), EncmodeToStr(pInParams->nEncMode), MakeFeatureListStr(availableFeaures).c_str());
     if (!(availableFeaures & ENC_FEATURE_CURRENT_RC)) {
-        //このコーデックがサポートされているかどうか確認する
+        //Check to see if this codec is supported
         if (   pInParams->nEncMode == MFX_RATECONTROL_CQP
             || pInParams->nEncMode == MFX_RATECONTROL_VBR
             || pInParams->nEncMode == MFX_RATECONTROL_CBR
@@ -383,28 +383,28 @@ mfxStatus CQSVPipeline::InitMfxEncParams(sInputParams *pInParams) {
         }
         //fallback
         const int RC_BITRATE[] = { MFX_RATECONTROL_CBR, MFX_RATECONTROL_VBR, MFX_RATECONTROL_AVBR, MFX_RATECONTROL_VCM, MFX_RATECONTROL_LA, MFX_RATECONTROL_LA_HRD, MFX_RATECONTROL_LA_EXT, MFX_RATECONTROL_QVBR };
-        //ビットレート指定モードかどうか
+        //Whether in bitrate mode
         bool bSelectedRCBitrate = std::find(RC_BITRATE, RC_BITRATE + _countof(RC_BITRATE), pInParams->nEncMode) != (RC_BITRATE + _countof(RC_BITRATE));
-        //fallbackの候補リスト、優先度の高い順にセットする
+        //set the fallback picklist, ordered by priority
         vector<int> check_rc_list;
-        //現在のレート制御モードは使用できないので、それ以外を確認する
+        //The current rate control mode is not available, so check others;
         auto check_rc_add = [pInParams, &check_rc_list](int rc_mode) {
             if (pInParams->nEncMode != rc_mode) {
                 check_rc_list.push_back(rc_mode);
             }
         };
 
-        //品質指定系の場合、若干補正をかけた値を設定する
+        //For quality-designated systems, set a slightly corrected value
         int nAdjustedQP[3] = { QSV_DEFAULT_QPI, QSV_DEFAULT_QPP, QSV_DEFAULT_QPB };
         if (bSelectedRCBitrate) {
-            //ビットレートモードなら、QVBR->VBRをチェックする
+            //Check QVBR->VBR in bitrate mode
             check_rc_add(MFX_RATECONTROL_QVBR);
             check_rc_add(MFX_RATECONTROL_VBR);
         } else {
-            //固定品質モードなら、ICQ->CQPをチェックする
+            //Check ICQ->CQP in fixed quality mode
             check_rc_add(MFX_RATECONTROL_ICQ);
             check_rc_add(MFX_RATECONTROL_CQP);
-            //品質指定系の場合、若干補正をかけた値を設定する
+            //For quality-designated systems, set a slightly corrected value
             if (pInParams->nEncMode == MFX_RATECONTROL_LA_ICQ) {
                 nAdjustedQP[0] = pInParams->nICQQuality - 8;
                 nAdjustedQP[1] = pInParams->nICQQuality - 6;
@@ -419,7 +419,7 @@ mfxStatus CQSVPipeline::InitMfxEncParams(sInputParams *pInParams) {
                 nAdjustedQP[2] = pInParams->nQPB;
             }
         }
-        //check_rc_listに設定したfallbackの候補リストをチェックする
+        //Check the list of fallback pickouts set in the check_rc_list
         bool bFallbackSuccess = false;
         for (uint32_t i = 0; i < (uint32_t)check_rc_list.size(); i++) {
             auto availRCFeatures = CheckEncodeFeature(m_mfxSession, m_mfxVer, (uint16_t)check_rc_list[i], pInParams->CodecId);
@@ -440,7 +440,7 @@ mfxStatus CQSVPipeline::InitMfxEncParams(sInputParams *pInParams) {
                 break;
             }
         }
-        //なんらかの理由でフォールバックできなかったらエラー終了
+        //Error termination if fallback fails for some reason
         if (!bFallbackSuccess) {
             return MFX_ERR_INVALID_VIDEO_PARAM;
         }
@@ -448,7 +448,7 @@ mfxStatus CQSVPipeline::InitMfxEncParams(sInputParams *pInParams) {
     if (pInParams->nBframes == QSV_BFRAMES_AUTO) {
         pInParams->nBframes = (pInParams->CodecId == MFX_CODEC_HEVC) ? QSV_DEFAULT_HEVC_BFRAMES : QSV_DEFAULT_H264_BFRAMES;
     }
-    //その他機能のチェック
+    //Check for other functions
     if (pInParams->bAdaptiveI && !(availableFeaures & ENC_FEATURE_ADAPTIVE_I)) {
         PrintMes(RGY_LOG_WARN, _T("Adaptve I-frame insert is not supported on current platform, disabled.\n"));
         pInParams->bAdaptiveI = false;
@@ -508,7 +508,7 @@ mfxStatus CQSVPipeline::InitMfxEncParams(sInputParams *pInParams) {
         PrintMes(RGY_LOG_WARN, _T("B frames will be disabled.\n"));
         pInParams->nBframes = 0;
     }
-    //最近のドライバでは問題ない模様
+    //It seems that it is not a problem with a recent driver.
     //if (pInParams->nBframes > 2 && pInParams->CodecId == MFX_CODEC_HEVC) {
     //    PrintMes(RGY_LOG_WARN, _T("HEVC encoding + B-frames > 2 might cause artifacts, please check the output.\n"));
     //}
@@ -625,11 +625,11 @@ mfxStatus CQSVPipeline::InitMfxEncParams(sInputParams *pInParams) {
         }
     }
 
-    //Intra Refereshが指定された場合は、GOP関連の設定を自動的に上書き
+    //If Intra Referesh is specified, the GOP-related settings are automatically overwritten.
     if (pInParams->bIntraRefresh) {
         pInParams->bforceGOPSettings = true;
     }
-    //profileを守るための調整
+    //Adjustments to protect profile
     if (pInParams->CodecProfile == MFX_PROFILE_AVC_BASELINE) {
         pInParams->nBframes = 0;
         pInParams->bCAVLC = true;
@@ -643,7 +643,7 @@ mfxStatus CQSVPipeline::InitMfxEncParams(sInputParams *pInParams) {
     CHECK_RANGE_LIST(pInParams->CodecProfile, get_profile_list(pInParams->CodecId), "profile");
     CHECK_RANGE_LIST(pInParams->nEncMode,     list_rc_mode, "rc mode");
 
-    //設定開始
+    //Start setting up
     m_mfxEncParams.mfx.CodecId                 = pInParams->CodecId;
     m_mfxEncParams.mfx.RateControlMethod       = pInParams->nEncMode;
     if (MFX_RATECONTROL_CQP == m_mfxEncParams.mfx.RateControlMethod) {
@@ -657,7 +657,7 @@ mfxStatus CQSVPipeline::InitMfxEncParams(sInputParams *pInParams) {
         m_mfxEncParams.mfx.MaxKbps         = 0;
     } else {
         auto maxBitrate = (std::max)((std::max)(pInParams->nBitRate, pInParams->nMaxBitrate),
-            pInParams->VBVBufsize / 8 /*これはbyte単位の指定*/);
+            pInParams->VBVBufsize / 8 /*This is specified in bytes*/);
         if (maxBitrate > USHRT_MAX) {
             m_mfxEncParams.mfx.BRCParamMultiplier = (mfxU16)(maxBitrate / USHRT_MAX) + 1;
             pInParams->nBitRate    /= m_mfxEncParams.mfx.BRCParamMultiplier;
@@ -729,7 +729,7 @@ mfxStatus CQSVPipeline::InitMfxEncParams(sInputParams *pInParams) {
     m_mfxEncParams.mfx.GopOptFlag              = 0;
     m_mfxEncParams.mfx.GopOptFlag             |= (!pInParams->bopenGOP) ? MFX_GOP_CLOSED : 0x00;
     m_mfxEncParams.mfx.IdrInterval             = (!pInParams->bopenGOP) ? 0 : (mfxU16)((OutputFPSRate + OutputFPSScale - 1) / OutputFPSScale) * 20 / pInParams->nGOPLength;
-    //MFX_GOP_STRICTにより、インタレ保持時にフレームが壊れる場合があるため、無効とする
+    //
     //m_mfxEncParams.mfx.GopOptFlag             |= (pInParams->bforceGOPSettings) ? MFX_GOP_STRICT : NULL;
 
     m_mfxEncParams.mfx.GopPicSize              = (pInParams->bIntraRefresh) ? 0 : pInParams->nGOPLength;
@@ -3465,26 +3465,26 @@ mfxStatus CQSVPipeline::RunEncode() {
 
     auto encode_one_frame =[&](mfxFrameSurface1* pSurfEncIn) {
         if (m_pmfxENC == nullptr) {
-            //エンコードが有効でない場合、このフレームデータを出力する
-            //パイプラインの最後のSyncPointをセットする
+			// Output this frame data if encoding is not valid
+			// set the last SyncPoint in the pipeline
             pCurrentTask->encSyncPoint = lastSyncP;
-            //フレームデータが出力されるまで空きフレームとして使われないようLockを加算しておく
-            //TaskのWriteBitstreamで減算され、解放される
+			//Add Lock so that it is not used as an empty frame until the frame data is output.
+			//Task is subtracted and released in WriteBitstream.
             pSurfEncIn->Data.Locked++;
-            //フレームのポインタを出力用にセット
+            //Set the frame pointer for output.
             pCurrentTask->mfxSurf = pSurfEncIn;
             return MFX_ERR_NONE;
         }
 
         mfxStatus enc_sts = MFX_ERR_NONE;
 
-        //以下の処理は
+        //The following process
         if (pSurfEncIn) {
             nFramePutToEncoder++;
-            //TimeStampをMFX_TIMESTAMP_UNKNOWNにしておくと、きちんと設定される
+            //If TimeStamp is set to MFX_TIMESTAMP_UNKNOWN, it will be set properly.
             pCurrentTask->mfxBS.TimeStamp = (uint64_t)MFX_TIMESTAMP_UNKNOWN;
             pCurrentTask->mfxBS.DecodeTimeStamp = (uint64_t)MFX_TIMESTAMP_UNKNOWN;
-            //bob化の際に増えたフレームのTimeStampには、MFX_TIMESTAMP_UNKNOWNが設定されているのでこれを補間して修正する
+            //MFX_TIMESTAMP_UNKNOWN is set in the TimeStamp of the frame that has increased during bobbing.
             pSurfEncIn->Data.TimeStamp = (uint64_t)m_outputTimestamp.check(pSurfEncIn->Data.TimeStamp);
         }
 
@@ -3518,27 +3518,29 @@ mfxStatus CQSVPipeline::RunEncode() {
         return enc_sts;
     };
 
-    //メインループ
+    //Main loop
     while (MFX_ERR_NONE <= sts || MFX_ERR_MORE_DATA == sts || MFX_ERR_MORE_SURFACE == sts) {
         if (pSurfCheckPts) {
-            //pSurfCheckPtsはcheckptsから出てきて、他の要素に投入するフレーム
-            //投入後、ロックを解除する必要がある
+            //pSurfCheckPts is a frame that comes out of checkpts and puts it into other elements.
+            //After loading, it is necessary to unlock
             pSurfCheckPts->Data.Locked--;
             pSurfCheckPts = nullptr;
         }
         speedCtrl.wait(m_pEncSatusInfo->m_sData.frameIn);
 #if defined(_WIN32) || defined(_WIN64)
-        //中断オブジェクトのチェック
+        //Checking for suspended objects
         if (WaitForSingleObject(m_heAbort.get(), 0) == WAIT_OBJECT_0) {
             m_EncThread.m_bthForceAbort = true;
         }
 #endif
 
-        //空いているフレームバッファを取得、空いていない場合は待機して、出力ストリームの書き出しを待ってから取得
+        //Get an empty framebuffer, wait if it is not free, 
+        //wait for the output stream to be written, and then retrieve.
         if (MFX_ERR_NONE != (sts = GetFreeTask(&pCurrentTask)))
             break;
 
-        //空いているフレームバッファを取得、空いていない場合は待機して、空くまで待ってから取得
+        //Get an empty framebuffer, wait if it is not available, 
+        //wait until free before retrieving.
         nEncSurfIdx = GetFreeSurface(m_pEncSurfaces.data(), m_EncResponse.NumFrameActual);
         if (nEncSurfIdx == MSDK_INVALID_SURF_IDX) {
             PrintMes(RGY_LOG_ERROR, _T("Failed to get free surface for enc.\n"));
@@ -3553,20 +3555,6 @@ mfxStatus CQSVPipeline::RunEncode() {
                 break;
             }
             if (!bCheckPtsMultipleOutput) {
-                //if (m_VppPrePlugins.size()) {
-                //    pSurfInputBuf = pSurfVppPreFilter[0];
-                //    //ppNextFrame = &;
-                //} else if (m_pmfxVPP) {
-                //    pSurfInputBuf = &m_pVppSurfaces[nVppSurfIdx];
-                //    //ppNextFrame = &pSurfVppIn;
-                //} else if (m_VppPostPlugins.size()) {
-                //    pSurfInputBuf = &pSurfVppPostFilter[0];
-                //    //ppNextFrame = &;
-                //} else {
-                //    pSurfInputBuf = pSurfEncIn;
-                //    //ppNextFrame = &pSurfEncIn;
-                //}
-
                 if (m_pFileReader->getInputCodec() == RGY_CODEC_UNKNOWN) {
 					//Wait for the reading end of the corresponding frame on the reading side (pInputBuf->heInputDone)and acquire the read frame. 
 					//When this function returns anything other than RGY_ERR_NONE, RunEncode enters the end processing.
@@ -3601,7 +3589,7 @@ mfxStatus CQSVPipeline::RunEncode() {
                     break;
                 }
 
-                //如果此函数返回MFX_ERR_MORE_BITSTREAM，则输入完成
+                //If this function returns MFX_ERR_MORE_BITSTREAM, the input is complete
                 sts = decode_one_frame(true);
                 if (sts == MFX_ERR_MORE_DATA || sts == MFX_ERR_MORE_SURFACE)
                     continue;
@@ -3648,9 +3636,9 @@ mfxStatus CQSVPipeline::RunEncode() {
         sts = encode_one_frame(pNextFrame);
     }
 
-    //MFX_ERR_MORE_DATA/MFX_ERR_MORE_BITSTREAMは入力が終了したことを示す
+    //MFX_ERR_MORE_DATA / MFX_ERR_MORE_BITSTREAM indicates that input has been completed
     QSV_IGNORE_STS(sts, (m_pFileReader->getInputCodec() != RGY_CODEC_UNKNOWN) ? MFX_ERR_MORE_BITSTREAM : MFX_ERR_MORE_DATA);
-    //エラーチェック
+    //Error checking
     m_EncThread.m_stsThread = sts;
     QSV_ERR_MES(sts, _T("Error in encoding pipeline."));
     PrintMes(RGY_LOG_DEBUG, _T("Encode Thread: finished main loop.\n"));
@@ -3742,7 +3730,7 @@ mfxStatus CQSVPipeline::RunEncode() {
     }
 
     if (m_pmfxVPP) {
-        //vppのフレームをflush
+        //flush vpp frame
         while (MFX_ERR_NONE <= sts || MFX_ERR_MORE_DATA == sts || MFX_ERR_MORE_SURFACE == sts) {
             // MFX_ERR_MORE_SURFACE can be returned only by RunFrameVPPAsync
             // MFX_ERR_MORE_DATA is accepted only from EncodeFrameAsync
@@ -3767,21 +3755,6 @@ mfxStatus CQSVPipeline::RunEncode() {
                 break;
 
             get_all_free_surface(pSurfEncIn);
-
-            //for (int i_filter = 0; i_filter < (int)m_VppPrePlugins.size(); i_filter++) {
-            //    bVppAllFiltersFlushed &= m_VppPrePlugins[i_filter]->m_bPluginFlushed;
-            //    if (!m_VppPrePlugins[i_filter]->m_bPluginFlushed) {
-            //        mfxFrameSurface1 *pSurfFilterOut = pSurfVppPreFilter[i_filter + 1];
-            //        sts = filter_one_frame(m_VppPrePlugins[i_filter], &pNextFrame, &pSurfFilterOut);
-            //        if (sts == MFX_ERR_MORE_DATA) {
-            //            m_VppPrePlugins[i_filter]->m_bPluginFlushed = true;
-            //            sts = MFX_ERR_NONE;
-            //        }
-            //        MSDK_BREAK_ON_ERROR(sts);
-            //        pNextFrame = pSurfFilterOut;
-            //    }
-            //}
-            //MSDK_BREAK_ON_ERROR(sts);
 
             sts = vpp_one_frame(pNextFrame, (m_VppPostPlugins.size()) ? pSurfVppPostFilter[0] : pSurfEncIn);
             if (bVppRequireMoreFrame) {

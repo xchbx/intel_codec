@@ -538,7 +538,7 @@ mfxStatus InitSession(MFXVideoSession& session, bool useHWLib, MemType& memType)
 std::unique_ptr<CQSVHWDevice> InitHWDevice(MFXVideoSession& session, MemType& memType) {
     mfxStatus sts = MFX_ERR_NONE;
     std::unique_ptr<CQSVHWDevice> hwdev;
-    std::shared_ptr<RGYLog> pQSVLog(new RGYLog(nullptr, RGY_LOG_ERROR));
+    std::shared_ptr<RGYLog> pQSVLog(new RGYLog(nullptr, RGY_LOG_DEBUG));
 #if D3D_SURFACES_SUPPORT
     POINT point = {0, 0};
     HWND window = WindowFromPoint(point);

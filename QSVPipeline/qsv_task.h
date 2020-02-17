@@ -107,7 +107,7 @@ struct QSVTask {
                 pmfxAllocator->Unlock(pmfxAllocator->pthis, mfxSurf->Data.MemId, &(mfxSurf->Data));
             }
 
-            //最終で加算したLockをここで減算する
+            //Subtract the Lock added in the last here
             mfxSurf->Data.Locked--;
         }
         return sts;
